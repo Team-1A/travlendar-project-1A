@@ -11,9 +11,11 @@ Deskripsi Proyek
 
 Travlendar akan menyediakan dukungan kalender yang fleksibel dan lengkap yang mempertimbangkan waktu tempuh antar pertemuan. Travlendar juga mendukung banyak sarana perjalanan, termasuk berjalan kaki, bersepeda, transportasi umum, dan mengemudi. Pengguna tertentu mungkin secara global mengaktifkan atau menonaktifkan setiap sarana perjalanan (mis., Pengguna yang tidak memiliki sepeda akan menonaktifkan bersepeda). Pengguna juga harus dapat memberikan batasan yang masuk akal pada berbagai cara perjalanan (mis., Jarak tempuh harus kurang dari jarak yang ditentukan, atau transportasi umum tidak boleh digunakan setelah waktu tertentu). Saat pengguna berinteraksi dengan Travlendar, aplikasi dapat:
 
-1)Menghitung waktu perjalanan antara rapat (atau rapat yang diusulkan) dan mencegah pertemuan penjadwalan yang konflik mulai / berakhirnya sebagai akibat ketidakmampuan melakukan perjalanan
-2)Secara eksplisit namun secara halus menambahkan "waktu tempuh" ke kalender di antara pertemuan, memesan jumlah waktu yang diperlukan di kalender, dan menyarankan pilihan "terbaik" untuk melakukan perjalanan di antara setiap pertemuan.
-3)Buat jadwal yang kompatibel secara keseluruhan setiap hari, mengingat pengguna yang tidak meninggalkan rumah dengan sepedanya atau mobil di pagi hari tidak dapat menggunakannya untuk bergerak di antara pertemuan di siang hari.
+ 1)Menghitung waktu perjalanan antara rapat (atau rapat yang diusulkan) dan mencegah pertemuan penjadwalan yang konflik mulai / berakhirnya sebagai akibat ketidakmampuan melakukan perjalanan
+
+ 2)Secara eksplisit namun secara halus menambahkan "waktu tempuh" ke kalender di antara pertemuan, memesan jumlah waktu yang diperlukan di kalender, dan menyarankan pilihan "terbaik" untuk melakukan perjalanan di antara setiap pertemuan.
+
+ 3)Buat jadwal yang kompatibel secara keseluruhan setiap hari, mengingat pengguna yang tidak meninggalkan rumah dengan sepedanya   atau mobil di pagi hari tidak dapat menggunakannya untuk bergerak di antara pertemuan di siang hari.
 
 Pada hari tertentu, mobil pengguna (atau sepeda, skateboard, dll.) Harus dimulai dan berakhir di rumah pengguna. Pelaksanaan Travlendar harus mempertimbangkan berbagai jenis pengguna, termasuk orang-orang yang bekerja "di jalan", melakukan perjalanan dari pertemuan ke pertemuan sepanjang hari serta orang tua yang sibuk mengantarkan anak-anak ke sana kemari.
 
