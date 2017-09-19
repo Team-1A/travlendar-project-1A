@@ -8,6 +8,6 @@
  *
  * @author RohmatDasuki
  */
-public class lokasi {
+class lokasi {
     
 }

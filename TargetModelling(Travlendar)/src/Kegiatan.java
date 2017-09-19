@@ -8,13 +8,12 @@
  *
  * @author ACER
  */
-public class Kegiatan {
+ class Kegiatan {
     public String nm_Kegiatan;
     public int prioritas;
     public int jam_mulai;
     public int jam_akhir;
-    
-  
+   
     public void nmKegiatan(String kegiatan){
         nm_Kegiatan = kegiatan;
     }
