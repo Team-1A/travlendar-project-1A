@@ -8,15 +8,15 @@
  * @author RohmatDasuki
  */
 public class lokasi extends Kegiatan {
-    public String namalokasi;
-    public int GMT ;  
+    private String namalokasi;
+    private int GMT ;  
     public void Namalokasi(String nmlokasi )
     {
-        namalokasi = nmlokasi;
+        setNamalokasi(nmlokasi);
     }
     public void Gmt(int gmt)
     {
-        GMT=gmt;
+        setGMT(gmt);
     }
     public String namalokasi(String nl)
     {
@@ -25,5 +25,33 @@ public class lokasi extends Kegiatan {
     public int GMT(int gmT )
     {
         return  +gmT ;
+    }
+
+    /**
+     * @return the namalokasi
+     */
+    public String getNamalokasi() {
+        return namalokasi;
+    }
+
+    /**
+     * @param namalokasi the namalokasi to set
+     */
+    public void setNamalokasi(String namalokasi) {
+        this.namalokasi = namalokasi;
+    }
+
+    /**
+     * @return the GMT
+     */
+    public int getGMT() {
+        return GMT;
+    }
+
+    /**
+     * @param GMT the GMT to set
+     */
+    public void setGMT(int GMT) {
+        this.GMT = GMT;
     }
 }

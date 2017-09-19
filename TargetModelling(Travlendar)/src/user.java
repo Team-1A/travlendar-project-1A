@@ -9,30 +9,29 @@
  * @author ACER
  */
 public class user extends Kegiatan {
-    public String username;
-    public String email;
-    public String password;
-    public String nama;
+    private String username;
+    private String email;
+    private String password;
+    private String nama;
 
-    user(String aaa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    user() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public user(){
+        username = null;
+        email = null;
+        password = null;
+        nama = null;
     }
     
     public void userName(String usernm){
-        username = usernm;
+        setUsername(usernm);
     }
     public void eMail(String mail){
-        email = mail;
+        setEmail(mail);
     }
     public void passWord(String psswrd){
-        password = psswrd;
+        setPassword(psswrd);
     }
     public void Nama(String nm){
-        nama = nm;
+        setNama(nm);
     }
     
     public String username(String uname){
@@ -46,6 +45,62 @@ public class user extends Kegiatan {
     }
     public String nama(String nama){
         return "nama " + nama;
+    }
+
+    /**
+     * @return the username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * @param username the username to set
+     */
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * @param password the password to set
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /**
+     * @return the nama
+     */
+    public String getNama() {
+        return nama;
+    }
+
+    /**
+     * @param nama the nama to set
+     */
+    public void setNama(String nama) {
+        this.nama = nama;
     }
     
 }
