@@ -8,6 +8,6 @@
  *
  * @author ACER
  */
-public class transportasi {
+class transportasi {
     
 }
