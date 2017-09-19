@@ -10,7 +10,6 @@
 public class lokasi extends Kegiatan {
     public String namalokasi;
     public int GMT ;  
-    
     public void Namalokasi(String nmlokasi )
     {
         namalokasi = nmlokasi;

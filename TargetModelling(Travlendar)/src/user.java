@@ -13,6 +13,14 @@ public class user extends Kegiatan {
     public String email;
     public String password;
     public String nama;
+
+    user(String aaa) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    user() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public void userName(String usernm){
         username = usernm;

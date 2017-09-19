@@ -13,7 +13,6 @@ import java.util.Scanner;
  * @author ACER
  */
 public class Travlendar {
-
     /**
      * @param args the command line arguments
      */
@@ -22,8 +21,8 @@ public class Travlendar {
         Scanner scan = new Scanner(System.in);
         ArrayList<user> listUser = new ArrayList<>();
         user Pengguna = new user();
-        ArrayList<kegiatan> listKegiatan = new ArrayList<>();
-        kegiatan Acara = new kegiatan();
+        ArrayList<Kegiatan> listKegiatan = new ArrayList<Kegiatan>();
+        Kegiatan Acara = new Kegiatan();
         ArrayList<lokasi> listLokasi = new ArrayList<>();
         lokasi tempat = new lokasi();
         ArrayList<transportasi> listKendaraan = new ArrayList<>();
