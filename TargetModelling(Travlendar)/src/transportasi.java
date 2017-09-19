@@ -8,7 +8,7 @@
  *
  * @author ACER
  */
-class transportasi {
+public class transportasi extends Kegiatan{
     public String jenis_kendaraan;
     
     public void jenisKendaraan(String kendaraan){

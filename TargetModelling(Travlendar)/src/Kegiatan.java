@@ -8,7 +8,7 @@
  *
  * @author ACER
  */
- class Kegiatan {
+ public class Kegiatan {
     public String nm_Kegiatan;
     public int prioritas;
     public int jam_mulai;

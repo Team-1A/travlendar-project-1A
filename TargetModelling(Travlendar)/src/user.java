@@ -8,7 +8,7 @@
  *
  * @author ACER
  */
-class user {
+public class user extends Kegiatan {
     public String username;
     public String email;
     public String password;
