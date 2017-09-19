@@ -1,3 +1,7 @@
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +19,16 @@ public class Travlendar {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Scanner scan = new Scanner(System.in);
+        ArrayList<user> listUser = new ArrayList<>();
+        user Pengguna = new user();
+        ArrayList<kegiatan> listKegiatan = new ArrayList<>();
+        kegiatan Pengguna = new kegiatan();
+        ArrayList<user> listUser = new ArrayList<>();
+        user Pengguna = new user();
+        ArrayList<user> listUser = new ArrayList<>();
+        user Pengguna = new user();
+        
     }
     
 }
