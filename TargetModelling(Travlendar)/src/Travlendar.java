@@ -22,8 +22,8 @@ public class Travlendar {
         Scanner scan = new Scanner(System.in);
         ArrayList<user> listUser = new ArrayList<>();
         user Pengguna = new user();
-        ArrayList<Kegiatan> listKegiatan = new ArrayList<Kegiatan>();
-        Kegiatan Acara = new Kegiatan();
+        ArrayList<kegiatan> listKegiatan = new ArrayList<kegiatan>();
+        kegiatan Acara = new kegiatan();
         ArrayList<lokasi> listLokasi = new ArrayList<>();
         lokasi tempat = new lokasi();
         ArrayList<transportasi> listKendaraan = new ArrayList<>();
@@ -42,7 +42,7 @@ public class Travlendar {
                 }
                 case 2:{
                     System.out.println("List acara");
-                    listAcara.forEach(Schedule -> System.out.println(Schedule.getAcara()));
+                    listKegiatan.forEach(Schedule -> System.out.println(Schedule.getAcara()));
                     break;
                 }
                 case 3:{
