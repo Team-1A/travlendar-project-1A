@@ -9,19 +9,12 @@
  * @author ACER
  */
 public class Kegiatan {
-    public String username;
-    public int id_Kegiatan;
     public String nm_Kegiatan;
     public int prioritas;
     public int jam_mulai;
     public int jam_akhir;
     
-    public void userName(String usernm){
-        username = usernm;
-    }
-    public void idKegiatan(int id){
-        id_Kegiatan = id;
-    }
+  
     public void nmKegiatan(String kegiatan){
         nm_Kegiatan = kegiatan;
     }
@@ -32,6 +25,6 @@ public class Kegiatan {
         jam_mulai = mulai;
     }
     public void jamAkhir(int akhir){
-        jam_akhir = akhir
+        jam_akhir = akhir;
     }
 }
