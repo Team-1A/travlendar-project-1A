@@ -23,11 +23,11 @@ public class Travlendar {
         ArrayList<user> listUser = new ArrayList<>();
         user Pengguna = new user();
         ArrayList<kegiatan> listKegiatan = new ArrayList<>();
-        kegiatan Pengguna = new kegiatan();
-        ArrayList<user> listUser = new ArrayList<>();
-        user Pengguna = new user();
-        ArrayList<user> listUser = new ArrayList<>();
-        user Pengguna = new user();
+        kegiatan Acara = new kegiatan();
+        ArrayList<lokasi> listLokasi = new ArrayList<>();
+        lokasi tempat = new lokasi();
+        ArrayList<transportasi> listKendaraan = new ArrayList<>();
+        transportasi kendaraan = new transportasi();
         
     }
     
