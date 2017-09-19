@@ -8,7 +8,7 @@
  *
  * @author ACER
  */
-public class transportasi extends Kegiatan{
+public class transportasi extends kegiatan{
     private String jenis_kendaraan;
     
     public transportasi(){

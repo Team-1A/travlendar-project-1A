@@ -22,7 +22,7 @@ public class Travlendar {
         Scanner scan = new Scanner(System.in);
         ArrayList<user> listUser = new ArrayList<>();
         user Pengguna = new user();
-        ArrayList<kegiatan> listKegiatan = new ArrayList<kegiatan>();
+        ArrayList<kegiatan> listKegiatan = new ArrayList<>();
         kegiatan Acara = new kegiatan();
         ArrayList<lokasi> listLokasi = new ArrayList<>();
         lokasi tempat = new lokasi();

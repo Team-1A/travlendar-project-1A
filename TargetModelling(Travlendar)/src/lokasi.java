@@ -7,7 +7,7 @@
  *
  * @author RohmatDasuki
  */
-public class lokasi extends Kegiatan {
+public class lokasi extends kegiatan {
     private String namalokasi;
     private int GMT ;  
     public void Namalokasi(String nmlokasi )
