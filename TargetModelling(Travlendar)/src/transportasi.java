@@ -9,5 +9,13 @@
  * @author ACER
  */
 class transportasi {
+    public String jenis_kendaraan;
     
+    public void jenisKendaraan(String kendaraan){
+        jenis_kendaraan = kendaraan;
+    }
+    
+    public String jenis_kendaraan(String jeniskendaraan){
+        return "jam mulai " + jeniskendaraan;
+    }
 }
