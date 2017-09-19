@@ -16,6 +16,6 @@ public class transportasi extends Kegiatan{
     }
     
     public String jenis_kendaraan(String jeniskendaraan){
-        return "jam mulai " + jeniskendaraan;
+        return "kendaraan " + jeniskendaraan;
     }
 }
