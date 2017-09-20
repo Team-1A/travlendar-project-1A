@@ -1,13 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author ACER
- */
 public class transportasi extends kegiatan{
     private String jenis_kendaraan;
     
@@ -23,9 +14,7 @@ public class transportasi extends kegiatan{
         return "kendaraan " + jeniskendaraan;
     }
 
-    /**
-     * @return the jenis_kendaraan
-     */
+
     public String getJenis_kendaraan() {
         return jenis_kendaraan;
     }

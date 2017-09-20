@@ -1,27 +1,25 @@
 
 import java.util.Scanner;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author ACER
- */
+import java.util.Calendar;
+import java.time.LocalDateTime;
  public class kegiatan {
     private String nm_Kegiatan;
+    private Calendar date ;//beberapa tambahan 
     private int prioritas;
     private int jam_mulai;
     private int jam_akhir;
+    private lokasi lokasi;
+    private int jam_berangkat;
+    private int jam_tiba ;
     
     public kegiatan(){
         nm_Kegiatan = null;
         prioritas = 0;
         jam_mulai = 0;
         jam_akhir = 0;
+        lokasi = null;
+        jam_berangkat=0;
+        jam_tiba=0;
     }
    
     public void nmKegiatan(String kegiatan){
