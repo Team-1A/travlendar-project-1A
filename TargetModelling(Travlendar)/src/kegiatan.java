@@ -1,37 +1,37 @@
-
+//tambaha estimasi waktu 
 import java.util.Scanner;
 import java.util.Calendar;
-import java.time.LocalDateTime;
+import java.time.Clock;
  public class kegiatan {
     private String nm_Kegiatan;
     private Calendar date ;//beberapa tambahan 
     private int prioritas;
-    private int jam_mulai;
-    private int jam_akhir;
+    private Clock acara_dimulai ;
+    private Clock acara_selesai ;
     private lokasi lokasi;
-    private int jam_berangkat;
-    private int jam_tiba ;
+    private Clock jam_berangkat;
+    private Clock jam_tiba ;
     
     public kegiatan(){
         nm_Kegiatan = null;
+        date= null;
         prioritas = 0;
-        jam_mulai = 0;
-        jam_akhir = 0;
+        acara_dimulai = null;
+        acara_selesai = null;
         lokasi = null;
-        jam_berangkat=0;
-        jam_tiba=0;
+        jam_berangkat=null;
+        jam_tiba=null;
     }
-   
     public void nmKegiatan(String kegiatan){
         setNm_Kegiatan(kegiatan);
     }
     public void keutamaan(int Prio){
         setPrioritas(Prio);
     }   
-    public void jamMulai(int mulai){
+    public void acaraMulai(int mulai){
         setJam_mulai(mulai);
     }
-    public void jamAkhir(int akhir){
+    public void acaraAkhir(int akhir){
         setJam_akhir(akhir);
     }
     
@@ -80,28 +80,28 @@ import java.time.LocalDateTime;
      * @return the jam_mulai
      */
     public int getJam_mulai() {
-        return jam_mulai;
+        return acara_dimulai;
     }
 
     /**
-     * @param jam_mulai the jam_mulai to set
+     * @param acara_dimulai the jam_mulai to set
      */
     public void setJam_mulai(int jam_mulai) {
-        this.jam_mulai = jam_mulai;
+        this.acara_dimulai = acara_dimulai;
     }
 
     /**
      * @return the jam_akhir
      */
     public int getJam_akhir() {
-        return jam_akhir;
+        return acara_selesai;
     }
 
     /**
      * @param jam_akhir the jam_akhir to set
      */
     public void setJam_akhir(int jam_akhir) {
-        this.jam_akhir = jam_akhir;
+        this.acara_selesai = acara_selesai;
     }
     
     public void setAcara(String title, int start, int end, int penting) {
