@@ -1,6 +1,11 @@
-public class lokasi {
+public class Lokasi {
     private String namalokasi;
     private int GMT ;  
+    
+    public Lokasi(){
+        namalokasi = null;
+        GMT = 0;
+    }
     public void Namalokasi(String nmlokasi )
     {
         setNamalokasi(nmlokasi);

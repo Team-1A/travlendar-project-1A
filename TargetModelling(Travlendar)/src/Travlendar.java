@@ -2,21 +2,21 @@
 import static java.lang.System.exit;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.time.*;
+import java.time.Clock;
 
 public class Travlendar {
 
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner scan = new Scanner(System.in);
-        ArrayList<user> listUser = new ArrayList<>();
-        user Pengguna = new user();
-        ArrayList<kegiatan> listKegiatan = new ArrayList<>();
-        kegiatan Acara = new kegiatan();
-        ArrayList<lokasi> listLokasi = new ArrayList<>();
-        lokasi tempat = new lokasi();
-        ArrayList<transportasi> listKendaraan = new ArrayList<>();
-        transportasi kendaraan = new transportasi();
+        ArrayList<User> listUser = new ArrayList<>();
+        User Pengguna = new User();
+        ArrayList<Kegiatan> listKegiatan = new ArrayList<>();
+        Kegiatan Acara = new Kegiatan();
+        ArrayList<Lokasi> listLokasi = new ArrayList<>();
+        Lokasi tempat = new Lokasi();
+        ArrayList<Transportasi> listKendaraan = new ArrayList<>();
+        Transportasi kendaraan = new Transportasi();
         
         System.out.println("1. Tambahkan Acara");
         System.out.println("2. Tampilkan list Acara");
