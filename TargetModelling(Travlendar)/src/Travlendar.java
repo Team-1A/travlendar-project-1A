@@ -13,10 +13,6 @@ public class Travlendar {
         User Pengguna = new User();
         ArrayList<Kegiatan> listKegiatan = new ArrayList<>();
         Kegiatan Acara = new Kegiatan();
-        ArrayList<Lokasi> listLokasi = new ArrayList<>();
-        Lokasi tempat = new Lokasi();
-        ArrayList<Transportasi> listKendaraan = new ArrayList<>();
-        Transportasi kendaraan = new Transportasi();
         
         System.out.println("1. Tambahkan Acara");
         System.out.println("2. Tampilkan list Acara");
@@ -31,7 +27,9 @@ public class Travlendar {
                 }
                 case 2:{
                     System.out.println("List acara");
-                    listKegiatan.forEach(Schedule -> System.out.println(Schedule.getAcara()));
+                    for(Kegiatan kegiatan : listKegiatan) {
+                        System.out.println(kegiatan.getAcara());
+                    }
                     break;
                 }
                 case 3:{
@@ -43,8 +41,8 @@ public class Travlendar {
                 }
             }
             if(pilihan == 1 || pilihan == 2) {
-                System.out.println("1. Tambahkan Acara hari ini");
-                System.out.println("2. Tampilkan list Acara hari ini");
+                System.out.println("1. Tambahkan Acara");
+                System.out.println("2. Tampilkan list Acara");
                 System.out.println("3. Exit");
                 System.out.print("Pilihan: ");
                 pilihan = Integer.parseInt(scan.nextLine());

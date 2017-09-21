@@ -18,26 +18,6 @@ public class Kegiatan {
         jam_berangkat = null;
         jam_tiba = null;
     }
-    public void nmKegiatan(String kegiatan){
-        setNm_Kegiatan(kegiatan);
-    }
-    public void keutamaan(int Prio){
-        setPrioritas(Prio);
-    }   
-    
-    public String nm_Kegiatan(String namakegiatan){
-        return "username " + namakegiatan;
-    }
-    public String prioritas(int utama){
-        return "prioritas " + utama;
-    }
-    public String jam_mulai(int Mulai){
-        return "jam mulai " + Mulai;
-    }
-    public String jam_akhir(int Akhir){
-        return "jam mulai " + Akhir;
-    }
-
     /**
      * @return the nm_Kegiatan
      */
@@ -66,13 +46,16 @@ public class Kegiatan {
         this.prioritas = prioritas;
     }
 
-    public void setAcara(String title, Clock start, Clock end, int penting) {
+    public void setAcara(String title, Lokasi lokasi, Calendar jam_berangkat, Calendar jam_tiba, int penting) {
         this.setNm_Kegiatan(title);
+        this.setLokasi(lokasi);
+        this.setJam_berangkat(jam_berangkat);
+        this.setJam_tiba(jam_tiba);
         this.setPrioritas(penting);
     }
     
     public String getAcara() {
-        return "Nama Acara : " + getNm_Kegiatan() + "\nWaktu Mulai (jam): " + getJam_mulai() + "\nWaktu Selesai (jam): " + getJam_akhir() + "\nPrioritas(1-5): " + getPrioritas();
+        return "Nama acara : " + getNm_Kegiatan() + "\nTempat acara: " + lokasi.getNamalokasi() + "\nGMT acara (angka): " + lokasi.getGMT() + "\nWaktu berangkat: " + getJam_berangkat().getTime() + "\nWaktu tiba: " + getJam_tiba().getTime() + "\nPrioritas(1-5): " + getPrioritas();
     }
     
     public Kegiatan masukanAcara() {
@@ -83,39 +66,44 @@ public class Kegiatan {
         Lokasi location = new Lokasi();
         System.out.print("Masukan nama acara : ");
         String title = scan.nextLine();
-        System.out.print("Lokasi acara");
-        System.out.print("Waktu berangkat");
-        System.out.print("Tahun: ");
+        System.out.print("Lokasi acara : ");
+        String locationEvent = scan.nextLine();
+        System.out.print("GMT acara (angka): ");
+        int gmtEvent = Integer.parseInt(scan.nextLine());
+        location.set(locationEvent, gmtEvent);
+        System.out.print("Waktu berangkat\n");
+        System.out.print("Tahun : ");
         int yearGo = Integer.parseInt(scan.nextLine());
-        System.out.print("Bulan: ");
+        System.out.print("Bulan : ");
         int monthGo = Integer.parseInt(scan.nextLine());
         monthGo = monthGo - 1;
-        System.out.print("Tanggal: ");
+        System.out.print("Tanggal : ");
         int dayGo = Integer.parseInt(scan.nextLine());
-        System.out.print("Jam: ");
+        System.out.print("Jam : ");
         int hourGo = Integer.parseInt(scan.nextLine());
-        System.out.print("Menit: ");
+        System.out.print("Menit : ");
         int minuteGo = Integer.parseInt(scan.nextLine());
         int secondGo = 0;
         time1.set(yearGo, monthGo, dayGo, hourGo, minuteGo, secondGo);
-        System.out.print("Waktu tiba");
-        System.out.print("Tahun: ");
+        System.out.print("Waktu tiba\n");
+        System.out.print("Tahun : ");
         int yearArrive = Integer.parseInt(scan.nextLine());
-        System.out.print("Bulan: ");
+        System.out.print("Bulan : ");
         int monthArrive = Integer.parseInt(scan.nextLine());
         monthArrive = monthArrive - 1;
-        System.out.print("Tanggal: ");
+        System.out.print("Tanggal : ");
         int dayArrive = Integer.parseInt(scan.nextLine());
-        System.out.print("Jam: ");
+        System.out.print("Jam : ");
         int hourArrive = Integer.parseInt(scan.nextLine());
-        System.out.print("Menit: ");
+        System.out.print("Menit : ");
         int minuteArrive = Integer.parseInt(scan.nextLine());
         int secondArrive = 0;
-        time1.set(yearArrive, monthArrive, dayArrive, hourArrive, minuteArrive, secondArrive);
+        time2.set(yearArrive, monthArrive, dayArrive, hourArrive, minuteArrive, secondArrive);
         System.out.print("Prioritas(1-5) : ");
         int prio = Integer.parseInt(scan.nextLine());
-//        Event.setAcara(judul,mulai,selesai,prio);
+        event.setAcara(title, location, time1, time2, prio);
         return event;
+
     }
 
     /**
@@ -124,7 +112,6 @@ public class Kegiatan {
     public Lokasi getLokasi() {
         return lokasi;
     }
-
     /**
      * @param lokasi the lokasi to set
      */

@@ -6,23 +6,7 @@ public class Lokasi {
         namalokasi = null;
         GMT = 0;
     }
-    public void Namalokasi(String nmlokasi )
-    {
-        setNamalokasi(nmlokasi);
-    }
-    public void Gmt(int gmt)
-    {
-        setGMT(gmt);
-    }
-    public String namalokasi(String nl)
-    {
-        return "nama lokasi "+nl;
-    }
-    public int GMT(int gmT )
-    {
-        return  +gmT ;
-    }
-   
+  
     public String getNamalokasi() {
         return namalokasi;
     }
@@ -34,5 +18,9 @@ public class Lokasi {
     }
     public void setGMT(int GMT) {
         this.GMT = GMT;
+    }
+    public void set(String location, int gmt){
+        this.namalokasi = location;
+        this.GMT = gmt;
     }
 }
