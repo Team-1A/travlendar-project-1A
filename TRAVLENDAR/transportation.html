@@ -136,9 +136,9 @@ function openCity(evt, cityName) {
        <h1> Add Activity <button class="button button2">Add</button></h1>
       <h2>   </h2>
       <br></br>
-      <span>Activity's Name </span>
+      <span>Activity's Name</span><br></br>
       <input class="kotak_lo" type="text"  name="#"><br></br>
-      <span>From</span>
+      <span>Start Location - Finish Location</span><br></br>
       <select id="loc" name="distance">
         <option value="polbanitb">POLBAN - ITB</option>
         <option value="polbanbip">POLBAN - BIP</option>
@@ -147,23 +147,17 @@ function openCity(evt, cityName) {
         <option value="bippolban">BIP - POLBAN</option>
         <option value="bippolban">BIP - ITB</option>
       </select><br></br>
-      <span>What Time The Event Started?</span>
-        <form id="myForm">
-          Time: <input type="time" id="myTimestart">
+      <span>What Time The Event Started?</span><br></br>
+        <form action="/action_page.php">
+          <input type="number" name="quantity" placeholder="Hour" min="1" max="12">
+          <input type="number" name="quantity" placeholder="Minute" min="1" max="60">
         </form><br></br>
-      <span>What Time The Event Ended?</span>
-        <form id="myForm">
-          Time: <input type="time" id="myTimeend">
-        </form>
-        <p id="demo"></p>
-      <script>
-        function myFunction() {
-        var x = document.getElementById("myTime").form.id;
-        var y = document.getElementById("myTimeend").form.id;
-        document.getElementById("demo").innerHTML = x;
-        }
-      </script><br></br>
-      <span>Transportation Mode</span>
+      <span>What Time The Event Ended?</span><br></br>
+        <form action="/action_page.php">
+          <input type="number" name="quantity" placeholder="Hour" min="1" max="12">
+          <input type="number" name="quantity" placeholder="Minute" min="1" max="60">
+        </form><br></br>
+      <span>Transportation Mode</span><br></br>
       <select id="trans" name="transportation">
         <option value="car">Car</option>
         <option value="motorcycle">Motorcycle</option>
