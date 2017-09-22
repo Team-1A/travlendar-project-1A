@@ -129,8 +129,49 @@ function openCity(evt, cityName) {
 <div id="My Schedule" class="tabcontent">
   <div class="content">
   <div id="box">
-     <div class="box-top">My Schedule</div>
+    <div class="box-top">Add Activity</div>
      <div class="box-panel">
+      <a href="add activity.html"></a>
+
+      <h1> Add Activity </h1>
+      <h2>   </h2>
+      <br></br>
+      <span>Activity's Name </span>
+      <input class="kotak_lo" type="text"  name="#"><br></br>
+      <span>From</span>
+      <select id="loc" name="distance">
+        <option value="polbanitb">POLBAN - ITB</option>
+        <option value="polbanbip">POLBAN - BIP</option>
+        <option value="itbpolban">ITB - POLBAN</option>
+        <option value="itbbip">ITB - BIP</option>
+        <option value="bippolban">BIP - POLBAN</option>
+        <option value="bippolban">BIP - ITB</option>
+      </select><br></br>
+      <span>What Time The Event Started?</span>
+        <form id="myForm">
+          Time: <input type="time" id="myTimestart">
+        </form><br></br>
+      <span>What Time The Event Ended?</span>
+        <form id="myForm">
+          Time: <input type="time" id="myTimeend">
+        </form>
+        <p id="demo"></p>
+      <script>
+        function myFunction() {
+        var x = document.getElementById("myTime").form.id;
+        var y = document.getElementById("myTimeend").form.id;
+        document.getElementById("demo").innerHTML = x;
+        }
+      </script><br></br>
+      <span>Transportation Mode</span>
+      <select id="trans" name="transportation">
+        <option value="car">Car</option>
+        <option value="motorcycle">Motorcycle</option>
+        <option value="Train">Train</option>
+        <option value="Plane">Plane</option>
+        <option value="Bycycle">Bycyle</option>
+        <option value="PublicTransportation">Public Transportation</option>
+      </select><br></br>
 
 </div>
 </div>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TRAVLENDAR</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="admin.css">
+<link rel="stylesheet" type="text/css" href="horizontal_tab.css">
+
+<link href='fullcalendar.min.css' rel='stylesheet' />
+<link href='fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<script src='moment.min.js'></script>
+<script src='jquery.min.js'></script>
+<script src='jquery-ui.min.js'></script>
+<script src='fullcalendar.min.js'></script>
+
+<script>
+
+  $(document).ready(function() {
+    
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,listWeek'
+      },
+      defaultDate: '2017-09-12',
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2017-09-01',
+        },
+        {
+          title: 'Long Event',
+          start: '2017-09-07',
+          end: '2017-09-10'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2017-09-09T16:00:00'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2017-09-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2017-09-11',
+          end: '2017-09-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2017-09-12T10:30:00',
+          end: '2017-09-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2017-09-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2017-09-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2017-09-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2017-09-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2017-09-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2017-09-28'
+        }
+      ]
+    });
+    
+  });
+
+</script>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+</head>
+<body>
+
+<div id="header">
+  <div class="logo">
+    <a href="#">TRAV<span>LENDAR</span></a>
+  </div>
+  
+</div>
+
+
+<a class="mobile">MENU</a>
+
+
+
+ <div class="tab">
+  <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule</button>
+  <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar</button>
+  <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data</button>
+</div>
+
+<div id="My Schedule" class="tabcontent">
+  
+<div class="content">
+  <div id="box">
+    <div class="box-top">Add Activity</div>
+     <div class="box-panel">
+      <a href="addactivity.html"></a>  
+      
+      <h1> Add Activity </h1>
+      <h2>   </h2>
+      <br></br>
+      <span>Activity's Name </span>
+      <input class="kotak_lo" type="text"  name="#"><br></br>
+      <span>From</span>
+      <select id="loc" name="distance">
+        <option value="polbanitb">POLBAN - ITB</option>
+        <option value="polbanbip">POLBAN - BIP</option>
+        <option value="itbpolban">ITB - POLBAN</option>
+        <option value="itbbip">ITB - BIP</option>
+        <option value="bippolban">BIP - POLBAN</option>
+        <option value="bippolban">BIP - ITB</option>
+      </select><br></br>
+      <span>What Time The Event Started?</span>
+        <form id="myForm">
+          Time: <input type="time" id="myTimestart">
+        </form><br></br>
+      <span>What Time The Event Ended?</span>
+        <form id="myForm">
+          Time: <input type="time" id="myTimeend">
+        </form>
+        <p id="demo"></p>
+      <script>
+        function myFunction() {
+        var x = document.getElementById("myTime").form.id;
+        var y = document.getElementById("myTimeend").form.id;
+        document.getElementById("demo").innerHTML = x;
+        }
+      </script><br></br>
+      <span>Transportation Mode</span>
+      <select id="trans" name="transportation">
+        <option value="car">Car</option>
+        <option value="motorcycle">Motorcycle</option>
+        <option value="Train">Train</option>
+        <option value="Plane">Plane</option>
+        <option value="Bycycle">Bycyle</option>
+        <option value="PublicTransportation">Public Transportation</option>
+      </select><br></br>
+
+     </div>
+    </div>
+  </div>
+</div>
+  
+
+<div id="Calendar" class="tabcontent">
+  
+<div class="content">
+  <div id="box">
+     <div class="box-top">Calendar</div>
+     <div class="box-panel">
+       <div id='calendar'></div>
+     </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="Travel_Data" class="tabcontent">
+ <div class="content">
+  <div id="box">
+    <div class="box-top">My Schedule</div>
+     <div class="box-panel">
+      <div class="menu_atas">
+        
+        <div class="menunya">
+          <div class="point">
+            <a href="location.html">Location</a>
+          </div>
+        </div>
+        
+        <div class="menunya">
+          <a href="transportation.html">Transportation Mode</a>
+        </div>
+        
+        <div class="menunya">
+          <a href="distance.html">Manage Distance</a>
+        </div>
+        
+        <div class="menunya">
+          <a href="estimation.html">Estimation Time</a>
+        </div>
+      
+      </div>
+     </div>
+     
+     <div class="box-panel">
+      <div class="kiri">
+
+        <div style="overflow-x:auto hidden;">
+          <table>
+            <tr>
+              <th>From</th>
+              <th>To</th>
+              <th>Distance</th>
+              <th></th>
+            <tr>
+              <td>POLBAN<br>Jl. Ciwaruga</br></td>
+              <td>ITB<br>Jl. Ganesha</br></td>
+              <td>1 km</td>
+              <td><div class="action">
+                <a href="edit.jsp"> Edit</a>
+                <a href="edit.jsp"> Delete</a>
+              </div></td>
+            </tr>
+            <tr>
+              <td>ITB<br>Jl. Ganesha</br></td>
+              <td>BIP<br>Jl. Merdeka</br></td>
+              <td>2 km</td>
+              <td><div class="action">
+                <a href="edit.jsp"> Edit</a>
+                <a href="edit.jsp"> Delete</a>
+              </div></td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+      <div class="kanan">
+        <form action="#" class="distance_form" method="post">
+          <h2>Add Distance</h2>
+          <h3>  </h3>
+          <span>From</span>
+          <select id="loc" name="distance">
+            <option value="polban">Polban</option>
+            <option value="itb">ITB</option>
+            <option value="bip">BIP</option>
+          </select>
+          <span>To</span>
+          <select id="loc" name="distance">
+            <option value="polban">Polban</option>
+            <option value="itb">ITB</option>
+            <option value="bip">BIP</option>
+          </select>
+  
+          <input class="add_button" type="submit" name="#" value="Add">
+
+        </form>
+        
+      </div>
+       
+     </div>
+
+</div>
+</div>
+</div>
+	
+
+<div id="Calendar" class="tabcontent">
+  
+<div class="content">
+  <div id="box">
+     <div class="box-top">Calendar</div>
+     <div class="box-panel">
+       <div id='calendar'></div>
+     </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="Travel_Data" class="tab1content">
+ <div class="content">
+ <p>asdasdasda</p>
+ </div>
+</div>
+
+
+
+<script>
+function openPages(evt, pageName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(pageName).style.display = "block";
+    evt.currentTarget.className += " active";
+	
+} 
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html>
