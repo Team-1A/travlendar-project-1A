@@ -1,8 +1,7 @@
 //tambaha estimasi waktu 
 import java.util.Scanner;
 import java.util.Calendar;
-import java.time.Clock;
-import java.time.Duration;
+
 
 public class Kegiatan {
     private String nm_Kegiatan;

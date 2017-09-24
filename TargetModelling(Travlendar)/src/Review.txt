@@ -1,0 +1,10 @@
+1. Skala Prioritas belum di implementasikan untuk saat ini
+2. Jika dilihat dari data kasus, yang di input itu waktu acara dimulai, berakhir
+   dan waktu yang diinginkan user untuk tiba di tempat sedangkan waktu keberangkatan
+   direkomendasikan oleh program
+3. dari data kasus seharusnya program ini memiliki input jarak dari tempat awal ke
+   tempat tujuan.
+4. di class Kegiatan, kenapa nama variabel waktu di tulis jam? apakah user tidak menginput
+   tahun,bulan dan tanggal? lebih baik diganti menjadi waktu_keberangkatan dll.
+5. mengapa ada class transportasi tetapi tidak digunakan? seharusnya user diawal
+   meng-inputkan moda transportasinya.
