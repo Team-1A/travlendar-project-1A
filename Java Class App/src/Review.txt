@@ -1,3 +1,0 @@
-1. Skala Prioritas belum di implementasikan untuk saat ini
-2. Saat meng-input jarak antar lokasi sebaiknya di tuliskan jaraknya berdasarkan skala apa, apakah km atau m agar user tidak sengaja menginput angka dengan string di belakangnya dan menyebabkan error.
-3. sebaiknya input estimasi waktu setelah menginput moda transportasi karena estimasi waktu tergantung dari moda transportasi yang dipakai.
