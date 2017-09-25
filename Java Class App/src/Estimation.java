@@ -72,7 +72,7 @@ public class Estimation {
     */
     public float inputDistance() {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Masukan jarak antar lokasi : ");
+        System.out.print("Masukan jarak antar lokasi(km) : ");
         float length = Float.parseFloat(scan.nextLine());
         
         return length;
