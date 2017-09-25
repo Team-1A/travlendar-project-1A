@@ -1,0 +1,41 @@
+model data 
+- Masukan sample code (packages) untuk coba-coba
+- Semua orang harus memiliki file dokumentasi (artefak)
+- Lakukan validasi eksplorasi dengan referensi yang valid (java concept)
+	co. calendar
+- Penamaan class, atribut, varibel harus benar (b.ing / b.indo)
+- Gunakan referensi yang valid untuk penamaan class, atribut, variabel
+	co. traveller :
+	    journey :
+- Inisiasi object, manggil method, gak ada yang namanya manggil class
+
+
+Github.
+- Ketika commit git lakukan comment yang representatif
+- Sediakan link ke pa zul, agar langsung dapat pull dan push (tambahkan account pa zul)
+- Sediakan .gitignore agar java project-nya yang disimpan di github
+- izqfly@gmail.com
+- ghyfer@gmail.com
+- joelianmin@gmail.com
+- 
+
+A1.
+Perbaikan
+- Implementasi tipe data waktu (date time)
+- Belum bisa membuat suatu class
+- Penamaan diperbaiki, jangan membuat user bingung (istilah penamaan)
+- Jam berangkat
+- Jam tiba
+- Data model disesuaian dengan data kasus
+
+Penambahan 
+- tipe data calendar
+- jam mulai acara
+- jam akhir acara
+- lokasi
+- yang harus di jawab oleh program adalah alternatif moda transportasi yang memungkikan sesuai dengan data kasus
+- distance matrix
+- estimation time
+- lakukan pembuatan form event plannet oleh pengumpul data kasus
+ 
+

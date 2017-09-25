@@ -1,0 +1,40 @@
+Tugas Dokumentasi
+1. File Dokumentasi harus dimiliki oleh setiap anggota tim,
+   Gunakan Github sebagai repository penyimpanan dokumentasi
+
+2. Trello hanya digunakan sebagai logbook, bukan sebagai repository penyimpanan dokumentasi
+
+3. Management File diperbaiki (Penamaan, Penyimpanan, JobDesk, Dll)
+
+4. Semua Teknologi yang digunakan harus dimiliki oleh setiap anggota (Balsamiq, yEd, Netbeans, Sublime, SQLyog, Powerdesigner, Dll)
+
+
+1. Data kasus dibuatkan visualisasinya (gunakan template yang diberikan pa joe)
+	[] -> [] -> [] -> []
+	nm_kegiatan
+	jam_datang
+	jam_pergi
+	jam_mulai_acara
+	jam_akhir_acara
+	moda_transportasi
+	lokasi
+	  lokasi_acara
+	  lokasi_berangkat
+   - Berapa lama durasi kegiatannya ?
+   - Dimana kegiatannya ?
+   - Paling cepat pergi ke kegiatan kapan ?
+   - Paling lambat harus tiba ke kegiatan kapan ?
+   - Setelah kegiatan ini, kegiatan apa lagi ?
+
+2. Studi kasus :
+	Kasus -> Data/Informasi -> Interaksi dengan sistem -> Mockup -> Balsamiq
+
+3. Interaksi dengan sistem :
+	Esensial : Digambarkan secara umum (tanpa tombol klik, dsb)
+	Realisasi : Digambarkan secara spesifik (use case activity)
+
+4. Penamaan atribut/variabel harus tepat sesuai kegunaan
+5. Penggunaan jenis tipe data harus tepat
+
+1. Mockup tidak sama dengan data kasus (skala prioritas 5 menjadi 3)
+2. Fitur kendaraan lebih didetailkan (dijelaskan lebih lanjut oleh Kivlan)
