@@ -1,0 +1,5 @@
+1. pada saat membuka calendar, tampilan calendar tidak langsung muncul
+2. di file scroll_estimation.jsp Line 45 ada penggunaan "<" yang tidak terpakai
+3. pada function calendar ada event yang berbeda waktu tapi memiliki id yang sama, mengapa?
+4. pada estimation.jsp Line 114 & 115 </head> & <body> tidak terpakai
+5. pada distance.jsp Line 99 & 100 </head> & <body> tidak terpakai
