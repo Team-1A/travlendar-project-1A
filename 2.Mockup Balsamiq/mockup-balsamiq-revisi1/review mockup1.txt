@@ -1,0 +1,15 @@
+1. Kalau mau tulisan dari yg ke 1 ini "create new account" diganti sama sign up,
+biar sama ke yang ke 1.1 nya biar lebih enak lagi diliatnya <>
+- Kata "create schedule" rubah jadi "add schedule" <>
+2.3. buat search ubah jadi seperti search di google tampilannya (kotak) <>
+2.4. notification ubah jadi ke arah kanan agar lebih enak dilihat dan tidak menghalangi middle bar <>
+3. Apa perbedaan "create schedule" dengan "add activity"?
+Kalau mau yang "create schedule" dihapus, jadi cuman ada add activity, soalnya itu juga isinya hanya kalender
+5. icon delete untuk delete apa? keseluruhan schedule diseharian itukah? atau bagaimana?
+kalau cuman buat ngehapus salah satu event, icon delete jangan ditaruh disitu soalnya
+kalau disitu kesannya kaya yg mau ngehapus jadwal seharian
+6.2.1 Hapus reminder <>
+7.4. Setelah ini dibuat juga mockup "important" dan "less important" agar lebih rinci
+8. Benerin lagi my profile sama edit profilenya, hapus my behaviour
+Terus buat juga mockup pas ngedropdown my vehicle
+9. Segera isi, mau apa aja yang ada di setting 

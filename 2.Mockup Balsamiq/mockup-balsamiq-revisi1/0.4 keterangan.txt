@@ -1,0 +1,99 @@
+- 1 login
+- 2 sign up form
+- 3
+  ket: setelah login, masuk ke page My Schedule sbg default.
+       ada bar fungsional (paling atas): ada menu, search event or activity, notification, dan manage account.
+- 3.0
+  ket: popup yg bakal muncul dari hasil pencarian.
+       pencarian terbagi 2 kategori:
+	1. event (berisi event reminder misal ultah, deadline)
+	2. activity (berisi kegiatan)
+- 3.1 
+  kalau menu (garis-garis di pojok kiri atas) diklik akan muncul popup
+  dengan pilihan: (My Schedule, Calendar, Shortcut) yg nantinya kalau salahsatu tsb diklik 
+  akan pindah ke page tsb
+- 3.2
+  kalau manage account(@nadhiravirly) diklik akan muncul popup
+  dengan pilihan: (My Profile, Setting, Logout) yg nantinya kalau salahsatu tsb diklik 
+  akan pindah ke page tsb
+- 3.3
+  kalau gambar foto user (sebelah kiri @nadhiravirly) diklik akan muncul popup notifikasi
+  dan simbol merah notifikasi menghilang.
+- 4.1
+  saat 'Create Shedule' yang ada di page My Schedule diklik maka akan pindah
+  ke page Create Schedule.
+- 4.2
+  saat memilih tanggal akan muncul date picker agar user tdk bisa memilih tgl lampau.
+- 4.3 
+  saat user mengklik 'Add Activity' yang ada di page Create Schedule maka akan muncul form
+  dengan isian:  title(nama kegiatan), pengisian lokasi (sistemnya seperti yg ada di app gojek),
+		 waktu(dimulai dan diakhiri), skala prioritas, dan note.
+		 ket: kalau bisa, setelah user menginput lokasi awal dan akhir sistem lgsg
+		      menghitung jarak dan waktu tempuh (seperti app gojek).
+		      dalam pemilihan waktu juga mengunaka time picker agar user tidak
+		      bisa memilih jam yang sudah lampau.
+- 4.4
+  tampilan page Create Schedule saat sudah terisi dengan activity-activity. disini user
+  bisa mengedit activity atau menghapusnya. dan disini tiap activity belum terurut,
+  masih add activity secara acak (karena bisa saja user mengentry kegiatannya secara random
+  misal: Siti meng-add terlebihdahulu 'Menjemput anak jam 11' lalu setelah itu dia baru ingat
+  kalau jam 10 harus ke pasar, maka setelah itu barulah Siti meng-add 'Ke pasar jam 10')
+  untuk mengantisipasi case tsb, maka pengecekan bentrok dan pengurutan activity dilakukan
+  setelah finalisasi (user mengklik finish).
+- 4.5
+  saat finalisasi diklik maka sistem akan mengecek.
+  jika tidak ada activity yg bentrok maka user bisa memilih untuk set schedulenya atau tidak (kembali mengedit)
+  jika ada activity yg bentrok maka user akan disuruh untuk kembali mengedit.
+- 4.6
+  jika user mengklik tombol back tanpa melakukan finalisasi.
+  kalau yes maka schedule yang dibuat akan terhapus.
+  kalau no maka masih disitu (tidak pindah page)
+- 5
+  tampilan page My Schedule yang sudah terisi schedule-schedule harian.
+  schedule harian tsb bisa diklik untuk melihat detailnya, diedit, atau dihapus.
+- 6
+  saat salahsatu list schedule di page My Schedule diklik, maka akan pindah ke page
+  Detail Schedule untuk melihat detail activity. disini user bisa memilih untuk
+  mengedit atau menghapus secara keseluruhan schedule dalam 1 hari tsb.
+- 6.2 
+  kalau user memilih mengedit, maka akan pindah ke page Create Schedule dengan 
+  data activity yang sudah ada. barulah disini activity yg telah dibuat bisa diedit atau
+  dihapus, bisa juga menambah activity baru. setelah selesai, seperti yg dijelaskan
+  sebelumnya, barulah dilakukan finalisasi kembali (pengecekan) setelah user mengklik finish.
+- 7.1 kalendar tahun
+- 7.2 kalendar bulan
+  ket: muncul popup notifikas seperti pada gambar 7.2 jika pada tanggal yg diklik terdapat event dan/atau schedule.
+- 7.2.1 form popup yg muncul saat mengklik '+'
+  ket: ini untuk add event yg nantinya akan dijadikan reminder(fitur saja)
+       event terbagi 3 kategori: ulang tahun, deadline, atau another.
+       ini untuk memudahkan sistem memilah event penting saat dilakukan pencarian baik perncarian yg
+       dilakukan di search bar atau pada pemilihan shortcut.
+- 7.3
+  berisi schedule di hari tsb (kalau ada) dan event reminder(kalau ada).
+- 8 page shortcut
+  note: pas belum dipilih menu shortcutnya.
+- 8.1 (ide fitur)
+  kalau salah satu menu dari shortcut dipilih. sebenernya itu satu-satu dipilihnya,
+  nanti muncul judul "Upcoming Birthday" atau "Upcoming Deadline" atau "Upcoming Another Event"
+  cuma aku mager bikin mockupnya beda2. jadi itu disatuin, nantinya mah engga.
+  nanti upcoming itu akan memunculkan event yg sekitar seminggu lagi akan terjadi
+- 8.2 (ide fitur)
+  nantinya akan memudahkan user untuk mencari kegiatan apa yg urgent dalam schedulenya.
+- 9
+  > berisi general info. disitu ada my home location yg akan memudahkan user untuk mengset location.
+  disitu juga ada my vehicle (kategori: motorcycle, car, i dont have any) yg nantinya akan
+  memudahkan user saat mengisi form add activity (sistem akan mendefaultkan isian formnya).
+  tapi nantinya vehiclepun dapat diganti saat user mengisi form add activity
+  >disitu juga ada my behaviour. ini untuk memudahkan sistem aja untuk memperhitungkan waktu
+- 10 page edit my profile
+- 11 page setting
+- 12 popup yg akan muncul jika user logout
+
+
+note:
+*perbedaan create schedule dan my schedule
+kalau create schedule itu untuk membuat plan kegiatan dalam 1 hari (detil aktivitas perjam misal: jam 1 ke polban,
+jam 3 ke dago, jam 5 harus pulang ke rumah). 
+kalau my schedule berisi list-list plan yg udah dibuat. jadi nanti di kolom cuma ada tulisan misal
+"Plan 13 September 2017" atau "Plan 20 Desember 2017". 
+nanti si plan itu bisa dilihat detilnya (detil aktivitas perjam), diedit, atau dihapus.

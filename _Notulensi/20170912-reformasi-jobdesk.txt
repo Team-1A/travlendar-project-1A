@@ -1,0 +1,27 @@
+MEETING
+Tanggal: 12 September 2017
+Jam: 20.00-22.00
+
+Reformasi Jobdesk
+	Reformasi jobdesk dilakukan untuk menyesuaikan jobdesk dengan kemampuan anggota.
+
+- Pengerjaan 2 jam/hari, untuk dokumentasi diisi logbooknya (trello) agar mudah untuk direview, formatnya 5w 1h
+- Penamaan zip : thnblntgl_nama_pengerjaan
+- Pengumpulan data kasus jangan terfokus pada 1 kasus
+- Hari Sabtu & Minggu tetap dihitung, tidak libur
+- Independent : MockUp Balsamic, Data Kasus, Skema Database
+- Dependent : MockUp HTML/CSS->JSP, ScreenFlow, Model, implementasi di MySQL
+- Jobdesk:
+	1. Reviewer: 
+		Mughie: Progress Analis, Design
+		Kivlan -> Progress Coding/Implementasi 
+		Adhitya
+	2. Pengumpulan Data Kasus : Novi, Faatih(support) -- 1 hari
+	3. Pembuatan Data Kasus : Faatih, Adhitya
+	4. MockUp Balsamic : Nadhira, Akmal -- 1 hari
+	5. ScreenFlow : Kartika, Novi(support) -- 2 hari
+	6. Skema Database : Taufik, Jeremia(support) -- 3 hari
+	7. Skema Relasi : Fikri, Kivlan(support) -- 3 hari
+	8. Model : Fadhil, Rohmat -- 2 hari
+	9. MockUp HTML/CSS : Lucky, Haya -- 3 hari
+	10. JSP : Jeremia, Irza(support) -- 7 hari

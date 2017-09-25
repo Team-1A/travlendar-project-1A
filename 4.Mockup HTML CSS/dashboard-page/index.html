@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="stylee.css">
+	<link rel="stylesheet" href="dropdowncss.css">
+	<link rel="stylesheet" href="calendar.css">
+	<script src="dropdown.js"></script>
+</head>
+<body>
+	<div class= "header">
+	    <div class="Logo">
+		    <h1>TRAVLENDAR</h1>
+        </div>
+        <div class="search-box">
+            <input type="text" name="search" placeholder="Search Event...">
+		</div>
+		<div class="dropdown" style="float:right;">
+			<img src="pictures/bell.png" width="30px" height="30px">
+  			<button class="dropbtn"><img src="pictures/profile.png" height="30" width="30">@user</button>	
+  			<div class="dropdown-content">
+    			<a href="#">Profiles</a>
+    			<a href="#">Setting</a>
+    			<a href="#">Log Out</a>
+    		</div>
+		</div>
+	</div>
+
+	<h2>
+    <div class="l-sidebar">
+            <div class="month">
+  				<ul>
+    				<li class="prev">&#10094;</li>
+    				<li class="next">&#10095;</li>
+    				<li>
+      					SEPTEMBER<br>
+      					<span style="font-size:18px">2017</span>
+    				</li>
+  				</ul>
+            </div>
+            <ul class="weekdays">
+  				<li>Mo</li>
+  				<li>Tu</li>
+  				<li>We</li>
+  				<li>Th</li>
+  				<li>Fr</li>
+  				<li>Sa</li>
+  				<li>Su</li>
+            </ul>
+            <ul class="days">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+  				<li>1</li>
+  				<li>2</li>
+  				<li>3</li>
+  				<li>4</li>
+  				<li>5</li>
+  				<li>6</li>
+  				<li>7</li>
+  				<li>8</li>
+  				<li>9</li>
+  				<li>10</li>
+  				<li>11</li>
+  				<li>12</li>
+  				<li>13</li>
+  				<li>14</li>
+  				<li>15</li>
+  				<li>16</li>
+  				<li><span class="active">17</span></li>
+  				<li>18</li>
+  				<li>19</li>
+  				<li>20</li>
+  				<li>21</li>
+  				<li>22</li>
+  				<li>23</li>
+  				<li>24</li>
+  				<li>25</li>
+  				<li>26</li>
+  				<li>27</li>
+  				<li>28</li>
+  				<li>29</li>
+  				<li>30</li>
+  				<li>31</li>
+            </ul>
+			
+			<h3>
+		<p>Anitha's Birthday</p>
+		<p>Deadline OOP</p>
+		</h3>
+        </div>
+    <div class="2sidebar">
+		<button class="button">Create an Event</button>
+		<button class="accordion">My Schedule</button>
+			<div class="panel">
+ 				 <p>You have no schedule</p>
+			</div>
+	</h2>
+	<div class="notifbar">
+			<p><strong>You have 1 event a head! </strong><br> Deadline OOP</br></p>
+			<p><strong>You have 1 event a head! </strong><br> Anita's Birthday</br></p>
+		</div>
+	<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+		for (i = 0; i < acc.length; i++) {
+   			acc[i].onclick = function(){
+       			 this.classList.toggle("active");
+        		var panel = this.nextElementSibling;
+        		if (panel.style.display === "block") {
+           			 panel.style.display = "none";
+       			 } else {
+           				 panel.style.display = "block";
+        				}
+    			}
+		}
+	</script>
+	<div class="footer">
+  		<p>KELOMPOK A1 © 2017</p>
+	</div>
+</body>
+</html>

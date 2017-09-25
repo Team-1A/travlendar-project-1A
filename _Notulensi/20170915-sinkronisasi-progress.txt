@@ -1,0 +1,32 @@
+MEETING
+Tanggal: 15 September 2017
+Jam: 19.22-20.50
+
+Sinkronisasi Progress
+	Sinkronisasi Progress dilakukan karena jobdesk banyak jobdesk yang tertunda
+
+- Tugas yang seharusnya telah selesai:
+	1. Pengumpulan data kasus(sudah diupload di trello)
+		- Review:
+			- beberapa kasus masih belum real bisa ngembangin lagi tapi tetep harus rasional, harus jelas siapa yang melakukannya
+	2. MockUp Balsamic
+		- Review:
+			- Ada perubahan homepage, UI mainframe
+- Tugas yg tertunda:
+	1. Screenflow(1 hari)
+	2. MockUp HTML/CSS(2 hari)
+	3. Membuat data kasus(dibuat dalam java,use case diagram)
+- Github:
+	Mulai lakukan sinkronisasi untuk semua anggota
+- Tambahan:
+	- Jobdesk tertunda ditambahkan ke jobdesk selanjutnya dan didokumentasikan
+	- Dokumentasi jobdesk tertunda dapat ditambahkan card "Pending" di trello
+- Kendala:
+	- Waktu eksplor
+	- Manage waktu
+	- Penyesuaian pengerjaan tugas
+	- Koneksi internet
+	- Menghargai orang lain ketika rapat
+	- Koordinasi lewat ketua
+	- Sebagian persepsi ada yg miskom belum satu pemikiran
+	- Saling menunggu (idle).

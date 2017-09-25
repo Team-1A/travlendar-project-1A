@@ -1,9 +1,14 @@
-# Proyek 3-Travelender
+# Proyek 3-Travelendar
+	
+A repository for a Web-based Travel app that has animations / alarms based on calendar and time schedules.
 
+Made to complete the task of Project 3 courses
 
-	Repositori untuk sebuah aplikasi Travel berbasis Web yang mempunyai peringatan/alarm berdasarkan jadwal kalender dan waktu.
+	Timeline: https://goo.gl/u5M9uw
+	Backup: https://goo.gl/eAGFFF
 
-
-
-
-Dibuat untuk menyelesaikan Tugas Proyek 3 dark kelompok 1A kelas 2A D-3 Jurusan Teknik Komputer dan Informatika
+- Team: 1A
+- Class: 2A
+- Study Program: D3 - Information Engineering
+- Department of Computer Engineering and Informatics
+- Politeknik Negeri Bandung

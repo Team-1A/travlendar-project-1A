@@ -1,0 +1,67 @@
+header, footer {
+    font-family: sans-serif;
+    padding: 1em;
+    color: white;
+    background-color: #0F2479;
+    clear: left;
+    text-align: left;
+}
+
+
+.profil {
+    font-family: sans-serif;
+    float: center;
+    text-align: center;
+    padding: 1em;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    
+}
+.form_kiri{
+    font-family: sans-serif;
+    padding-left: 20px;
+    float: left;
+   
+}
+.form_kanan{
+    font-family: sans-serif;
+    padding-left: 490px;
+    float: left;
+   
+}   
+input[type=text]{
+    font-family: sans-serif;
+    width: 65%;
+    padding: 5px 10px;
+    margin: 8px 5px;
+}
+
+input[type=password]{
+    font-family: sans-serif;
+    width: 65.3%;
+    padding: 5px 10px;
+    margin: 8px 5px;
+    
+}
+input[type=email]{
+    font-family: sans-serif;
+    width: 75%;
+    padding: 5px 10px;
+    margin: 8px 5px;
+  
+}
+input[type=location]{
+    font-family: sans-serif;
+    width: 88%;
+    padding: 6px 10px;
+    margin: 8px 5px;
+
+}
+input[type=behavior1]{
+    font-family: sans-serif;
+    width: 100%;
+    padding: 6px 10px;
+    margin: 8px 5px;
+
+
+}

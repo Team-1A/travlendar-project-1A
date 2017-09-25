@@ -1,0 +1,35 @@
+MEETING
+Tanggal: 18 September 2017
+Jam: 13.30-15.00
+
+Sinkronisasi Progress
+	Sinkronisasi Progress dilakukan untuk menyelesaikan masalah komunikasi dan koordinasi antar divisi
+
+- Terdapat Miss Kominukasi ke Front End
+	1. Kurang koordinasi dari Analis ke FrontEnd Leader
+	2. Mockup Balsamic dan Screenflow masih review karena tidak sinkron
+- Timeline :
+	1. Pengumpulan Data Kasus
+	2. Screenflow, MockUp Balsamic
+	3. Skema Database, Model (desain, perancangan), Prototype (HTML/CSS)
+	4. Skema Relasi (coding)
+	5. Pembuatan Data Kasus (Testing)
+	6. JSP
+
+- ScreenFlow dan MockUp Balsamic harus berkolaborasi agar tidak terjadi Miss Komunikasi kembali, lalu komunikasikan dengan FE dan BE jika memungkinkan
+- Perancangan dibuat sampai akhir, lalu dibuatkan target(milestone) untuk waktu terdekat(26/09/2017)
+
+
+Preview Mockup Balsamiq
+	Dilakukan presentasi oleh Nadhira untuk menjelaskan mockup balsamiq yang dibuat
+
+- Review :
+	1. Scroll di Balsamic dibuat di page yg tetap
+	2. Fitur warning
+		jika ada konflik, user dapat mengedit kembali (sesuai keinginan user)
+	3. MockUp Balsamic dibuat clickable agar lebih mudah untuk FE dan BE
+
+- Solusi :
+	- MockUp sudah solve, antara jangka panjang dan pendeknya
+	- Secara keseluruhan sistem yang akan dibuat telah terpikirkan dan dibuat satu pemikiran
+	- Tidak melepas dari kemampuan, setiap anggota tetap saling mereview.

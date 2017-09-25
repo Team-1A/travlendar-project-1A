@@ -1,0 +1,62 @@
+- 1 login
+- 2 choose account
+- 3 dashboard (ada 4 bar)
+ > bar paling atas ada logo, search event, dan manage account
+ > left bar ada kalender 
+   ket: dia fix ada disitu terus biar user gampang lihat kalender.
+   dibawahnya ada keterangan event.
+   event disini reminder doang bkn buat bikin plan(fitur tambahan). dibawahnya ada 'plus' buat nambah event.
+ > middle bar ada schedule. schedule terbagi 2:
+   - create schedule
+   - my schedule
+ > right bar ada notifikasi. belum kepikir banget notifikasi apa, kalo gaperlu bisa dihilangkan.
+- 4 create schedule (ini ceritanya pas belum diisi apa-apa)
+  ket: pas create schedule diklik, tampilannya bakal kyk di "4 create scheule.jpg"
+       ini itu untuk bikin plan satu hari.
+- 4.1 create schedule
+  ket: pilih tanggal. pas di klik muncul popup date picker.
+       kenapa pake date picker? soalnya supaya gabisa milih tanggal yg udh lewat (masa lalu).
+- 4.2 create schedule
+  ket: klik icon "+" yg ada di gambar 4.1 itu artinya add event. 
+       add event untuk menambah kegiatan yg akan dilakukan di hari itu.
+       disitu ada form isian untuk nama, waktu dimulai, waktu selesai, kendaraan, prioritas, dan note.
+       disitu juga pake time picker, kenapa? supaya gabisa milih jam yang udah kelewat (masa lalu).
+- 4.3 create schedule
+  ket: yg atas kalau gaada event yg konflik/bentrok.
+       yg bawah kalau ada event yg bentrok.
+- 4.4 create schedule (ini ceritanya udah diisi event-event)
+  ket: berisi event-event dalam satu hari. nantinya bisa diedit atau dihapus.
+       kalau diedit bakal muncul popup form gambar 4.2 tapi udh keisi, user tinggal edit-edit.
+       kalau dihapus ya satu event itu kehapus.
+- 4.5 create schedule
+  ket: ketika kita selesai membuat schedule untuk 1 hari akann muncul alert tsb.
+       kalau no tetap disitu, kalau yes disave.
+- 4.6 create schedule
+  ket: ketika kita pencet tombol back tanpa disave terlebih dahulu.
+       kalau save ya disave lalu keback, kalau yes keback dan schedule satu hari tsb hilang.
+- 5.1 my schedule
+  ket: berisi plan-plan harian yg telah dibuat. kalau dipencet nanti muncul tampilan dalam bentuk
+       list(kolom-kolom kebawah diurutkan berdasarkan tanggal).
+       plan bisa dilihat secara detil, diedit atau dihapus.
+- 5.2 my schedule
+  ket: sama kayak ket 5.1. ini ceritanya kalau masih belum ada schedule.
+- 6 manage acc
+  ket: kalau yg "@nadhiravirly" diklik nanti muncul popup plihan:
+       -My Profile
+       -Setting
+       -Log Out
+- 7 my profile
+- 8 edit profile
+  ket: pas link edit profile di gambar 7 diklik bakal menampilkan seperti ini.
+       btw yg my behaviour mah ide aku aja. buat mempermudah sistem untuk memperhitungkan waktu.
+       disini defaultnya ada: kebiasaan makan kita brp min, kebiasaan kita bersiap2 dari rumah untuk pergi brp min/jam,
+       atau kebiasaan kita harus lari pagi dulu selama bbrp min.
+       kalau ga butuh bisa di ngga adain aja.
+
+note:
+*perbedaan create schedule dan my schedule
+kalau create schedule itu untuk membuat plan kegiatan dalam 1 hari (detil aktivitas perjam misal: jam 1 ke polban,
+jam 3 ke dago, jam 5 harus pulang ke rumah). 
+kalau my schedule berisi list-list plan yg udah dibuat. jadi nanti di kolom cuma ada tulisan misal
+"Plan 13 September 2017" atau "Plan 20 Desember 2017". 
+nanti si plan itu bisa dilihat detilnya (detil aktivitas perjam), diedit, atau dihapus.

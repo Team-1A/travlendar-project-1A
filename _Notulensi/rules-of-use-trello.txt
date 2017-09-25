@@ -1,0 +1,17 @@
+RULES OF USE TRELLO
+
+RULES JOBDESK: 
+1. Ambil jobdesk dari "To Do"
+2. Pindahkan jobdesk ke "Doing"
+3. Bila jobdesk belum selesai setelah tenggat waktu, pindahkan jobdesk ke "Pending"
+4. Bila jobdesk telah selesai, pindahkan jobdesk ke "Done", lalu hubungi reviwer untuk mereview
+6. Pindahkan jobdesk ke "Finalized", bila jobdesk telah dinyatakan valid oleh pihak reviewer
+7. Pindahkan jobdesk ke "To Do", bila ada revisi oleh pihak reviewer
+
+RULES LABEL:
+- "To Do" [NONE]
+- "Doing" [BIRU] 
+- "Done" [KUNING]
+- "Finalized" [HIJAU]
+- "Pending" [UNGU MUDA] 
+- Revisi [MERAH], lalu pindahkan ke "To Do"

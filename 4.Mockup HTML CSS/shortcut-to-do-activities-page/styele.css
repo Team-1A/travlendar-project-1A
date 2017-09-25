@@ -1,0 +1,156 @@
+header, footer{
+    font-family: sans-serif;
+    padding: 1em;
+    color: white;
+    background-color: #0F2479;
+    clear: left;
+    text-align: center;
+    float: center;
+
+}
+
+body{
+    font-family: sans-serif;
+
+}
+
+header{
+  padding-left: 100px;
+
+}
+
+h1{
+    margin-left: 80px;
+    font-size: 50px;
+    margin-top: -10px;
+
+}
+
+.sidebar{
+    background-color: #f9f9f9;
+    padding: 5px 5px;
+    padding-bottom: 5px;
+    background-size: relative;
+
+}
+
+h2{
+     margin-left: 45px;
+     font-size: 30px;
+}
+
+.btn-group button {
+    background-color: #96A1CA;
+    border: 1px #F6F7FF;    
+    color: #F2F4FD;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 20%;
+    display: block;
+    margin-left: 30px;
+    border-left-color: purple;
+
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: ##D2D7EB;
+}
+
+.search-box{
+    width:50%;
+    height:3%;
+    float:left;
+    margin-top: -50px;
+    margin-left: -90px;
+}
+
+input[type=teks] {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 40px;
+    font-size: 13px;
+    background-color: white;
+    background-image: url('pictures/search.png');
+    background-position: 10px 2px; 
+    background-repeat: no-repeat;
+    padding: 5px 10px 5px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    display:block;
+    margin: 11px auto;
+    width: 50%;
+
+}
+
+.panengah {
+    background-color: white;
+    padding: 2px 15px;
+    margin: -404px 5px 5px 450px;
+    float: center;
+    width: 600px;
+    padding-left: 30px;
+    padding-right: 90px;
+    padding-bottom: 200px;
+
+}
+
+h5{
+    font-size: 25px;
+    padding-left: 30px;
+}
+
+@media screen and (max-width: 980px) {
+    #middle {
+        width: 41%;
+        padding: 1% 4%;
+        margin: 0px 0px 5px 5px;
+        float: right;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #middle {
+        width: auto;
+        float: none;
+        margin-left: 0px;
+    }
+}
+
+#aa{
+    background-color: #E34D28;
+    width: 40%;
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-top: 5px;
+    margin-right: 10px;
+
+}
+
+#ab{
+    background-color: #E34D28;
+    width: 40%;
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-top: 5px;
+    margin-right: 10px;
+    margin-left: 300px;
+    margin-top: -115px;
+
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #4B5063;
+    color: white;
+    text-align: center;
+
+}
