@@ -133,7 +133,7 @@ public class Event {
         arriveLocation.setLocation(nextLocation, nextTimeZone);
         Estimation guess = new Estimation(arriveLocation, departLocation, vehicle);
         float distance = guess.inputDistance();
-        int lenght = guess.inputEstimation();
+        int length = guess.inputEstimation();
         System.out.println("\nWaktu acara mulai\n");
         System.out.print("Tahun : ");
         int startYear = Integer.parseInt(scan.nextLine());
@@ -176,11 +176,11 @@ public class Event {
         int arrivalMinute = Integer.parseInt(scan.nextLine());
         int arrivalSecond = 0;
         arriveTime.set(arrivalYear, arrivalMonth, arrivalDay, arrivalHour, arrivalMinute, arrivalSecond);
-        int departureYear = arrivalYear - (lenght/5256000);
-        int departureMonth = arrivalMonth - (lenght/432000);
-        int departureDay = arrivalDay - (lenght/1440);
-        int departureHour = arrivalHour - (lenght/60);
-        int departureMinute = arrivalMinute - (lenght%60);
+        int departureYear = arrivalYear - (length/5256000);
+        int departureMonth = arrivalMonth - (length/432000);
+        int departureDay = arrivalDay - (length/1440);
+        int departureHour = arrivalHour - (length/60);
+        int departureMinute = arrivalMinute - (length%60);
         int departureSecond = 0;
         departTime.set(departureYear, departureMonth, departureDay, departureHour, departureMinute, departureSecond);
         System.out.print("Moda Transportasi : ");
