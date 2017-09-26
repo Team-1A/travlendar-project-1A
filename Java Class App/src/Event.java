@@ -104,7 +104,7 @@ public class Event {
         this.setTransportation(transportation);
     }
     public String getEvent() {
-        return "\nNama acara : " + getEventName() + "\n\nLokasi asal : " + departureLocation.getLocationName() + "\nGMT lokasi asal(angka) : " + departureLocation.getTimeZone() + "\n\nLokasi acara : " + arrivalLocation.getLocationName() + "\nGMT lokasi acara(angka) : " + arrivalLocation.getTimeZone() + "\n\nWaktu acara mulai : " + getStartEventTime().getTime() + "\nWaktu acara selesai : " + getEndEventTime().getTime() + "\n\nWaktu berangkat : " + getDepartureTime().getTime() + "\nWaktu tiba : " + getArrivalTime().getTime() + "\n\nModa transportasi : " + getTransportation().getTransportationMode() + "\nPrioritas(1-5) : " + getPriority() + "\n";
+        return "\nNama acara : " + getEventName() + "\n\nLokasi asal : " + departureLocation.getLocationName() + "\nAlamat asal : " + departureLocation.getAddress() + "\nGMT lokasi asal(angka) : " + departureLocation.getTimeZone() + "\n\nLokasi acara : " + arrivalLocation.getLocationName() + "\nAlamat acara : " + arrivalLocation.getAddress() + "\nGMT lokasi acara(angka) : " + arrivalLocation.getTimeZone() + "\n\nWaktu acara mulai : " + getStartEventTime().getTime() + "\nWaktu acara selesai : " + getEndEventTime().getTime() + "\n\nWaktu berangkat : " + getDepartureTime().getTime() + "\nWaktu tiba : " + getArrivalTime().getTime() + "\n\nModa transportasi : " + getTransportation().getTransportationMode() + "\nPrioritas(1-5) : " + getPriority() + "\n";
     }
     /*
         Method inputEvent() berfungsi untuk melakukan input Event
@@ -123,14 +123,18 @@ public class Event {
         String eventLabel = scan.nextLine();
         System.out.print("Lokasi asal : ");
         String previousLocation = scan.nextLine();
+        System.out.print("Alamat asal : ");
+        String previousAddress = scan.nextLine();
         System.out.print("GMT lokasi asal(angka): ");
         int previousTimeZone = Integer.parseInt(scan.nextLine());
-        departLocation.setLocation(previousLocation, previousTimeZone);
+        departLocation.setLocation(previousLocation, previousAddress, previousTimeZone);
         System.out.print("Lokasi acara : ");
         String nextLocation = scan.nextLine();
+        System.out.print("Alamat acara : ");
+        String nextAddress = scan.nextLine();
         System.out.print("GMT Lokasi acara(angka): ");
         int nextTimeZone = Integer.parseInt(scan.nextLine());
-        arriveLocation.setLocation(nextLocation, nextTimeZone);
+        arriveLocation.setLocation(nextLocation, nextAddress, nextTimeZone);
         Estimation guess = new Estimation(arriveLocation, departLocation, vehicle);
         float distance = guess.inputDistance();
         int lenght = guess.inputEstimation();

@@ -1,11 +1,13 @@
 public class Location {
     private String locationName;
+    private String address;
     private int timeZone ;  
     /*
         Constructor pada class Location
     */
     public Location(){
         locationName = null;
+        address = null;
         timeZone = 0;
     }
     /*
@@ -23,8 +25,15 @@ public class Location {
     public void setTimeZone(int timeZone) {
         this.timeZone = timeZone;
     }
-    public void setLocation(String location, int gmt){
+    public void setLocation(String location, String address, int gmt){
         this.locationName = location;
+        this.address = address;
         this.timeZone = gmt;
+    }
+    public String getAddress() {
+        return address;
+    }
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
