@@ -104,7 +104,7 @@ public class Event {
         this.setTransportation(transportation);
     }
     public String getEvent() {
-        return "\nNama acara : " + getEventName() + "\n\nLokasi asal : " + departureLocation.getLocationName() + "\nGMT lokasi asal(angka) : " + departureLocation.getTimeZone() + "\n\nLokasi acara : " + arrivalLocation.getLocationName() + "\nGMT lokasi acara(angka) : " + arrivalLocation.getTimeZone() + "\n\nWaktu acara mulai : " + getStartEventTime().getTime() + "\nWaktu acara selesai : " + getEndEventTime().getTime() + "\n\nWaktu berangkat : " + getDepartureTime().getTime() + "\nWaktu tiba : " + getArrivalTime().getTime() + "\n\nModa transportasi : " + getTransportation().getTransportationMode() + "\nPrioritas(1-5) : " + getPriority() + "\n";
+        return "\nNama acara : " + getEventName() + "\n\nLokasi asal : " + departureLocation.getLocationName() + "\nGMT lokasi asal(angka) : " + departureLocation.getTimeZone() + "\n\nLokasi acara : " + arrivalLocation.getLocationName() + "\nGMT lokasi acara(angka) : " + arrivalLocation.getTimeZone() + "\n\nModa transportasi : " + getTransportation().getTransportationMode() + "\nPrioritas(1-5) : " + getPriority() + "\n\nWaktu acara mulai : " + getStartEventTime().getTime() + "\nWaktu acara selesai : " + getEndEventTime().getTime() + "\n\nRekomendasi waktu berangkat : " + getDepartureTime().getTime() + "\nWaktu tiba : " + getArrivalTime().getTime() + "\n";
     }
     /*
         Method inputEvent() berfungsi untuk melakukan input Event
@@ -133,7 +133,12 @@ public class Event {
         arriveLocation.setLocation(nextLocation, nextTimeZone);
         Estimation guess = new Estimation(arriveLocation, departLocation, vehicle);
         float distance = guess.inputDistance();
-        int lenght = guess.inputEstimation();
+        System.out.print("Moda Transportasi : ");
+        String vehicleMode = scan.nextLine();
+        vehicle.setTransportationMode(vehicleMode);
+        System.out.print("Prioritas(1-5) : ");
+        int preference = Integer.parseInt(scan.nextLine());
+        int length = guess.inputEstimation();
         System.out.println("\nWaktu acara mulai\n");
         System.out.print("Tahun : ");
         int startYear = Integer.parseInt(scan.nextLine());
@@ -176,18 +181,13 @@ public class Event {
         int arrivalMinute = Integer.parseInt(scan.nextLine());
         int arrivalSecond = 0;
         arriveTime.set(arrivalYear, arrivalMonth, arrivalDay, arrivalHour, arrivalMinute, arrivalSecond);
-        int departureYear = arrivalYear - (lenght/5256000);
-        int departureMonth = arrivalMonth - (lenght/432000);
-        int departureDay = arrivalDay - (lenght/1440);
-        int departureHour = arrivalHour - (lenght/60);
-        int departureMinute = arrivalMinute - (lenght%60);
+        int departureYear = arrivalYear - (length/5256000);
+        int departureMonth = arrivalMonth - (length/432000);
+        int departureDay = arrivalDay - (length/1440);
+        int departureHour = arrivalHour - (length/60);
+        int departureMinute = arrivalMinute - (length%60);
         int departureSecond = 0;
         departTime.set(departureYear, departureMonth, departureDay, departureHour, departureMinute, departureSecond);
-        System.out.print("Moda Transportasi : ");
-        String vehicleMode = scan.nextLine();
-        vehicle.setTransportationMode(vehicleMode);
-        System.out.print("Prioritas(1-5) : ");
-        int preference = Integer.parseInt(scan.nextLine());
         System.out.println();
         event.setEvent(eventLabel, departLocation, arriveLocation, departTime, arriveTime, startTime, endTime, preference, guess, vehicle);
         

@@ -9,7 +9,6 @@ public class Travlendar {
         Scanner scan = new Scanner(System.in);
         ArrayList<Event> eventList = new ArrayList<>();
         Event event = new Event();
-        
         System.out.println("1. Tambahkan Acara");
         System.out.println("2. Tampilkan list Acara");
         System.out.println("3. Exit");
