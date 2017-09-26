@@ -1,1 +1,0 @@
-1. Pada Entity Estimasi penamaan atrribut dirapihkan kembali, attribut no diperjelas kembali contoh, Kode Estimasi dsb. Attribut from-to diperjelas kembali contoh, Lokasi_Awal-Lokasi_Akhir Dsb. 

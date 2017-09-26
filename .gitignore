@@ -24,3 +24,5 @@ hs_err_pid*
 /Java Class Web/build/
 /Java Class App/build/
 /Java Class App/nbproject/private/
+Java Class App/nbproject/private/private.properties
+Java Class App/nbproject/private/private.xml
