@@ -33,60 +33,29 @@ and open the template in the editor.
       editable: true,
       eventLimit: true, // allow "more" link when too many events
       events: [
-        {
-          title: 'All Day Event',
-          start: '2017-09-01'
+         {
+          title: 'Kegiatan di Bandara',
+          start: '2017-09-19T04:30:00',
+          end: '2017-09-19T16:10:00'
         },
-        {
-          title: 'Long Event',
-          start: '2017-09-07',
-          end: '2017-09-10'
+		
+		{
+          title: 'Sampai di Bandara Kendari',
+          start: '2017-09-19T11:10:00',
+          end: '2017-09-19T11:30:00'
         },
-        {
-          id: 999,
-          title: 'Repeating Event',
-          start: '2017-09-09T16:00:00'
+		
+		{
+          title: 'Pertemuan dengan Departement Agama',
+          start: '2017-09-19T12:00:00',
+          end: '2017-09-19T15:15:00'
         },
-        {
-          id: 999,
-          title: 'Repeating Event',
-          start: '2017-09-16T16:00:00'
+		
+		{
+          title: 'Makan Sore',
+          start: '2017-09-19T15:30:00',
+          end: '2017-09-19T16:30:00'
         },
-        {
-          title: 'Conference',
-          start: '2017-09-11',
-          end: '2017-09-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2017-09-12T10:30:00',
-          end: '2017-09-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2017-09-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2017-09-12T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: '2017-09-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2017-09-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2017-09-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2017-09-28'
-        }
       ]
     });
     
@@ -189,31 +158,27 @@ and open the template in the editor.
           <h2>Add Distance Matrix</h2>
 
           <span>From</span><br>
-              <select name="transportation" >
-                  <option value="ITB">ITB</option>
-                  <option value="ITB">POLBAN</option>
-                  <option value="ITB">UNIGA</option>
-                  <option value="ITB">STTG</option>
-                  <option value="Ciwaruga">Ciwaruga</option>
-                  <option value="UNPAD">UNPAD</option>
-                  <option value="UPI">UPI</option>
+              <select name="distance" >
+                  <option value="Rumah">Rumah</option>
+                  <option value="Bandara Soekarno Hatta, Tangerang">Bandara Soekarno Hatta, Tangerang</option>
+                  <option value="Bandara Haluoleo, Kadia">Bandara Haluoleo, Kadia</option>
+                  <option value="Hotel "X", Kadia">Hotel "X", Kadia</option>
+                  <option value="Restoran Poasia">Restoran Poasia</option>
               </select>
           <br><br>
  
           <span>To</span><br>
-              <select name="transportation" >
-                  <option value="ITB">ITB</option>
-                  <option value="ITB">POLBAN</option>
-                  <option value="ITB">UNIGA</option>
-                  <option value="ITB">STTG</option>
-                  <option value="Ciwaruga">Ciwaruga</option>
-                  <option value="UNPAD">UNPAD</option>
-                  <option value="UPI">UPI</option>
+              <select name="distance" >
+                  <option value="Rumah">Rumah</option>
+                  <option value="Bandara Soekarno Hatta, Tangerang">Bandara Soekarno Hatta, Tangerang</option>
+                  <option value="Bandara Haluoleo, Kadia">Bandara Haluoleo, Kadia</option>
+                  <option value="Hotel "X", Kadia">Hotel "X", Kadia</option>
+                  <option value="Restoran Poasia">Restoran Poasia</option>
               </select>
           <br><br>
           
           <span>Distance</span><br>
-                  <input class="time" type="text"  name="#">km<br>
+                  <input class="distance" type="text"  name="#">km<br>
                   <input class="add_button" type="submit" name="#" value="Add">
 
             </form>
