@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<%@page contentType="text/html" pageEncoding = "UTF-8"%>
 <html>
     <head>
         <title>Travlender</title>
@@ -145,7 +146,7 @@ function openCity(evt, cityName) {
       </div>
       
      <div class="box-panel">
-        <iframe src="schedule_scroll.jsp" width="945" height="200" scrolling="yes"></iframe>
+        <iframe src="scroll_estimation.jsp" width="945" height="200" scrolling="yes"></iframe>
       </div>
     </div>
   </div>
@@ -196,7 +197,7 @@ function openCity(evt, cityName) {
      <!--kiri-->
   <div class="box-panel">
     <div class="kiri">
-        <iframe src="scroll_estimation.jsp" width="580" height="350" scrolling="yes"></iframe>
+        <iframe src="scroll_distance.jsp" width="580" height="350" scrolling="yes"></iframe>
     </div>
 
       <!--kanan-->
@@ -204,14 +205,15 @@ function openCity(evt, cityName) {
       <h2>Add Destination Time</h2>
 
           <!--pemilihan destination-->
-          <span>Destination</span><br>
+          <span>Destinantion</span><br>
               <select name="transportation" >
-                  <option value="Rumah Fatmawati">Rumah Fatmawati</option>
-                   <option value="Bandara Soekarno Hatta, Tangerang">Bandara Soekarno Hatta, Tangerang</option>
-                   <option value="Bandara Haluoleo, kadia">Bandara Haluoleo, kadia</option>
-                   <option value="Hotel "x" Kadia">Hotel "x" Kadia</option>
-                  <option value="Restoran Poasia">Restoran Poasia</option>
-                  
+                  <option value="ITB">ITB</option>
+                   <option value="ITB">POLBAN</option>
+                   <option value="ITB">UNIGA</option>
+                   <option value="ITB">STTG</option>
+                  <option value="Ciwaruga">Ciwaruga</option>
+                  <option value="UNPAD">UNPAD</option>
+                  <option value="UPI">UPI</option>
               </select>
           <br><br>
 
@@ -227,7 +229,7 @@ function openCity(evt, cityName) {
                   <input class="time" type="text"  name="#" placeholder="minutes"><br>
               
               
-                  <input class="add_button" type="add" name="#" value="Add">
+                  <input class="add_button" type="add" name="" value="Add">
               </form>
             </div>
           </div>

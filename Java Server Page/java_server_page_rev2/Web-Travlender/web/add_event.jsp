@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<%@page contentType="text/html" pageEncoding = "UTF-8"%>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -130,12 +131,12 @@ and open the template in the editor.
             <span>Activity's Name</span><br>
             <input class="kotak_lo" type="text"  name="#"><br>
           
-            <span>Start Location - Destination Location</span><br>
+            <span>Start Location - Finish Location</span><br>
             <select name="location" >
-                  <option value="Rumah - Bandara Soekarno Hatta, Tangerang">Rumah - Bandara Soekarno Hatta, Tangerang</option>
-                  <option value="Bandara Soekarno Hatta, Tangerang - Bandara Haluoleo, Kadia">Bandara Soekarno Hatta, Tangerang - Bandara Haluoleo, Kadia</option>
-                  <option value="Bandara Haluoleo, Kadia - Hotel "X" , Kadia">Bandara Haluoleo, Kadia - Hotel "X" , Kadia</option>
-                  <option value="Hotel X , Kadia - Restoran Poasia">Hotel "X" , Kadia - Restoran Poasia</option>
+                  <option value="Garut">Garut</option>
+                  <option value="Bandung">Bandung</option>
+                  <option value="POLBAN">POLBAN</option>
+                  <option value="ITB">Motorcycle</option>
               </select>
             <br><br>
           
@@ -151,9 +152,9 @@ and open the template in the editor.
               
               <select name="transportation" >
                   <option value="Car">Car</option>
-                  <option value="Bicycle">Plane</option>
+                  <option value="Bicycle">Bicycle</option>
                   <option value="Public Transportation">Public Transportation</option>
-                  <option value="Motorcycle">Walk</option>
+                  <option value="Motorcycle">Motorcycle</option>
               </select>
             <br><br>
           </div>

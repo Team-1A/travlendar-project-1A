@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding = "UTF-8"%>
 <link href="css/admin.css" rel="stylesheet" type="text/css" >
 <div class="table_distance">
  <table border="1px" width="500px">
@@ -11,37 +12,85 @@
           </tr>
           
           <tr>
-            <td>Rumah</td>
-            <td>Bandara Soekarno Hatta, Tangerang</td>
-            <td>40 km</td>
+            <td>Polban, Jl. Ciwaruga</td>
+            <td>ITB, Jl. Ganeca</td>
+            <td>1 km</td>
             <td>
                 <a href="Delete.jsp">Delete</a>
             </td>
           </tr>
 
           <tr>
-            <td>Bandara Soekarno Hatta, Tangerang</td>
-            <td>Bandara Haluoleo, Kadia</td>
-            <td>2600 km</td>
+            <td>ITB, Jl. Ganeca</td>
+            <td>Polban, Jl. Ciwaruga</td>
+            <td>1 km</td>
             <td>
                 <a href="Delete.jsp">Delete</a>
             </td>
           </tr>
 
           <tr>
-            <td>Bandara Haluoleo, Kadia</td>
-            <td>Hotel "X" , Kadia</td>
-            <td>21 km</td>
+            <td>ITB, Jl. Ganeca</td>
+            <td>Polban, Jl. Ciwaruga</td>
+            <td>1 km</td>
             <td>
                 <a href="Delete.jsp">Delete</a>
             </td>
           </tr>
 
           <tr>
-            <td>Hotel "X" , Kadia</td>
-            <td>Restoran Poasia</td>
-            <td>200 m</td>
+            <td>ITB, Jl. Ganeca</td>
+            <td>Polban, Jl. Ciwaruga</td>
+            <td>1 km</td>
             <td>
                 <a href="Delete.jsp">Delete</a>
             </td>
           </tr>
+
+          <tr>
+            <td>ITB, Jl. Ganeca</td>
+            <td>Polban, Jl. Ciwaruga</td>
+            <td>1 km</td>
+            <td>
+                <a href="Delete.jsp">Delete</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>ITB, Jl. Ganeca</td>
+            <td>BIP, Jl. Merdeka</td>
+            <td>2 km</td>
+            <td>
+                <a href="Delete.jsp">Delete</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>ITB, Jl. Ganeca</td>
+            <td>BIP, Jl. Merdeka</td>
+            <td>2 km</td>
+            <td>
+                <a href="Delete.jsp">Delete</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>ITB, Jl. Ganeca</td>
+            <td>BIP, Jl. Merdeka</td>
+            <td>2 km</td>
+            <td>
+                <a href="Delete.jsp">Delete</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>BIP, Jl. Merdeka</td>
+            <td>ITB, Jl. Ganeca</td>
+            <td>2 km</td>
+            <td>
+                <a href="Delete.jsp">Delete</a>
+            </td>
+          </tr>
+          
+        </table>
+        </div>

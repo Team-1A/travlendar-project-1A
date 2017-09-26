@@ -1,23 +1,44 @@
+<%@page contentType="text/html" pageEncoding = "UTF-8"%>
 <link href="css/admin.css" rel="stylesheet" type="text/css" >
 
 <div class="print_output">
-          Car
+          Cars
           <div class="action">
             <a href="delete.jsp"> Delete</a>
           </div>
         </div>
 
         <div class="print_output">
-          Airplane
+          Motorcycle
           <div class="action">
             <a href="delete.jsp"> Delete</a>
           </div>
         </div>
 
         <div class="print_output">
-          Walk
+          Train
           <div class="action">
             <a href="delete.jsp"> Delete</a>
           </div>
         </div>
 
+        <div class="print_output">
+          Plane
+          <div class="action">
+            <a href="delete.jsp"> Delete</a>
+          </div>
+        </div>
+
+        <div class="print_output">
+          Bicycle
+          <div class="action">
+            <a href="delete.jsp"> Delete</a>
+          </div>
+        </div>
+
+         <div class="print_output">
+          Public transportation
+          <div class="action">
+            <a href="delete.jsp"> Delete</a>
+          </div>
+        </div>

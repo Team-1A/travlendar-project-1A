@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<%@page contentType="text/html" pageEncoding = "UTF-8"%>
 <html>
     <head>
         <title>Travlender</title>
@@ -190,21 +191,25 @@ and open the template in the editor.
 
           <span>From</span><br>
               <select name="transportation" >
-                  <option value="Rumah">Rumah</option>
-                  <option value="Bandara Soekarno Hatta, Tangerang">Bandara Soekarno Hatta, Tangerang</option>
-                  <option value="Bandara Haluoleo, Kadia">Bandara Haluoleo, Kadia</option>
-                  <option value="Hotel "X", Kadia">Hotel "X", Kadia</option>
-                  <option value="Restoran Poasia">Restoran Poasia</option>
+                  <option value="ITB">ITB</option>
+                  <option value="ITB">POLBAN</option>
+                  <option value="ITB">UNIGA</option>
+                  <option value="ITB">STTG</option>
+                  <option value="Ciwaruga">Ciwaruga</option>
+                  <option value="UNPAD">UNPAD</option>
+                  <option value="UPI">UPI</option>
               </select>
           <br><br>
  
           <span>To</span><br>
               <select name="transportation" >
-                  <option value="Rumah">Rumah</option>
-                  <option value="Bandara Soekarno Hatta, Tangerang">Bandara Soekarno Hatta, Tangerang</option>
-                  <option value="Bandara Haluoleo, Kadia">Bandara Haluoleo, Kadia</option>
-                  <option value="Hotel "X", Kadia">Hotel "X", Kadia</option>
-                  <option value="Restoran Poasia">Restoran Poasia</option>
+                  <option value="ITB">ITB</option>
+                  <option value="ITB">POLBAN</option>
+                  <option value="ITB">UNIGA</option>
+                  <option value="ITB">STTG</option>
+                  <option value="Ciwaruga">Ciwaruga</option>
+                  <option value="UNPAD">UNPAD</option>
+                  <option value="UPI">UPI</option>
               </select>
           <br><br>
           
