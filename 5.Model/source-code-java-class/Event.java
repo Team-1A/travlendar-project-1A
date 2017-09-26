@@ -104,7 +104,7 @@ public class Event {
         this.setTransportation(transportation);
     }
     public String getEvent() {
-        return "\nNama acara : " + getEventName() + "\n\nLokasi asal : " + departureLocation.getLocationName() + "\nGMT lokasi asal(angka) : " + departureLocation.getTimeZone() + "\n\nLokasi acara : " + arrivalLocation.getLocationName() + "\nGMT lokasi acara(angka) : " + arrivalLocation.getTimeZone() + "\n\nModa transportasi : " + getTransportation().getTransportationMode() + "\nPrioritas(1-5) : " + getPriority() + "\n\nWaktu acara mulai : " + getStartEventTime().getTime() + "\nWaktu acara selesai : " + getEndEventTime().getTime() + "\n\nWaktu berangkat : " + getDepartureTime().getTime() + "\nWaktu tiba : " + getArrivalTime().getTime() + "\n";
+        return "\nNama acara : " + getEventName() + "\n\nLokasi asal : " + departureLocation.getLocationName() + "\nGMT lokasi asal(angka) : " + departureLocation.getTimeZone() + "\n\nLokasi acara : " + arrivalLocation.getLocationName() + "\nGMT lokasi acara(angka) : " + arrivalLocation.getTimeZone() + "\n\nModa transportasi : " + getTransportation().getTransportationMode() + "\nPrioritas(1-5) : " + getPriority() + "\n\nWaktu acara mulai : " + getStartEventTime().getTime() + "\nWaktu acara selesai : " + getEndEventTime().getTime() + "\n\nRekomendasi waktu berangkat : " + getDepartureTime().getTime() + "\nWaktu tiba : " + getArrivalTime().getTime() + "\n";
     }
     /*
         Method inputEvent() berfungsi untuk melakukan input Event
