@@ -1,0 +1,143 @@
+.menu_atas {
+	max-width: auto;
+	background: #95a5a6;
+	overflow: hidden;
+	padding: 2px;
+	margin: 2px;
+
+}
+.menunya{
+	float:left;
+	width: 220px;
+	padding: 7px;
+	margin: 7px;
+	text-align: center;
+	font: 14px sans-serif;
+	font-weight: bold;
+	color: #454545;
+	background: #f4f4f4;
+
+}
+.menunya a{
+	color: #454545;
+
+}
+.menunya:hover {
+	background:#2c3e50;
+	transition: 0.3s;
+}
+.menunya, a:hover{
+	color: #ddd;
+}
+.point {
+	padding: 7px;
+	margin: 7px;
+	background:#2c3e50;
+}
+.point a{padding: 7px;
+	margin: 7px;
+	color: #ddd;
+}
+.kiri{
+	float: left;
+	padding: 2px;
+	margin: 2px;
+	width: 600px;
+	border: 1px solid #ddd ;
+}
+.kanan{
+float: left;
+padding: 2px;
+margin: 2px;
+width: 330px;
+border: 1px solid #ddd ;
+overflow: hidden;
+}
+.location_form{
+	padding: 5px;
+	margin: 5px;
+	float: left;
+	background:#FFF;
+	overflow: hidden;
+
+}
+
+span{
+	font:12px;
+	font-weight: bold;
+
+}
+.kotak_lo{
+	padding: 7px;
+	margin: 7px;
+	width: 300px;
+
+}
+.add_button{
+	float: right;
+	padding: 7px;
+	margin: 7px;
+	font: 14px sans-serif;
+	font-weight: bold;
+	background:#2c3e50;
+	border: none;
+	border-radius: -radius 0.3em;
+	width: 100px;
+	color: #FFF;
+}
+.print_location{
+	padding: 7px;
+	margin: 7px;
+	width: 540px;
+	background:#EEE;
+	border:none;
+	font:15px sans-serif;
+	font-weight: bold;
+}
+.action{
+	float: right;
+
+}
+
+select {
+    width: 50%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    border: none;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    float: right;
+}
+
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
