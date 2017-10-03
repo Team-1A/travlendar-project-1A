@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 public class Transportation {
     private String transportationMode;
+    String[] mode={"Mobil","Motor","Jalan Kaki","Pesawat","Transportasi Umum Darat"} ;
+    String[] kec ={"60 KMpH","50 KMpH","5 KMpH","990 KMpH"," "};
+    String[] umum={"Mobil","Motor"};
+    String[] kecumum={"60 KMpH","40 KMpH"};
     /*
         Constructor pada class Transportation
     */

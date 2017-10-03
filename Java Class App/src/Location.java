@@ -1,7 +1,10 @@
 public class Location {
     private String locationName;
     private String address;
-    private int timeZone ;  
+    private int timeZone ; 
+    String [] location ={"Fatmawati, Jakarta","Tangerang","Kadia,Kendari","Poasia,Kendari","Labibia,Kendari","Kadia,Kendari"};
+    String []  dilaksanakan={"Rumah","Bandar Udara Soekarno-Hatta","Bandar Udara Haluoleo","Hotel","Restoran","Rumah Tinggal","Hotel"};
+    
     /*
         Constructor pada class Location
     */
