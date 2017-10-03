@@ -1,0 +1,190 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 29, 2017, 4:08:25 PM
+    Author     : Lucky Ramdani 
+*/
+
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* untuk ukuran 1080px kebawah */
+@media screen and (max-width: 1080px) {
+
+
+div.tab {
+	background-size: 200px 1340px;
+    width: 17%;
+    height:1340px;
+
+}
+div.tab button {
+	  font-size: 12px;
+	  float: center;
+}
+#calendar {
+		max-width: 780px;
+		margin: 0 auto;
+		margin-top: -10px;
+	}
+.menunya{
+	font-size: 10px;
+	width: 136px;
+	float: center;
+}
+iframe{
+	width: 570px;
+
+}
+.activity{
+	width: 300px;
+}
+.activity iframe{
+	width: 900px;
+}
+.kiri{
+	width: 590px;
+	height: 380px;
+}
+.kanan{
+	font-size: 37px;
+	width: 590px;
+	height: 680px; 
+}
+.kotak_lo{
+	width: 400px;
+}
+.menunya2{
+	width: 540px;
+}
+
+
+#calendar {
+		max-width: 500px;
+		margin: 0 auto;
+		margin-top: -10px;
+	}
+}
+
+
+@media screen and (min-width: 780px){
+
+	div.tab button {
+	  font-size: 10px;
+	  float: center;
+}
+
+
+
+}
+	
+
+	
+/* untuk ukuran layar 700px kebawah */
+@media screen and (max-width: 780px) {
+
+div.tab {
+	background-size: 100% 1150px;
+    width: 17%;
+    height:1150px;
+
+}
+
+div.tab button {
+	  font-size: 7px;
+	  float: center;
+}
+.menunya{
+	font-size: 4px;
+	width: 40px;
+	float: center;
+	border-radius: 2px;
+}
+.point img{
+	width: 15px;
+	height: 15px;
+}
+.menunya img{
+	width: 15px;
+	height: 15px;
+}
+iframe{
+	width: 170px;
+
+}
+.activity{
+	width: 300px;
+	border-radius: 0px;
+	font-size: 14px;
+}
+.activity iframe{
+	width: 900px;
+}
+.kiri{
+	
+	width: 180px;
+	height: 380px;
+}
+
+.kanan{
+	font-size: 12px;
+	width: 180px;
+	height: 500px; 
+}
+.location_form{
+	width: 150px;
+}
+.kanan select{
+	width: 150px; 
+}
+.kotak_lo{
+	width: 200px;
+}
+select{
+	width: 200px;
+}
+
+.menunya2{
+	width: 170px;
+}
+.add_activity{
+	font-size: 12px;
+}
+
+
+
+#calendar {
+		max-width: 500px;
+		margin: 0 auto;
+		margin-top: -10px;
+	}
+
+
+    
+}
+	
+
+@media only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px)  
+	{
+
+.print_tgl{
+	font-size: 12px;
+	width: 540px;
+	border-radius: 0px;
+}
+.print_activity{
+	width: 530px;
+	border-radius: 0px;
+	}
+
+.print_output{
+		width: 540px;
+		border-radius: 0px;
+	}
+
+}

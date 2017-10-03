@@ -9,6 +9,7 @@ and open the template in the editor.
     <head>
         <title>Travlender</title>
         <meta charset="UTF-8">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript"
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/admin.css" rel="stylesheet">
         <link href="css/fullcalendar.min.css" rel="stylesheet">

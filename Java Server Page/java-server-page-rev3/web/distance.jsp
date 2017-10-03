@@ -63,7 +63,27 @@ and open the template in the editor.
   });
 
 </script>
+<style>
+* {
+  box-sizing: border-box;
+}
+.menunya {
+  float:left;
+  width:20%;
+  text-align:center;
+}
+.kanan {
+  float:right;
+  width:50%;
+  padding:0 5px;
+}
+@media only screen and (max-width:480px) {
+  /* For mobile phones: */
+  .menunya, .kanan {
+    width:100%;
+  }
 
+</style>
 
 
 </head>
@@ -103,7 +123,7 @@ and open the template in the editor.
       <iframe src="schedule_scroll.jsp" width="945" height="330" scrolling="yes">
         </iframe>
         <div class="back">
-        <a href="index.jsp"><img src="css/icon/back.png" ></a>
+        <a href="index.jsp"><img src="css/icon/back.png" style="width:100%;"></a>
         </div>
       </div>
     </div>
@@ -123,35 +143,45 @@ and open the template in the editor.
   </div>
 </div>
 
+<picture>
+  <source srcset="css/icon/location.jpg" media="(max-width: 32px)">
+  <source srcset="css/icon/distance.jpg" media="(max-width: 32px)">
+  <source srcset="css/icon/estimation.jpg" media="(max-width: 32px)">
+  <source srcset="css/icon/transportation.jpg" media="(max-width: 32px)">
+</picture>
 
 <div id="Travel_Data" class="tabcontent">
  <div class="content">
   <div id="box">
-    <div class="box-top">Travel Data</div>
+    <div class="box-top" >Travel Data</div>
      <div class="box-panel">
       <div class="menu_atas">
         
           <div class="menunya">
-          <img src="css/icon/location.png "><br>
-            <a href="location.jsp" id="defaultOpen">Location</a>
+          <img src="css/icon/location.jpg " style="width:auto;"><br>
+            <a href="location.jsp" id="defaultOpen">
+                <p style="font-size:1vw;"> Location</a>
           </div>
         
         <div class="menunya">
 
-          <img src="css/icon/transportation.png "><br>
-          <a href="transportation.jsp">Transportation Mode</a>
+          <img src="css/icon/transportation.jpg " style="width:auto;"><br>
+          <a href="transportation.jsp">
+              <p style="font-size:1vw;"> Transportation Mode</a>
         </div>
         
         <div class="menunya">
           <div class="point">
-          <img src="css/icon/distance.png "><br>
-          <a href="distance.jsp">Manage Distance</a>
+          <img src="css/icon/distance.jpg " style="width:auto;"><br>
+          <a href="distance.jsp">
+              <p style="font-size:1vw;"> Manage Distance</a>
         </div>
       </div>
 
         <div class="menunya">
-          <img src="css/icon/estimation.png "><br>
-          <a href="estimation.jsp" id="defaultOpen">Estimation Time</a>
+          <img src="css/icon/estimation.jpg " style="width:auto;"><br>
+          <a href="estimation.jsp" id="defaultOpen">
+              <p style="font-size:1vw;"> Estimation Time</a>
         </div>
 
       </div>
@@ -165,9 +195,9 @@ and open the template in the editor.
 
       <div class="kanan">
         <form action="#" class="location_form" method="post">
-          <h2>Add Distance Matrix</h2>
+          <h2 style="font-size:3vw;">Add Distance Matrix</h2>
 
-          <span>From</span><br>
+          <span><p style="font-size:2vw;">From</span><br>
               <select name="distance" >
                   <option value="Rumah">Rumah</option>
                   <option value="Bandara Soekarno Hatta, Tangerang">Bandara Soekarno Hatta, Tangerang</option>
@@ -177,7 +207,7 @@ and open the template in the editor.
               </select>
           <br><br>
  
-          <span>To</span><br>
+          <span><p style="font-size:2vw;">To</span><br>
               <select name="distance" >
                   <option value="Rumah">Rumah</option>
                   <option value="Bandara Soekarno Hatta, Tangerang">Bandara Soekarno Hatta, Tangerang</option>
@@ -187,8 +217,8 @@ and open the template in the editor.
               </select>
           <br><br>
           
-          <span>Distance</span><br>
-                  <input class="time" type="text">km<br>
+          <span><p style="font-size:2vw;">Distance</span><br>
+                  <input class="time" type="text"><p style="font-size:2vw;">km<br>
                   <input class="add_button" type="submit" name="#" value="Add">
 
             </form>

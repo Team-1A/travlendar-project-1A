@@ -8,6 +8,7 @@ and open the template in the editor.
     <head>
         <title>Travlender</title>
         <meta charset="UTF-8">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript"
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/admin.css" rel="stylesheet">
         <link href="css/fullcalendar.min.css" rel="stylesheet">
@@ -131,25 +132,25 @@ and open the template in the editor.
       <div class="menu_atas">
         
           <div class="menunya">
-          <img src="css/icon/location.png "><br>
+          <img src="css/icon/location.png " style="max-width:100%;height:auto;"><br>
             <a href="location.jsp" id="defaultOpen">Location</a>
           </div>
         
         <div class="menunya">
 
-          <img src="css/icon/transportation.png "><br>
+          <img src="css/icon/transportation.png " ><br>
           <a href="transportation.jsp">Transportation Mode</a>
         </div>
         
         <div class="menunya">
           <div class="point">
-          <img src="css/icon/distance.png "><br>
+          <img src="css/icon/distance.png " ><br>
           <a href="distance.jsp">Manage Distance</a>
         </div>
       </div>
 
         <div class="menunya">
-          <img src="css/icon/estimation.png "><br>
+          <img src="css/icon/estimation.png " ><br>
           <a href="estimation.jsp" id="defaultOpen">Estimation Time</a>
         </div>
 
