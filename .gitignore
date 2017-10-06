@@ -1,3 +1,13 @@
+# Created by https://www.gitignore.io/api/java,netbeans,java-web,code-java
+
+### Code-Java ###
+# Language Support for Java(TM) by Red Hat extension for Visual Studio Code - https://marketplace.visualstudio.com/items?itemName=redhat.java
+
+.project
+.classpath
+factoryConfiguration.json
+
+### Java ###
 # Compiled class file
 *.class
 
@@ -20,10 +30,17 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/TargetModelling(Travlendar)/build/
-/Java Class Web/build/
-/Java Class App/build/
-/Java Class App/nbproject/private/
-Java Class App/nbproject/private/private.properties
-Java Class App/nbproject/private/private.xml
-Java Server Page/java-server-page-rev3/
+
+### Java-Web ###
+## ignoring target file
+target/
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# End of https://www.gitignore.io/api/java,netbeans,java-web,code-java
