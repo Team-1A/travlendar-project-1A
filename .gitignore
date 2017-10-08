@@ -44,3 +44,4 @@ nbdist/
 .nb-gradle/
 
 # End of https://www.gitignore.io/api/java,netbeans,java-web,code-java
+/Java Class App vers 2/JavaApplication3/nbproject/private/
