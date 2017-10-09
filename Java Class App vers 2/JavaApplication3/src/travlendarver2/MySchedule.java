@@ -14,4 +14,28 @@ import java.util.*;
 public class MySchedule {
     private Calendar time;
     private ArrayList<Activity> activity;
+    
+    public MySchedule(){
+        time = null;
+    }
+    
+    public MySchedule input(){
+        MySchedule schedule = new MySchedule();
+        
+        return schedule;
+    }
+
+    /**
+     * @return the time
+     */
+    public Calendar getTime() {
+        return time;
+    }
+
+    /**
+     * @param time the time to set
+     */
+    public void setTime(Calendar time) {
+        this.time = time;
+    }
 }

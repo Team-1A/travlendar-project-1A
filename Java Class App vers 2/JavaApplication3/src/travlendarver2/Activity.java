@@ -18,8 +18,9 @@ class Activity {
     private Calendar startEventtime;
     private Calendar endEventtime;
     private TransportationMode transportationMode;
+    
     /*
-        Constructor pada class Event
+        Constructor pada class Activity
     */
     public Activity(){
         eventName = null;
@@ -123,11 +124,18 @@ class Activity {
         this.setTransportationMode(transportation);
     }
     
-    public Activity inputEvent() {
+    public Activity inputEvent(ArrayList<TravelData> listRoute, ArrayList<TransportationMode> listTransportationmode) {
         Activity activity = new Activity();
         Scanner scan = new Scanner(System.in);
-        System.out.print("Masukan nama acara : ");
+        System.out.print("Activity's title : ");
         String eventLabel = scan.nextLine();
+        for(int i = 0; i<=listRoute.size(); i++){
+            System.out.println((i+1) + ". " + listRoute.get(i).getLocation().getNameStartPoint() + " (" + listRoute.get(i).getLocation().getAddressStartPoint() + ") = " + listRoute.get(i).getLocation().getNamePointArrived()  + " (" + listRoute.get(i).getLocation().getAddressPointArrived() + ") ");
+        }
+        System.out.print("Choose : ");
+        activity.setLocation(listRoute.get(Integer.parseInt(scan.next())-1).getLocation());
+        
+        
         return activity;
     }
 }

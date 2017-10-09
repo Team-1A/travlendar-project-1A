@@ -20,14 +20,7 @@ public class Location {
     private String addressPointArrived;
     private int distanceKM;
     private int distanceM;
-//    String [] startPoint ={"Rumah,Fatmawati","Bandara Soekarno Hatta,Tangerang","Bandara Haluoleo,Kadia","Hotel X,Kadia"};
-//    String [] Destination={"Bandara Soekarno Hatta,Tangerang","Bandar Haluoleo,Kadia","Hotel X,Kadia","Restoran,Poasia"};
-////    double [] jarak = {40 , 2600 ,21 ,0.200};//satuan KiloMeter
-//    List<String> listAsal = new ArrayList<String>(Arrays.asList(startPoint ));
-//    List<String> listTujuan = new ArrayList<String>(Arrays.asList(Destination ));
-//    //List<double> listJarak =  new ArrayList<double>(Arrays.asList(jarak)); 
-//    List<String> field = new ArrayList<String>() { { addAll(listAsal); addAll(listTujuan); } };
-      /*
+    /*
         Getter dan Settter pada class Location
     */
     public Location(){

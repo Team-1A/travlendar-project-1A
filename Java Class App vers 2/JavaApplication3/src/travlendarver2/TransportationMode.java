@@ -16,11 +16,6 @@ import java.util.List;
 public class TransportationMode {
     private String transportation;
     private int velocity;
-//    String [] mode={"Pesawat","Mobil","Motor","Sepeda","Jalan Kaki"} ;
-//    double [] kec ={990.00 ,60.00 ,50.00,15.00,5.00}; //dalam satuan KMpH
-   //  List<String> list1 = new ArrayList<String>(Arrays.asList(mode ));
-     //List<String> list =new ArrayList<double>(Arrays.asList(kec ));
-     //List<String> fieldPribadi = new ArrayList<String>() { { addAll(list1); addAll(list2); } };
     /*
         Method inputTransportation() berfungsi untuk melakukan input moda transportasi dan kecepatan rata-rata
     */
