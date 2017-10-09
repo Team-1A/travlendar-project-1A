@@ -1,0 +1,651 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans';
+}
+
+a {
+	color: #2c3e50;
+	text-decoration: none;
+}
+
+div#header {
+
+ width: 100%;
+ height: 55px;
+ background-image: url(header.png); 
+ background-repeat: none;
+ margin: 0 auto;
+}
+
+.logo{
+	float: left;
+	margin-top: 10px; 
+	margin-left: 10px;
+}
+
+
+
+div#container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+.sidebar {
+	width: 250px;
+	background:#171717;
+	float: left; 
+}
+
+ul#nav{
+
+}
+
+ul#nav li {
+	list-style: none;
+
+}
+ul#nav li a {
+  color: #ccc;
+  display: block;
+  padding: 10px;
+  font-size: 0.8em;
+  border-bottom: 1px solid #444;
+-webkit-transition: all 0.2s ease;
+-moz-transition: all 0.2s ease;
+-ms-transition: all 0.2s ease;
+-o-transition: all 0.2s ease;
+transition: all 0.2s ease;
+}
+
+ul#nav li a:hover {
+ background: #030303;
+ color: #fff;
+}
+
+ul#nav li a.selected{
+	background: #030303;
+	color:#fff;
+}
+
+
+
+
+div#box {
+	border-radius: 40px;
+	opacity: 0.95;
+    filter: alpha(opacity=85); 
+	margin-top: 15px;
+}
+
+div#box .box-top {
+ 	
+	font-size: 16px;
+	text-shadow: 0 1px #000;
+	background: #FFF;
+	padding: 5px;
+	padding-left: 15px;
+} 
+
+div#box .box-panel {
+	padding: 40px;
+	background: #fff;
+    color: #333;
+    overflow: hidden;
+	
+}
+
+
+a.mobile {
+	display: block;
+	color: #fff;
+	background: #000;
+	text-align: center;
+	padding: 7px; 
+	cursor: pointer;
+}
+
+a.mobile:active{
+	background: #474747;
+}
+
+
+.sidebar {
+	width: 100%;
+	display: none;
+	height: auto;
+}
+
+.content {
+   margin-left: 0;
+}
+
+
+
+
+
+
+
+
+.sidebar {
+	min-height: 900px;
+	display: block;
+}
+
+a.mobile {
+	display: none;
+}
+
+div.tab {
+	background-repeat: none;
+	background-image: url(sidebar.jpg);
+    float: left;
+    width: 20%;
+    height:860px;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+	font-family: sans-serif;
+	font-weight: bold;
+    display: block;
+    background: none;
+    color: white;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+
+    background-color: #0174DF;
+}
+
+/* Create an active/current "tab button" class */
+div.tab button.active {
+    background-color: #0174DF;
+}
+
+/* Style the tab content */
+.tabcontent {
+	background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    float: left;
+    padding: 0px 12px;
+    width: 80%;
+    border-left: none;
+    height: 610px;
+	
+} 
+.time
+{
+	padding: 7px;
+	margin: 7px;
+	width: 100px;
+
+}
+select{
+	text-align: bold;
+	padding: 7px;
+	margin: 7px;
+	width: 250px;
+
+}
+
+.waktu{padding: 7px;
+	margin: 7px;
+	width: 100px;
+	float: left;
+	border:1px solid #000;
+}
+p{
+	padding-bottom: 20px;
+}
+.print_activity{
+	padding: 7px;
+	margin: 7px;
+	width: 500px;
+	height: 120px;
+	background:#EEE;
+	border:none;
+	font:15px sans-serif;
+	
+}
+
+
+.finish_button{
+	float: right;
+	padding: 7px;
+	margin: 7px;
+	font: 14px sans-serif;
+	font-weight: bold;
+	background:#2c3e50;
+	border: none;
+	border-radius: -radius 0.3em;
+	width: 100px;
+	color: #FFF;
+}
+.back_button{
+	float: left;
+	padding: 7px;
+	margin: 7px;
+	font: 14px sans-serif;
+	font-weight: bold;
+	background:#2c3e50;
+	border: none;
+	border-radius: -radius 0.3em;
+	width: 100px;
+	color: #FFF;
+}
+.add_activity_button{
+	float: right;
+	padding: 7px;
+	margin: 7px;
+	font: 14px sans-serif;
+	font-weight: bold;
+	background:#2c3e50;
+	border: none;
+	border-radius: -radius 0.3em;
+	width: 100px;
+	color: #FFF;
+}
+
+
+.hour{
+	padding: 7px;
+	margin: 7px;
+	width: 200px;
+	font-family: sans-serif;
+
+}
+option{
+	font-size: 12px;
+}
+#wrap {
+		width: 1100px;
+		margin: 0 auto;
+	}
+		
+	#external-events {
+		float: left;
+		width: 150px;
+		padding: 0 10px;
+		border: 1px solid #ccc;
+		background: #eee;
+		text-align: left;
+	}
+		
+	#external-events h4 {
+		font-size: 16px;
+		margin-top: 0;
+		padding-top: 1em;
+	}
+		
+	#external-events .fc-event {
+		margin: 10px 0;
+		cursor: pointer;
+	}
+		
+	#external-events p {
+		margin: 1.5em 0;
+		font-size: 11px;
+		color: #666;
+	}
+		
+	#external-events p input {
+		margin: 0;
+		vertical-align: middle;
+	}
+
+	#calendar {
+		display: block;
+		margin: 0px auto;
+		width: 900px;
+	}
+
+.menu_atas {
+	
+	max-width: auto;
+	background: #fff;
+	overflow: hidden;
+	padding: 2px;
+	margin: 2px;
+
+}
+.logo_menu{
+	width: 220px;
+	margin: 7px;
+	float: left;
+	
+
+}
+
+.menunya{
+	float:left;
+	width: 220px;
+	padding: 2px;
+	margin: 2px;
+	text-align: center;
+	font: 14px sans-serif;
+	font-weight: bold;
+	color: #FFF;
+	background: #2980b9;
+	border-radius: 12px;
+
+}
+.menunya a{
+	color: #151B54;
+
+}
+.menunya:hover {
+	background:#151B54;
+	transition: 0.3s;
+}
+.menunya, a:hover{
+	color: #151B54;
+}
+
+.menunya2{
+	float:center;
+	width: 97%;
+	padding: 7px;
+	margin: 7px;
+	text-align: center;
+	font: 20px sans-serif;
+	font-weight: bold;
+	color: white;
+	background: #2980b9;
+
+}
+.menunya2 a{
+	color: white;
+}
+.menunya2:hover {
+	background:#2c3e50;
+	transition: 0.3s;
+}
+.menunya2, a:hover{
+	color: #151B54;
+}
+iframe{
+	float: center;
+	border:none;
+}
+
+.print_tgl{
+	float: left;
+	width: 930px;
+	padding: 7px; 
+	margin: 7px; 
+	text-align: left;
+	font: 20px sans-serif;
+	font-weight: bold;
+	color: #ddd;
+	background: #2980b9;
+	border-radius: 9px;
+}
+.print_tgl a{
+	color: #ddd;
+}
+.print_tgl:hover {
+	background:#2c3e50;
+	transition: 0.3s;
+}
+.print_tgl, a:hover{
+	color: #ddd;
+}
+
+
+
+.kiri{
+	background: #ddd;
+	color: black;
+	float: left;
+	padding: 1px;
+	margin: 1px;
+	width: 600px;
+	height: 420px;
+	border: 6px solid #ddd ;
+}
+.kanan{
+background: #2980b9;
+color: #FFF;
+float: left;
+padding: 0px;
+margin: 0px;
+width: 370px;
+height: 420px;
+border: 1px solid #ddd ;
+overflow: hidden;
+}
+
+.location_form{
+	background: #2980b9;
+	padding: 5px;
+	margin: 5px;
+	float: left;
+	overflow: hidden;
+
+}
+
+span{
+	font:12px;
+	font-weight: bold;
+
+}
+.kotak_lo{
+	text-align: bold;
+	padding: 7px;
+	margin: 7px;
+	width: 300px;
+
+}
+.ktk_distance{
+	text-align: bold;
+	padding: 7px;
+	margin: 7px;
+	width: 100px;
+	
+}
+.add_button{
+	float: right;
+	padding: 7px;
+	margin: 7px;
+	font: 14px sans-serif;
+	font-weight: bold;
+	background:#2c3e50;
+	border: none;
+	border-radius: -radius 0.3em;
+	width: 100px;
+	color: #FFF;
+}
+.print_output{
+	padding: 7px;
+	margin: 7px;
+	width: 540px;
+	background:#2980b9;
+	color: #FFF;
+	border:none;
+	font:15px sans-serif;
+	font-weight: bold;
+	color: #FFF;
+	border-radius: 7px;
+}
+.print_schedule{
+	padding: 7px;
+	margin: 7px;
+	width: 940px;
+	height: 50px;
+	background:#2980b9;
+	color: #FFF;
+	border:none;
+	font:15px sans-serif;
+	font-weight: bold;
+	border-radius: 7px;
+}
+.action{
+	float: right;
+
+}
+.print_activity{
+	padding: 7px;
+	margin: 7px;
+	width: 910px;
+	height: 200px;
+	background:#2980b9;
+	border:none;
+	font:15px sans-serif;
+	font-weight: bold;
+	color: #FFF;
+	border-radius: 7px;
+}
+
+.lokasi{
+	padding: 7px;
+	margin: 7px;
+	width: 100px;
+}
+
+#div1_schedule
+{
+	height: 30px;
+	width: 100%;
+	background-color:#2980b9;
+}
+
+#table1_schedule
+{
+	
+	border-collapse: collapse;
+    border-spacing: 0;
+    width: 80%;
+	color:#FFFFFF;	
+}
+#div2_schedule
+{	
+	height:250px;
+	width:100%;
+	overflow-x:hidden;
+	
+}
+#table2_schedule
+{
+	background-color: #CEECF5;
+	border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+#table2_schedule th img{
+	width: 30px;
+	height: 30px;
+	float: right;
+}
+
+tr:nth-child(even){background-color: #2980b9}
+
+
+#div1_travel
+{	
+	height: 30px;
+	width: 100%;
+	background-color:#2980b9;
+}
+
+#table1_travel
+{
+	font-size: 12px;
+	width: 117%;
+	border-collapse: collapse;
+	color:white;
+	text-align: center;	
+}
+#div2_travel
+{	
+	height:300px;
+	width:100%;
+	overflow-x:hidden;
+	
+}
+#table2_travel
+{
+	background-color: #CEECF5;
+	border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+#table2_travel th img{
+	
+	width: 20px;
+	height: 20px;
+	float: right;
+}
+th, td {
+	font-size: 12px;
+	text-align: left;
+    border: none;
+    padding: 8px 52px;
+	text-align:left;
+	
+}
+tr:nth-child(even){background-color: #2980b9}
+
+
+
+#div1_create_schedule
+{	
+	height: 30px;
+	width: 100%;
+	background-color:#2980b9;
+}
+
+#table1_create_schedule
+{
+	font-size: 12px;
+	width: 117%;
+	border-collapse: collapse;
+	color:white;
+	text-align: center;	
+}
+#div2_create_schedule
+{	
+	height:300px;
+	width:100%;
+	overflow-x:hidden;
+	
+}
+#table2_create_schedule
+{
+	background-color: #CEECF5;
+	border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+#table2_create_schedule th img{
+	
+	width: 20px;
+	height: 20px;
+	float: right;
+}
+th, td {
+
+
+	font-size: 12px;
+	text-align: left;
+	border:none;
+    padding: 8px 52px;
+	text-align:left;
+	
+}
+tr:nth-child(even){background-color: #2980b9}
+
