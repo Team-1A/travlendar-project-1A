@@ -19,7 +19,10 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner scan = new Scanner(System.in);
-        boolean loop = true;
+        boolean loop;
+        ArrayList<TravelData> listRoute = new ArrayList<>();
+        ArrayList<TransportationMode> listTransportationmode = new ArrayList<>();
+        //File dimasukan ke array list diatas
         do{
             loop = true;
             System.out.println("Menu");

@@ -9,6 +9,7 @@ package travlendarver2;
  *
  * @author Fadhil
  */
-public class TravelData {
+public class TravelData {  
+    Location location;
     
 }
