@@ -17,7 +17,6 @@ class Activity {
     private Location location;
     private Date startEventtime;
     private Date endEventtime;
-    private TransportationMode transportationMode;
     
     /*
         Constructor pada class Activity
@@ -28,7 +27,6 @@ class Activity {
         location = null;
         startEventtime = null;
         endEventtime = null;
-        transportationMode = null;
     }   
 
     /**
@@ -88,20 +86,6 @@ class Activity {
     }
 
     /**
-     * @return the transportationMode
-     */
-    public TransportationMode getTransportationMode() {
-        return transportationMode;
-    }
-
-    /**
-     * @param transportationMode the transportationMode to set
-     */
-    public void setTransportationMode(TransportationMode transportationMode) {
-        this.transportationMode = transportationMode;
-    }
-
-    /**
      * @return the location
      */
     public Location getLocation() {
@@ -115,12 +99,12 @@ class Activity {
         this.location = location;
     }
     
-    public void setTime(String eventName, Location location, Date startEventtime, Date endEventtime, int priority, TransportationMode transportation) {
+    public void setTime(Date startEventtime, Date endEventtime){
         this.setStartEventtime(startEventtime);
         this.setEndEventtime(endEventtime);
     }
     
-    public Activity inputEvent(ArrayList<TravelData> listRoute, ArrayList<TransportationMode> listTransportationmode) {
+    public Activity inputActivity(ArrayList<TravelData> listRoute) {
         Activity activity = new Activity();
         Scanner scan = new Scanner(System.in);
         
@@ -144,9 +128,10 @@ class Activity {
         scan.next(".");
         activity.endEventtime.setMinutes(Integer.parseInt(scan.next()));
         
+        activity.setTime(activity.startEventtime, activity.endEventtime);
+        
         System.out.print("Prioritas(1-5) : ");
         activity.setPriority(Integer.parseInt(scan.nextLine()));
-        
         
         return activity;
     }

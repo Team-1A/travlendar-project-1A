@@ -13,7 +13,7 @@ import java.util.*;
  */
 public class MySchedule {
     private Date time;
-    private ArrayList<Activity> activity;
+    private ArrayList<Activity> listactivity;
     
     public MySchedule(){
         time = null;
@@ -21,7 +21,7 @@ public class MySchedule {
     
     public MySchedule input(){
         MySchedule schedule = new MySchedule();
-        
+        schedule.setListactivity(schedule.getListactivity());
         return schedule;
     }
 
@@ -37,5 +37,25 @@ public class MySchedule {
      */
     public void setTime(Date time) {
         this.time = time;
+    }
+    
+    void addNewActivity(ArrayList<Activity> activity, ArrayList<TravelData> listRoute){
+        Activity newActivity = new Activity();
+        newActivity.inputActivity(listRoute);
+        getListactivity().add(newActivity);
+    }
+
+    /**
+     * @return the listactivity
+     */
+    public ArrayList<Activity> getListactivity() {
+        return listactivity;
+    }
+
+    /**
+     * @param listactivity the listactivity to set
+     */
+    public void setListactivity(ArrayList<Activity> listactivity) {
+        this.listactivity = listactivity;
     }
 }
