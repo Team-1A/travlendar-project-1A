@@ -7,8 +7,8 @@ package travlendarver2;
 
 /**
  *
- * @author Rohmat Dasuki
+ * @author Fadhil
  */
-class any {
+public class TravelData {
     
 }

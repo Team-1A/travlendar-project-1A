@@ -14,37 +14,113 @@ import java.util.List;
  * @author Rohmat Dasuki
  */
 public class Location {
-    private String nameLocation;
-    private String address;
-    String [] startPoint ={"Rumah,Fatmawati","Bandara Soekarno Hatta,Tangerang","Bandara Haluoleo,Kadia","Hotel X,Kadia"};
-    String [] Destination={"Bandara Soekarno Hatta,Tangerang","Bandar Haluoleo,Kadia","Hotel X,Kadia","Restoran,Poasia"};
-    double [] jarak = {40 , 2600 ,21 ,0.200};//satuan KiloMeter
-    List<String> listAsal = new ArrayList<String>(Arrays.asList(startPoint ));
-    List<String> listTujuan = new ArrayList<String>(Arrays.asList(Destination ));
-    //List<double> listJarak =  new ArrayList<double>(Arrays.asList(jarak)); 
-    List<String> field = new ArrayList<String>() { { addAll(listAsal); addAll(listTujuan); } };
+    private String nameStartPoint;
+    private String addressStartPoint;
+    private String namePointArrived;
+    private String addressPointArrived;
+    private int distanceKM;
+    private int distanceM;
+//    String [] startPoint ={"Rumah,Fatmawati","Bandara Soekarno Hatta,Tangerang","Bandara Haluoleo,Kadia","Hotel X,Kadia"};
+//    String [] Destination={"Bandara Soekarno Hatta,Tangerang","Bandar Haluoleo,Kadia","Hotel X,Kadia","Restoran,Poasia"};
+////    double [] jarak = {40 , 2600 ,21 ,0.200};//satuan KiloMeter
+//    List<String> listAsal = new ArrayList<String>(Arrays.asList(startPoint ));
+//    List<String> listTujuan = new ArrayList<String>(Arrays.asList(Destination ));
+//    //List<double> listJarak =  new ArrayList<double>(Arrays.asList(jarak)); 
+//    List<String> field = new ArrayList<String>() { { addAll(listAsal); addAll(listTujuan); } };
       /*
         Getter dan Settter pada class Location
     */
     public Location(){
-        nameLocation = null;
-        address = null;
+        nameStartPoint = null;
+        addressStartPoint = null;
+        namePointArrived = null;
+        addressPointArrived = null;
+        distanceM = 0;
+        distanceKM = 0;
     }
-    public void setLocationName(String locationName) {
-        this.nameLocation = locationName;
+
+    /**
+     * @return the distanceKM
+     */
+    public int getDistanceKM() {
+        return distanceKM;
     }
-    public void setLocation(String location, String address){
-        this.nameLocation = location;
-        this.address = address;
+
+    /**
+     * @param distanceKM the distanceKM to set
+     */
+    public void setDistanceKM(int distanceKM) {
+        this.distanceKM = distanceKM;
     }
-     public void setAddress(String address) {
-        this.address = address;
+
+    /**
+     * @return the distanceM
+     */
+    public int getDistanceM() {
+        return distanceM;
     }
-    public String getAddress() {
-        return address;
-    } 
-    public String getLocationName() {
-        return nameLocation;
+
+    /**
+     * @param distanceM the distanceM to set
+     */
+    public void setDistanceM(int distanceM) {
+        this.distanceM = distanceM;
+    }
+
+    /**
+     * @return the nameStartPoint
+     */
+    public String getNameStartPoint() {
+        return nameStartPoint;
+    }
+
+    /**
+     * @param nameStartPoint the nameStartPoint to set
+     */
+    public void setNameStartPoint(String nameStartPoint) {
+        this.nameStartPoint = nameStartPoint;
+    }
+
+    /**
+     * @return the addressStartPoint
+     */
+    public String getAddressStartPoint() {
+        return addressStartPoint;
+    }
+
+    /**
+     * @param addressStartPoint the addressStartPoint to set
+     */
+    public void setAddressStartPoint(String addressStartPoint) {
+        this.addressStartPoint = addressStartPoint;
+    }
+
+    /**
+     * @return the namePointArrived
+     */
+    public String getNamePointArrived() {
+        return namePointArrived;
+    }
+
+    /**
+     * @param namePointArrived the namePointArrived to set
+     */
+    public void setNamePointArrived(String namePointArrived) {
+        this.namePointArrived = namePointArrived;
+    }
+
+    /**
+     * @return the addressPointArrived
+     */
+    public String getAddressPointArrived() {
+        return addressPointArrived;
+    }
+
+    /**
+     * @param addressPointArrived the addressPointArrived to set
+     */
+    public void setAddressPointArrived(String addressPointArrived) {
+        this.addressPointArrived = addressPointArrived;
     }
    
 }

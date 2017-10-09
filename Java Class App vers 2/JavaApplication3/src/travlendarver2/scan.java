@@ -7,8 +7,8 @@ package travlendarver2;
 
 /**
  *
- * @author Rohmat Dasuki
+ * @author ACER
  */
-public class Event {
+class scan {
     
 }
