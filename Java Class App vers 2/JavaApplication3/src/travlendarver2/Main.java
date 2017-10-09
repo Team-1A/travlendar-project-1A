@@ -17,7 +17,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // TODO code application logic here        
         Scanner scan = new Scanner(System.in);
         boolean loop = true;
         ArrayList<TravelData> listRoute = new ArrayList<>();
@@ -35,6 +35,15 @@ public class Main {
                     do{
                         loop = true;
                         System.out.println("Travel Data");
+                        if(!listRoute.isEmpty())
+                        {
+                            for(int x=0; x<=listRoute.size(); x++)
+                            {
+                                System.out.println((x+1) + listRoute.get(x).getLocation().getNameStartPoint() +listRoute.get(x).getLocation().getNamePointArrived());
+                                System.out.println(listRoute.get(x).getLocation().getAddressPointArrived() +listRoute.get(x).getLocation().getAddressStartPoint());             
+                            }
+                        } else {
+                        }
                         //Line ini khusus print list travel datanya
                         System.out.println("1. Input Travel Data");
                         System.out.println("2. Back");
