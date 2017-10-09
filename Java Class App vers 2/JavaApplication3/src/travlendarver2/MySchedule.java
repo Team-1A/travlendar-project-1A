@@ -5,6 +5,7 @@
  */
 package travlendarver2;
 
+import java.text.*;
 import java.util.*;
 
 /**
@@ -40,7 +41,7 @@ public class MySchedule {
         this.time = time;
     }
     
-    void addNewActivity(ArrayList<Activity> activity, ArrayList<TravelData> listRoute){
+    void addNewActivity(ArrayList<Activity> activity, ArrayList<TravelData> listRoute) throws ParseException{
         Activity newActivity = new Activity();
         newActivity.inputActivity(listRoute);
         getListactivity().add(newActivity);

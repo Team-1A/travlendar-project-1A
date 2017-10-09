@@ -5,6 +5,8 @@
  */
 package travlendarver2;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -104,29 +106,26 @@ class Activity {
         this.setEndEventtime(endEventtime);
     }
     
-    public Activity inputActivity(ArrayList<TravelData> listRoute) {
+    public Activity inputActivity(ArrayList<TravelData> listRoute) throws ParseException {
         Activity activity = new Activity();
         Scanner scan = new Scanner(System.in);
+        SimpleDateFormat formatTime = new SimpleDateFormat("hh.mm");
         
         System.out.print("Activity's title : ");
         activity.setEventName(scan.nextLine());
         System.out.println();
         
-        for(int i = 0; i<=listRoute.size(); i++){
+        for(int i = 0; i<listRoute.size(); i++){
             System.out.println((i+1) + ". " + listRoute.get(i).getLocation().getNameStartPoint() + " (" + listRoute.get(i).getLocation().getAddressStartPoint() + ") = " + listRoute.get(i).getLocation().getNamePointArrived()  + " (" + listRoute.get(i).getLocation().getAddressPointArrived() + ") ");
         }
         System.out.print("Choose : ");
         activity.setLocation(listRoute.get(Integer.parseInt(scan.next())-1).getLocation());
         
         System.out.print("\nInput start event(hh.mm) : ");
-        activity.startEventtime.setHours(Integer.parseInt(scan.next()));
-        scan.next(".");
-        activity.startEventtime.setMinutes(Integer.parseInt(scan.next()));
+        activity.startEventtime = formatTime.parse(scan.nextLine());
         
         System.out.print("\nInput start event(hh.mm) : ");
-        activity.endEventtime.setHours(Integer.parseInt(scan.next()));
-        scan.next(".");
-        activity.endEventtime.setMinutes(Integer.parseInt(scan.next()));
+        activity.endEventtime = formatTime.parse(scan.nextLine());
         
         activity.setTime(activity.startEventtime, activity.endEventtime);
         
