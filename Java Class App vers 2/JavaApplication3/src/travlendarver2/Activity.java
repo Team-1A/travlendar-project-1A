@@ -15,8 +15,8 @@ class Activity {
     private String eventName;
     private int priority;
     private Location location;
-    private Calendar startEventtime;
-    private Calendar endEventtime;
+    private Date startEventtime;
+    private Date endEventtime;
     private TransportationMode transportationMode;
     
     /*
@@ -62,28 +62,28 @@ class Activity {
     /**
      * @return the startEventtime
      */
-    public Calendar getStartEventtime() {
+    public Date getStartEventtime() {
         return startEventtime;
     }
 
     /**
      * @param startEventtime the startEventtime to set
      */
-    public void setStartEventtime(Calendar startEventtime) {
+    public void setStartEventtime(Date startEventtime) {
         this.startEventtime = startEventtime;
     }
 
     /**
      * @return the endEventtime
      */
-    public Calendar getEndEventtime() {
+    public Date getEndEventtime() {
         return endEventtime;
     }
 
     /**
      * @param endEventtime the endEventtime to set
      */
-    public void setEndEventtime(Calendar endEventtime) {
+    public void setEndEventtime(Date endEventtime) {
         this.endEventtime = endEventtime;
     }
 
@@ -115,25 +115,37 @@ class Activity {
         this.location = location;
     }
     
-    public void setEvent(String eventName, Location location, Calendar startEventtime, Calendar endEventtime, int priority, TransportationMode transportation) {
-        this.setEventName(eventName);
-        this.setLocation(location);
+    public void setTime(String eventName, Location location, Date startEventtime, Date endEventtime, int priority, TransportationMode transportation) {
         this.setStartEventtime(startEventtime);
         this.setEndEventtime(endEventtime);
-        this.setPriority(priority);
-        this.setTransportationMode(transportation);
     }
     
     public Activity inputEvent(ArrayList<TravelData> listRoute, ArrayList<TransportationMode> listTransportationmode) {
         Activity activity = new Activity();
         Scanner scan = new Scanner(System.in);
+        
         System.out.print("Activity's title : ");
-        String eventLabel = scan.nextLine();
+        activity.setEventName(scan.nextLine());
+        System.out.println();
+        
         for(int i = 0; i<=listRoute.size(); i++){
             System.out.println((i+1) + ". " + listRoute.get(i).getLocation().getNameStartPoint() + " (" + listRoute.get(i).getLocation().getAddressStartPoint() + ") = " + listRoute.get(i).getLocation().getNamePointArrived()  + " (" + listRoute.get(i).getLocation().getAddressPointArrived() + ") ");
         }
         System.out.print("Choose : ");
         activity.setLocation(listRoute.get(Integer.parseInt(scan.next())-1).getLocation());
+        
+        System.out.print("\nInput start event(hh.mm) : ");
+        activity.startEventtime.setHours(Integer.parseInt(scan.next()));
+        scan.next(".");
+        activity.startEventtime.setMinutes(Integer.parseInt(scan.next()));
+        
+        System.out.print("\nInput start event(hh.mm) : ");
+        activity.endEventtime.setHours(Integer.parseInt(scan.next()));
+        scan.next(".");
+        activity.endEventtime.setMinutes(Integer.parseInt(scan.next()));
+        
+        System.out.print("Prioritas(1-5) : ");
+        activity.setPriority(Integer.parseInt(scan.nextLine()));
         
         
         return activity;

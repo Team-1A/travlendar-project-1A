@@ -12,7 +12,7 @@ import java.util.*;
  * @author Rohmat Dasuki
  */
 public class MySchedule {
-    private Calendar time;
+    private Date time;
     private ArrayList<Activity> activity;
     
     public MySchedule(){
@@ -28,14 +28,14 @@ public class MySchedule {
     /**
      * @return the time
      */
-    public Calendar getTime() {
+    public Date getTime() {
         return time;
     }
 
     /**
      * @param time the time to set
      */
-    public void setTime(Calendar time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 }
