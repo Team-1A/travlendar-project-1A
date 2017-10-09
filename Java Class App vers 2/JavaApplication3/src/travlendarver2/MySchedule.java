@@ -17,6 +17,7 @@ public class MySchedule {
     
     public MySchedule(){
         time = null;
+        listactivity = null;
     }
     
     public MySchedule input(){
@@ -48,14 +49,14 @@ public class MySchedule {
     /**
      * @return the listactivity
      */
-    public ArrayList<Activity> getListactivity() {
+    ArrayList<Activity> getListactivity() {
         return listactivity;
     }
 
     /**
      * @param listactivity the listactivity to set
      */
-    public void setListactivity(ArrayList<Activity> listactivity) {
+    void setListactivity(ArrayList<Activity> listactivity) {
         this.listactivity = listactivity;
     }
 }

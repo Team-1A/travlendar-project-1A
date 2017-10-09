@@ -22,6 +22,7 @@ public class Main {
         boolean loop = true;
         ArrayList<TravelData> listRoute = new ArrayList<>();
         ArrayList<TransportationMode> listTransportationmode = new ArrayList<>();
+        ArrayList<MySchedule> listSchedule = new ArrayList<>();
         //File dimasukan ke array list diatas
         do{
             System.out.println("Menu");
@@ -40,6 +41,7 @@ public class Main {
                         System.out.print("Choose : ");
                         switch(Integer.parseInt(scan.next())){
                             case 1:{
+                                
                                 break;
                             }
                             case 2:{
@@ -60,6 +62,7 @@ public class Main {
                         System.out.print("Choose : ");
                         switch(Integer.parseInt(scan.next())){
                             case 1:{
+                                MySchedule schedule = new MySchedule();
                                 do{
                                     loop = true;
                                     //pertama input maupun tampilin datenya
@@ -70,15 +73,22 @@ public class Main {
                                     System.out.print("Choose : ");
                                     switch(Integer.parseInt(scan.next())){
                                         case 1:{
-                                            //input activity
+                                            schedule.addNewActivity(schedule.getListactivity(), listRoute);
                                             break;
                                         }
                                         case 2:{
-                                            //masukan ke dalam list
+                                            listSchedule.add(schedule);
+                                            loop = false;
                                             break;
                                         }
                                         case 3:{
-                                            loop = false;
+                                            System.out.println("You haven't finish, Go back otherwise your schedule will be gone?");
+                                            System.out.println("1. Go back");
+                                            System.out.println("2. No");
+                                            System.out.print("Choose : ");
+                                            if(Integer.parseInt(scan.next())==2){
+                                                loop = false;
+                                            }
                                             break;
                                         }
                                     }    
