@@ -19,12 +19,11 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner scan = new Scanner(System.in);
-        boolean loop;
+        boolean loop = true;
         ArrayList<TravelData> listRoute = new ArrayList<>();
         ArrayList<TransportationMode> listTransportationmode = new ArrayList<>();
         //File dimasukan ke array list diatas
         do{
-            loop = true;
             System.out.println("Menu");
             System.out.println("1. Travel Data");
             System.out.println("2. My Schedule");
@@ -53,7 +52,6 @@ public class Main {
                 }
                 case 2:{
                     do{
-                        loop = true;
                         System.out.println("Travel Data");
                         //Line ini khusus print list travel datanya
                         System.out.println("1. Create Schedule");
@@ -83,9 +81,10 @@ public class Main {
                                             loop = false;
                                             break;
                                         }
-                                    }
+                                    }    
                                 }while(loop);
-                                break;
+                                loop = true;
+                                break;                                   
                             }
                             case 2:{
                                 //Line ini khusus print list My Schedule nya
@@ -96,10 +95,10 @@ public class Main {
                                 break;
                             }
                         }
-                    }while(loop);
+                    }while(loop);                  
                     break;
                 }
-            }
+            }loop = true;
         }while(loop);
         
     }
