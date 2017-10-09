@@ -60,4 +60,8 @@ public class MySchedule {
     void setListactivity(ArrayList<Activity> listactivity) {
         this.listactivity = listactivity;
     }
+
+    boolean isEmpty() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

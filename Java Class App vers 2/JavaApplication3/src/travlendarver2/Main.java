@@ -80,7 +80,7 @@ public class Main {
                             case 1:{
                                 MySchedule schedule = new MySchedule();
                                 System.out.print("I want to create a schedue for (dd/MM/yyyy) : ");
-                                Date calendar = formatDate.parse(scan.nextLine());
+                                Date calendar = (Date) formatDate.parseObject(scan.next());
                                 loop = true;
                                 do{
                                     System.out.println(calendar.getDay() + "/" + calendar.getMonth() + "/" + calendar.getYear());
