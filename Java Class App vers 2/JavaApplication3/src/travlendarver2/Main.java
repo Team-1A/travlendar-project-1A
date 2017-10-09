@@ -33,15 +33,25 @@ public class Main {
             switch(Integer.parseInt(scan.next())){
                 case 1:{
                     do{
+                        TravelData travelData = new TravelData();
                         loop = true;
                         System.out.println("Travel Data");
+                        if(!listRoute.isEmpty())
+                        {
+                            for(int x=0; x<=listRoute.size(); x++)
+                            {
+                                System.out.println((x+1) + listRoute.get(x).getLocation().getNameStartPoint() +listRoute.get(x).getLocation().getNamePointArrived());
+                                System.out.println(listRoute.get(x).getLocation().getAddressPointArrived() +listRoute.get(x).getLocation().getAddressStartPoint());             
+                            }
+                        } else {
+                        }
                         //Line ini khusus print list travel datanya
                         System.out.println("1. Input Travel Data");
                         System.out.println("2. Back");
                         System.out.print("Choose : ");
                         switch(Integer.parseInt(scan.next())){
                             case 1:{
-                                
+                                travelData.inputTravelData();
                                 break;
                             }
                             case 2:{
@@ -108,7 +118,11 @@ public class Main {
                     }while(loop);                  
                     break;
                 }
-            }loop = true;
+                case 3 :{
+                    loop = false;
+                    break;
+                }
+            }
         }while(loop);
         
     }
