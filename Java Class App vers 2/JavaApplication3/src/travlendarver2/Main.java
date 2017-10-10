@@ -27,6 +27,22 @@ public class Main {
         boolean loop = true;
         ArrayList<TravelData> listRoute = new ArrayList<>();
         ArrayList<TransportationMode> listTransportationmode = new ArrayList<>();
+        TransportationMode transportationMode = new TransportationMode();
+        transportationMode.setTransportation("Plane");
+        transportationMode.setVelocity(990);
+        listTransportationmode.add(transportationMode);
+        transportationMode.setTransportation("Car");
+        transportationMode.setVelocity(60);
+        listTransportationmode.add(transportationMode);
+        transportationMode.setTransportation("Motorcycle");
+        transportationMode.setVelocity(50);
+        listTransportationmode.add(transportationMode);
+        transportationMode.setTransportation("Bike");
+        transportationMode.setVelocity(15);
+        listTransportationmode.add(transportationMode);
+        transportationMode.setTransportation("Walk");
+        transportationMode.setVelocity(1);
+        listTransportationmode.add(transportationMode);
         ArrayList<MySchedule> listSchedule = new ArrayList<>();
         //File dimasukan ke array list diatas
         do{
@@ -140,7 +156,12 @@ public class Main {
         //                                    System.out.println("Priority Scale: " + listSchedule.get(choose).getListactivity().get(i).getPriority());
                                             System.out.println("Recommend Transportation mode");
                                             for(int j = 0; j<listTransportationmode.size(); j++){
-                                                System.out.println(listTransportationmode.get(j).getTransportation());
+                                                int hours = listSchedule.get(choose).getListactivity().get(i).getLocation().getDistanceKM()/listTransportationmode.get(j).getVelocity();
+                                                int minute = listSchedule.get(choose).getListactivity().get(i).getLocation().getDistanceM()/(listTransportationmode.get(j).getVelocity()*(1000/60));
+                                                int totalMinute = (hours*60) + minute;
+                                                hours = hours + (minute/60);
+                                                minute = minute%60;
+                                                System.out.println(listTransportationmode.get(j).getTransportation() + " estimation " + totalMinute + ", Departure: " + hours + "." + minute);
                                             }//terjadi perhitungan
                                             System.out.println();
                                         }
