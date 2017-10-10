@@ -1,0 +1,11 @@
+[Testing Program]
+1. Saat Setelah menginputkan ingin membuat schedule pada tanggal berapa, muncul sesuatu yang tidak ada hubungannya dengan program. Contoh : Input 10/09/2017 keluar 0/8/117 ,Apa itu? dan mengapa bisa ter print?
+2. Saat saya memilih Lokasi di bagian add activity program menjadi Error dan berhenti.
+
+[Review Balancing Program]
+1. Coba tanyakan kembali kepada tim Analis/Designer apakah ada perubahan di mockup karena setahu saya tadi ada pembicaraan mengenai perubahan sedikit di mockup yang berpengaruh ke database
+2. Conceptual Data Model Database sudah selesai di Review, Nanti di cek lagi jika sudah ada di git, Class dan Variabel dapat mengikuti Entity dan Attribut yang sudah ada. :)
+
+[Review Java]
+1. import yang tidak terpakai bisa dihapus dari program.
+2. di class Activity , Method InputActivity() setelah setlokasi Activity sebaiknya ditambah lagi di line selanjutnya scan.nextLine(); Karena dibagian itu menyebabkan Error program setelah user menginputkan lokasi Activity.
