@@ -84,7 +84,7 @@ public class Main {
                                 loop = true;
                                 do{
                                     System.out.println(calendar.getDay() + "/" + calendar.getMonth() + "/" + calendar.getYear());
-                                    if(!schedule.getListactivity().isEmpty()){
+                                    if(schedule.getListactivity() != null){
                                         for(int i = 0; i<schedule.getListactivity().size(); i++){
                                             System.out.println("Activity's name: " + schedule.getListactivity().get(i).getEventName());
                                             System.out.println("From: " + schedule.getListactivity().get(i).getLocation().getNameStartPoint() + "@" + schedule.getListactivity().get(i).getLocation().getAddressStartPoint());
