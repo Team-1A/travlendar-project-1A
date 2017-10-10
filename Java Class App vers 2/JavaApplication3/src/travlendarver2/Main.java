@@ -157,11 +157,13 @@ public class Main {
                                             System.out.println("Recommend Transportation mode");
                                             for(int j = 0; j<listTransportationmode.size(); j++){
                                                 int hours = listSchedule.get(choose).getListactivity().get(i).getLocation().getDistanceKM()/listTransportationmode.get(j).getVelocity();
-                                                int minute = listSchedule.get(choose).getListactivity().get(i).getLocation().getDistanceM()/(listTransportationmode.get(j).getVelocity()*(1000/60));
-                                                int totalMinute = (hours*60) + minute;
-                                                hours = hours + (minute/60);
-                                                minute = minute%60;
-                                                System.out.println(listTransportationmode.get(j).getTransportation() + " estimation " + totalMinute + ", Departure: " + hours + "." + minute);
+                                                int minutes = listSchedule.get(choose).getListactivity().get(i).getLocation().getDistanceM()/(listTransportationmode.get(j).getVelocity()*(1000/60));
+                                                int totalMinutes = (hours*60) + minutes;
+                                                hours = hours + (minutes/60);
+                                                minutes = minutes%60;
+                                                hours = listSchedule.get(choose).getListactivity().get(i).getStartEventtime().getHours() - hours;
+                                                minutes = listSchedule.get(choose).getListactivity().get(i).getStartEventtime().getMinutes() - minutes;
+                                                System.out.println(listTransportationmode.get(j).getTransportation() + " estimation " + totalMinutes + ", Departure: " + hours + "." + minutes);
                                             }//terjadi perhitungan
                                             System.out.println();
                                         }
