@@ -1,13 +1,12 @@
-
+<!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<%@page contentType="text/html" pageEncoding = "UTF-8"%>
 <html>
     <head>
-        <title>TRAVNER</title>
+        <title>Travlender</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/admin.css" rel="stylesheet">
@@ -72,7 +71,7 @@ and open the template in the editor.
 <!--judul-->
   <div id="header">
     <div class="logo">
-      <img src="css/logo.png " width="150px" height="35px">
+      <img src="css/logo.png " width="200px" height="35px">
     </div>
 </div>
 <a class="mobile">MENU</a>
@@ -80,222 +79,219 @@ and open the template in the editor.
 <!--sidebar-->
  <div class="tab">
     <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule</button>
-    
+    <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar</button>
+    <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data</button>
 </div>
 
 <!--isi dari sidebar-->
 
-<!--My Schedule-->
+<!--DETAIL SCHEDULE HAYA-->
 <div id="My Schedule" class="tabcontent">
     <div class="content">
       <div id="box">
           <div class="box-panel">
-            <h2 style="font-family: arial, sans-serif">
-              <a href="add_activity.jsp"><img src="css/icon/back.png" style="padding-right: 5px;"></a>DETAIL SCHEDULE: 16 SEP '17
-              <a href="add_activity.jsp"><img src="css/icon/seting.png" style="float: right; padding-bottom: 3px;"></a>
-
-
-              <img src="css/icon/delete.png" style="float: right;">
-
+            <h2><img id="back" src="css/icon/back.png">DETAIL SCHEDULE: 16 SEP '17<img id="seting" src="css/icon/seting.png"><img id="delete" src="css/icon/delete.png"></h2>
                <div id="table-wrapper">
-  <div id="table-scroll">
-    <table>
-        <tbody>
-<table style="width:80%">
-  <tr>
-    <th>Activity's Name</th>
-    <td>Ke Bandara</td>
-  </tr>
-  <tr>
-    <th>From</th>
-    <td>Rumah @Fatmawati</td>
-  </tr>
-  <tr>
-    <th>Destination</th>
-    <td>Bandara Soe-Hatta @Tangerang</td>
-  </tr>
-  <tr>
-    <th>Distance</th>
-    <td>40 km</td>
-  </tr>
-  <tr>
-    <th>Time</th>
-    <td>4.30 AM - 5.10 AM</td>
-  </tr>
-  <tr>
-    <th colspan="2">Recomendation</th>
-   </tr>
-   <tr>
-    <td><img src="css/icon/plane.png" style="padding-right: 5px;">not allowed to plane</td>
-    <td>departure time: -</td>
-   </tr>
-   <tr>
-    <td><img src="css/icon/car.png" style="padding-right: 5px;">90 min by car</td>
-    <td>departure time: 3.00 AM</td>
-     </tr>
-    <tr>
-    <td><img src="css/icon/motorcycle.png" style="padding-right: 5px; width: 26px;">80 min by motorcycle</td>
-    <td>departure time: 2.50 AM</td>
-     </tr>
-    <tr>
-    <td><img src="css/icon/bike.png" style="padding-right: 5px; width: 26px;">not allowed to bike</td>
-    <td>departure time: -</td>
-     </tr>
-    <tr>
-    <td><img src="css/icon/walk.png" style="padding-right: 5px; width: 26px;">not allowed to walk</td>
-    <td>departure time: -</td>
-   </tr>
-   </table>
-   <br>
+                  <div id="table-scroll">
+                    <table>
+                      <tbody>
+                        <table id="t00">
+                          <tr>
+                            <th>Activity's Name</th>
+                            <td>Ke Bandara</td>
+                          </tr>
+                          <tr>
+                            <th>From</th>
+                            <td>Rumah @Fatmawati</td>
+                          </tr>
+                          <tr>
+                            <th>Destination</th>
+                            <td>Bandara Soe-Hatta @Tangerang</td>
+                          </tr>
+                          <tr>
+                            <th>Distance</th>
+                            <td>40 km</td>
+                          </tr>
+                          <tr>
+                            <th>Time</th>
+                            <td>4.30 AM - 5.10 AM</td>
+                          </tr>
+                          <tr>
+                            <th colspan="2">Recomendation</th>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar20" src="css/icon/plane.png">not allowed to plane</td>
+                            <td>departure time: -</td>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar20" src="css/icon/car.png">90 min by car</td>
+                            <td>departure time: 3.00 AM</td>
+                          </tr>
+                          </div>
+                          <tr>
+                            <td><img id="gambar26" src="css/icon/motorcycle.png">80 min by motorcycle</td>
+                            <td>departure time: 2.50 AM</td>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar26" src="css/icon/bike.png">not allowed to bike</td>
+                            <td>departure time: -</td>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar26" src="css/icon/walk.png">not allowed to walk</td>
+                            <td>departure time: -</td>
+                          </tr>
+                          </div>
+                        </table>
+                        <br>
    
-   <table style="width:80%">
-   <tr>
-    <th>Activity's Name</th>
-    <td>Perjalanan ke Kendari</td>
-  </tr>
-  <tr>
-    <th>From</th>
-    <td>Bandara Soe-Hatta @Tangerang</td>
-  </tr>
-  <tr>
-    <th>Destination</th>
-    <td>Bandara Haluoeo @Kadia</td>
-  </tr>
-  <tr>
-    <th>Distance</th>
-    <td>2600 km</td>
-  </tr>
-  <tr>
-    <th>Time</th>
-    <td>11.10 AM - 11.30 AM</td>
-  </tr>
-  <tr>
-    <th colspan="2">Recomendation</th>
-   </tr>
-   <tr>
-    <td><img src="css/icon/plane.png" style="padding-right: 5px;">3hr by plane</td>
-    <td>departure time: 8.10AM</td>
-   </tr>
-   <tr>
-    <td><img src="css/icon/car.png" style="padding-right: 5px;">not allowed to car</td>
-    <td>departure time: -</td>
-     </tr>
-    <tr>
-    <td><img src="css/icon/motorcycle.png" style="padding-right: 5px; width: 26px;">not allowed to motorcycle</td>
-    <td>departure time: -</td>
-     </tr>
-    <tr>
-    <td><img src="css/icon/bike.png" style="padding-right: 5px; width: 26px;">not allowed to bike</td>
-    <td>departure time: -</td>
-     </tr>
-    <tr>
-    <td><img src="css/icon/walk.png" style="padding-right: 5px; width: 26px;">not allowed to walk</td>
-    <td>departure time: -</td>
-   </tr>
-   </table>
-   <br>
+                        <table id="t00">
+                        <tr>
+                          <th>Activity's Name</th>
+                          <td>Perjalanan ke Kendari</td>
+                        </tr>
+                        <tr>
+                          <th>From</th>
+                          <td>Bandara Soe-Hatta @Tangerang</td>
+                        </tr>
+                        <tr>
+                          <th>Destination</th>
+                          <td>Bandara Haluoeo @Kadia</td>
+                        </tr>
+                        <tr>
+                          <th>Distance</th>
+                          <td>2600 km</td>
+                        </tr>
+                        <tr>
+                          <th>Time</th>
+                          <td>11.10 AM - 11.30 AM</td>
+                        </tr>
+                        <tr>
+                          <th colspan="2">Recomendation</th>
+                        </tr>
+                        <tr>
+                          <td><img id="gambar20" src="css/icon/plane.png">3hr by plane</td>
+                          <td>departure time: 8.10AM</td>
+                        </tr>
+                        <tr>
+                          <td><img id="gambar20" src="css/icon/car.png">not allowed to car</td>
+                          <td>departure time: -</td>
+                        </tr>
+                        <tr>
+                          <td><img id="gambar26" src="css/icon/motorcycle.png">not allowed to motorcycle</td>
+                          <td>departure time: -</td>
+                        </tr>
+                        <tr>
+                          <td><img id="gambar26" src="css/icon/bike.png">not allowed to bike</td>
+                          <td>departure time: -</td>
+                        </tr>
+                        <tr>
+                          <td><img id="gambar26" src="css/icon/walk.png">not allowed to walk</td>
+                          <td>departure time: -</td>
+                        </tr>
+                        </table>
+                        <br>
    
-   <table id="t01" style="width:80%">
-   <tr>
-    <th>Activity's Name</th>
-    <td>Pertemuan dengan Dept. Agama</td>
-  </tr>
-  <tr>
-    <th>From</th>
-    <td>Bandara Haluoeo @Kadia</td>
-  </tr>
-  <tr>
-    <th>Destination</th>
-    <td>Hotel "X" @ Kadia</td>
-  </tr>
-  <tr>
-    <th>Distance</th>
-    <td>21 km</td>
-  </tr>
-  <tr>
-    <th>Time</th>
-    <td>12.00 AM - 15.30 PM</td>
-  </tr>
-  <tr>
-    <th colspan="2">Recomendation</th>
-   </tr>
-   <tr>
-    <td><img src="css/icon/plane.png" style="padding-right: 5px;">not allowed to plane</td>
-    <td>departure time: -</td>
-   </tr>
-   <tr>
-    <td><img src="css/icon/car.png" style="padding-right: 5px;">30 min by car</td>
-    <td>departure time: 11.30</td>
-     </tr>
-    <tr>
-    <td><img src="css/icon/motorcycle.png" style="padding-right: 5px; width: 26px;">15 min by motorcycle</td>
-    <td>departure time: 11.45</td>
-     </tr>
-    <tr>
-    <td><img src="css/icon/bike.png" style="padding-right: 5px; width: 26px;">not allowed to bike</td>
-    <td>departure time: -</td>
-     </tr>
-    <tr>
-    <td><img src="css/icon/walk.png" style="padding-right: 5px; width: 26px;">not allowed to walk</td>
-    <td>departure time: -</td>
-   </tr>
-   </table>
-   <br>
+                        <table id="t01">
+                          <tr>
+                            <th>Activity's Name</th>
+                            <td>Pertemuan dengan Dept. Agama</td>
+                          </tr>
+                          <tr>
+                            <th>From</th>
+                            <td>Bandara Haluoeo @Kadia</td>
+                          </tr>
+                          <tr>
+                            <th>Destination</th>
+                            <td>Hotel "X" @ Kadia</td>
+                          </tr>
+                          <tr>
+                            <th>Distance</th>
+                            <td>21 km</td>
+                          </tr>
+                          <tr>
+                            <th>Time</th>
+                            <td>12.00 AM - 15.30 PM</td>
+                          </tr>
+                          <tr>
+                            <th colspan="2">Recomendation</th>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar20" src="css/icon/plane.png">not allowed to plane</td>
+                            <td>departure time: -</td>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar20" src="css/icon/car.png">30 min by car</td>
+                            <td>departure time: 11.30</td>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar26" src="css/icon/motorcycle.png">15 min by motorcycle</td>
+                            <td>departure time: 11.45</td>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar26" src="css/icon/bike.png">not allowed to bike</td>
+                            <td>departure time: -</td>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar26" src="css/icon/walk.png">not allowed to walk</td>
+                            <td>departure time: -</td>
+                          </tr>
+                          </table>
+                          <br>
    
-   <table id="t02" style="width:80%">
-   <tr>
-    <th>Activity's Name</th>
-    <td>Makan Sore</td>
-  </tr>
-  <tr>
-    <th>From</th>
-    <td>Hotel "X" @ Kadia</td>
-  </tr>
-  <tr>
-    <th>Destination</th>
-    <td>Restoran @Poasia</td>
-  </tr>
-  <tr>
-    <th>Distance</th>
-    <td>200 m</td>
-  </tr>
-  <tr>
-    <th>Time</th>
-    <td>15.30 PM - 16.30 PM</td>
-  </tr>
-  <tr>
-    <th colspan="2">Recomendation</th>
-   </tr>
-   <tr>
-    <td><img src="css/icon/plane.png" style="padding-right: 5px;">not allowed to plane</td>
-    <td>departure time: -</td>
-   </tr>
-   <tr>
-    <td><img src="css/icon/car.png" style="padding-right: 5px;">10 min by car</td>
-    <td>departure time: 15.20</td>
-     </tr>
-    <tr>
-    <td><img src="css/icon/motorcycle.png" style="padding-right: 5px; width: 26px;">8 min by motorcycle</td>
-    <td>departure time: 15.22</td>
-     </tr>
-    <tr>
-    <td><img src="css/icon/bike.png" style="padding-right: 5px; width: 26px;">9 min by bike</td>
-    <td>departure time: 15.21</td>
-     </tr>
-    <tr>
-    <td><img src="css/icon/walk.png" style="padding-right: 5px; width: 26px;">15 min by walk</td>
-    <td>departure time: 15.15</td>
-   </tr>
-   </table>
-        </tbody>
-    </table>
-  </div>
-</div>
+                          <table id="t02">
+                          <tr>
+                            <th>Activity's Name</th>
+                            <td>Makan Sore</td>
+                          </tr>
+                          <tr>
+                            <th>From</th>
+                            <td>Hotel "X" @ Kadia</td>
+                          </tr>
+                          <tr>
+                            <th>Destination</th>
+                            <td>Restoran @Poasia</td>
+                          </tr>
+                          <tr>
+                            <th>Distance</th>
+                            <td>200 m</td>
+                          </tr>
+                          <tr>
+                            <th>Time</th>
+                            <td>15.30 PM - 16.30 PM</td>
+                          </tr>
+                          <tr>
+                            <th colspan="2">Recomendation</th>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar20" src="css/icon/plane.png">not allowed to plane</td>
+                            <td>departure time: -</td>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar20" src="css/icon/car.png">10 min by car</td>
+                            <td>departure time: 15.20</td>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar26" src="css/icon/motorcycle.png">8 min by motorcycle</td>
+                            <td>departure time: 15.22</td>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar26" src="css/icon/bike.png">9 min by bike</td>
+                            <td>departure time: 15.21</td>
+                          </tr>
+                          <tr>
+                            <td><img id="gambar26" src="css/icon/walk.png">15 min by walk</td>
+                            <td>departure time: 15.15</td>
+                          </tr>
+                        </table>
+                      </tbody>
+                  </table>
+                </div>
+            </div>
         </div>        
       </div>
   </div>
 </div>
-	
+<!---SAMPAI SINI-->
 
 <div id="Calendar" class="tabcontent">
   <div class="content">
@@ -315,9 +311,60 @@ and open the template in the editor.
     <div class="box-top">My Schedule</div>
      <div class="box-panel">
       <div class="menu_atas">
+        
+        <div class="menunya">
+          <div class="point">
+          <img src="css/icon/location.png "><br>
+            <a href="location.jsp" id="defaultOpen">Location</a>
+          </div>
+        </div>
+        
+        <div class="menunya">
+          
+          <img src="css/icon/transportation.png "><br>
+          <a href="transportation.jsp">Transportation Mode</a>
+        </div>
+      
+        
+        <div class="menunya">
+          <img src="css/icon/distance.png "><br>
+          <a href="distance.jsp">Manage Distance</a>
+        </div>
+      
 
+        <div class="menunya">
+          <img src="css/icon/estimation.png "><br>
+          <a href="estimation.jsp" id="defaultOpen">Estimation Time</a>
+        </div>
+      </div>
+    </div>
+     
      <div class="box-panel">
+      <div class="kiri">
+
+          <iframe src="scroll_location.jsp" width="580" height="200" scrolling="yes"></iframe>
+      
+      </div>
+      
+      <div class="kanan">
+        <form action="#" class="location_form" method="post">
+          <h2>Add Location</h2>
+            <span>Place's Name</span>
+            <input class="kotak_lo" type="text"  name="#">
+          
+            <span>Address</span>
+            <input class="kotak_lo" type="text"  name="#">
+
+            <input class="add_button" type="submit" name="#" value="Add">
+        </form>
     
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
       function openPages(evt, pageName) {
       // Declare all variables
