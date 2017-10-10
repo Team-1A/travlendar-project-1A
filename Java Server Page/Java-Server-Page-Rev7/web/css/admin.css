@@ -19,7 +19,7 @@ div#header {
  width: 100%;
  height: 55px;
  background-image: url(header.png); 
- background-repeat: none;
+ background-repeat: no-repeat;
  margin: 0 auto;
 }
 
@@ -143,12 +143,11 @@ a.mobile {
 }
 
 div.tab {
-	background-size: 265px 1960px;
-	background-repeat: none;
+	background-repeat: no-repeat;
 	background-image: url(sidebar.jpg);
     float: left;
-    width: 265px;
-    height:1960px;
+    width: 20%;
+    height:860px;
 }
 
 /* Style the buttons inside the tab */
@@ -197,7 +196,7 @@ div.tab button.active {
 
 }
 select{
-	text-align: bold;
+	text-align: left;
 	padding: 7px;
 	margin: 7px;
 	width: 300px;
@@ -233,7 +232,7 @@ p{
 	font-weight: bold;
 	background:#2c3e50;
 	border: none;
-	border-radius: -radius 0.3em;
+        border-radius: 12px; 
 	width: 100px;
 	color: #FFF;
 }
@@ -245,7 +244,7 @@ p{
 	font-weight: bold;
 	background:#2c3e50;
 	border: none;
-	border-radius: -radius 0.3em;
+	border-radius: 12px;
 	width: 100px;
 	color: #FFF;
 }
@@ -257,7 +256,7 @@ p{
 	font-weight: bold;
 	background:#2c3e50;
 	border: none;
-	border-radius: -radius 0.3em;
+	border-radius: 12px;
 	width: 100px;
 	color: #FFF;
 }
@@ -311,13 +310,13 @@ option{
 
 	#calendar {
 		display: block;
-		margin 0px auto;
+		margin: 0px auto;
 		width: 900px;
 	}
 
 .menu_atas {
 	
-	max-width: auto;
+	max-width: 1024px;
 	background: #fff;
 	overflow: hidden;
 	padding: 2px;
@@ -380,7 +379,7 @@ option{
 	color: #ddd;
 }
 iframe{
-	float: center;
+	float: none;
 	border:none;
 }
 
@@ -453,7 +452,7 @@ span{
 
 }
 .kotak_lo{
-	text-align: bold;
+	text-align: left;
 	padding: 7px;
 	margin: 7px;
 	width: 300px;
@@ -534,7 +533,8 @@ color: #FFF;
 	margin: 7px;
 	width: 100px;
 }
-
-
-
- /* Style the tab */
+.t1 {   margin-top: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+    
+}
