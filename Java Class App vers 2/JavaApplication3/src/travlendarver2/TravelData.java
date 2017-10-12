@@ -12,43 +12,44 @@ import java.util.Scanner;
  * @author Fadhil
  */
 public class TravelData {  
-    private Location location;
+    private Distance route;
     
     public TravelData(){
-        location = null;
+        route = null;
     }
 
-    /**
-     * @return the location
-     */
-    public Location getLocation() {
-        return location;
-    }
-
-    /**
-     * @param location the location to set
-     */
-    public void setLocation(Location location) {
-        this.location = location;
-    }
     public TravelData inputTravelData() {
         Scanner scan = new Scanner(System.in);
         TravelData travelData = new TravelData();
-        Location input = new Location();
+        Distance route = new Distance();
         System.out.print("Start point name : ");
-        input.setNameStartPoint(scan.nextLine());
+        route.getStartPoint().setNamePoint(scan.nextLine());
         System.out.print("Start point address : ");
-        input.setAddressStartPoint(scan.nextLine());
+        route.getStartPoint().setAddressPoint(scan.nextLine());
         System.out.print("Arrival point name : ");
-        input.setNamePointArrived(scan.nextLine());
+        route.getPointArrived().setNamePoint(scan.nextLine());
         System.out.print("Arrival point address : ");
-        input.setAddressPointArrived(scan.nextLine());
+        route.getPointArrived().setAddressPoint(scan.nextLine());
         System.out.print("Distance(Km) : ");
-        input.setDistanceKM(Integer.parseInt(scan.nextLine()));
+        route.setDistanceKM(Integer.parseInt(scan.nextLine()));
         System.out.print("Distance(m) : ");
-        input.setDistanceM(Integer.parseInt(scan.nextLine()));
-        travelData.setLocation(input);
+        route.setDistanceM(Integer.parseInt(scan.nextLine()));
+        travelData.setRoute(route);
         
         return travelData;
+    }
+
+    /**
+     * @return the route
+     */
+    public Distance getRoute() {
+        return route;
+    }
+
+    /**
+     * @param route the route to set
+     */
+    public void setRoute(Distance route) {
+        this.route = route;
     }
 }

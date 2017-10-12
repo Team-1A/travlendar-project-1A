@@ -15,122 +15,42 @@ import java.util.Scanner;
  * @author Rohmat Dasuki
  */
 public class Location {
-    private String nameStartPoint;
-    private String addressStartPoint;
-    private String namePointArrived;
-    private String addressPointArrived;
-    private int distanceKM;
-    private int distanceM;
-    private int estimation;
+    private String namePoint;
+    private String addressPoint;
     /*
         Getter dan Settter pada class Location
     */
     public Location(){
-        nameStartPoint = null;
-        addressStartPoint = null;
-        namePointArrived = null;
-        addressPointArrived = null;
-        distanceM = 0;
-        distanceKM = 0;
-        estimation = 0;
+        namePoint = null;
+        addressPoint = null;
     }
 
     /**
-     * @return the distanceKM
+     * @return the namePoint
      */
-    public int getDistanceKM() {
-        return distanceKM;
-    }  /**
-     * @param distanceKM the distanceKM to set
-     */
-     public void setDistanceKM(int distanceKM) {
-        this.distanceKM = distanceKM;
+    public String getNamePoint() {
+        return namePoint;
     }
 
     /**
-     * @param distanceM the distanceM to set
+     * @param namePoint the namePoint to set
      */
-    public int getDistanceM() {
-        return distanceM;
-    }
-    /**
-     * @return the distanceM
-     */
-    public void setDistanceM(int distanceM) {
-        this.distanceM = distanceM;
-    }
-
-    public void setEstimation(int timeEstimation) {
-        this.estimation = timeEstimation;
-    }
-    
-    public double geTimeEstimation() {
-        return estimation;
-    }    
-    
-    public int inputEstimation(){
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Masukan estimasi(menit) : ");
-        int guess = Integer.parseInt(scan.nextLine());
-        
-        return guess;
-    }  
-
-    /**
-     * @return the nameStartPoint
-     */
-    public String getNameStartPoint() {
-        return nameStartPoint;
+    public void setNamePoint(String namePoint) {
+        this.namePoint = namePoint;
     }
 
     /**
-     * @param nameStartPoint the nameStartPoint to set
+     * @return the addressPoint
      */
-    public void setNameStartPoint(String nameStartPoint) {
-        this.nameStartPoint = nameStartPoint;
+    public String getAddressPoint() {
+        return addressPoint;
     }
 
     /**
-     * @return the addressStartPoint
+     * @param addressPoint the addressPoint to set
      */
-  
-    public String getAddressStartPoint() {
-        return addressStartPoint;
+    public void setAddressPoint(String addressPoint) {
+        this.addressPoint = addressPoint;
     }
 
-    /**
-     * @param addressStartPoint the addressStartPoint to set
-     */
-    public void setAddressStartPoint(String addressStartPoint) {
-        this.addressStartPoint = addressStartPoint;
-    }
-
-    /**
-     * @return the namePointArrived
-     */
-    public String getNamePointArrived() {
-        return namePointArrived;
-    }
-
-    /**
-     * @param namePointArrived the namePointArrived to set
-     */
-    public void setNamePointArrived(String namePointArrived) {
-        this.namePointArrived = namePointArrived;
-    }
-
-    /**
-     * @return the addressPointArrived
-     */
-    public String getAddressPointArrived() {
-        return addressPointArrived;
-    }
-
-    /**
-     * @param addressPointArrived the addressPointArrived to set
-     */
-    public void setAddressPointArrived(String addressPointArrived) {
-        this.addressPointArrived = addressPointArrived;
-    }
-   
 }

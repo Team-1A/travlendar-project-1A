@@ -16,7 +16,7 @@ import java.util.*;
 class Activity {
     private String eventName;
     private int priority;
-    private Location location;
+    private Distance route;
     private Date startEventtime;
     private Date endEventtime;
     
@@ -26,7 +26,7 @@ class Activity {
     public Activity(){
         eventName = null;
         priority = 0;
-        location = null;
+        route = null;
         startEventtime = null;
         endEventtime = null;
     }   
@@ -87,20 +87,6 @@ class Activity {
         this.endEventtime = endEventtime;
     }
 
-    /**
-     * @return the location
-     */
-    public Location getLocation() {
-        return location;
-    }
-
-    /**
-     * @param location the location to set
-     */
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-    
     public void setTime(Date startEventtime, Date endEventtime){
         this.setStartEventtime(startEventtime);
         this.setEndEventtime(endEventtime);
@@ -116,10 +102,10 @@ class Activity {
         System.out.println();
         
         for(int i = 0; i<listRoute.size(); i++){
-            System.out.println((i+1) + ". " + listRoute.get(i).getLocation().getNameStartPoint() + " (" + listRoute.get(i).getLocation().getAddressStartPoint() + ") = " + listRoute.get(i).getLocation().getNamePointArrived()  + " (" + listRoute.get(i).getLocation().getAddressPointArrived() + ") ");
+            System.out.println((i+1) + ". " + listRoute.get(i).getRoute().getStartPoint().getNamePoint() + " (" + listRoute.get(i).getRoute().getStartPoint().getAddressPoint() + ") = " + listRoute.get(i).getRoute().getPointArrived().getNamePoint()  + " (" + listRoute.get(i).getRoute().getPointArrived().getAddressPoint() + ") ");
         }
         System.out.print("Choose : ");
-        activity.setLocation(listRoute.get(Integer.parseInt(scan.nextLine())-1).getLocation());
+        activity.setRoute(listRoute.get(Integer.parseInt(scan.nextLine())-1).getRoute());
         
         System.out.print("\nInput start event(hh.mm) : ");
         activity.setStartEventtime((Date) formatTime.parseObject(scan.nextLine()));
@@ -131,5 +117,19 @@ class Activity {
         activity.setPriority(Integer.parseInt(scan.nextLine()));
         
         return activity;
+    }
+
+    /**
+     * @return the route
+     */
+    public Distance getRoute() {
+        return route;
+    }
+
+    /**
+     * @param route the route to set
+     */
+    public void setRoute(Distance route) {
+        this.route = route;
     }
 }

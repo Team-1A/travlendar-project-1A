@@ -61,7 +61,7 @@ public class Main {
                         {
                             for(int x=0; x<listRoute.size(); x++)
                             {
-                                System.out.println((x+1) + ". " + listRoute.get(x).getLocation().getNameStartPoint() + "(" + listRoute.get(x).getLocation().getAddressStartPoint() + ") - " + listRoute.get(x).getLocation().getNamePointArrived() + "(" + listRoute.get(x).getLocation().getAddressPointArrived() + ") = " + listRoute.get(x).getLocation().getDistanceKM() + "KM");
+                                System.out.println((x+1) + ". " + listRoute.get(x).getRoute().getStartPoint().getNamePoint() + "(" + listRoute.get(x).getRoute().getStartPoint().getAddressPoint() + ") - " + listRoute.get(x).getRoute().getPointArrived().getNamePoint() + "(" + listRoute.get(x).getRoute().getPointArrived().getAddressPoint() + ") = " + listRoute.get(x).getRoute().getDistanceKM() + "KM");
                             }
                         }else{
                             System.out.println("List is Empty");
@@ -96,19 +96,11 @@ public class Main {
                                 MySchedule schedule = new MySchedule();
                                 System.out.print("I want to create a schedue for (dd/MM/yyyy) : ");
                                 Date calendar = (Date) formatDate.parseObject(scan.next());
+                                schedule.setTime(calendar);
                                 loop = true;
                                 do{
-                                    System.out.println(formatDate.format(calendar));
-                                    if(schedule.getListactivity() != null){
-                                        for(int i = 0; i<schedule.getListactivity().size(); i++){
-                                            System.out.println("Activity's name: " + schedule.getListactivity().get(i).getEventName());
-                                            System.out.println("From: " + schedule.getListactivity().get(i).getLocation().getNameStartPoint() + "@" + schedule.getListactivity().get(i).getLocation().getAddressStartPoint());
-                                            System.out.println("To: " + schedule.getListactivity().get(i).getLocation().getNamePointArrived() + "@" + schedule.getListactivity().get(i).getLocation().getAddressPointArrived());
-                                            System.out.println("Priority Scale: " + schedule.getListactivity().get(i).getPriority());
-                                        }
-                                    }else{
-                                        System.out.println("List is Empty");
-                                    }//pertama input maupun tampilin datenya
+                                    System.out.println(formatDate.format(schedule.getTime()));
+                                    schedule.printActivity(schedule);//pertama input maupun tampilin datenya
                                     //kedua print list activity
                                     System.out.println("1. Add Activity");
                                     System.out.println("2. Finish ");
@@ -149,22 +141,11 @@ public class Main {
                                         int choose = Integer.parseInt(scan.next());
                                         for(int i = 0; i<listSchedule.get(choose).getListactivity().size(); i++){
                                             System.out.println("Activity's name: " + listSchedule.get(choose).getListactivity().get(i).getEventName());
-                                            System.out.println("From: " + listSchedule.get(choose).getListactivity().get(i).getLocation().getNameStartPoint() + "@" + listSchedule.get(choose).getListactivity().get(i).getLocation().getAddressStartPoint());
-                                            System.out.println("To: " + listSchedule.get(choose).getListactivity().get(i).getLocation().getNamePointArrived() + "@" + listSchedule.get(choose).getListactivity().get(i).getLocation().getAddressPointArrived());
+                                            System.out.println("From: " + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getNamePoint() + "@" + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getAddressPoint());
+                                            System.out.println("To: " + listSchedule.get(choose).getListactivity().get(i).getRoute().getPointArrived().getNamePoint() + "@" + listSchedule.get(choose).getListactivity().get(i).getRoute().getPointArrived().getAddressPoint());
                                             System.out.println("Time: " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getStartEventtime()) + " - " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getEndEventtime()));
         //                                    System.out.println("Priority Scale: " + listSchedule.get(choose).getListactivity().get(i).getPriority());
-                                            System.out.println("Recommend Transportation mode");
-                                            for(int j = 0; j<listTransportationmode.size(); j++){
-                                                int hours = listSchedule.get(choose).getListactivity().get(i).getLocation().getDistanceKM()/listTransportationmode.get(j).getVelocity();
-                                                int minutes = listSchedule.get(choose).getListactivity().get(i).getLocation().getDistanceM()/(listTransportationmode.get(j).getVelocity()*(1000/60));
-                                                int totalMinutes = (hours*60) + minutes;
-                                                hours = hours + (minutes/60);
-                                                minutes = minutes%60;
-                                                hours = listSchedule.get(choose).getListactivity().get(i).getStartEventtime().getHours() - hours;
-                                                minutes = listSchedule.get(choose).getListactivity().get(i).getStartEventtime().getMinutes() - minutes;
-                                                System.out.println(listTransportationmode.get(j).getTransportation() + " estimation " + totalMinutes + ", Departure: " + hours + "." + minutes);
-                                            }//terjadi perhitungan
-                                            System.out.println();
+                                            listSchedule.get(choose).getListactivity().get(i).getRoute().printRecommend(listTransportationmode, listSchedule, choose, i);
                                         }
                                         System.out.println("1. See Again");
                                         System.out.println("2. Back");
