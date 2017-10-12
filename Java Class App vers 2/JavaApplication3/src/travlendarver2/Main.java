@@ -152,7 +152,7 @@ public class Main {
                                             System.out.println("Activity's name: " + listSchedule.get(choose).getListactivity().get(i).getEventName());
                                             System.out.println("From: " + listSchedule.get(choose).getListactivity().get(i).getLocation().getNameStartPoint() + "@" + listSchedule.get(choose).getListactivity().get(i).getLocation().getAddressStartPoint());
                                             System.out.println("To: " + listSchedule.get(choose).getListactivity().get(i).getLocation().getNamePointArrived() + "@" + listSchedule.get(choose).getListactivity().get(i).getLocation().getAddressPointArrived());
-                                            System.out.println("Time: " + listSchedule.get(choose).getListactivity().get(i).getStartEventtime().getHours() + listSchedule.get(choose).getListactivity().get(i).getStartEventtime().getMinutes() + " - " + listSchedule.get(choose).getListactivity().get(i).getEndEventtime().getHours() + "." + listSchedule.get(choose).getListactivity().get(i).getEndEventtime().getMinutes());
+                                            System.out.println("Time: " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getStartEventtime()) + " - " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getEndEventtime()));
         //                                    System.out.println("Priority Scale: " + listSchedule.get(choose).getListactivity().get(i).getPriority());
                                             System.out.println("Recommend Transportation mode");
                                             for(int j = 0; j<listTransportationmode.size(); j++){

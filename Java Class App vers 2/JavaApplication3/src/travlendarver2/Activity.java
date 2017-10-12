@@ -122,10 +122,10 @@ class Activity {
         activity.setLocation(listRoute.get(Integer.parseInt(scan.next())-1).getLocation());
         
         System.out.print("\nInput start event(hh.mm) : ");
-        activity.startEventtime = formatTime.parse(scan.nextLine());
+        activity.startEventtime = (Date) formatTime.parse(scan.nextLine());
         
         System.out.print("\nInput start event(hh.mm) : ");
-        activity.endEventtime = formatTime.parse(scan.nextLine());
+        activity.endEventtime = (Date) formatTime.parse(scan.nextLine());
         
         activity.setTime(activity.startEventtime, activity.endEventtime);
         
