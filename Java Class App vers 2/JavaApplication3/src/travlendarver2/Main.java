@@ -61,8 +61,7 @@ public class Main {
                         {
                             for(int x=0; x<listRoute.size(); x++)
                             {
-                                System.out.println((x+1) + listRoute.get(x).getLocation().getNameStartPoint() +listRoute.get(x).getLocation().getNamePointArrived());
-                                System.out.println(listRoute.get(x).getLocation().getAddressPointArrived() +listRoute.get(x).getLocation().getAddressStartPoint());             
+                                System.out.println((x+1) + ". " + listRoute.get(x).getLocation().getNameStartPoint() + "(" + listRoute.get(x).getLocation().getAddressStartPoint() + ") - " + listRoute.get(x).getLocation().getNamePointArrived() + "(" + listRoute.get(x).getLocation().getAddressPointArrived() + ") = " + listRoute.get(x).getLocation().getDistanceKM() + "KM");
                             }
                         }else{
                             System.out.println("List is Empty");

@@ -119,15 +119,13 @@ class Activity {
             System.out.println((i+1) + ". " + listRoute.get(i).getLocation().getNameStartPoint() + " (" + listRoute.get(i).getLocation().getAddressStartPoint() + ") = " + listRoute.get(i).getLocation().getNamePointArrived()  + " (" + listRoute.get(i).getLocation().getAddressPointArrived() + ") ");
         }
         System.out.print("Choose : ");
-        activity.setLocation(listRoute.get(Integer.parseInt(scan.next())-1).getLocation());
+        activity.setLocation(listRoute.get(Integer.parseInt(scan.nextLine())-1).getLocation());
         
         System.out.print("\nInput start event(hh.mm) : ");
-        activity.startEventtime = (Date) formatTime.parse(scan.nextLine());
+        activity.setStartEventtime((Date) formatTime.parseObject(scan.nextLine()));
         
         System.out.print("\nInput start event(hh.mm) : ");
-        activity.endEventtime = (Date) formatTime.parse(scan.nextLine());
-        
-        activity.setTime(activity.startEventtime, activity.endEventtime);
+        activity.setEndEventtime((Date) formatTime.parseObject(scan.nextLine()));
         
         System.out.print("Prioritas(1-5) : ");
         activity.setPriority(Integer.parseInt(scan.nextLine()));
