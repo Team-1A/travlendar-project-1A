@@ -44,7 +44,7 @@ public class MySchedule {
     void addNewActivity(ArrayList<Activity> activity, ArrayList<TravelData> listRoute) throws ParseException{
         Activity newActivity = new Activity();
         newActivity.inputActivity(listRoute);
-        getListactivity().add(newActivity);
+        activity.add(newActivity);
     }
 
     /**

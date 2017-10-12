@@ -21,20 +21,23 @@ public class TravelData {
     public TravelData inputTravelData() {
         Scanner scan = new Scanner(System.in);
         TravelData travelData = new TravelData();
-        Distance route = new Distance();
+        Distance trip = new Distance();
+        Location place = new Location();
         System.out.print("Start point name : ");
-        route.getStartPoint().setNamePoint(scan.nextLine());
+        place.setNamePoint(scan.nextLine());
         System.out.print("Start point address : ");
-        route.getStartPoint().setAddressPoint(scan.nextLine());
+        place.setAddressPoint(scan.nextLine());
+        trip.setStartPoint(place);
         System.out.print("Arrival point name : ");
-        route.getPointArrived().setNamePoint(scan.nextLine());
+        place.setNamePoint(scan.nextLine());
         System.out.print("Arrival point address : ");
-        route.getPointArrived().setAddressPoint(scan.nextLine());
+        place.setAddressPoint(scan.nextLine());
+        trip.setPointArrived(place);
         System.out.print("Distance(Km) : ");
-        route.setDistanceKM(Integer.parseInt(scan.nextLine()));
+        trip.setDistanceKM(Integer.parseInt(scan.nextLine()));
         System.out.print("Distance(m) : ");
-        route.setDistanceM(Integer.parseInt(scan.nextLine()));
-        travelData.setRoute(route);
+        trip.setDistanceM(Integer.parseInt(scan.nextLine()));
+        travelData.setRoute(trip);
         
         return travelData;
     }
