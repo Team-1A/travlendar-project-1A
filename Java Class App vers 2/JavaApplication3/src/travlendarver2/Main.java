@@ -99,7 +99,7 @@ public class Main {
                                 Date calendar = (Date) formatDate.parseObject(scan.next());
                                 loop = true;
                                 do{
-                                    System.out.println(calendar.getDay() + "/" + calendar.getMonth() + "/" + calendar.getYear());
+                                    System.out.println(formatDate.format(calendar));
                                     if(schedule.getListactivity() != null){
                                         for(int i = 0; i<schedule.getListactivity().size(); i++){
                                             System.out.println("Activity's name: " + schedule.getListactivity().get(i).getEventName());

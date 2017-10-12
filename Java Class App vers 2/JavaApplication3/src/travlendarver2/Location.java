@@ -8,6 +8,7 @@ package travlendarver2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -20,6 +21,7 @@ public class Location {
     private String addressPointArrived;
     private int distanceKM;
     private int distanceM;
+    private int estimation;
     /*
         Getter dan Settter pada class Location
     */
@@ -30,6 +32,7 @@ public class Location {
         addressPointArrived = null;
         distanceM = 0;
         distanceKM = 0;
+        estimation = 0;
     }
 
     /**
@@ -37,28 +40,41 @@ public class Location {
      */
     public int getDistanceKM() {
         return distanceKM;
-    }
-
-    /**
+    }  /**
      * @param distanceKM the distanceKM to set
      */
-    public void setDistanceKM(int distanceKM) {
+     public void setDistanceKM(int distanceKM) {
         this.distanceKM = distanceKM;
-    }
-
-    /**
-     * @return the distanceM
-     */
-    public int getDistanceM() {
-        return distanceM;
     }
 
     /**
      * @param distanceM the distanceM to set
      */
+    public int getDistanceM() {
+        return distanceM;
+    }
+    /**
+     * @return the distanceM
+     */
     public void setDistanceM(int distanceM) {
         this.distanceM = distanceM;
     }
+
+    public void setEstimation(int timeEstimation) {
+        this.estimation = timeEstimation;
+    }
+    
+    public double geTimeEstimation() {
+        return estimation;
+    }    
+    
+    public int inputEstimation(){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Masukan estimasi(menit) : ");
+        int guess = Integer.parseInt(scan.nextLine());
+        
+        return guess;
+    }  
 
     /**
      * @return the nameStartPoint
@@ -77,6 +93,7 @@ public class Location {
     /**
      * @return the addressStartPoint
      */
+  
     public String getAddressStartPoint() {
         return addressStartPoint;
     }
