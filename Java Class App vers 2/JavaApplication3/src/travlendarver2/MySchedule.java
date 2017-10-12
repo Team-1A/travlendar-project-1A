@@ -40,12 +40,6 @@ public class MySchedule {
     public void setTime(Date time) {
         this.time = time;
     }
-    
-    void addNewActivity(ArrayList<Activity> activity, ArrayList<TravelData> listRoute) throws ParseException{
-        Activity newActivity = new Activity();
-        newActivity.inputActivity(listRoute);
-        activity.add(newActivity);
-    }
 
     /**
      * @return the listactivity

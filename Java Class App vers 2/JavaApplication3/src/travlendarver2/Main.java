@@ -94,6 +94,8 @@ public class Main {
                         switch(Integer.parseInt(scan.next())){
                             case 1:{
                                 MySchedule schedule = new MySchedule();
+                                Activity newActivity = new Activity();
+                                ArrayList<Activity> listActivity = new ArrayList<>();
                                 System.out.print("I want to create a schedue for (dd/MM/yyyy) : ");
                                 Date calendar = (Date) formatDate.parseObject(scan.next());
                                 schedule.setTime(calendar);
@@ -108,10 +110,12 @@ public class Main {
                                     System.out.print("Choose : ");
                                     switch(Integer.parseInt(scan.next())){
                                         case 1:{
-                                            schedule.addNewActivity(schedule.getListactivity(), listRoute);
+                                            newActivity.inputActivity(listRoute);
+                                            listActivity.add(newActivity);
                                             break;
                                         }
                                         case 2:{
+                                            schedule.setListactivity(listActivity);
                                             listSchedule.add(schedule);
                                             loop = false;
                                             break;
@@ -138,7 +142,7 @@ public class Main {
                                             System.out.println((i+1) + ". " + listSchedule.get(i).getTime());
                                         }
                                         System.out.print("Choose : ");
-                                        int choose = Integer.parseInt(scan.next());
+                                        int choose = Integer.parseInt(scan.next())-1;
                                         for(int i = 0; i<listSchedule.get(choose).getListactivity().size(); i++){
                                             System.out.println("Activity's name: " + listSchedule.get(choose).getListactivity().get(i).getEventName());
                                             System.out.println("From: " + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getNamePoint() + "@" + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getAddressPoint());
