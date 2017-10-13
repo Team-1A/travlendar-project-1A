@@ -58,7 +58,7 @@ and open the template in the editor.
           title: 'Makan Sore',
           start: '2017-09-19T15:30:00',
           end: '2017-09-19T16:30:00'
-        },
+        }
       ]
     });
     
@@ -90,8 +90,10 @@ and open the template in the editor.
     <div class="content">
       <div id="box">
           <div class="box-panel">
-            <h2><img id="back" src="css/icon/back.png">DETAIL SCHEDULE: 16 SEP '17<img id="seting" src="css/icon/seting.png"><img id="delete" src="css/icon/delete.png"></h2>
-               <div id="table-wrapper">
+              <h2><a href="index.jsp"><img id="back" src="css/icon/back.png"></a>DETAIL SCHEDULE: 16 SEP '17
+                  <a href="add_activity.jsp"><img id="seting" src="css/icon/seting.png"></a>
+                  <img id="delete" src="css/icon/delete.png"></h2>
+                 <div id="table-wrapper">
                   <div id="table-scroll">
                     <table>
                       <tbody>
