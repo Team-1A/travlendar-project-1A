@@ -59,16 +59,17 @@ public class MySchedule {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public void printActivity(MySchedule schedule)  {
-        if(schedule.getListactivity() != null){
-            for(int i = 0; i<schedule.getListactivity().size(); i++){
-                System.out.println("Activity's name: " + schedule.getListactivity().get(i).getEventName());
-                System.out.println("From: " + schedule.getListactivity().get(i).getRoute().getStartPoint().getNamePoint() + "@" + schedule.getListactivity().get(i).getRoute().getStartPoint().getAddressPoint());
-                System.out.println("To: " + schedule.getListactivity().get(i).getRoute().getPointArrived().getNamePoint() + "@" + schedule.getListactivity().get(i).getRoute().getPointArrived().getAddressPoint());
-                System.out.println("Priority Scale: " + schedule.getListactivity().get(i).getPriority());
+    void printActivity(ArrayList<Activity> listActivity)  {
+        if(listActivity != null){
+            for(int i = 0; i<listActivity.size(); i++){
+                System.out.println("Activity's name: " + listActivity.get(i).getEventName());
+                System.out.println("From: " + listActivity.get(i).getRoute().getStartPoint().getNamePoint() + "(" + listActivity.get(i).getRoute().getStartPoint().getAddressPoint() + ")");
+                System.out.println("To: " + listActivity.get(i).getRoute().getPointArrived().getNamePoint() + "(" + listActivity.get(i).getRoute().getPointArrived().getAddressPoint() + ")");
+                System.out.println("Priority Scale: " + listActivity.get(i).getPriority());
             }
         }else{
             System.out.println("List is Empty");
         }
+        System.out.println();
     }
 }

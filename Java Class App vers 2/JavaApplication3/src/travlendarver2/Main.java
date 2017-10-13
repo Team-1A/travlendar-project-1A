@@ -24,25 +24,29 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         SimpleDateFormat formatDate = new SimpleDateFormat("dd/M/yyyy");
         boolean loopMenu = true;
-        boolean loop = true;
+        boolean loop;
         ArrayList<TravelData> listRoute = new ArrayList<>();
         ArrayList<TransportationMode> listTransportationmode = new ArrayList<>();
-        TransportationMode transportationMode = new TransportationMode();
-        transportationMode.setTransportation("Plane");
-        transportationMode.setVelocity(990);
-        listTransportationmode.add(transportationMode);
-        transportationMode.setTransportation("Car");
-        transportationMode.setVelocity(60);
-        listTransportationmode.add(transportationMode);
-        transportationMode.setTransportation("Motorcycle");
-        transportationMode.setVelocity(50);
-        listTransportationmode.add(transportationMode);
-        transportationMode.setTransportation("Bike");
-        transportationMode.setVelocity(15);
-        listTransportationmode.add(transportationMode);
-        transportationMode.setTransportation("Walk");
-        transportationMode.setVelocity(1);
-        listTransportationmode.add(transportationMode);
+        TransportationMode transportationMode1 = new TransportationMode();
+        transportationMode1.setTransportation("Plane");
+        transportationMode1.setVelocity(990);
+        listTransportationmode.add(transportationMode1);
+        TransportationMode transportationMode2 = new TransportationMode();
+        transportationMode2.setTransportation("Car");
+        transportationMode2.setVelocity(60);
+        listTransportationmode.add(transportationMode2);
+        TransportationMode transportationMode3 = new TransportationMode();
+        transportationMode3.setTransportation("Motorcycle");
+        transportationMode3.setVelocity(50);
+        listTransportationmode.add(transportationMode3);
+        TransportationMode transportationMode4 = new TransportationMode();
+        transportationMode4.setTransportation("Bike");
+        transportationMode4.setVelocity(15);
+        listTransportationmode.add(transportationMode4);
+        TransportationMode transportationMode5 = new TransportationMode();
+        transportationMode5.setTransportation("Walk");
+        transportationMode5.setVelocity(1);
+        listTransportationmode.add(transportationMode5);
         ArrayList<MySchedule> listSchedule = new ArrayList<>();
         //File dimasukan ke array list diatas
         do{
@@ -55,7 +59,6 @@ public class Main {
                 case 1:{
                     do{
                         TravelData travelData = new TravelData();
-                        loop = true;
                         System.out.println("Travel Data");
                         if(!listRoute.isEmpty())
                         {
@@ -85,7 +88,6 @@ public class Main {
                 }
                 case 2:{
                     do{
-                        loop = true;
                         System.out.println("My Schedule");
                         System.out.println("1. Create Schedule");
                         System.out.println("2. Print My Schedule");
@@ -102,7 +104,8 @@ public class Main {
                                 loop = true;
                                 do{
                                     System.out.println(formatDate.format(schedule.getTime()));
-                                    schedule.printActivity(schedule);//pertama input maupun tampilin datenya
+                                    schedule.printActivity(listActivity);
+                                    //pertama input maupun tampilin datenya
                                     //kedua print list activity
                                     System.out.println("1. Add Activity");
                                     System.out.println("2. Finish ");
@@ -110,8 +113,7 @@ public class Main {
                                     System.out.print("Choose : ");
                                     switch(Integer.parseInt(scan.next())){
                                         case 1:{
-                                            newActivity.inputActivity(listRoute);
-                                            listActivity.add(newActivity);
+                                            listActivity.add(newActivity.inputActivity(listRoute));
                                             break;
                                         }
                                         case 2:{
@@ -139,7 +141,7 @@ public class Main {
                                 if(!listSchedule.isEmpty()){
                                     do{
                                         for(int i = 0; i<listSchedule.size(); i++){
-                                            System.out.println((i+1) + ". " + listSchedule.get(i).getTime());
+                                            System.out.println((i+1) + ". " + formatDate.format(listSchedule.get(i).getTime()));
                                         }
                                         System.out.print("Choose : ");
                                         int choose = Integer.parseInt(scan.next())-1;
@@ -153,6 +155,7 @@ public class Main {
                                         }
                                         System.out.println("1. See Again");
                                         System.out.println("2. Back");
+                                        System.out.print("Choose : ");
                                         if(Integer.parseInt(scan.next())==2){
                                             loop = false;
                                         }
