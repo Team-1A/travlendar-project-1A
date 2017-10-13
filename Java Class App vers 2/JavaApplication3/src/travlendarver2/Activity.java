@@ -110,7 +110,7 @@ class Activity {
         System.out.print("\nInput start event(hh.mm) : ");
         activity.setStartEventtime((Date) formatTime.parseObject(scan.nextLine()));
         
-        System.out.print("\nInput start event(hh.mm) : ");
+        System.out.print("\nInput end event(hh.mm) : ");
         activity.setEndEventtime((Date) formatTime.parseObject(scan.nextLine()));
         
         System.out.print("Prioritas(1-5) : ");
@@ -132,4 +132,15 @@ class Activity {
     public void setRoute(Distance route) {
         this.route = route;
     }
+    
+    public static Comparator<Activity> activityComparator = new Comparator<Activity>() {
+        @Override
+        public int compare(Activity activity1, Activity activity2) {
+            Date startDate1 = activity1.getStartEventtime();
+            Date startDate2 = activity2.getStartEventtime();
+            
+            return startDate1.compareTo(startDate2);
+        }
+    };
+    
 }

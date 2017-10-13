@@ -72,4 +72,15 @@ public class MySchedule {
         }
         System.out.println();
     }
+    
+    public static Comparator<MySchedule> timeComparator = new Comparator<MySchedule>() {
+        @Override
+        public int compare(MySchedule mySchedule1, MySchedule mySchedule2) {
+            Date time1 = mySchedule1.getTime();
+            Date time2 = mySchedule2.getTime();
+            
+            return time1.compareTo(time2);
+        }
+    };
+    
 }

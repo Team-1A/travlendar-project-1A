@@ -88,6 +88,7 @@ public class Main {
                 }
                 case 2:{
                     do{
+                        ArrayList<Activity> listActivity = new ArrayList<>();
                         System.out.println("My Schedule");
                         System.out.println("1. Create Schedule");
                         System.out.println("2. Print My Schedule");
@@ -97,7 +98,6 @@ public class Main {
                             case 1:{
                                 MySchedule schedule = new MySchedule();
                                 Activity newActivity = new Activity();
-                                ArrayList<Activity> listActivity = new ArrayList<>();
                                 System.out.print("I want to create a schedue for (dd/MM/yyyy) : ");
                                 Date calendar = (Date) formatDate.parseObject(scan.next());
                                 schedule.setTime(calendar);
@@ -139,18 +139,20 @@ public class Main {
                             case 2:{
                                 loop = true;
                                 if(!listSchedule.isEmpty()){
+                                    Collections.sort(listSchedule, MySchedule.timeComparator);
                                     do{
                                         for(int i = 0; i<listSchedule.size(); i++){
                                             System.out.println((i+1) + ". " + formatDate.format(listSchedule.get(i).getTime()));
                                         }
                                         System.out.print("Choose : ");
                                         int choose = Integer.parseInt(scan.next())-1;
+                                        Collections.sort(listActivity, Activity.activityComparator);
                                         for(int i = 0; i<listSchedule.get(choose).getListactivity().size(); i++){
                                             System.out.println("Activity's name: " + listSchedule.get(choose).getListactivity().get(i).getEventName());
                                             System.out.println("From: " + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getNamePoint() + "@" + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getAddressPoint());
                                             System.out.println("To: " + listSchedule.get(choose).getListactivity().get(i).getRoute().getPointArrived().getNamePoint() + "@" + listSchedule.get(choose).getListactivity().get(i).getRoute().getPointArrived().getAddressPoint());
                                             System.out.println("Time: " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getStartEventtime()) + " - " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getEndEventtime()));
-        //                                    System.out.println("Priority Scale: " + listSchedule.get(choose).getListactivity().get(i).getPriority());
+                                            //System.out.println("Priority Scale: " + listSchedule.get(choose).getListactivity().get(i).getPriority());
                                             listSchedule.get(choose).getListactivity().get(i).getRoute().printRecommend(listTransportationmode, listSchedule, choose, i);
                                         }
                                         System.out.println("1. See Again");
