@@ -119,6 +119,7 @@ public class Main {
                                         case 2:{
                                             schedule.setListactivity(listActivity);
                                             listSchedule.add(schedule);
+                                            Collections.sort(listActivity, Activity.activityComparator);
                                             loop = false;
                                             break;
                                         }
@@ -134,19 +135,18 @@ public class Main {
                                         }
                                     }    
                                 }while(loop);
+                                Collections.sort(listSchedule, MySchedule.timeComparator);
                                 break;                                   
                             }
                             case 2:{
                                 loop = true;
                                 if(!listSchedule.isEmpty()){
-                                    Collections.sort(listSchedule, MySchedule.timeComparator);
                                     do{
                                         for(int i = 0; i<listSchedule.size(); i++){
                                             System.out.println((i+1) + ". " + formatDate.format(listSchedule.get(i).getTime()));
                                         }
                                         System.out.print("Choose : ");
                                         int choose = Integer.parseInt(scan.next())-1;
-                                        Collections.sort(listActivity, Activity.activityComparator);
                                         for(int i = 0; i<listSchedule.get(choose).getListactivity().size(); i++){
                                             System.out.println("Activity's name: " + listSchedule.get(choose).getListactivity().get(i).getEventName());
                                             System.out.println("From: " + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getNamePoint() + "@" + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getAddressPoint());
