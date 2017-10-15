@@ -15,7 +15,7 @@ and open the template in the editor.
         <link href="css/fullcalendar.min.css" rel="stylesheet">
         <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print"> 
          <link rel="stylesheet" type="text/css" href="css/popup.css">  
-          <link rel="stylesheet" type="text/css" href="css/responsive.css">
+         <link rel="stylesheet" type="text/css" href="css/responsive.css">
         <script type="text/javascript" src="css/popup.js"></script>
         <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -69,7 +69,7 @@ and open the template in the editor.
 </script>
 <body>
 <!--judul-->
-  <div id="header">
+<div id="header">
     <div class="logo">
       <img src="css/logo.png " width="150px" height="35px">
     </div>
@@ -90,9 +90,9 @@ and open the template in the editor.
     <div class="content">
       <div id="box">
         <div class="box-top">My Schedule</div>
-      <div class="box-panel">
-        <div class="menu_atas">
-          <div class="menunya2">
+     <div class="box-panel">
+      <div class="menu_atas">
+        <div class="menunya2">
             <a href="create_schedule.jsp">Create Schedule</a>
         </div>
       </div>
@@ -300,11 +300,11 @@ and open the template in the editor.
 <div class="content">
   <div id="box">
     <div class="box-top">Calendar</div>
-      <div class="box-panel">
+     <div class="box-panel">
        <div id='calendar'></div>
      </div>
-    </div>
   </div>
+</div>
 </div>
 
 
@@ -314,7 +314,7 @@ and open the template in the editor.
     <div class="box-top">Travel Data</div>
      <div class="box-panel">
          <div class="menu_atas">
-             <div class="menunya">
+        <div class="menunya">
             <div class="point">
               <a href="location.jsp " id="defaultOpen" style="color: white"><img src="css/icon/location.png "><br>
                   <span>Location</span></a>
@@ -322,11 +322,11 @@ and open the template in the editor.
         </div>
         
         <div class="menunya">
-                <a href="estimation.jsp " id="defaultOpen" style="color: white"><img src="css/icon/distance.png "><br>
+                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="css/icon/distance.png "><br>
                   <span>Distance Management</span></a>
         </div>
         
-         </div>
+          </div>
     
     <div class="kiri">
     
@@ -482,13 +482,12 @@ and open the template in the editor.
           
 
             </form>
-          </div>
+  </div>
         </div>
-      </div>
-    </div>
-  </div> 
+  </div>
  </div>
-</div>
+</div> 
+
        
 <script>
       function openPages(evt, pageName) {

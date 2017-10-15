@@ -11,18 +11,20 @@ and open the template in the editor.
         <title>TRAVNER</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS-->
         <link rel="stylesheet" href="css/style.css">
         <link href="css/fullcalendar.min.css" rel="stylesheet">
         <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print"> 
          <link rel="stylesheet" type="text/css" href="css/responsive.css">
-         <link rel="stylesheet" type="text/css" href="css/popup.css">  
+         <link rel="stylesheet" type="text/css" href="css/popup.css">
+         <!-- JAVASCRIPT-->
         <script type="text/javascript" src="js/popup.js"></script>
         <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/fullcalendar.min.js"></script>
 		</head>
-    
+<!--script calendar-->
     <script>
 
   $(document).ready(function() {
@@ -61,7 +63,7 @@ and open the template in the editor.
           title: 'Makan Sore',
           start: '2017-09-19T15:30:00',
           end: '2017-09-19T16:30:00'
-        },
+        }
       ]
     });
     
@@ -70,8 +72,8 @@ and open the template in the editor.
 </script>
 <body>
 <!--judul-->
-  <div id="header">
-    <div class="logo">
+  <div id="header"><!--header-->
+    <div class="logo"><!--logo Travner-->
       <img src="css/logo.png " width="150px" height="35px">
     </div>
 </div>
@@ -90,20 +92,20 @@ and open the template in the editor.
 <div id="My Schedule" class="tabcontent">
     <div class="content">
       <div id="box">
-        <div class="box-top">My Schedule</div>
-      <div class="box-panel">
-        <div class="menu_atas">
-          <div class="menunya2">
+        <div class="box-top">My Schedule</div><!--Kotak Judul-->
+      <div class="box-panel"><!--Isi Kotak-->
+        <div class="menu_atas"><!--menu bar-->
+          <div class="menunya2"><!--content menu bar-->
             <a href="create_schedule.jsp">Create Schedule</a>
         </div>
       </div>
      </div>
      
-     <div class="box-panel">
+     <div class="box-panel"><!--isi box-->
 
-                        <div id="div2_schedule">
-                         <table id="table2_schedule">
-                          
+                        <div id="div2_schedule"><!--field table schedule-->
+                         <table id="table2_schedule"><!--table schedule-->
+                          <!--isi table schedule-->
                           <tr>
                            <th><a href="detail_schedule.jsp">16 September 2017</a></th>
                            <th> </th>
@@ -111,6 +113,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
+                                <!--Modal Delete-->
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
 
                               <div id="id01" class="modal">
@@ -137,6 +140,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
+                                <!--Modal Delete-->
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
 
                               <div id="id01" class="modal">
@@ -163,6 +167,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
+                                <!--Modal Delete-->
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
 
                               <div id="id01" class="modal">
@@ -189,6 +194,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
+                                <!--Modal Delete-->
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
 
                               <div id="id01" class="modal">
@@ -215,6 +221,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
+                                <!--Modal Delete-->
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
 
                               <div id="id01" class="modal">
@@ -235,6 +242,7 @@ and open the template in the editor.
                           </tr>
 
                            <tr>
+                               <!--Modal Delete-->
                            <th><a href="detail_schedule.jsp">20 Desember 2017</a></th>
                            <th> </th>
                            <th> </th>
@@ -261,12 +269,14 @@ and open the template in the editor.
                           </tr>
 
                            <tr>
+                               <!--Modal Delete-->
                            <th><a href="detail_schedule.jsp">25 Desember 2017</a></th>
                            <th> </th>
                            <th> </th>
                            <th> </th>
                            <th> </th>
                             <th>
+                                <!--Modal Delete-->
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
 
                               <div id="id01" class="modal">
@@ -298,7 +308,7 @@ and open the template in the editor.
 	
 
 <div id="Calendar" class="tabcontent">
-  
+<!--Field-->
 <div class="content">
   <div id="box">
     <div class="box-top">Calendar</div>
@@ -316,26 +326,27 @@ and open the template in the editor.
     <div class="box-top">Travel Data</div>
     
   <div class="box-panel">
-      <div class="menu_atas">
-          <div class="menunya">
-            <div class="point">
+      <div class="menu_atas"> <!--Box Luar-->
+          <div class="menunya"> <!--Isi box-->
+            <div class="point"> <!--Box pointer-->
               <a href="location.jsp " id="defaultOpen" style="color: white"><img src="css/icon/location.png "><br>
                   <span>Location</span></a>
             </div>
         </div>
         
-        <div class="menunya">
-                <a href="estimation.jsp " id="defaultOpen" style="color: white"><img src="css/icon/distance.png "><br>
+        <div class="menunya"> <!--Isi box-->
+                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="css/icon/distance.png "><br>
                   <span>Distance Management</span></a>
         </div>
           
       </div>
     
+    <!--Field Kiri-->
     <div class="kiri">
     
    
-                        <div id="div2_travel">
-                         <table id="table2_travel">
+                        <div id="div2_travel"> <!--Field (luar) kategori-->
+                         <table id="table2_travel"> <!--Field (dalam) kategori-->
                             
                             <tr>
                             <th>Rumah Fatmawati</th>
@@ -343,6 +354,7 @@ and open the template in the editor.
                             <th></th>
                             <th> </th>
                             
+                            <!--Modal Delete-->
                             <th>
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
@@ -401,11 +413,11 @@ and open the template in the editor.
 
                               <div id="id02" class="modal">
   
-                              <form class="modal-content animate" action="/action_page.php">
-                              <div class="imgcontainer">
+                              <form class="modal-content animate" action="/action_page.php"> <!--Field animasi modal-->
+                              <div class="imgcontainer"> <!--Field (dalam) Modal-->
       
     
-                              <div class="container">
+                              <div class="container"> 
                               <label><b>LOCATION DELETION</b></label>
       
                              <label><p>Are you sure want to delete it?</p></label>
