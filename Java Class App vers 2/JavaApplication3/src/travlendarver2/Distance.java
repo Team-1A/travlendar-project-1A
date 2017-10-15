@@ -80,7 +80,7 @@ public class Distance {
         this.distanceM = distanceM;
     }
     
-    public void printRecommend(ArrayList<TransportationMode> listTransportationmode, ArrayList<MySchedule> listSchedule, int choose, int index)    {
+    public void printRecommend(ArrayList<TransportationMode> listTransportationmode, ArrayList<Schedule> listSchedule, int choose, int index)    {
         System.out.println("Recommend Transportation mode");
         for(int j = 0; j<listTransportationmode.size(); j++){
         int hours = listSchedule.get(choose).getListactivity().get(index).getRoute().getDistanceKM()/listTransportationmode.get(j).getVelocity();

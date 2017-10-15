@@ -13,7 +13,7 @@ import java.util.*;
  *
  * @author Modelling
  */
-public class Main {
+public class Travner {
 
     /**
      * @param args the command line arguments
@@ -47,7 +47,7 @@ public class Main {
         transportationMode5.setTransportation("Walk");
         transportationMode5.setVelocity(1);
         listTransportationmode.add(transportationMode5);
-        ArrayList<MySchedule> listSchedule = new ArrayList<>();
+        ArrayList<Schedule> listSchedule = new ArrayList<>();
         //File dimasukan ke array list diatas
         do{
             System.out.println("Menu");
@@ -96,7 +96,7 @@ public class Main {
                         System.out.print("Choose : ");
                         switch(Integer.parseInt(scan.next())){
                             case 1:{
-                                MySchedule schedule = new MySchedule();
+                                Schedule schedule = new Schedule();
                                 Activity newActivity = new Activity();
                                 System.out.print("I want to create a schedue for (dd/MM/yyyy) : ");
                                 Date calendar = (Date) formatDate.parseObject(scan.next());
@@ -135,7 +135,7 @@ public class Main {
                                         }
                                     }    
                                 }while(loop);
-                                Collections.sort(listSchedule, MySchedule.timeComparator);
+                                Collections.sort(listSchedule, Schedule.timeComparator);
                                 break;                                   
                             }
                             case 2:{
