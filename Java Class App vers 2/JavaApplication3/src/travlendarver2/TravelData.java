@@ -19,26 +19,26 @@ public class TravelData {
     }
 
     public TravelData inputTravelData() {
-        Scanner scan = new Scanner(System.in);
-        TravelData travelData = new TravelData();
-        Distance trip = new Distance();
-        Location placeStart = new Location();
-        Location placeArrival = new Location();
+        Scanner scan = new Scanner(System.in);//create new object scan
+        TravelData travelData = new TravelData();// create new object from class TravleData
+        Distance trip = new Distance();// create new object from class Distance
+        Location placeStart = new Location();//create new object placeStart from class location
+        Location placeArrival = new Location();// create new object placeArrival from location
         System.out.print("Start point name : ");
-        placeStart.setNamePoint(scan.nextLine());
+        placeStart.setNamePoint(scan.nextLine());// take value name start event
         System.out.print("Start point address : ");
-        placeStart.setAddressPoint(scan.nextLine());
-        trip.setStartPoint(placeStart);
+        placeStart.setAddressPoint(scan.nextLine());// take value name arrive event 
+        trip.setStartPoint(placeStart);//take value distance from place start
         System.out.print("Arrival point name : ");
-        placeArrival.setNamePoint(scan.nextLine());
+        placeArrival.setNamePoint(scan.nextLine());// take value from place name arrival 
         System.out.print("Arrival point address : ");
-        placeArrival.setAddressPoint(scan.nextLine());
-        trip.setPointArrived(placeArrival);
+        placeArrival.setAddressPoint(scan.nextLine());// take vlue from address name arrival
+        trip.setPointArrived(placeArrival);//take value distance from place arrival
         System.out.print("Distance(Km) : ");
-        trip.setDistanceKM(Integer.parseInt(scan.nextLine()));
+        trip.setDistanceKM(Integer.parseInt(scan.nextLine())); //take value distance from DistanceKM
         System.out.print("Distance(m) : ");
-        trip.setDistanceM(Integer.parseInt(scan.nextLine()));
-        travelData.setRoute(trip);
+        trip.setDistanceM(Integer.parseInt(scan.nextLine()));//take value distance from DistanceM
+        travelData.setRoute(trip);// take value travel as trip
         
         return travelData;
     }

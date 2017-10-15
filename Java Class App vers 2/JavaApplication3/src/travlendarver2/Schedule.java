@@ -22,8 +22,8 @@ public class Schedule {
     }
     
     public Schedule input(){
-        Schedule schedule = new Schedule();
-        schedule.setListactivity(schedule.getListactivity());
+        Schedule schedule = new Schedule();// create new object schedule from class schedule
+        schedule.setListactivity(schedule.getListactivity());// keep value from list getactivity to setactivity
         return schedule;
     }
 
@@ -61,11 +61,11 @@ public class Schedule {
     
     void printActivity(ArrayList<Activity> listActivity)  {
         if(listActivity != null){
-            for(int i = 0; i<listActivity.size(); i++){
-                System.out.println("Activity's name: " + listActivity.get(i).getEventName());
-                System.out.println("From: " + listActivity.get(i).getRoute().getStartPoint().getNamePoint() + "(" + listActivity.get(i).getRoute().getStartPoint().getAddressPoint() + ")");
-                System.out.println("To: " + listActivity.get(i).getRoute().getPointArrived().getNamePoint() + "(" + listActivity.get(i).getRoute().getPointArrived().getAddressPoint() + ")");
-                System.out.println("Priority Scale: " + listActivity.get(i).getPriority());
+            for(int i = 0; i<listActivity.size(); i++){// trace listActivity as counter i
+                System.out.println("Activity's name: " + listActivity.get(i).getEventName());//print event name
+                System.out.println("From: " + listActivity.get(i).getRoute().getStartPoint().getNamePoint() + "(" + listActivity.get(i).getRoute().getStartPoint().getAddressPoint() + ")");// print name start location
+                System.out.println("To: " + listActivity.get(i).getRoute().getPointArrived().getNamePoint() + "(" + listActivity.get(i).getRoute().getPointArrived().getAddressPoint() + ")");// print name arrive location
+                System.out.println("Priority Scale: " + listActivity.get(i).getPriority());//print priority
             }
         }else{
             System.out.println("List is Empty");
@@ -73,11 +73,11 @@ public class Schedule {
         System.out.println();
     }
     
-    public static Comparator<Schedule> timeComparator = new Comparator<Schedule>() {
+    public static Comparator<Schedule> timeComparator = new Comparator<Schedule>() { // create new object timeComparator from Comparator
         @Override
         public int compare(Schedule mySchedule1, Schedule mySchedule2) {
-            Date time1 = mySchedule1.getTime();
-            Date time2 = mySchedule2.getTime();
+            Date time1 = mySchedule1.getTime(); // object time 1 keep value from mySchedule1.getTime
+            Date time2 = mySchedule2.getTime();// object time 2 keep value from mySchedule2.getTime
             
             return time1.compareTo(time2);
         }

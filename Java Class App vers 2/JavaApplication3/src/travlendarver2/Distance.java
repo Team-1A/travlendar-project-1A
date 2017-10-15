@@ -82,14 +82,20 @@ public class Distance {
     
     public void printRecommend(ArrayList<TransportationMode> listTransportationmode, ArrayList<Schedule> listSchedule, int choose, int index)    {
         System.out.println("Recommend Transportation mode");
-        for(int j = 0; j<listTransportationmode.size(); j++){
+        for(int j = 0; j<listTransportationmode.size(); j++){//to trace size listTransportationmode as counter j
+            // keep value to hours
         int hours = listSchedule.get(choose).getListactivity().get(index).getRoute().getDistanceKM()/listTransportationmode.get(j).getVelocity();
+            //keep value to minutes
         int minutes = listSchedule.get(choose).getListactivity().get(index).getRoute().getDistanceM()/(listTransportationmode.get(j).getVelocity()*(1000/60));
+            // keep value to totslminutes
         int totalMinutes = (hours*60) + minutes;
-        hours = hours + (minutes/60);
-        minutes = minutes%60;
+        hours = hours + (minutes/60);//hours keep value from hours and minute
+        minutes = minutes%60;//minutes keep value from minutes%60
+        // keep value from start event time hours to hours
         hours = listSchedule.get(choose).getListactivity().get(index).getStartEventtime().getHours() - hours;
+        // keep value from start event time minutes to minutes
         minutes = listSchedule.get(choose).getListactivity().get(index).getStartEventtime().getMinutes() - minutes;
+        //print estimation transportation and depature
         System.out.println(listTransportationmode.get(j).getTransportation() + " estimation " + totalMinutes + ", Departure: " + hours + "." + minutes);
         }//terjadi perhitungan
          System.out.println();
