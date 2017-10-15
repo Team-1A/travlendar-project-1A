@@ -5,18 +5,21 @@
         <title>Detail Schedule</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS-->
         <link href="css/style.css" rel="stylesheet">
-         <link href="css/schedule_list.css" rel="stylesheet">
+        <link href="css/schedule_list.css" rel="stylesheet">
         <link href="css/fullcalendar.min.css" rel="stylesheet">
         <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">   
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
-        <link rel="stylesheet" type="text/css" href="css/popup.css"><script type="text/javascript" src="js/moment.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/popup.css">
+        <!-- JAVASCRIPT-->
+        <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/fullcalendar.min.js"></script>
     
     </head>
-
+<!--script calendar-->
     <script>
 
     $(document).ready(function() {
@@ -79,7 +82,7 @@
 
 <!--isi dari sidebar-->
 
-<!--DETAIL SCHEDULE HAYA-->
+<!--Detail Schedule-->
 <div id="My Schedule" class="tabcontent">
     <div class="content">
       <div id="box">
@@ -301,7 +304,7 @@
       </div>
   </div>
 </div>
-
+<!--Script Vertical Tab-->
 <script>
       function openPages(evt, pageName) {
       // Declare all variables

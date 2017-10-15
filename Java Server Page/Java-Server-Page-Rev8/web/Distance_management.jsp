@@ -1,9 +1,14 @@
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <%@page contentType="text/html" pageEncoding = "UTF-8"%>
 
 <html>
     <head>
-        <title>Create Schedule</title>
+        <title>Distance Management</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSS-->
@@ -12,7 +17,7 @@
         <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">   
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
         <link rel="stylesheet" type="text/css" href="css/popup.css">
-        <!--Javascript-->
+        <!-- JAVASCRIPT-->
         <script type="text/javascript" src="css/popup.js"></script>     
         <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -20,9 +25,9 @@
         <script type="text/javascript" src="js/fullcalendar.min.js"></script>
     
     </head>
-<!--Script Calendar-->
+    
+<!--script calendar-->
     <script>
-
     $(document).ready(function() {
     
     $('#calendar').fullCalendar({
@@ -58,7 +63,7 @@
           title: 'Makan Sore',
           start: '2017-09-19T15:30:00',
           end: '2017-09-19T16:30:00'
-        },
+        }
       ]
     });
     
@@ -68,20 +73,19 @@
 
 
 <body>
-<!--header-->
-<div id="header">
-  <div class="logo"><!--logo travner-->
-    <img src="css/logo.png " width="150px" height="30px">
-  </div>
+<!--judul-->
+  <div id="header">
+    <div class="logo">
+      <img src="css/logo.png " width="150px" height="35px">
+    </div>
 </div>
-
 <a class="mobile">MENU</a>
 
 <!--sidebar-->
  <div class="tab">
-  <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule</button><!--My Schedule-->
-  <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar</button><!-- Calendar-->
-  <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data</button><!--Travel Data-->
+    <button class="tablinks" onclick="openPages(event, 'My Schedule')" >My Schedule</button>
+    <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar</button>
+    <button class="tablinks" onclick="openPages(event, 'Travel_Data')"id="defaultOpen">Travel Data</button>
 </div>
 
 <!--isi dari sidebar-->
@@ -89,28 +93,26 @@
 <!--My Schedule-->
 <div id="My Schedule" class="tabcontent">
     <div class="content">
-      <div id="box"><!--Kotak-->
-        <div class="box-top">My Schedule</div><!--Judul Kotak-->
-          <div class="box-panel"><!--Isi Kotak-->
+      <div id="box">
+        <div class="box-top">My Schedule</div>
+          <div class="box-panel">
             <h2>Create Schedule</h2>
-              <p>I want to create Schedule for :<p><!--Form Tanggal Schedule-->
+              <p>I want to create Schedule for :<p>
               
               <input class="waktu"  type="text" name="Date" placeholder="Date" required>
               <input class="waktu" type="text" name="Month" placeholder="Month" required>
               <input class="waktu" type="text" name="Year" placeholder="Year" required>
-              
-              <a href="detail_schedule.jsp"><button  class="add_button">Finish</button></a><!--Finish Button-->
-              <a href="index.jsp"><button  class="add_button">Back</button></a><!--Back button-->
-              <div class="activity"><br><br><br></div><!--Activity-->
-                  <div class="menunya2"><!--Add Activity Button-->
-                      <br><a href="add_activity.jsp">Add Activity</a>
+              <a href="detail_schedule.jsp"><button  class="add_button">Finish</button></a>
+              <a href="index.jsp"><button  class="add_button">Back</button></a>
+                <div class="activity"><br><br>
+                  <div class="menunya2">
+                    <a href="add_activity.jsp">Add Activity</a>
                   </div><br>
                  
                         
-                        <div id="div2_create_schedule"><!--Field Tabel Schedule-->
-                         <table id="table2_create_schedule"><!--tabel Schdule-->
+                        <div id="div2_create_schedule">
+                         <table id="table2_create_schedule">
                           <tr style="background-color:red; color:black">
-                              <!--Isi Tabel Lokasi-->
                               <th> Activity Name : Ke Bandara Soekarno Hatta<br>
                                  From : Rumah @Fatmawati<br>
                                  To : Bandara Soekarno-Hatta @Tangerang</th>
@@ -119,8 +121,8 @@
                                  <th> </th>
                                  <th> </th>
                                  <th> </th>
-                                 <!--Modal Delete Lokasi-->
                             <th>
+                                <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
                                 <img src="icon/trash.png"></button>
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
@@ -248,205 +250,147 @@
   </div>
 </div>
 	
-<!--Menuju Page Calendar-->
-<div id="Calendar" class="tabcontent">
+<!--Calendar-->
+<div id="Calendar" class="tabcontent"><!--menuju page calendar-->
   <div class="content">
     <div id="box"><!--Kotak-->
       <div class="box-top">Calendar</div><!--Judul Kotak-->
     <div class="box-panel"><!--Isi Kotak-->
-      <div id='calendar'></div><!--memanggil calendar-->
+      <div id='calendar'></div><!--manampilkan calendar-->
       </div>
     </div>
   </div>
 </div>
 
-<!--Menuju Page Travel Data-->
-<div id="Travel_Data" class="tabcontent">
+
+<div id="Travel_Data" class="tabcontent"><!--menuju page Travel Data -->
  <div class="content">
-  <div id="box"><!--Kotak-->
-    <div class="box-top">Travel Data</div><!--judul Kotak-->
+  <div id="box"><!--kotak-->
+    <div class="box-top">Travel Data</div><!--Judul kotak-->
     
      <div class="box-panel"><!--Isi Kotak-->
       <div class="menu_atas"><!--Menu bar-->
           
-          <div class="menunya"><!--Isi dari menu bar-->
-            <div class="point"><!--pointer Menu Bar-->
+          <div class="menunya"><!-- konten dari menu bar-->
               <a href="location.jsp " id="defaultOpen" style="color: white"><img src="css/icon/location.png "><br>
-                  <span>Location</span></a><!--Menu Bar (Location)-->
+                  <span>Location</span></a>
+            
+            </div>
+        <div class="menunya"><!-- konten dari menu bar-->
+            <div class="point"><!--pointer menu bar-->
+                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="css/icon/distance.png "><br>
+                  <span>Distance Management</span></a><!--Menu Bar (Location)-->
             </div>
         </div>
-        
-        <div class="menunya"><!--Menu Bar (Distance Management)-->
-                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="css/icon/distance.png "><br>
-                  <span>Distance Management</span></a>
-        </div>
-        
           
         
         
       </div>
     </div>
      
-    <div class="box-panel">
-    
-         <div class="kiri"><!--Field Kiri-->
-    
-   
-                        <div id="div2_travel"><!--field tabel lokasi-->
-                         <table id="table2_travel"><!--isi tabel lokasi-->
-                            
-                            <tr>
-                            <th>Rumah Fatmawati</th>
-                            <th></th>
-                            <th></th>
-                            <th> </th>
-                            
-                            <th>
-                                <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
-
-                              <div id="id02" class="modal">
-  
-                              <form class="modal-content animate" action="/action_page.php">
-                              <div class="imgcontainer">
-      
-    
-                              <div class="container">
+    <div class="box-panel"><!--Isi Kotak-->
+        <div class="kiri"><!--field kiri-->
+            <div id="div1_travel"><!--field tabel lokasi-->
+                <table id="table1_travel"><!--isi tabel lokasi-->
+                    <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Distance</th> 
+                    <th></th>
+                    </tr>
+                </table>
+            </div>
+            <div id="div2_travel"><!--field tabel lokasi-->
+                <table id="table2_travel"><!--isi tabel lokasi-->
+            </form>
+                    <tr>
+                    <th>Rumah Fatmawati</th>
+                    <th>Bandara Soekarno-Hatta, Tangerang</th>
+                    <th>40km</th>
+                    <th>
+                        <!--Modal Delete Lokasi-->
+                        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+                        <div id="id02" class="modal">
+                            <form class="modal-content animate" action="/action_page.php">
+                                <div class="imgcontainer">
+                                    <div class="container">
                               <label><b>LOCATION DELETION</b></label>
       
                              <label><p>Are you sure want to delete it?</p></label>
+                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
+                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
+                             </form>
+                    </th>
+                    </tr>
+                    <tr>
+                    <th>Bandara Soekarno-Hatta, Tangerang</th>
+                    <th>Bandara Haluoleo, Kadia</th>
+                    <th>2600km</th>
+                    <th>
+                        <!--Modal Delete Lokasi-->
+                        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+                        <div id="id02" class="modal">
+                            <form class="modal-content animate" action="/action_page.php">
+                                <div class="imgcontainer">
+                                    <div class="container">
+                                        <label><b>LOCATION DELETION</b></label>
+                                        <label><p>Are you sure want to delete it?</p></label>
+                                        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
+                                        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
+                            </form>
+                        </th>
+                        </tr>
+                        <tr>
+                        <th>Bandara Haluoleo, Kadia</th>
+                        <th>Hotel "X" Kadia</th>
+                        <th>21km</th>
+                        <th>
+                            <!--Modal Delete Lokasi-->
+                            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+                            <div id="id02" class="modal">
+                                <form class="modal-content animate" action="/action_page.php">
+                                    <div class="imgcontainer">
+                                        <div class="container">
+                                            <label><b>LOCATION DELETION</b></label>
+                                            <label><p>Are you sure want to delete it?</p></label>
+                                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
+                                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
+                                </form>
 
-                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
-                          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
-</form>
-
-                              </th>
-                          </tr>
-
-                          <tr>
-                            <th>Bandara Soekarno-Hatta, Tangerang</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            
-                  
-                            <th>
-                                 <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
-
-                              <div id="id02" class="modal">
-  
-                              <form class="modal-content animate" action="/action_page.php">
-                              <div class="imgcontainer">
-      
-    
-                              <div class="container">
-                              <label><b>LOCATION DELETION</b></label>
-      
-                             <label><p>Are you sure want to delete it?</p></label>
-
-                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
-                          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
-</form>
-
-                              </th>
-                          <tr>
-                            <th>Bandara Haluoleo, Kadia</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                      
-                            <th>
-                                 <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
-
-                              <div id="id02" class="modal">
-  
-                              <form class="modal-content animate" action="/action_page.php">
-                              <div class="imgcontainer">
-      
-    
-                              <div class="container">
-                              <label><b>LOCATION DELETION</b></label>
-      
-                             <label><p>Are you sure want to delete it?</p></label>
-
-                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
-                          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
-</form>
-
-                              </th>
-
-
-                          <tr>
-                            <th>Hotel "X" Kadia</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                       
-                            <th>
-                                 <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
-
-                              <div id="id02" class="modal">
-  
-                              <form class="modal-content animate" action="/action_page.php">
-                              <div class="imgcontainer">
-      
-    
-                              <div class="container">
-                              <label><b>LOCATION DELETION</b></label>
-      
-                             <label><p>Are you sure want to delete it?</p></label>
-
-                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
-                          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
-</form>
-                              </th>
-                              
-                              <tr>
-                            <th>Restoran, Poasia</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                       
-                            <th>
-                                 <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
-
-                              <div id="id02" class="modal">
-  
-                              <form class="modal-content animate" action="/action_page.php">
-                              <div class="imgcontainer">
-      
-    
-                              <div class="container">
-                              <label><b>LOCATION DELETION</b></label>
-      
-                             <label><p>Are you sure want to delete it?</p></label>
-
-                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
-                          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
-</form>
-                              </th>
-                                         
-                          </table>                          
+                        </th>
+                        </tr>
+                        <tr>
+                        <th>Hotel "X" Kadia</th>
+                        <th>Restoran Poasia</th>
+                        <th>200m</th>
+                        <th>
+                            <!--Modal Delete Lokasi-->
+                            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+                            <div id="id02" class="modal">
+                                <form class="modal-content animate" action="/action_page.php">
+                                    <div class="imgcontainer">
+                                        <div class="container">
+                                            <label><b>LOCATION DELETION</b></label>
+                                            <label><p>Are you sure want to delete it?</p></label>
+                                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
+                                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
+                                </form>
+                            </th>
+                            </tr>             
+</table>                          
                         </div>
-
-
-    </div>
-  
-  <div class="kanan"> <!--Field Kanan--> 
-    <form action="#" class="location_form" method="post"><!--add location-->
-      <h2>Add Location</h2>
-          <span>Place's Name</span><br><!--Form Place name-->
-          <input class="kotak_lo" type="text"  name="#" placeholder="Place's Name">
-          
-          <span>Address</span><br><!--Form Address-->
-          <input class="kotak_lo" type="text"  name="#" placeholder="Address">
-           <input class="add_button" type="submit" name="#" value="Add"><!--add Button-->
-          
-
+                                    </div>
+                                    <div class="kanan">
+                                        <form action="#" class="location_form" method="post">
+                                            <h2>Add Distance</h2>
+                                            <span>From</span><br>
+                                            <input class="kotak_lo" type="text"  name="#" placeholder="insert name"><input class="kotak_lo" type="text"  name="#" placeholder="insert address"><br>
+                                            <span>To</span><br>
+                                            <input class="kotak_lo" type="text"  name="#" placeholder="insert name"><input class="kotak_lo" type="text"  name="#" placeholder="insert address"><br>
+                                            <span>Distance</span><br>
+                                            <input class="ktk_distance" type="text"  name="#" placeholder="km">
+                                            <input class="ktk_distance" type="text"  name="#" placeholder="m"><br><br>
+                                            <input class="add_button" type="submit" name="#" value="Add">
             </form>
           </div>
         </div>
@@ -455,7 +399,6 @@
   </div> 
  </div>
 </div>
-                                  
 <!--Script Vertical Tab-->
 <script>
       function openPages(evt, pageName) {

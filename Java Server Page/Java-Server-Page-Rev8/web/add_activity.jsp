@@ -5,11 +5,13 @@
         <title>Add Activity</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS-->
         <link href="css/style.css" rel="stylesheet">
         <link href="css/fullcalendar.min.css" rel="stylesheet">
         <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
         <link rel="stylesheet" type="text/css" href="css/popup.css">
         <link href="css/responsive.css" rel="stylesheet">			
+        <!-- JAVASCRIPT-->
         <script type="text/javascript" src="css/popup.js"></script>
         <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -17,7 +19,7 @@
         <script type="text/javascript" src="js/fullcalendar.min.js"></script>
     </head>
     <body>
-
+<!--script calendar-->
 <script>
   $(document).ready(function() {
     
@@ -54,7 +56,7 @@
           title: 'Makan Sore',
           start: '2017-09-19T15:30:00',
           end: '2017-09-19T16:30:00'
-        },
+        }
       ]
     });
     
@@ -66,7 +68,7 @@
 <body>
 <!--header-->
 <div id="header">
-  <div class="logo">
+  <div class="logo"><!--logo travner-->
     <img src="css/logo.png " width="150px" height="30px">
   </div>
 </div>
@@ -76,30 +78,27 @@
 
 <!--sidebar-->
  <div class="tab">
-  <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule</button>
-  <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar</button>
-  <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data</button>
+  <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule</button><!--My Schedule-->
+  <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar</button><!-- Calendar-->
+  <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data</button><!--Travel Data-->
 </div>
 
 
 <div id="My Schedule" class="tabcontent">
   
-    <div id="box">
-      <div class="box-top">My Schedule</div>
-    <div class="box-panel">
-      
-      
+    <div id="box"><!--Kotak-->
+      <div class="box-top">My Schedule</div><!--Kotak Judul-->
+    <div class="box-panel"><!--Isi kotak-->
 
-       <!-- <input class="add_button" type="submit" name="#" value="Add" >-->
           <!--add activity-->
         <div class = add_activity>
           <h2>Add Activity</h2>
         </div>
         
-            <span>Activity's Name</span><br>
-            <input class="kotak_lo" type="text"   name="#" placeholder="Add your activity"><br>
+            <span>Activity's Name</span><br><!--Activity Name-->
+            <input class="kotak_lo" type="text"   name="#" placeholder="Add your activity"><br><!--Form Activity Name-->
           
-            <span>Starting Point - Destination </span><br>
+            <span>Starting Point - Destination </span><br><!--Form dropdown Starting Point - Destination-->
             <select name="location" >
                   <option value="Rumah Fatmawati" >Rumah Fatmawati</option>
                   <option value="Bandara Soekarno Hatta, Tangerang ">Bandara Soekarno Hatta, Tangerang </option>
@@ -108,23 +107,23 @@
                   <option value="Restoran Poasia">Restoran Poasia</option>
             </select><br>
             
-            <span>What time the event started</span><br>
-            <input class="time" type="text"  name="#" placeholder="Hour">
-            <input class="time" type="text"  name="#" placeholder="Minutes"><br>
+            <span>What time the event started?</span><br><!--event dimulai-->
+            <input class="time" type="text"  name="#" placeholder="Hour"><!--Form Event dimulai (Jam) -->
+            <input class="time" type="text"  name="#" placeholder="Minutes"><br><!--Form Event dimulai(minutes)-->
           
-            <span>What time the event ended</span><br>
+            <span>What time the event ended?</span><br><!--Event berakhir-->
             <input class="time" type="text"  name="#" placeholder="Hour">
             <input class="time" type="text"  name="#" placeholder="Minutes"><br>
     
-            <span>Choose Scale Priority</span><br>
+            <span>Choose Scale Priority</span><br><!--Pilih Skala Prioritas -->
               
-              <select name="transportation" >
+              <select name="Priotity" ><!--Form dropdown Priority-->
                   <option value="Urgent">Urgent</option>
                   <option value="Important">Important</option>
                   <option value="Necessary">Necessary</option>
               </select><br>
-              <a href="create_schedule.jsp"><button  class="add_button">Add</button></a>
-              <a href="create_schedule.jsp"><button  class="add_button">Back</button></a>
+              <a href="create_schedule.jsp"><button  class="add_button">Add</button></a><!--Add Button-->
+              <a href="create_schedule.jsp"><button  class="add_button">Back</button></a><!--Back Button-->
             <br><br>
           </div>
         </div>   
@@ -133,44 +132,44 @@
   </div>
 </div>
 	
-
-  <div id="Calendar" class="tabcontent">
+<!--Calendar-->
+  <div id="Calendar" class="tabcontent"><!--menuju page calendar-->
     <div class="content">
-      <div id="box">
-        <div class="box-top">Calendar</div>
-      <div class="box-panel">
-        <div id='calendar'></div>
-     </div>
+      <div id="box"><!--Kotak-->
+        <div class="box-top">Calendar</div><!--Judul Kotak-->
+            <div class="box-panel"><!--Isi Kotak-->
+                <div id='calendar'></div><!--manampilkan calendar-->
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+ </div>
 
 
-<div id="Travel_Data" class="tabcontent">
+<div id="Travel_Data" class="tabcontent"><!--menuju page Travel Data -->
  <div class="content">
-  <div id="box">
-    <div class="box-top">Travel Data</div>
-     <div class="box-panel">
-         <div class="menu_atas">
-             <div class="menunya">
-            <div class="point">
+  <div id="box"><!--kotak-->
+    <div class="box-top">Travel Data</div><!--Judul kotak-->
+       <div class="box-panel"><!--Isi Kotak-->
+          <div class="menu_atas"><!--Menu bar-->
+              
+        <div class="menunya"><!-- konten dari menu bar-->
+            <div class="point"><!--pointer menu bar-->
               <a href="location.jsp " id="defaultOpen" style="color: white"><img src="css/icon/location.png "><br>
-                  <span>Location</span></a>
+                  <span>Location</span></a><!--Menu Bar (Location)-->
             </div>
         </div>
         
         <div class="menunya">
-                <a href="estimation.jsp " id="defaultOpen" style="color: white"><img src="css/icon/distance.png "><br>
-                  <span>Distance Management</span></a>
-        </div>
-        
+                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="css/icon/distance.png "><br>
+                  <span>Distance Management</span></a><!--Menu Bar (Distance Management)-->
+           </div>
          </div>
     
-    <div class="kiri">
+    <div class="kiri"><!--field kiri-->
     
    
-                        <div id="div2_travel">
-                         <table id="table2_travel">
+                        <div id="div2_travel"><!--field tabel lokasi-->
+                         <table id="table2_travel"><!--isi tabel lokasi-->
                             
                             <tr>
                             <th>Rumah Fatmawati</th>
@@ -179,6 +178,7 @@
                             <th> </th>
                             
                             <th>
+                                <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
@@ -207,6 +207,7 @@
                             
                   
                             <th>
+                                <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
@@ -232,6 +233,7 @@
                             <th></th>
                       
                             <th>
+                                <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
@@ -259,6 +261,7 @@
                             <th></th>
                        
                             <th>
+                                <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
@@ -284,6 +287,7 @@
                             <th></th>
                        
                             <th>
+                                <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
@@ -308,15 +312,15 @@
 
     </div>
   
-  <div class="kanan">
-    <form action="#" class="location_form" method="post">
+  <div class="kanan"><!--Field Kanan-->
+    <form action="#" class="location_form" method="post"><!--add location-->
       <h2>Add Location</h2>
-          <span>Place's Name</span><br>
+          <span>Place's Name</span><br><!--Form Place name-->
           <input class="kotak_lo" type="text"  name="#" placeholder="Place's Name">
           
-          <span>Address</span><br>
+          <span>Address</span><br><!--Form Address-->
           <input class="kotak_lo" type="text"  name="#" placeholder="Address">
-           <input class="add_button" type="submit" name="#" value="Add">
+           <input class="add_button" type="submit" name="#" value="Add"><!--add Button-->
           
 
             </form>
@@ -327,7 +331,8 @@
   </div> 
  </div>
 </div>
-                                  
+
+<!--Script Vertical Tab-->
 <script>
       function openPages(evt, pageName) {
       // Declare all variables
