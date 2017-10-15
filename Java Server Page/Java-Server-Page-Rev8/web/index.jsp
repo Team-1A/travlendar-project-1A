@@ -22,6 +22,7 @@ and open the template in the editor.
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/fullcalendar.min.js"></script>
 		</head>
+    
     <script>
 
   $(document).ready(function() {
