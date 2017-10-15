@@ -5,8 +5,6 @@
  */
 package travlendarver2;
 
-import java.util.*;
-
 /**
  *
  * @author Rohmat Dasuki

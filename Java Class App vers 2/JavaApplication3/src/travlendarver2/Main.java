@@ -30,25 +30,31 @@ public class Main {
         TransportationMode transportationMode1 = new TransportationMode();
         transportationMode1.setTransportation("Plane");
         transportationMode1.setVelocity(990);
+        
         listTransportationmode.add(transportationMode1);
         TransportationMode transportationMode2 = new TransportationMode();
         transportationMode2.setTransportation("Car");
         transportationMode2.setVelocity(60);
+        
         listTransportationmode.add(transportationMode2);
         TransportationMode transportationMode3 = new TransportationMode();
         transportationMode3.setTransportation("Motorcycle");
         transportationMode3.setVelocity(50);
+        
         listTransportationmode.add(transportationMode3);
         TransportationMode transportationMode4 = new TransportationMode();
         transportationMode4.setTransportation("Bike");
         transportationMode4.setVelocity(15);
+        
         listTransportationmode.add(transportationMode4);
         TransportationMode transportationMode5 = new TransportationMode();
         transportationMode5.setTransportation("Walk");
         transportationMode5.setVelocity(1);
+        
         listTransportationmode.add(transportationMode5);
         ArrayList<MySchedule> listSchedule = new ArrayList<>();
         //File dimasukan ke array list diatas
+        
         do{
             System.out.println("Menu");
             System.out.println("1. Travel Data");
@@ -73,6 +79,7 @@ public class Main {
                         System.out.println("1. Input Travel Data");
                         System.out.println("2. Back");
                         System.out.print("Choose : ");
+                        
                         switch(Integer.parseInt(scan.next())){
                             case 1:{
                                 listRoute.add(travelData.inputTravelData());
