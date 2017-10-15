@@ -12,17 +12,17 @@ import java.util.*;
  *
  * @author Rohmat Dasuki
  */
-public class MySchedule {
+public class Schedule {
     private Date time;
     private ArrayList<Activity> listactivity;
     
-    public MySchedule(){
+    public Schedule(){
         time = null;
         listactivity = null;
     }
     
-    public MySchedule input(){
-        MySchedule schedule = new MySchedule();
+    public Schedule input(){
+        Schedule schedule = new Schedule();
         schedule.setListactivity(schedule.getListactivity());
         return schedule;
     }
@@ -73,9 +73,9 @@ public class MySchedule {
         System.out.println();
     }
     
-    public static Comparator<MySchedule> timeComparator = new Comparator<MySchedule>() {
+    public static Comparator<Schedule> timeComparator = new Comparator<Schedule>() {
         @Override
-        public int compare(MySchedule mySchedule1, MySchedule mySchedule2) {
+        public int compare(Schedule mySchedule1, Schedule mySchedule2) {
             Date time1 = mySchedule1.getTime();
             Date time2 = mySchedule2.getTime();
             
