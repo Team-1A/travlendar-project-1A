@@ -158,7 +158,7 @@ public class Travner {
                                             System.out.println("Activity's name: " + listSchedule.get(choose).getListactivity().get(i).getEventName());
                                             System.out.println("From: " + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getNamePoint() + "@" + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getAddressPoint());
                                             System.out.println("To: " + listSchedule.get(choose).getListactivity().get(i).getRoute().getPointArrived().getNamePoint() + "@" + listSchedule.get(choose).getListactivity().get(i).getRoute().getPointArrived().getAddressPoint());
-                                            System.out.println("Time: " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getStartEventtime()) + " - " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getEndEventtime()));
+                                            System.out.println("Time: " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getStartEventTime()) + " - " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getEndEventTime()));
                                             //System.out.println("Priority Scale: " + listSchedule.get(choose).getListactivity().get(i).getPriority());
                                             listSchedule.get(choose).getListactivity().get(i).getRoute().printRecommend(listTransportationmode, listSchedule, choose, i);
                                         }

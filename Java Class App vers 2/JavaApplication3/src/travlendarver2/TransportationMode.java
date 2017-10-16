@@ -10,8 +10,25 @@ package travlendarver2;
  * @author Rohmat Dasuki
  */
 public class TransportationMode {
-    private String transportation;
+    
+    private String transportation_Code;
+    private String transportation_Name;
     private int velocity;
+
+    /**
+     * @return the transportation_Code
+     */
+    public String getTransportation_Code() {
+        return transportation_Code;
+    }
+
+    /**
+     * @param transportation_Code the transportation_Code to set
+     */
+    public void setTransportation_Code(String transportation_Code) {
+        this.transportation_Code = transportation_Code;
+    }
+    
     /*
         Method inputTransportation() berfungsi untuk melakukan input moda transportasi dan kecepatan rata-rata
     */
@@ -20,14 +37,14 @@ public class TransportationMode {
      * @return the transportation
      */
     public String getTransportation() {
-        return transportation;
+        return transportation_Name;
     }
 
     /**
      * @param transportation the transportation to set
      */
-    public void setTransportation(String transportation) {
-        this.transportation = transportation;
+    public void setTransportation(String transportation_Name) {
+        this.transportation_Name = transportation_Name;
     }
 
     /**
