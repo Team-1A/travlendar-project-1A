@@ -5,6 +5,7 @@
  */
 package travlendarver2;
 
+import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -15,10 +16,11 @@ import java.util.*;
  */
 class Activity {
     private String eventName;
-    private int priority;
+    private Integer priority;
     private Distance route;
-    private Date startEventtime;
-    private Date endEventtime;
+    private Date eventDate;
+    private Time startEventTime;
+    private Time endEventTime;
     
     /*
         Constructor pada class Activity
@@ -27,8 +29,8 @@ class Activity {
         eventName = null;
         priority = 0;
         route = null;
-        startEventtime = null;
-        endEventtime = null;
+        startEventTime = null;
+        endEventTime = null;
     }   
 
     /**
@@ -60,38 +62,52 @@ class Activity {
     }
 
     /**
-     * @return the startEventtime
+     * @return the route
      */
-    public Date getStartEventtime() {
-        return startEventtime;
+    public Distance getRoute() {
+        return route;
     }
 
     /**
-     * @param startEventtime the startEventtime to set
+     * @param route the route to set
      */
-    public void setStartEventtime(Date startEventtime) {
-        this.startEventtime = startEventtime;
+    public void setRoute(Distance route) {
+        this.route = route;
     }
 
     /**
-     * @return the endEventtime
+     * @return the startEventTime
      */
-    public Date getEndEventtime() {
-        return endEventtime;
+    public Time getStartEventTime() {
+        return startEventTime;
     }
 
     /**
-     * @param endEventtime the endEventtime to set
+     * @param startEventTime the startEventTime to set
      */
-    public void setEndEventtime(Date endEventtime) {
-        this.endEventtime = endEventtime;
+    public void setStartEventTime(Time startEventTime) {
+        this.startEventTime = startEventTime;
+    }
+
+    /**
+     * @return the endEventTime
+     */
+    public Time getEndEventTime() {
+        return endEventTime;
+    }
+
+    /**
+     * @param endEventTime the endEventTime to set
+     */
+    public void setEndEventTime(Time endEventTime) {
+        this.endEventTime = endEventTime;
     }
     /**
-     * @param SetTime the endEventtime to set
+     * @param SetTime the endEventTime to set
      */
-    public void setTime(Date startEventtime, Date endEventtime){
-        this.setStartEventtime(startEventtime);
-        this.setEndEventtime(endEventtime);
+    public void setTime(Time startEventTime, Time endEventTime){
+        this.setStartEventTime(startEventTime);
+        this.setEndEventTime(endEventTime);
     }
     
     public Activity inputActivity(ArrayList<TravelData> listRoute) throws ParseException {
@@ -113,11 +129,11 @@ class Activity {
         
         System.out.print("\nInput start event(hh.mm) : ");
         //take Date time for start event
-        activity.setStartEventtime((Date) formatTime.parseObject(scan.nextLine()));
+        activity.setStartEventTime((Time) formatTime.parseObject(scan.nextLine()));
         
         System.out.print("\nInput end event(hh.mm) : ");
         //take Date time for end event
-        activity.setEndEventtime((Date) formatTime.parseObject(scan.nextLine()));
+        activity.setEndEventTime((Time) formatTime.parseObject(scan.nextLine()));
         
         System.out.print("Prioritas(1-5) : ");
         //take value priority 
@@ -125,26 +141,12 @@ class Activity {
         
         return activity;
     }
-
-    /**
-     * @return the route
-     */
-    public Distance getRoute() {
-        return route;
-    }
-
-    /**
-     * @param route the route to set
-     */
-    public void setRoute(Distance route) {
-        this.route = route;
-    }
     
     public static Comparator<Activity> activityComparator = new Comparator<Activity>() {//public create new object from Comparator
         @Override
         public int compare(Activity activity1, Activity activity2) {
-            Date startDate1 = activity1.getStartEventtime();// create object start event
-            Date startDate2 = activity2.getStartEventtime();// create object end event
+            Time startDate1 = activity1.getStartEventTime();// create object start event
+            Time startDate2 = activity2.getStartEventTime();// create object end event
             
             return startDate1.compareTo(startDate2);
         }

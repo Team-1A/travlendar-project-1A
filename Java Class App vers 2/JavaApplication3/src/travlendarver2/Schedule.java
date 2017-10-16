@@ -5,7 +5,6 @@
  */
 package travlendarver2;
 
-import java.text.*;
 import java.util.*;
 
 /**

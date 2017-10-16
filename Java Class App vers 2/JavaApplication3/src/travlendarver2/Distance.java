@@ -13,13 +13,13 @@ import java.util.ArrayList;
  */
 public class Distance {
     private Location startPoint;
-    private Location pointArrived;
-    private int distanceKM;
-    private int distanceM;
+    private Location destinationPoint;
+    private Integer distanceKM;
+    private Integer distanceM;
     
     public Distance(){
         startPoint= null;
-        pointArrived = null;
+        destinationPoint = null;
         distanceKM = 0;
         distanceM = 0;
     }
@@ -42,14 +42,14 @@ public class Distance {
      * @return the pointArrived
      */
     public Location getPointArrived() {
-        return pointArrived;
+        return destinationPoint;
     }
 
     /**
      * @param pointArrived the pointArrived to set
      */
-    public void setPointArrived(Location pointArrived) {
-        this.pointArrived = pointArrived;
+    public void setPointArrived(Location destinationPoint) {
+        this.destinationPoint = destinationPoint;
     }
 
     /**
@@ -92,9 +92,9 @@ public class Distance {
         hours = hours + (minutes/60);//hours keep value from hours and minute
         minutes = minutes%60;//minutes keep value from minutes%60
         // keep value from start event time hours to hours
-        hours = listSchedule.get(choose).getListactivity().get(index).getStartEventtime().getHours() - hours;
+        hours = listSchedule.get(choose).getListactivity().get(index).getStartEventTime().getHours() - hours;
         // keep value from start event time minutes to minutes
-        minutes = listSchedule.get(choose).getListactivity().get(index).getStartEventtime().getMinutes() - minutes;
+        minutes = listSchedule.get(choose).getListactivity().get(index).getStartEventTime().getMinutes() - minutes;
         //print estimation transportation and depature
         System.out.println(listTransportationmode.get(j).getTransportation() + " estimation " + totalMinutes + ", Departure: " + hours + "." + minutes);
         }//terjadi perhitungan

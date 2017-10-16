@@ -5,18 +5,30 @@
  */
 package travlendarver2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
 /**
  *
  * @author Rohmat Dasuki
  */
 public class Location {
+    
+    private Integer id_Location;
     private String namePoint;
     private String addressPoint;
+    
+    /**
+     * @return the id_Location
+     */
+    public int getId_Location() {
+        return id_Location;
+    }
+
+    /**
+     * @param id_Location the id_Location to set
+     */
+    public void setId_Location(int id_Location) {
+        this.id_Location = id_Location;
+    }
+    
     /*
         Getter dan Settter pada class Location
     */
