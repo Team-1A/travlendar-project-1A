@@ -80,8 +80,8 @@ button:hover {
 
 /* Add Zoom Animation */
 .animate{
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
+    -webkit-animation: animatezoom 0s;
+    animation: animatezoom 0s;
 }
 
 @-webkit-keyframes animatezoom {
