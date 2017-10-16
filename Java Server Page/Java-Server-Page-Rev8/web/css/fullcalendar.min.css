@@ -393,7 +393,7 @@ a.fc-more:hover {
 }
 .fc-now-indicator {
  position:absolute;
- border:0 solid red
+ border:0 solid red;
 }
 .fc-icon:after,.fc-toolbar button {
  position:relative
@@ -414,10 +414,10 @@ a.fc-more:hover {
  border-style:solid
 }
 .fc-unthemed .fc-divider,.fc-unthemed .fc-list-heading td,.fc-unthemed .fc-popover .fc-header {
- background:#eee
+ background:#eee;
 }
 .fc-unthemed td.fc-today {
- background:#fcf8e3
+ background:#fcf8e3;
 }
 .fc-unthemed .fc-disabled-day {
  background:#d7d7d7;
