@@ -6,8 +6,11 @@
 package travlendarver2;
 
 import static java.lang.System.exit;
+import com.mysql.jdbc.Connection;
 import java.text.*;
 import java.util.*;
+import travlendarver2DAO.LocationDAO;
+import travlendarver2DAO.TransportationModeDAO;
 
 /**
  *
@@ -21,6 +24,7 @@ public class Travner {
      */
     public static void main(String[] args) throws ParseException {
         // TODO code application logic here        
+        Connection con = TransportationModeDAO.getConnection();
         Scanner scan = new Scanner(System.in);
         SimpleDateFormat formatDate = new SimpleDateFormat("dd/M/yyyy");
         boolean loopMenu = true;
@@ -31,27 +35,35 @@ public class Travner {
         transportationMode1.setTransportation("Plane");
         transportationMode1.setVelocity(990);
         
-        listTransportationmode.add(transportationMode1);
-        TransportationMode transportationMode2 = new TransportationMode();
-        transportationMode2.setTransportation("Car");
-        transportationMode2.setVelocity(60);
+        listTransportationmode = (ArrayList<TransportationMode>) TransportationModeDAO.getAll();
         
-        listTransportationmode.add(transportationMode2);
-        TransportationMode transportationMode3 = new TransportationMode();
-        transportationMode3.setTransportation("Motorcycle");
-        transportationMode3.setVelocity(50);
-        
-        listTransportationmode.add(transportationMode3);
-        TransportationMode transportationMode4 = new TransportationMode();
-        transportationMode4.setTransportation("Bike");
-        transportationMode4.setVelocity(15);
-        
-        listTransportationmode.add(transportationMode4);
-        TransportationMode transportationMode5 = new TransportationMode();
-        transportationMode5.setTransportation("Walk");
-        transportationMode5.setVelocity(1);
-        
-        listTransportationmode.add(transportationMode5);
+        Location loc = new Location();
+        loc.setNamePoint("BEC");
+        loc.setAddressPoint("Jl. Purnawarman No.21");
+        LocationDAO.save(loc);
+//        listTransportationmode.add(transportationMode1);
+//        TransportationMode transportationMode2 = new TransportationMode();
+//        transportationMode2.setTransportation("Car");
+//        transportationMode2.setVelocity(60);
+//        
+//        listTransportationmode.add(transportationMode2);
+//        TransportationMode transportationMode3 = new TransportationMode();
+//        transportationMode3.setTransportation("Motorcycle");
+//        transportationMode3.setVelocity(50);
+//        
+//        listTransportationmode.add(transportationMode3);
+//        TransportationMode transportationMode4 = new TransportationMode();
+//        transportationMode4.setTransportation("Bike");
+//        transportationMode4.setVelocity(15);
+//        
+//        TransportationModeDAO.save(transportationMode4);
+//        
+//        listTransportationmode.add(transportationMode4);
+//        TransportationMode transportationMode5 = new TransportationMode();
+//        transportationMode5.setTransportation("Walk");
+//        transportationMode5.setVelocity(1);
+//        
+//        listTransportationmode.add(transportationMode5);
         ArrayList<Schedule> listSchedule = new ArrayList<>();
         //File dimasukan ke array list diatas
         

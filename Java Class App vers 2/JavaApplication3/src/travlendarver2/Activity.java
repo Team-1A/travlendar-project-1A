@@ -15,7 +15,7 @@ import java.util.*;
  *
  * @author Rohmat Dasuki
  */
-class Activity {
+public class Activity {
     private String eventName;
     private Integer priority;
     private Distance route;
