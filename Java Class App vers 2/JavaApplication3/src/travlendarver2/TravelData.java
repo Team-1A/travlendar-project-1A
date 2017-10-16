@@ -25,14 +25,14 @@ public class TravelData {
         Location placeStart = new Location();//create new object placeStart from class location
         Location placeArrival = new Location();// create new object placeArrival from location
         System.out.print("Start point name : ");
-        placeStart.setLocation_Name(scan.nextLine());// take value name start event
+        placeStart.setNamePoint(scan.nextLine());// take value name start event
         System.out.print("Start point address : ");
-        placeStart.setLocation_Address(scan.nextLine());// take value name arrive event 
+        placeStart.setAddressPoint(scan.nextLine());// take value name arrive event 
         trip.setStartPoint(placeStart);//take value distance from place start
         System.out.print("Arrival point name : ");
-        placeArrival.setLocation_Name(scan.nextLine());// take value from place name arrival 
+        placeArrival.setNamePoint(scan.nextLine());// take value from place name arrival 
         System.out.print("Arrival point address : ");
-        placeArrival.setLocation_Address(scan.nextLine());// take vlue from address name arrival
+        placeArrival.setAddressPoint(scan.nextLine());// take vlue from address name arrival
         trip.setPointArrived(placeArrival);//take value distance from place arrival
         System.out.print("Distance(Km) : ");
         trip.setDistanceKM(Integer.parseInt(scan.nextLine())); //take value distance from DistanceKM

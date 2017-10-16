@@ -5,56 +5,52 @@
  */
 package travlendarver2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  *
  * @author Rohmat Dasuki
  */
 public class Location {
-    
-    private Integer id_Location;
-    private String location_Name;
-    private String location_Address;
-    
-    /**
-     * @return the ID_Location
-     */
-    public Integer getID_Location() {
-        return id_Location;
+    private String namePoint;
+    private String addressPoint;
+    /*
+        Getter dan Settter pada class Location
+    */
+    public Location(){
+        namePoint = null;
+        addressPoint = null;
     }
 
     /**
-     * @param id_Location the ID_Location to set
+     * @return the namePoint
      */
-    public void setID_Location(Integer id_Location) {
-        this.id_Location = id_Location;
+    public String getNamePoint() {
+        return namePoint;
     }
 
     /**
-     * @return the Location_Name
+     * @param namePoint the namePoint to set
      */
-    public String getLocation_Name() {
-        return location_Name;
+    public void setNamePoint(String namePoint) {
+        this.namePoint = namePoint;
     }
 
     /**
-     * @param location_Name the Location_Name to set
+     * @return the addressPoint
      */
-    public void setLocation_Name(String location_Name) {
-        this.location_Name = location_Name;
+    public String getAddressPoint() {
+        return addressPoint;
     }
 
     /**
-     * @return the Location_Address
+     * @param addressPoint the addressPoint to set
      */
-    public String getLocation_Address() {
-        return location_Address;
-    }
-
-    /**
-     * @param location_Address the Location_Address to set
-     */
-    public void setLocation_Address(String location_Address) {
-        this.location_Address = location_Address;
+    public void setAddressPoint(String addressPoint) {
+        this.addressPoint = addressPoint;
     }
 
 }

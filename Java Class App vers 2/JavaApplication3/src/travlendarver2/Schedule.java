@@ -63,8 +63,8 @@ public class Schedule {
         if(listActivity != null){
             for(int i = 0; i<listActivity.size(); i++){// trace listActivity as counter i
                 System.out.println("Activity's name: " + listActivity.get(i).getEventName());//print event name
-                System.out.println("From: " + listActivity.get(i).getRoute().getStartPoint().getLocation_Name() + "(" + listActivity.get(i).getRoute().getStartPoint().getLocation_Address() + ")");// print name start location
-                System.out.println("To: " + listActivity.get(i).getRoute().getPointArrived().getLocation_Name() + "(" + listActivity.get(i).getRoute().getPointArrived().getLocation_Address() + ")");// print name arrive location
+                System.out.println("From: " + listActivity.get(i).getRoute().getStartPoint().getNamePoint() + "(" + listActivity.get(i).getRoute().getStartPoint().getAddressPoint() + ")");// print name start location
+                System.out.println("To: " + listActivity.get(i).getRoute().getPointArrived().getNamePoint() + "(" + listActivity.get(i).getRoute().getPointArrived().getAddressPoint() + ")");// print name arrive location
                 System.out.println("Priority Scale: " + listActivity.get(i).getPriority());//print priority
             }
         }else{

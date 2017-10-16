@@ -70,7 +70,7 @@ public class Travner {
                         {
                             for(int x=0; x<listRoute.size(); x++)
                             {
-                                System.out.println((x+1) + ". " + listRoute.get(x).getRoute().getStartPoint().getLocation_Name() + "(" + listRoute.get(x).getRoute().getStartPoint().getLocation_Address() + ") - " + listRoute.get(x).getRoute().getPointArrived().getLocation_Name() + "(" + listRoute.get(x).getRoute().getPointArrived().getLocation_Address() + ") = " + listRoute.get(x).getRoute().getDistanceKM() + "KM");
+                                System.out.println((x+1) + ". " + listRoute.get(x).getRoute().getStartPoint().getNamePoint() + "(" + listRoute.get(x).getRoute().getStartPoint().getAddressPoint() + ") - " + listRoute.get(x).getRoute().getPointArrived().getNamePoint() + "(" + listRoute.get(x).getRoute().getPointArrived().getAddressPoint() + ") = " + listRoute.get(x).getRoute().getDistanceKM() + "KM");
                             }
                         }else{
                             System.out.println("List is Empty");
@@ -143,7 +143,7 @@ public class Travner {
                                     }    
                                 }while(loop);
                                 Collections.sort(listSchedule, Schedule.timeComparator);
-                                break;
+                                break;                                   
                             }
                             case 2:{
                                 loop = true;
@@ -156,9 +156,9 @@ public class Travner {
                                         int choose = Integer.parseInt(scan.next())-1;
                                         for(int i = 0; i<listSchedule.get(choose).getListactivity().size(); i++){
                                             System.out.println("Activity's name: " + listSchedule.get(choose).getListactivity().get(i).getEventName());
-                                            System.out.println("From: " + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getLocation_Name() + "@" + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getLocation_Address());
-                                            System.out.println("To: " + listSchedule.get(choose).getListactivity().get(i).getRoute().getPointArrived().getLocation_Name() + "@" + listSchedule.get(choose).getListactivity().get(i).getRoute().getPointArrived().getLocation_Address());
-                                            System.out.println("Time: " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getStartEventTime()) + " - " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getEndEventTime()));
+                                            System.out.println("From: " + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getNamePoint() + "@" + listSchedule.get(choose).getListactivity().get(i).getRoute().getStartPoint().getAddressPoint());
+                                            System.out.println("To: " + listSchedule.get(choose).getListactivity().get(i).getRoute().getPointArrived().getNamePoint() + "@" + listSchedule.get(choose).getListactivity().get(i).getRoute().getPointArrived().getAddressPoint());
+                                            System.out.println("Time: " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getStartEventtime()) + " - " + formatDate.format(listSchedule.get(choose).getListactivity().get(i).getEndEventtime()));
                                             //System.out.println("Priority Scale: " + listSchedule.get(choose).getListactivity().get(i).getPriority());
                                             listSchedule.get(choose).getListactivity().get(i).getRoute().printRecommend(listTransportationmode, listSchedule, choose, i);
                                         }

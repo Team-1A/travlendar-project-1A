@@ -92,9 +92,9 @@ public class Distance {
         hours = hours + (minutes/60);//hours keep value from hours and minute
         minutes = minutes%60;//minutes keep value from minutes%60
         // keep value from start event time hours to hours
-        hours = listSchedule.get(choose).getListactivity().get(index).getStartEventTime().getHours() - hours;
+        hours = listSchedule.get(choose).getListactivity().get(index).getStartEventtime().getHours() - hours;
         // keep value from start event time minutes to minutes
-        minutes = listSchedule.get(choose).getListactivity().get(index).getStartEventTime().getMinutes() - minutes;
+        minutes = listSchedule.get(choose).getListactivity().get(index).getStartEventtime().getMinutes() - minutes;
         //print estimation transportation and depature
         System.out.println(listTransportationmode.get(j).getTransportation() + " estimation " + totalMinutes + ", Departure: " + hours + "." + minutes);
         }//terjadi perhitungan

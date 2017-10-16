@@ -5,7 +5,6 @@
  */
 package travlendarver2;
 
-import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -16,11 +15,10 @@ import java.util.*;
  */
 class Activity {
     private String eventName;
-    private Integer priority;
+    private int priority;
     private Distance route;
-    private Date eventDate;
-    private Time startEventTime;
-    private Time endEventTime;
+    private Date startEventtime;
+    private Date endEventtime;
     
     /*
         Constructor pada class Activity
@@ -29,9 +27,8 @@ class Activity {
         eventName = null;
         priority = 0;
         route = null;
-        eventDate = null;
-        startEventTime = null;
-        endEventTime = null;
+        startEventtime = null;
+        endEventtime = null;
     }   
 
     /**
@@ -61,7 +58,74 @@ class Activity {
     public void setPriority(int priority) {
         this.priority = priority;
     }
+
+    /**
+     * @return the startEventtime
+     */
+    public Date getStartEventtime() {
+        return startEventtime;
+    }
+
+    /**
+     * @param startEventtime the startEventtime to set
+     */
+    public void setStartEventtime(Date startEventtime) {
+        this.startEventtime = startEventtime;
+    }
+
+    /**
+     * @return the endEventtime
+     */
+    public Date getEndEventtime() {
+        return endEventtime;
+    }
+
+    /**
+     * @param endEventtime the endEventtime to set
+     */
+    public void setEndEventtime(Date endEventtime) {
+        this.endEventtime = endEventtime;
+    }
+    /**
+     * @param SetTime the endEventtime to set
+     */
+    public void setTime(Date startEventtime, Date endEventtime){
+        this.setStartEventtime(startEventtime);
+        this.setEndEventtime(endEventtime);
+    }
     
+    public Activity inputActivity(ArrayList<TravelData> listRoute) throws ParseException {
+        Activity activity = new Activity();// create new object activity from class Activity
+        Scanner scan = new Scanner(System.in);//create new object scan 
+        SimpleDateFormat formatTime = new SimpleDateFormat("hh.mm"); // create new object formatTime from library SimpleDateFormat 
+        
+        System.out.print("Activity's title : ");
+        activity.setEventName(scan.nextLine());// input event name
+        System.out.println();
+        
+        for(int i = 0; i<listRoute.size(); i++){
+            // print name start location and address start location  //print name arrrive location and name arrive address location 
+            System.out.println((i+1) + ". " + listRoute.get(i).getRoute().getStartPoint().getNamePoint() +" (" + listRoute.get(i).getRoute().getStartPoint().getAddressPoint() + ") = " + listRoute.get(i).getRoute().getPointArrived().getNamePoint()  + " (" + listRoute.get(i).getRoute().getPointArrived().getAddressPoint() + ") ");
+        }
+        System.out.print("Choose : ");
+        //take array from travle data for start location and arrive location
+        activity.setRoute(listRoute.get(Integer.parseInt(scan.nextLine())-1).getRoute());
+        
+        System.out.print("\nInput start event(hh.mm) : ");
+        //take Date time for start event
+        activity.setStartEventtime((Date) formatTime.parseObject(scan.nextLine()));
+        
+        System.out.print("\nInput end event(hh.mm) : ");
+        //take Date time for end event
+        activity.setEndEventtime((Date) formatTime.parseObject(scan.nextLine()));
+        
+        System.out.print("Prioritas(1-5) : ");
+        //take value priority 
+        activity.setPriority(Integer.parseInt(scan.nextLine()));
+        
+        return activity;
+    }
+
     /**
      * @return the route
      */
@@ -76,92 +140,11 @@ class Activity {
         this.route = route;
     }
     
-    /**
-     * @return the eventDate
-     */
-    public Date getEventDate() {
-        return eventDate;
-    }
-
-    /**
-     * @param eventDate the eventDate to set
-     */
-    public void setEventDate(Date eventDate) {
-        this.eventDate = eventDate;
-    }
-
-    /**
-     * @return the startEventtime
-     */
-    public Time getStartEventTime() {
-        return startEventTime;
-    }
-
-    /**
-     * @param startEventTime the startEventtime to set
-     */
-    public void setStartEventTime(Time startEventTime) {
-        this.startEventTime = startEventTime;
-    }
-
-    /**
-     * @return the endEventtime
-     */
-    public Date getEndEventTime() {
-        return endEventTime;
-    }
-
-    /**
-     * @param endEventTime the endEventtime to set
-     */
-    public void setEndEventTime(Time endEventTime) {
-        this.endEventTime = endEventTime;
-    }
-    /**
-     * @param SetTime the endEventtime to set
-     */
-    public void setTime(Time startEventTime, Time endEventTime){
-        this.setStartEventTime(startEventTime);
-        this.setEndEventTime(endEventTime);
-    }
-    
-    public Activity inputActivity(ArrayList<TravelData> listRoute) throws ParseException {
-        Activity activity = new Activity();// create new object activity from class Activity
-        Scanner scan = new Scanner(System.in);//create new object scan 
-        SimpleDateFormat formatTime = new SimpleDateFormat("hh.mm"); // create new object formatTime from library SimpleDateFormat 
-        
-        System.out.print("Activity's title : ");
-        activity.setEventName(scan.nextLine());// input event name
-        System.out.println();
-        
-        for(int i = 0; i<listRoute.size(); i++){
-            // print name start location and address start location  //print name arrrive location and name arrive address location 
-            System.out.println((i+1) + ". " + listRoute.get(i).getRoute().getStartPoint().getLocation_Name() +" (" + listRoute.get(i).getRoute().getStartPoint().getLocation_Address() + ") = " + listRoute.get(i).getRoute().getPointArrived().getLocation_Name()  + " (" + listRoute.get(i).getRoute().getPointArrived().getLocation_Address() + ") ");
-        }
-        System.out.print("Choose : ");
-        //take array from travle data for start location and arrive location
-        activity.setRoute(listRoute.get(Integer.parseInt(scan.nextLine())-1).getRoute());
-        
-        System.out.print("\nInput start event(hh.mm) : ");
-        //take Date time for start event
-        activity.setStartEventTime((Time) formatTime.parseObject(scan.nextLine()));
-        
-        System.out.print("\nInput end event(hh.mm) : ");
-        //take Date time for end event
-        activity.setEndEventTime((Time) formatTime.parseObject(scan.nextLine()));
-        
-        System.out.print("Prioritas(1-5) : ");
-        //take value priority 
-        activity.setPriority(Integer.parseInt(scan.nextLine()));
-        
-        return activity;
-    }
-    
     public static Comparator<Activity> activityComparator = new Comparator<Activity>() {//public create new object from Comparator
         @Override
         public int compare(Activity activity1, Activity activity2) {
-            Time startDate1 = activity1.getStartEventTime();// create object start event
-            Time startDate2 = activity2.getStartEventTime();// create object end event
+            Date startDate1 = activity1.getStartEventtime();// create object start event
+            Date startDate2 = activity2.getStartEventtime();// create object end event
             
             return startDate1.compareTo(startDate2);
         }
