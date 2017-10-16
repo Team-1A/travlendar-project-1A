@@ -149,7 +149,6 @@ div.tab {
     height:860px;
 }
 .tab img{
-<<<<<<< HEAD
 
     float: left;
     width: 20px;
@@ -157,13 +156,6 @@ div.tab {
 		margin-right: 10px;
     margin-bottom: -2px;
     margin-top: -2px;
-=======
-    float: right;
-    width: 40px;
-    height: 40px;
-    margin-bottom: -10px;
-    margin-top: -10px;
->>>>>>> 2b14c8ad7331fcb3929ed8dde33522fc8e49b89d
 
 }
 
@@ -182,8 +174,6 @@ div.tab button {
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
-
-
 }
 
 /* Change background color of buttons on hover */
@@ -210,12 +200,7 @@ div.tab button.active {
 }
 .time
 {
-<<<<<<< HEAD
 	border-radius:5px;
-=======
-		box-shadow: 3px 3px 7px grey;
-		border-radius: 5px;
->>>>>>> 2b14c8ad7331fcb3929ed8dde33522fc8e49b89d
 	padding: 7px;
 	margin: 7px;
 	width: 100px;
@@ -229,8 +214,6 @@ select{
 	padding: 7px;
 	margin: 7px;
 	width: 250px;
-		box-shadow: 1px 1px 3px grey;
-		border-radius: 5px;
 
 }
 
@@ -242,9 +225,6 @@ select{
 	width: 100px;
 	float: left;
 	border:1px solid #000;
-
-	box-shadow: 5px 5px 7px grey;
-	border-radius: 5px;
 }
 p{
 	padding-bottom: 20px;
@@ -417,9 +397,6 @@ option{
 	color: white;
 	background: #2980b9;
 
-		box-shadow: 3px 3px 7px grey;
-		border-radius: 5px;
-
 }
 .menunya2 a{
 	color: white;
@@ -504,8 +481,6 @@ span{
 	padding: 7px;
 	margin: 7px;
 	width: 300px;
-			box-shadow: 5px 5px 7px grey;
-		border-radius: 5px;
 
 }
 .ktk_distance{
@@ -526,13 +501,8 @@ span{
 	border-radius: -radius 0.3em;
 	width: 100px;
 	color: #FFF;
-<<<<<<< HEAD
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	border-radius: 5px;
-=======
-		box-shadow: 3px 3px 7px grey;
-		border-radius: 10px;
->>>>>>> 2b14c8ad7331fcb3929ed8dde33522fc8e49b89d
 }
 
 .print_output{
@@ -691,10 +661,6 @@ tr:nth-child(even){background-color: #2980b9}
 	height:300px;
 	width:100%;
 	overflow-x:hidden;
-<<<<<<< HEAD
-=======
-
->>>>>>> 2b14c8ad7331fcb3929ed8dde33522fc8e49b89d
 }
 #table2_create_schedule
 {
@@ -710,6 +676,7 @@ tr:nth-child(even){background-color: #2980b9}
 	float: right;
 }
 th, td {
+
 
 	font-size: 12px;
 	text-align: left;
