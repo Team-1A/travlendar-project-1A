@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@page contentType="text/html" pageEncoding = "UTF-8"%>
+<!--%@page contentType="text/html" pageEncoding = "UTF-8"%-->
 <html>
     <head>
         <title>Detail Schedule</title>
@@ -70,7 +70,7 @@
 <!--judul-->
   <div id="header">
     <div class="logo">
-      <img src="css/logo.png " width="150px" height="35px">
+      <img src="css/logo.png " width="90px" height="35px">
     </div>
 </div>
 <a class="mobile">MENU</a>
