@@ -8,28 +8,29 @@ and open the template in the editor.
 
 <html>
     <head>
-        <title>Distance Management</title>
+        <title>Travner</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSS-->
+        <link rel="shortcut icon" type="image/png" href="icon/TravnerLogoClz.png" >
         <link href="css/style.css" rel="stylesheet">
         <link href="css/fullcalendar.min.css" rel="stylesheet">
-        <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">   
+        <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
         <link rel="stylesheet" type="text/css" href="css/popup.css">
         <!-- JAVASCRIPT-->
-        <script type="text/javascript" src="css/popup.js"></script>     
+        <script type="text/javascript" src="css/popup.js"></script>
         <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/fullcalendar.min.js"></script>
-    
+
     </head>
-    
+
 <!--script calendar-->
     <script>
     $(document).ready(function() {
-    
+
     $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
@@ -46,19 +47,19 @@ and open the template in the editor.
           start: '2017-09-19T04:30:00',
           end: '2017-09-19T16:10:00'
         },
-		
+
 		{
           title: 'Sampai di Bandara Kendari',
           start: '2017-09-19T11:10:00',
           end: '2017-09-19T11:30:00'
         },
-		
+
 		{
           title: 'Pertemuan dengan Departement Agama',
           start: '2017-09-19T12:00:00',
           end: '2017-09-19T15:15:00'
         },
-		
+
 		{
           title: 'Makan Sore',
           start: '2017-09-19T15:30:00',
@@ -66,7 +67,7 @@ and open the template in the editor.
         }
       ]
     });
-    
+
   });
 
 </script>
@@ -98,7 +99,7 @@ and open the template in the editor.
           <div class="box-panel">
             <h2>Create Schedule</h2>
               <p>I want to create Schedule for :<p>
-              
+
               <input class="waktu"  type="text" name="Date" placeholder="Date" required>
               <input class="waktu" type="text" name="Month" placeholder="Month" required>
               <input class="waktu" type="text" name="Year" placeholder="Year" required>
@@ -108,15 +109,15 @@ and open the template in the editor.
                   <div class="menunya2">
                     <a href="add_activity.jsp">Add Activity</a>
                   </div><br>
-                 
-                        
+
+
                         <div id="div2_create_schedule">
                          <table id="table2_create_schedule">
-                          <tr style="background-color:red; color:black">
+                          <tr style="background-color:red;  ">
                               <th> Activity Name : Ke Bandara Soekarno Hatta<br>
                                  From : Rumah @Fatmawati<br>
                                  To : Bandara Soekarno-Hatta @Tangerang</th>
-                              
+
                                  <th> </th>
                                  <th> </th>
                                  <th> </th>
@@ -128,14 +129,14 @@ and open the template in the editor.
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>ACTIVITY DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -144,7 +145,7 @@ and open the template in the editor.
                               </th>
                           </tr>
 
-                          <tr style="background-color:red; color:black">
+                          <tr style="background-color:red;  ">
                             <th> Activity Name : Ke Bandara Haluoleo<br>
                                  From : Bandara Soekarno-Hatta @Tangerang<br>
                                  To : Bandara Haluoleo @Kadia
@@ -160,14 +161,14 @@ and open the template in the editor.
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>ACTIVITY DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -176,7 +177,7 @@ and open the template in the editor.
                               </th>
                           </tr>
 
-                          <tr style="background-color:orange; color:black">
+                          <tr style="background-color:orange;  ">
                             <th> Activity Name : Hotel "X" @Kadia<br>
                                  From : Bandara Haluoleo, @Kadia<br>
                                  To : Hotel "X" @Kadia
@@ -192,14 +193,14 @@ and open the template in the editor.
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>ACTIVITY DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -208,7 +209,7 @@ and open the template in the editor.
                               </th>
                           </tr>
 
-                          <tr style="background-color:yellow; color:black">
+                          <tr style="background-color:yellow;  ">
                             <th> Activity Name : Ke Restoran @Poasia<br>
                                  From : Hotel "X" @Kadia<br>
                                  To : Restoran @Poasia</th>
@@ -223,14 +224,14 @@ and open the template in the editor.
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>ACTIVITY DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -238,18 +239,18 @@ and open the template in the editor.
 
                               </th>
                           </tr>
-                                      
-                          </table>                          
+
+                          </table>
                         </div>
 
 
            </div>
-        </div>        
+        </div>
       </div>
     </div>
   </div>
 </div>
-	
+
 <!--Calendar-->
 <div id="Calendar" class="tabcontent"><!--menuju page calendar-->
   <div class="content">
@@ -267,27 +268,27 @@ and open the template in the editor.
  <div class="content">
   <div id="box"><!--kotak-->
     <div class="box-top">Travel Data</div><!--Judul kotak-->
-    
+
      <div class="box-panel"><!--Isi Kotak-->
       <div class="menu_atas"><!--Menu bar-->
-          
+
           <div class="menunya"><!-- konten dari menu bar-->
-              <a href="location.jsp " id="defaultOpen" style="color: white"><img src="css/icon/location.png "><br>
+              <a href="location.jsp " id="defaultOpen" style="color: white"><img src="icon/location.svg"><br>
                   <span>Location</span></a>
-            
+
             </div>
         <div class="menunya"><!-- konten dari menu bar-->
             <div class="point"><!--pointer menu bar-->
-                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="css/icon/distance.png "><br>
+                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="icon/distance.svg"><br>
                   <span>Distance Management</span></a><!--Menu Bar (Location)-->
             </div>
         </div>
-          
-        
-        
+
+
+
       </div>
     </div>
-     
+
     <div class="box-panel"><!--Isi Kotak-->
         <div class="kiri"><!--field kiri-->
             <div id="div1_travel"><!--field tabel lokasi-->
@@ -295,7 +296,7 @@ and open the template in the editor.
                     <tr>
                     <th>From</th>
                     <th>To</th>
-                    <th>Distance</th> 
+                    <th>Distance</th>
                     <th></th>
                     </tr>
                 </table>
@@ -315,7 +316,7 @@ and open the template in the editor.
                                 <div class="imgcontainer">
                                     <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
                              <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
                              <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
@@ -376,8 +377,8 @@ and open the template in the editor.
                                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
                                 </form>
                             </th>
-                            </tr>             
-</table>                          
+                            </tr>
+</table>
                         </div>
                                     </div>
                                     <div class="kanan">
@@ -396,7 +397,7 @@ and open the template in the editor.
         </div>
       </div>
     </div>
-  </div> 
+  </div>
  </div>
 </div>
 <!--Script Vertical Tab-->
@@ -420,8 +421,8 @@ and open the template in the editor.
       // Show the current tab, and add an "active" class to the link that opened the tab
       document.getElementById(pageName).style.display = "block";
       evt.currentTarget.className += " active";
-	
-  } 
+
+  }
   // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>

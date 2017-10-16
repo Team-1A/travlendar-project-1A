@@ -9,14 +9,15 @@ and open the template in the editor.
 
 <html>
     <head>
-        <title>TRAVNER</title>
+        <title>Travner</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--        <%@page contentType="text/html" pageEncoding="UTF-8"%>    -->
         <!-- CSS-->
+        <link rel="shortcut icon" type="image/png" href="icon/TravnerLogoClz.png" >
         <link rel="stylesheet" href="css/style.css">
         <link href="css/fullcalendar.min.css" rel="stylesheet">
-        <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print"> 
+        <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
          <link rel="stylesheet" type="text/css" href="css/responsive.css">
          <link rel="stylesheet" type="text/css" href="css/popup.css">
          <!-- JAVASCRIPT-->
@@ -27,10 +28,9 @@ and open the template in the editor.
         <script type="text/javascript" src="js/fullcalendar.min.js"></script>
 		</head>
 <!--script calendar-->
-    <script>
-
+<script>
   $(document).ready(function() {
-    
+
     $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
@@ -41,26 +41,26 @@ and open the template in the editor.
       navLinks: true, // can click day/week names to navigate views
       editable: true,
       eventLimit: true, // allow "more" link when too many events
-      events: [  
-        
+      events: [
+
         {
           title: 'Kegiatan di Bandara',
           start: '2017-09-19T04:30:00',
           end: '2017-09-19T16:10:00'
         },
-		
+
 		{
           title: 'Sampai di Bandara Kendari',
           start: '2017-09-19T11:10:00',
           end: '2017-09-19T11:30:00'
         },
-		
+
 		{
           title: 'Pertemuan dengan Departement Agama',
           start: '2017-09-19T12:00:00',
           end: '2017-09-19T15:15:00'
         },
-		
+
 		{
           title: 'Makan Sore',
           start: '2017-09-19T15:30:00',
@@ -68,7 +68,7 @@ and open the template in the editor.
         }
       ]
     });
-    
+
   });
 
 </script>
@@ -83,9 +83,9 @@ and open the template in the editor.
 
 <!--sidebar-->
  <div class="tab">
-    <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule<img src="icon/Calendar.svg" ></button>
+    <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule<img src="icon/schedule.svg" width="20px" height="20px" ></button>
     <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar<img src="icon/Calendar.svg" ></button>
-    <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data<img src="icon/Data2.svg" ></button>
+    <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data<img src="icon/travel data.svg" ></button>
 </div>
 
 <!--isi dari sidebar-->
@@ -94,7 +94,7 @@ and open the template in the editor.
 <div id="My Schedule" class="tabcontent">
     <div class="content">
       <div id="box">
-        
+
       <div class="box-panel"><!--Isi Kotak-->
         <div class="menu_atas"><!--menu bar-->
           <div class="menunya2"><!--content menu bar-->
@@ -102,7 +102,7 @@ and open the template in the editor.
         </div>
       </div>
      </div>
-     
+
      <div class="box-panel"><!--isi box-->
 
                         <div id="div2_schedule"><!--field table schedule-->
@@ -119,14 +119,14 @@ and open the template in the editor.
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></button>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>SCHEDULE DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -146,14 +146,14 @@ and open the template in the editor.
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>SCHEDULE DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -173,14 +173,14 @@ and open the template in the editor.
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>SCHEDULE DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -200,14 +200,14 @@ and open the template in the editor.
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>SCHEDULE DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -227,14 +227,14 @@ and open the template in the editor.
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>SCHEDULE DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -254,14 +254,14 @@ and open the template in the editor.
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>SCHEDULE DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -282,14 +282,14 @@ and open the template in the editor.
                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>SCHEDULE DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -297,8 +297,8 @@ and open the template in the editor.
 
                               </th>
                           </tr>
-                                                       
-                          </table>                          
+
+                          </table>
                         </div>
 
         </div>
@@ -307,7 +307,7 @@ and open the template in the editor.
   </div>
 </div>
 
-	
+
 
 <div id="Calendar" class="tabcontent">
 <!--Field-->
@@ -326,49 +326,49 @@ and open the template in the editor.
  <div class="content">
   <div id="box">
     <div class="box-top">Travel Data</div>
-    
+
   <div class="box-panel">
       <div class="menu_atas"> <!--Box Luar-->
           <div class="menunya"> <!--Isi box-->
             <div class="point"> <!--Box pointer-->
-              <a href="location.jsp " id="defaultOpen" style="color: white"><img src="css/icon/location.png "><br>
+              <a href="location.jsp " id="defaultOpen" style="color: white"><img src="icon/location.svg"><br>
                   <span>Location</span></a>
             </div>
         </div>
-        
+
         <div class="menunya"> <!--Isi box-->
-                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="css/icon/distance.png "><br>
+                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="icon/distance.svg"><br>
                   <span>Distance Management</span></a>
         </div>
-          
+
       </div>
-    
+
     <!--Field Kiri-->
     <div class="kiri">
-    
-   
+
+
                         <div id="div2_travel"> <!--Field (luar) kategori-->
                          <table id="table2_travel"> <!--Field (dalam) kategori-->
-                            
+
                             <tr>
                             <th>Rumah Fatmawati</th>
                             <th></th>
                             <th></th>
                             <th> </th>
-                            
+
                             <!--Modal Delete-->
                             <th>
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
@@ -383,20 +383,20 @@ and open the template in the editor.
                             <th></th>
                             <th></th>
                             <th></th>
-                            
-                  
+
+
                             <th>
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
@@ -409,19 +409,19 @@ and open the template in the editor.
                             <th></th>
                             <th></th>
                             <th></th>
-                      
+
                             <th>
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php"> <!--Field animasi modal-->
                               <div class="imgcontainer"> <!--Field (dalam) Modal-->
-      
-    
-                              <div class="container"> 
+
+
+                              <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
@@ -436,74 +436,74 @@ and open the template in the editor.
                             <th></th>
                             <th></th>
                             <th></th>
-                       
+
                             <th>
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
                           <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
 </form>
                               </th>
-                              
+
                               <tr>
                             <th>Restoran, Poasia</th>
                             <th></th>
                             <th></th>
                             <th></th>
-                       
+
                             <th>
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
                           <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
 </form>
                               </th>
-                                         
-                          </table>                          
+
+                          </table>
                         </div>
 
 
     </div>
-  
+
   <div class="kanan">
     <form action="#" class="location_form" method="post">
       <h2>Add Location</h2>
           <span>Place's Name</span><br>
           <input class="kotak_lo" type="text"  name="#" placeholder="Place's Name">
-          
+
           <span>Address</span><br>
           <input class="kotak_lo" type="text"  name="#" placeholder="Address">
            <input class="add_button" type="submit" name="#" value="Add">
-          
+
 
             </form>
           </div>
         </div>
       </div>
     </div>
-  </div> 
+  </div>
  </div>
 </div>
 <script>
@@ -526,8 +526,8 @@ and open the template in the editor.
       // Show the current tab, and add an "active" class to the link that opened the tab
       document.getElementById(pageName).style.display = "block";
       evt.currentTarget.className += " active";
-	
-  } 
+
+  }
   // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>

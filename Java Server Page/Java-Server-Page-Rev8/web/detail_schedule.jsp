@@ -2,14 +2,15 @@
 <!--%@page contentType="text/html" pageEncoding = "UTF-8"%-->
 <html>
     <head>
-        <title>Detail Schedule</title>
+        <title>Travners</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSS-->
+        <link rel="shortcut icon" type="image/png" href="icon/TravnerLogoClz.png" >
         <link href="css/style.css" rel="stylesheet">
         <link href="css/schedule_list.css" rel="stylesheet">
         <link href="css/fullcalendar.min.css" rel="stylesheet">
-        <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">   
+        <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
         <link rel="stylesheet" type="text/css" href="css/popup.css">
         <!-- JAVASCRIPT-->
@@ -17,13 +18,13 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/fullcalendar.min.js"></script>
-    
+
     </head>
 <!--script calendar-->
     <script>
 
     $(document).ready(function() {
-    
+
     $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
@@ -40,19 +41,19 @@
           start: '2017-09-19T04:30:00',
           end: '2017-09-19T16:10:00'
         },
-		
+
 		{
           title: 'Sampai di Bandara Kendari',
           start: '2017-09-19T11:10:00',
           end: '2017-09-19T11:30:00'
         },
-		
+
 		{
           title: 'Pertemuan dengan Departement Agama',
           start: '2017-09-19T12:00:00',
           end: '2017-09-19T15:15:00'
         },
-		
+
 		{
           title: 'Makan Sore',
           start: '2017-09-19T15:30:00',
@@ -60,7 +61,7 @@
         }
       ]
     });
-    
+
   });
 
 </script>
@@ -92,14 +93,14 @@
                   <button id="delete" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/delete.png"></button>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>SCHEDULE DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -156,7 +157,7 @@
                           </div>
                         </table>
                         <br>
-   
+
                         <table id="t00">
                         <tr>
                           <th>Activity's Name</th>
@@ -203,7 +204,7 @@
                         </tr>
                         </table>
                         <br>
-   
+
                         <table id="t01">
                           <tr>
                             <th>Activity's Name</th>
@@ -250,7 +251,7 @@
                           </tr>
                           </table>
                           <br>
-   
+
                           <table id="t02">
                           <tr>
                             <th>Activity's Name</th>
@@ -300,7 +301,7 @@
                   </table>
                 </div>
             </div>
-        </div>        
+        </div>
       </div>
   </div>
 </div>
@@ -325,8 +326,8 @@
       // Show the current tab, and add an "active" class to the link that opened the tab
       document.getElementById(pageName).style.display = "block";
       evt.currentTarget.className += " active";
-	
-  } 
+
+  }
   // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
