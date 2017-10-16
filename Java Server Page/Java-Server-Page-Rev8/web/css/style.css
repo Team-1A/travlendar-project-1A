@@ -25,7 +25,7 @@ div#header {
 
 .logo{
 	float: left;
-	margin-top: 10px; 
+	margin-top: 10px;
 	margin-left: 10px;
 }
 
@@ -42,7 +42,7 @@ div#container {
 .sidebar {
 	width: 250px;
 	background:#171717;
-	float: left; 
+	float: left;
 }
 
 ul#nav{
@@ -78,25 +78,25 @@ ul#nav li a.selected{
 div#box {
 	border-radius: 40px;
 	opacity: 0.95;
-    filter: alpha(opacity=85); 
+    filter: alpha(opacity=85);
 	margin-top: 15px;
 }
 
 div#box .box-top {
- 	
+
 	font-size: 16px;
 	text-shadow: 0 1px #000;
 	background: #FFF;
 	padding: 5px;
 	padding-left: 15px;
-} 
+}
 
 div#box .box-panel {
 	padding: 5px;
 	background: #fff;
     color: #333;
     overflow: hidden;
-	
+
 }
 
 
@@ -105,7 +105,7 @@ a.mobile {
 	color: #fff;
 	background: #000;
 	text-align: center;
-	padding: 7px; 
+	padding: 7px;
 	cursor: pointer;
 }
 
@@ -150,7 +150,7 @@ div.tab {
     height: 40px;
     margin-bottom: -10px;
     margin-top: -10px;
-    
+
 }
 
 /* Style the buttons inside the tab */
@@ -168,6 +168,8 @@ div.tab button {
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
+
+
 }
 
 /* Change background color of buttons on hover */
@@ -190,10 +192,12 @@ div.tab button.active {
     width: 80%;
     border-left: none;
     height: 610px;
-	
-} 
+
+}
 .time
 {
+		box-shadow: 3px 3px 7px grey;
+		border-radius: 5px;
 	padding: 7px;
 	margin: 7px;
 	width: 100px;
@@ -204,6 +208,8 @@ select{
 	padding: 7px;
 	margin: 7px;
 	width: 250px;
+		box-shadow: 1px 1px 3px grey;
+		border-radius: 5px;
 
 }
 
@@ -212,6 +218,9 @@ select{
 	width: 100px;
 	float: left;
 	border:1px solid #000;
+
+	box-shadow: 5px 5px 7px grey;
+	border-radius: 5px;
 }
 p{
 	padding-bottom: 20px;
@@ -224,7 +233,7 @@ p{
 	background:#EEE;
 	border:none;
 	font:15px sans-serif;
-	
+
 }
 
 
@@ -280,7 +289,7 @@ option{
 		width: 1100px;
 		margin: 0 auto;
 	}
-		
+
 	#external-events {
 		float: left;
 		width: 150px;
@@ -289,24 +298,24 @@ option{
 		background: #eee;
 		text-align: left;
 	}
-		
+
 	#external-events h4 {
 		font-size: 16px;
 		margin-top: 0;
 		padding-top: 1em;
 	}
-		
+
 	#external-events .fc-event {
 		margin: 10px 0;
 		cursor: pointer;
 	}
-		
+
 	#external-events p {
 		margin: 1.5em 0;
 		font-size: 11px;
 		color: #666;
 	}
-		
+
 	#external-events p input {
 		margin: 0;
 		vertical-align: middle;
@@ -319,7 +328,7 @@ option{
 	}
 
 .menu_atas {
-	
+
 	max-width: auto;
 	background: #fff;
 	overflow: hidden;
@@ -331,7 +340,7 @@ option{
 	width: 220px;
 	margin: 7px;
 	float: left;
-	
+
 
 }
 
@@ -362,7 +371,7 @@ option{
 .point {
 	border-radius: 12px;
 	background:#2c3e50;
-}        
+}
 
 .menunya2{
 	float: none;
@@ -375,6 +384,9 @@ option{
 	font-weight: bold;
 	color: white;
 	background: #2980b9;
+
+		box-shadow: 3px 3px 7px grey;
+		border-radius: 5px;
 
 }
 .menunya2 a{
@@ -395,8 +407,8 @@ iframe{
 .print_tgl{
 	float: left;
 	width: 930px;
-	padding: 7px; 
-	margin: 7px; 
+	padding: 7px;
+	margin: 7px;
 	text-align: left;
 	font: 20px sans-serif;
 	font-weight: bold;
@@ -458,6 +470,8 @@ span{
 	padding: 7px;
 	margin: 7px;
 	width: 300px;
+			box-shadow: 5px 5px 7px grey;
+		border-radius: 5px;
 
 }
 .ktk_distance{
@@ -465,7 +479,7 @@ span{
 	padding: 7px;
 	margin: 7px;
 	width: 100px;
-	
+
 }
 .add_button{
 	float: right;
@@ -478,6 +492,8 @@ span{
 	border-radius: -radius 0.3em;
 	width: 100px;
 	color: #FFF;
+		box-shadow: 3px 3px 7px grey;
+		border-radius: 10px;
 }
 .print_output{
 	padding: 7px;
@@ -535,18 +551,18 @@ span{
 
 #table1_schedule
 {
-	
+
 	border-collapse: collapse;
     border-spacing: 0;
     width: 80%;
-	color:#FFFFFF;	
+	color:#FFFFFF;
 }
 #div2_schedule
-{	
+{
 	height:250px;
 	width:100%;
 	overflow-x:hidden;
-	
+
 }
 #table2_schedule
 {
@@ -565,7 +581,7 @@ tr:nth-child(even){background-color: #2980b9}
 
 
 #div1_travel
-{	
+{
 	height: 30px;
 	width: 100%;
 	background-color:#2980b9;
@@ -577,14 +593,14 @@ tr:nth-child(even){background-color: #2980b9}
 	width: 117%;
 	border-collapse: collapse;
 	color:white;
-	text-align: center;	
+	text-align: center;
 }
 #div2_travel
-{	
+{
 	height:300px;
 	width:100%;
 	overflow-x:hidden;
-	
+
 }
 #table2_travel
 {
@@ -594,7 +610,7 @@ tr:nth-child(even){background-color: #2980b9}
     width: 100%;
 }
 #table2_travel th img{
-	
+
 	width: 20px;
 	height: 20px;
 	float: right;
@@ -604,15 +620,15 @@ th, td {
 	text-align: left;
     border: none;
     padding: 8px 52px;
-	
-	
+
+
 }
 tr:nth-child(even){background-color: #2980b9}
 
 
 
 #div1_create_schedule
-{	
+{
 	height: 30px;
 	width: 100%;
 	background-color:#2980b9;
@@ -624,14 +640,14 @@ tr:nth-child(even){background-color: #2980b9}
 	width: 117%;
 	border-collapse: collapse;
 	color:white;
-	text-align: center;	
+	text-align: center;
 }
 #div2_create_schedule
-{	
+{
 	height:300px;
 	width:100%;
 	overflow-x:hidden;
-	
+
 }
 #table2_create_schedule
 {
@@ -641,22 +657,18 @@ tr:nth-child(even){background-color: #2980b9}
     width: 100%;
 }
 #table2_create_schedule th img{
-	
+
 	width: 20px;
 	height: 20px;
 	float: right;
 }
 th, td {
 
-
 	font-size: 12px;
 	text-align: left;
 	border:none;
     padding: 8px 52px;
 	text-align:left;
-	
+
 }
 tr:nth-child(even){background-color: #2980b9}
-
-
-
