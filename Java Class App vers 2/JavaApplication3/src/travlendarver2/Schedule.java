@@ -14,11 +14,11 @@ import java.util.*;
  */
 public class Schedule {
     private Date time;
-    private ArrayList<Activity> listactivity;
+    private ArrayList<Activity> listActivity;
     
     public Schedule(){
         time = null;
-        listactivity = null;
+        listActivity = null;
     }
     
     public Schedule input(){
@@ -42,17 +42,17 @@ public class Schedule {
     }
 
     /**
-     * @return the listactivity
+     * @return the listActivity
      */
     ArrayList<Activity> getListactivity() {
-        return listactivity;
+        return listActivity;
     }
 
     /**
-     * @param listactivity the listactivity to set
+     * @param listActivity the listActivity to set
      */
-    void setListactivity(ArrayList<Activity> listactivity) {
-        this.listactivity = listactivity;
+    void setListactivity(ArrayList<Activity> listActivity) {
+        this.listActivity = listActivity;
     }
 
     boolean isEmpty() {
