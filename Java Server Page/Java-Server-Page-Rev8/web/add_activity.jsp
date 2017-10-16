@@ -2,15 +2,16 @@
 <%@page contentType="text/html" pageEncoding = "UTF-8"%>
 <html>
     <head>
-        <title>Add Activity</title>
+        <title>Travner</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSS-->
+        <link rel="shortcut icon" type="image/png" href="icon/TravnerLogoClz.png" >
         <link href="css/style.css" rel="stylesheet">
         <link href="css/fullcalendar.min.css" rel="stylesheet">
         <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
         <link rel="stylesheet" type="text/css" href="css/popup.css">
-        <link href="css/responsive.css" rel="stylesheet">			
+        <link href="css/responsive.css" rel="stylesheet">
         <!-- JAVASCRIPT-->
         <script type="text/javascript" src="css/popup.js"></script>
         <script type="text/javascript" src="js/moment.min.js"></script>
@@ -22,7 +23,7 @@
 <!--script calendar-->
 <script>
   $(document).ready(function() {
-    
+
     $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
@@ -39,19 +40,19 @@
           start: '2017-09-19T04:30:00',
           end: '2017-09-19T16:10:00'
         },
-    
+
     {
           title: 'Sampai di Bandara Kendari',
           start: '2017-09-19T11:10:00',
           end: '2017-09-19T11:30:00'
         },
-    
+
     {
           title: 'Pertemuan dengan Departement Agama',
           start: '2017-09-19T12:00:00',
           end: '2017-09-19T15:15:00'
         },
-    
+
     {
           title: 'Makan Sore',
           start: '2017-09-19T15:30:00',
@@ -59,7 +60,7 @@
         }
       ]
     });
-    
+
   });
 
 </script>
@@ -85,7 +86,7 @@
 
 
 <div id="My Schedule" class="tabcontent">
-  
+
     <div id="box"><!--Kotak-->
       <div class="box-top">My Schedule</div><!--Kotak Judul-->
     <div class="box-panel"><!--Isi kotak-->
@@ -94,10 +95,10 @@
         <div class = add_activity>
           <h2>Add Activity</h2>
         </div>
-        
+
             <span>Activity's Name</span><br><!--Activity Name-->
             <input class="kotak_lo" type="text"   name="#" placeholder="Add your activity"><br><!--Form Activity Name-->
-          
+
             <span>Starting Point - Destination </span><br><!--Form dropdown Starting Point - Destination-->
             <select name="location" >
                   <option value="Rumah Fatmawati" >Rumah Fatmawati</option>
@@ -106,17 +107,17 @@
                   <option value="Hotel X , Kadia">Hotel "X", Kadia</option>
                   <option value="Restoran Poasia">Restoran Poasia</option>
             </select><br>
-            
+
             <span>What time the event started?</span><br><!--event dimulai-->
             <input class="time" type="text"  name="#" placeholder="Hour"><!--Form Event dimulai (Jam) -->
             <input class="time" type="text"  name="#" placeholder="Minutes"><br><!--Form Event dimulai(minutes)-->
-          
+
             <span>What time the event ended?</span><br><!--Event berakhir-->
             <input class="time" type="text"  name="#" placeholder="Hour">
             <input class="time" type="text"  name="#" placeholder="Minutes"><br>
-    
+
             <span>Choose Scale Priority</span><br><!--Pilih Skala Prioritas -->
-              
+
               <select name="Priotity" ><!--Form dropdown Priority-->
                   <option value="Urgent">Urgent</option>
                   <option value="Important">Important</option>
@@ -126,12 +127,12 @@
               <a href="create_schedule.jsp"><button  class="add_button">Back</button></a><!--Back Button-->
             <br><br>
           </div>
-        </div>   
+        </div>
       </div>
     </div>
   </div>
 </div>
-	
+
 <!--Calendar-->
   <div id="Calendar" class="tabcontent"><!--menuju page calendar-->
     <div class="content">
@@ -151,45 +152,45 @@
     <div class="box-top">Travel Data</div><!--Judul kotak-->
        <div class="box-panel"><!--Isi Kotak-->
           <div class="menu_atas"><!--Menu bar-->
-              
+
         <div class="menunya"><!-- konten dari menu bar-->
             <div class="point"><!--pointer menu bar-->
-              <a href="location.jsp " id="defaultOpen" style="color: white"><img src="css/icon/location.png "><br>
+              <a href="location.jsp " id="defaultOpen" style="color: white"><img src="icon/location.svg"><br>
                   <span>Location</span></a><!--Menu Bar (Location)-->
             </div>
         </div>
-        
+
         <div class="menunya">
-                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="css/icon/distance.png "><br>
+                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="icon/distance.svgs"><br>
                   <span>Distance Management</span></a><!--Menu Bar (Distance Management)-->
            </div>
          </div>
-    
+
     <div class="kiri"><!--field kiri-->
-    
-   
+
+
                         <div id="div2_travel"><!--field tabel lokasi-->
                          <table id="table2_travel"><!--isi tabel lokasi-->
-                            
+
                             <tr>
                             <th>Rumah Fatmawati</th>
                             <th></th>
                             <th></th>
                             <th> </th>
-                            
+
                             <th>
                                 <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
@@ -204,21 +205,21 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            
-                  
+
+
                             <th>
                                 <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
@@ -231,20 +232,20 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                      
+
                             <th>
                                 <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
@@ -259,76 +260,76 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                       
+
                             <th>
                                 <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
                           <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
 </form>
                               </th>
-                              
+
                               <tr>
                             <th>Restoran, Poasia</th>
                             <th></th>
                             <th></th>
                             <th></th>
-                       
+
                             <th>
                                 <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
                           <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
 </form>
                               </th>
-                                         
-                          </table>                          
+
+                          </table>
                         </div>
 
 
     </div>
-  
+
   <div class="kanan"><!--Field Kanan-->
     <form action="#" class="location_form" method="post"><!--add location-->
       <h2>Add Location</h2>
           <span>Place's Name</span><br><!--Form Place name-->
           <input class="kotak_lo" type="text"  name="#" placeholder="Place's Name">
-          
+
           <span>Address</span><br><!--Form Address-->
           <input class="kotak_lo" type="text"  name="#" placeholder="Address">
            <input class="add_button" type="submit" name="#" value="Add"><!--add Button-->
-          
+
 
             </form>
           </div>
         </div>
       </div>
     </div>
-  </div> 
+  </div>
  </div>
 </div>
 
@@ -353,8 +354,8 @@
       // Show the current tab, and add an "active" class to the link that opened the tab
       document.getElementById(pageName).style.display = "block";
       evt.currentTarget.className += " active";
-	
-  } 
+
+  }
   // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>

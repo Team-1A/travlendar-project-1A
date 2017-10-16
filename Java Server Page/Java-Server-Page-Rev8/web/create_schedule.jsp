@@ -3,28 +3,29 @@
 
 <html>
     <head>
-        <title>Create Schedule</title>
+        <title>Travner</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSS-->
+        <link rel="shortcut icon" type="image/png" href="icon/TravnerLogoClz.png" >
         <link href="css/style.css" rel="stylesheet">
         <link href="css/fullcalendar.min.css" rel="stylesheet">
-        <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">   
+        <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
         <link rel="stylesheet" type="text/css" href="css/popup.css">
         <!--Javascript-->
-        <script type="text/javascript" src="css/popup.js"></script>     
+        <script type="text/javascript" src="css/popup.js"></script>
         <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/fullcalendar.min.js"></script>
-    
+
     </head>
 <!--Script Calendar-->
     <script>
 
     $(document).ready(function() {
-    
+
     $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
@@ -41,19 +42,19 @@
           start: '2017-09-19T04:30:00',
           end: '2017-09-19T16:10:00'
         },
-		
+
 		{
           title: 'Sampai di Bandara Kendari',
           start: '2017-09-19T11:10:00',
           end: '2017-09-19T11:30:00'
         },
-		
+
 		{
           title: 'Pertemuan dengan Departement Agama',
           start: '2017-09-19T12:00:00',
           end: '2017-09-19T15:15:00'
         },
-		
+
 		{
           title: 'Makan Sore',
           start: '2017-09-19T15:30:00',
@@ -61,7 +62,7 @@
         },
       ]
     });
-    
+
   });
 
 </script>
@@ -94,28 +95,27 @@
           <div class="box-panel"><!--Isi Kotak-->
             <h2>Create Schedule</h2>
               <p>I want to create Schedule for :<p><!--Form Tanggal Schedule-->
-              
+
               <input class="waktu"  type="text" name="Date" placeholder="Date" required>
               <input class="waktu" type="text" name="Month" placeholder="Month" required>
               <input class="waktu" type="text" name="Year" placeholder="Year" required>
-              
+
               <a href="detail_schedule.jsp"><button  class="add_button">Finish</button></a><!--Finish Button-->
               <a href="index.jsp"><button  class="add_button">Back</button></a><!--Back button-->
               <div class="activity"><br><br><br></div><!--Activity-->
                   <div class="menunya2"><!--Add Activity Button-->
-                      <br><a href="add_activity.jsp">Add Activity</a>
+                   <a href="add_activity.jsp">Add Activity</a>
                   </div><br>
-                 
-                        
+
+
                         <div id="div2_create_schedule"><!--Field Tabel Schedule-->
                          <table id="table2_create_schedule"><!--tabel Schdule-->
-                          <tr style="background-color:red; color:black">
+                          <tr style="background-color:blue;  border-bottom:4px solid white">
                               <!--Isi Tabel Lokasi-->
-                              <th> Activity Name : Ke Bandara Soekarno Hatta<br>
-                                 From : Rumah @Fatmawati<br>
-                                 To : Bandara Soekarno-Hatta @Tangerang</th>
-                              
-                                 <th> </th>
+                              <th bgcolor="red"></th>
+                                 <th> Activity Name : Ke Bandara Soekarno Hatta<br>
+                                    From : Rumah @Fatmawati<br>
+                                    To : Bandara Soekarno-Hatta @Tangerang</th>
                                  <th> </th>
                                  <th> </th>
                                  <th> </th>
@@ -126,14 +126,14 @@
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>ACTIVITY DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -142,12 +142,11 @@
                               </th>
                           </tr>
 
-                          <tr style="background-color:red; color:black">
-                            <th> Activity Name : Ke Bandara Haluoleo<br>
-                                 From : Bandara Soekarno-Hatta @Tangerang<br>
-                                 To : Bandara Haluoleo @Kadia
-                               </th>
-                                 <th> </th>
+                          <tr style="background-color:red;  ">
+                            <th></th>
+                                 <th> Activity Name : Ke Bandara Haluoleo<br>
+                                      From : Bandara Soekarno-Hatta @Tangerang<br>
+                                      To : Bandara Haluoleo @Kadia </th>
                                  <th> </th>
                                  <th> </th>
                                  <th> </th>
@@ -158,14 +157,14 @@
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>ACTIVITY DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -174,12 +173,11 @@
                               </th>
                           </tr>
 
-                          <tr style="background-color:orange; color:black">
-                            <th> Activity Name : Hotel "X" @Kadia<br>
-                                 From : Bandara Haluoleo, @Kadia<br>
-                                 To : Hotel "X" @Kadia
-                                 </th>
-                                 <th> </th>
+                          <tr style="background-color:orange;  ">
+                            <th></th>
+                                 <th>Activity Name : Hotel "X" @Kadia<br>
+                                      From : Bandara Haluoleo, @Kadia<br>
+                                      To : Hotel "X" @Kadia </th>
                                  <th> </th>
                                  <th> </th>
                                  <th> </th>
@@ -190,14 +188,14 @@
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>ACTIVITY DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -206,11 +204,11 @@
                               </th>
                           </tr>
 
-                          <tr style="background-color:yellow; color:black">
-                            <th> Activity Name : Ke Restoran @Poasia<br>
-                                 From : Hotel "X" @Kadia<br>
-                                 To : Restoran @Poasia</th>
-                                 <th> </th>
+                          <tr style="background-color:yellow;  ">
+                            <th> </th>
+                                 <th>Activity Name : Ke Restoran @Poasia<br>
+                                      From : Hotel "X" @Kadia<br>
+                                      To : Restoran @Poasia </th>
                                  <th> </th>
                                  <th> </th>
                                  <th> </th>
@@ -221,14 +219,14 @@
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
 
                               <div id="id01" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>ACTIVITY DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
@@ -236,18 +234,18 @@
 
                               </th>
                           </tr>
-                                      
-                          </table>                          
+
+                          </table>
                         </div>
 
 
            </div>
-        </div>        
+        </div>
       </div>
     </div>
   </div>
 </div>
-	
+
 <!--Menuju Page Calendar-->
 <div id="Calendar" class="tabcontent">
   <div class="content">
@@ -265,55 +263,55 @@
  <div class="content">
   <div id="box"><!--Kotak-->
     <div class="box-top">Travel Data</div><!--judul Kotak-->
-    
+
      <div class="box-panel"><!--Isi Kotak-->
       <div class="menu_atas"><!--Menu bar-->
-          
+
           <div class="menunya"><!--Isi dari menu bar-->
             <div class="point"><!--pointer Menu Bar-->
-              <a href="location.jsp " id="defaultOpen" style="color: white"><img src="css/icon/location.png "><br>
+              <a href="location.jsp " id="defaultOpen" style="color: white"><img src="icon/location.svg"><br>
                   <span>Location</span></a><!--Menu Bar (Location)-->
             </div>
         </div>
-        
+
         <div class="menunya"><!--Menu Bar (Distance Management)-->
-                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="css/icon/distance.png "><br>
+                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="icon/distance.svg"><br>
                   <span>Distance Management</span></a>
         </div>
-        
-          
-        
-        
+
+
+
+
       </div>
     </div>
-     
+
     <div class="box-panel">
-    
+
          <div class="kiri"><!--Field Kiri-->
-    
-   
+
+
                         <div id="div2_travel"><!--field tabel lokasi-->
                          <table id="table2_travel"><!--isi tabel lokasi-->
-                            
+
                             <tr>
                             <th>Rumah Fatmawati</th>
                             <th></th>
                             <th></th>
                             <th> </th>
-                            
+
                             <th>
                                 <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
@@ -328,21 +326,21 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            
-                  
+
+
                             <th>
                                  <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
@@ -355,20 +353,20 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                      
+
                             <th>
                                  <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
@@ -383,79 +381,79 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                       
+
                             <th>
                                  <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
                           <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
 </form>
                               </th>
-                              
+
                               <tr>
                             <th>Restoran, Poasia</th>
                             <th></th>
                             <th></th>
                             <th></th>
-                       
+
                             <th>
                                  <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
-  
+
                               <form class="modal-content animate" action="/action_page.php">
                               <div class="imgcontainer">
-      
-    
+
+
                               <div class="container">
                               <label><b>LOCATION DELETION</b></label>
-      
+
                              <label><p>Are you sure want to delete it?</p></label>
 
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
                           <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
 </form>
                               </th>
-                                         
-                          </table>                          
+
+                          </table>
                         </div>
 
 
     </div>
-  
-  <div class="kanan"> <!--Field Kanan--> 
+
+  <div class="kanan"> <!--Field Kanan-->
     <form action="#" class="location_form" method="post"><!--add location-->
       <h2>Add Location</h2>
           <span>Place's Name</span><br><!--Form Place name-->
           <input class="kotak_lo" type="text"  name="#" placeholder="Place's Name">
-          
+
           <span>Address</span><br><!--Form Address-->
           <input class="kotak_lo" type="text"  name="#" placeholder="Address">
            <input class="add_button" type="submit" name="#" value="Add"><!--add Button-->
-          
+
 
             </form>
           </div>
         </div>
       </div>
     </div>
-  </div> 
+  </div>
  </div>
 </div>
-                                  
+
 <!--Script Vertical Tab-->
 <script>
       function openPages(evt, pageName) {
@@ -477,8 +475,8 @@
       // Show the current tab, and add an "active" class to the link that opened the tab
       document.getElementById(pageName).style.display = "block";
       evt.currentTarget.className += " active";
-	
-  } 
+
+  }
   // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
