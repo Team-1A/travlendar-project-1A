@@ -18,6 +18,20 @@ public class TravelData {
         route = null;
     }
 
+    /**
+     * @return the route
+     */
+    public Distance getRoute() {
+        return route;
+    }
+
+    /**
+     * @param route the route to set
+     */
+    public void setRoute(Distance route) {
+        this.route = route;
+    }
+
     public TravelData inputTravelData() {
         Scanner scan = new Scanner(System.in);//create new object scan
         TravelData travelData = new TravelData();// create new object from class TravleData
@@ -42,18 +56,5 @@ public class TravelData {
         
         return travelData;
     }
-
-    /**
-     * @return the route
-     */
-    public Distance getRoute() {
-        return route;
-    }
-
-    /**
-     * @param route the route to set
-     */
-    public void setRoute(Distance route) {
-        this.route = route;
-    }
+    
 }
