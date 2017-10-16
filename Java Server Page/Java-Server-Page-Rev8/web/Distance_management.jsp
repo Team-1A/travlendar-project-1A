@@ -77,16 +77,16 @@ and open the template in the editor.
 <!--judul-->
   <div id="header">
     <div class="logo">
-      <img src="css/logo.png " width="90px" height="35px">
+      <a href="index.jsp"><img src="css/logo.png " width="90px" height="35px"></a>
     </div>
 </div>
 <a class="mobile">MENU</a>
 
 <!--sidebar-->
- <div class="tab">
-    <button class="tablinks" onclick="openPages(event, 'My Schedule')" >My Schedule</button>
-    <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar</button>
-    <button class="tablinks" onclick="openPages(event, 'Travel_Data')"id="defaultOpen">Travel Data</button>
+<div class="tab">
+   <button class="tablinks" onclick="openPages(event, 'My Schedule')" >My Schedule<img src="icon/schedule.svg" ></button>
+   <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar<img src="icon/Calendar.svg" ></button>
+   <button class="tablinks" onclick="openPages(event, 'Travel_Data')"id="defaultOpen">Travel Data<img src="icon/travel data.svg" ></button>
 </div>
 
 <!--isi dari sidebar-->
@@ -95,38 +95,29 @@ and open the template in the editor.
 <div id="My Schedule" class="tabcontent">
     <div class="content">
       <div id="box">
-        <div class="box-top">My Schedule</div>
-          <div class="box-panel">
-            <h2>Create Schedule</h2>
-              <p>I want to create Schedule for :<p>
 
-              <input class="waktu"  type="text" name="Date" placeholder="Date" required>
-              <input class="waktu" type="text" name="Month" placeholder="Month" required>
-              <input class="waktu" type="text" name="Year" placeholder="Year" required>
-              <a href="detail_schedule.jsp"><button  class="add_button">Finish</button></a>
-              <a href="index.jsp"><button  class="add_button">Back</button></a>
-                <div class="activity"><br><br>
-                  <div class="menunya2">
-                    <a href="add_activity.jsp">Add Activity</a>
-                  </div><br>
+      <div class="box-panel"><!--Isi Kotak-->
+        <div class="menu_atas"><!--menu bar-->
+          <div class="menunya2"><!--content menu bar-->
+            <a href="create_schedule.jsp">Create Schedule</a>
+        </div>
+      </div>
+     </div>
 
+     <div class="box-panel"><!--isi box-->
 
-                        <div id="div2_create_schedule">
-                         <table id="table2_create_schedule">
-                          <tr style="background-color:red;  ">
-                              <th> Activity Name : Ke Bandara Soekarno Hatta<br>
-                                 From : Rumah @Fatmawati<br>
-                                 To : Bandara Soekarno-Hatta @Tangerang</th>
-
-                                 <th> </th>
-                                 <th> </th>
-                                 <th> </th>
-                                 <th> </th>
+                        <div id="div2_schedule"><!--field table schedule-->
+                         <table id="table2_schedule"><!--table schedule-->
+                          <!--isi table schedule-->
+                          <tr>
+                           <th><a href="detail_schedule.jsp">16 September 2017</a></th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
                             <th>
-                                <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
-                                <img src="icon/trash.png"></button>
-                                <a href="add_activity.jsp"><img src="icon/settings.png"></a>
+                                <!--Modal Delete-->
+                              <div class="delete_button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -135,7 +126,7 @@ and open the template in the editor.
 
 
                               <div class="container">
-                              <label><b>ACTIVITY DELETION</b></label>
+                              <label><b>SCHEDULE DELETION</b></label>
 
                              <label><p>Are you sure want to delete it?</p></label>
 
@@ -145,20 +136,15 @@ and open the template in the editor.
                               </th>
                           </tr>
 
-                          <tr style="background-color:red;  ">
-                            <th> Activity Name : Ke Bandara Haluoleo<br>
-                                 From : Bandara Soekarno-Hatta @Tangerang<br>
-                                 To : Bandara Haluoleo @Kadia
-                               </th>
-                                 <th> </th>
-                                 <th> </th>
-                                 <th> </th>
-                                 <th> </th>
+                           <tr>
+                           <th><a href="detail_schedule.jsp">10 November 2017</a></th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
                             <th>
-                                <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
-                                <img src="icon/trash.png"></button>
-                                <a href="add_activity.jsp"><img src="icon/settings.png"></a>
+                                <!--Modal Delete-->
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg" ></div>
 
                               <div id="id01" class="modal">
 
@@ -167,7 +153,7 @@ and open the template in the editor.
 
 
                               <div class="container">
-                              <label><b>ACTIVITY DELETION</b></label>
+                              <label><b>SCHEDULE DELETION</b></label>
 
                              <label><p>Are you sure want to delete it?</p></label>
 
@@ -177,20 +163,15 @@ and open the template in the editor.
                               </th>
                           </tr>
 
-                          <tr style="background-color:orange;  ">
-                            <th> Activity Name : Hotel "X" @Kadia<br>
-                                 From : Bandara Haluoleo, @Kadia<br>
-                                 To : Hotel "X" @Kadia
-                                 </th>
-                                 <th> </th>
-                                 <th> </th>
-                                 <th> </th>
-                                 <th> </th>
+                           <tr>
+                           <th><a href="detail_schedule.jsp">13 Desember 2017</a></th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
                             <th>
-                                <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
-                                <img src="icon/trash.png"></button>
-                                <a href="add_activity.jsp"><img src="icon/settings.png"></a>
+                                <!--Modal Delete-->
+                              <div class="delete_button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -199,7 +180,7 @@ and open the template in the editor.
 
 
                               <div class="container">
-                              <label><b>ACTIVITY DELETION</b></label>
+                              <label><b>SCHEDULE DELETION</b></label>
 
                              <label><p>Are you sure want to delete it?</p></label>
 
@@ -209,19 +190,15 @@ and open the template in the editor.
                               </th>
                           </tr>
 
-                          <tr style="background-color:yellow;  ">
-                            <th> Activity Name : Ke Restoran @Poasia<br>
-                                 From : Hotel "X" @Kadia<br>
-                                 To : Restoran @Poasia</th>
-                                 <th> </th>
-                                 <th> </th>
-                                 <th> </th>
-                                 <th> </th>
+                           <tr>
+                           <th><a href="detail_schedule.jsp">15 Desember 2017</a></th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
                             <th>
-                                <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
-                                <img src="icon/trash.png"></button>
-                                <a href="add_activity.jsp"><img src="icon/settings.png"></a>
+                                <!--Modal Delete-->
+                              <div class="delete_button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -230,7 +207,89 @@ and open the template in the editor.
 
 
                               <div class="container">
-                              <label><b>ACTIVITY DELETION</b></label>
+                              <label><b>SCHEDULE DELETION</b></label>
+
+                             <label><p>Are you sure want to delete it?</p></label>
+
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
+                          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">No</button>
+
+                              </th>
+                          </tr>
+
+                           <tr>
+                           <th><a href="detail_schedule.jsp">18 Desember 2017</a></th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
+                            <th>
+                                <!--Modal Delete-->
+                              <div class="delete_button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
+
+                              <div id="id01" class="modal">
+
+                              <form class="modal-content animate" action="/action_page.php">
+                              <div class="imgcontainer">
+
+
+                              <div class="container">
+                              <label><b>SCHEDULE DELETION</b></label>
+
+                             <label><p>Are you sure want to delete it?</p></label>
+
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
+                          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">No</button>
+
+                              </th>
+                          </tr>
+
+                           <tr>
+                               <!--Modal Delete-->
+                           <th><a href="detail_schedule.jsp">20 Desember 2017</a></th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
+                            <th>
+                              <div class="delete_button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
+
+                              <div id="id01" class="modal">
+
+                              <form class="modal-content animate" action="/action_page.php">
+                              <div class="imgcontainer">
+
+
+                              <div class="container">
+                              <label><b>SCHEDULE DELETION</b></label>
+
+                             <label><p>Are you sure want to delete it?</p></label>
+
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Yes</button>
+                          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">No</button>
+
+                              </th>
+                          </tr>
+
+                           <tr>
+                               <!--Modal Delete-->
+                           <th><a href="detail_schedule.jsp">25 Desember 2017</a></th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
+                           <th> </th>
+                            <th>
+                                <!--Modal Delete-->
+                              <div class="delete_button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
+
+                              <div id="id01" class="modal">
+
+                              <form class="modal-content animate" action="/action_page.php">
+                              <div class="imgcontainer">
+
+
+                              <div class="container">
+                              <label><b>SCHEDULE DELETION</b></label>
 
                              <label><p>Are you sure want to delete it?</p></label>
 
@@ -243,13 +302,13 @@ and open the template in the editor.
                           </table>
                         </div>
 
-
-           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
 
 <!--Calendar-->
 <div id="Calendar" class="tabcontent"><!--menuju page calendar-->

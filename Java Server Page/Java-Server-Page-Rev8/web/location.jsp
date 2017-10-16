@@ -72,16 +72,16 @@ and open the template in the editor.
 <!--judul-->
 <div id="header">
     <div class="logo">
-      <img src="css/logo.png " width="90px" height="35px">
+      <a href="index.jsp"><img src="css/logo.png " width="90px" height="35px"></a>
     </div>
 </div>
 <a class="mobile">MENU</a>
 
 <!--sidebar-->
- <div class="tab">
-    <button class="tablinks" onclick="openPages(event, 'My Schedule')" >My Schedule</button>
-    <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar</button>
-    <button class="tablinks" onclick="openPages(event, 'Travel_Data')" id="defaultOpen">Travel Data</button>
+<div class="tab">
+   <button class="tablinks" onclick="openPages(event, 'My Schedule')" >My Schedule<img src="icon/schedule.svg" ></button>
+   <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar<img src="icon/Calendar.svg" ></button>
+   <button class="tablinks" onclick="openPages(event, 'Travel_Data')"id="defaultOpen">Travel Data<img src="icon/travel data.svg" ></button>
 </div>
 
 <!--isi dari sidebar-->
@@ -111,7 +111,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -137,7 +137,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -163,7 +163,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                          <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -189,7 +189,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                          <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -215,7 +215,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                          <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -241,7 +241,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -267,7 +267,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                        <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 

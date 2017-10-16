@@ -71,15 +71,16 @@
 <!--judul-->
   <div id="header">
     <div class="logo">
-      <img src="css/logo.png " width="90px" height="35px">
+      <a href="index.jsp"><img src="css/logo.png " width="90px" height="35px"></a>
     </div>
 </div>
 <a class="mobile">MENU</a>
 
 <!--sidebar-->
  <div class="tab">
-    <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule</button>
+    <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule<img src="icon/schedule.svg" ></button>
 </div>
+
 
 <!--isi dari sidebar-->
 

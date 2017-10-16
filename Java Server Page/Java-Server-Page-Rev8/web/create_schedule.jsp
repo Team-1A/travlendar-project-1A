@@ -72,18 +72,19 @@
 <!--header-->
 <div id="header">
   <div class="logo"><!--logo travner-->
-    <img src="css/logo.png " width="90px" height="35px">
+    <a href="index.jsp"><img src="css/logo.png " width="90px" height="35px"></a>
   </div>
 </div>
 
 <a class="mobile">MENU</a>
 
 <!--sidebar-->
- <div class="tab">
-  <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule</button><!--My Schedule-->
-  <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar</button><!-- Calendar-->
-  <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data</button><!--Travel Data-->
+<div class="tab">
+   <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule<img src="icon/schedule.svg" ></button>
+   <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar<img src="icon/Calendar.svg" ></button>
+   <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data<img src="icon/travel data.svg" ></button>
 </div>
+
 
 <!--isi dari sidebar-->
 
@@ -121,8 +122,8 @@
                                  <th> </th>
                                  <!--Modal Delete Lokasi-->
                             <th>
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
-                                <img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                              <img src="icon/ExitIcon.svg"></div>
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
 
                               <div id="id01" class="modal">
@@ -152,8 +153,8 @@
                                  <th> </th>
                             <th>
                                 <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
-                                <img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                                <img src="icon/ExitIcon.svg"></div>
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
 
                               <div id="id01" class="modal">
@@ -183,8 +184,8 @@
                                  <th> </th>
                             <th>
                                 <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
-                                <img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                                <img src="icon/ExitIcon.svg"></div>
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
 
                               <div id="id01" class="modal">
@@ -214,8 +215,8 @@
                                  <th> </th>
                             <th>
                                 <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
-                                <img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                                <img src="icon/ExitIcon.svg"></div>
                                 <a href="add_activity.jsp"><img src="icon/settings.png"></a>
 
                               <div id="id01" class="modal">
@@ -301,7 +302,7 @@
 
                             <th>
                                 <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+                              <div onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
 
@@ -330,7 +331,7 @@
 
                             <th>
                                  <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+                              <div onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
 
@@ -356,7 +357,7 @@
 
                             <th>
                                  <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+                              <div onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
 
@@ -384,7 +385,7 @@
 
                             <th>
                                  <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+                              <div onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
 
@@ -410,7 +411,7 @@
 
                             <th>
                                  <!--Modal Delete Lokasi-->
-                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+                              <div onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
 

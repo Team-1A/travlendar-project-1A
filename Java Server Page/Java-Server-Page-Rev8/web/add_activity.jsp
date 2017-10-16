@@ -70,7 +70,7 @@
 <!--header-->
 <div id="header">
   <div class="logo"><!--logo travner-->
-    <img src="css/logo.png " width="150px" height="30px">
+  <a href="index.jsp"><img src="css/logo.png " width="90px" height="35px"></a>
   </div>
 </div>
 
@@ -78,11 +78,12 @@
 
 
 <!--sidebar-->
- <div class="tab">
-  <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule</button><!--My Schedule-->
-  <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar</button><!-- Calendar-->
-  <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data</button><!--Travel Data-->
+<div class="tab">
+   <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule<img src="icon/schedule.svg" ></button>
+   <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar<img src="icon/Calendar.svg" ></button>
+   <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data<img src="icon/travel data.svg" ></button>
 </div>
+
 
 
 <div id="My Schedule" class="tabcontent">

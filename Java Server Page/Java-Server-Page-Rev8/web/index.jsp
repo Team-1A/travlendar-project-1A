@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -76,14 +75,15 @@ and open the template in the editor.
 <!--judul-->
   <div id="header"><!--header-->
     <div class="logo"><!--logo Travner-->
-      <img src="css/logo.png " width="90px" height="35px">
+      <a href="index.jsp"><img src="css/logo.png " width="90px" height="35px"></a>
     </div>
 </div>
+
 <a class="mobile">MENU</a>
 
 <!--sidebar-->
  <div class="tab">
-    <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule<img src="icon/schedule.svg" width="20px" height="20px" ></button>
+    <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule<img src="icon/schedule.svg" ></button>
     <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar<img src="icon/Calendar.svg" ></button>
     <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data<img src="icon/travel data.svg" ></button>
 </div>
@@ -116,7 +116,7 @@ and open the template in the editor.
                            <th> </th>
                             <th>
                                 <!--Modal Delete-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -143,7 +143,7 @@ and open the template in the editor.
                            <th> </th>
                             <th>
                                 <!--Modal Delete-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -170,7 +170,7 @@ and open the template in the editor.
                            <th> </th>
                             <th>
                                 <!--Modal Delete-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -197,7 +197,7 @@ and open the template in the editor.
                            <th> </th>
                             <th>
                                 <!--Modal Delete-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -224,7 +224,7 @@ and open the template in the editor.
                            <th> </th>
                             <th>
                                 <!--Modal Delete-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -251,7 +251,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -279,7 +279,7 @@ and open the template in the editor.
                            <th> </th>
                             <th>
                                 <!--Modal Delete-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
