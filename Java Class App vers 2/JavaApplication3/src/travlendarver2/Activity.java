@@ -6,6 +6,7 @@
 package travlendarver2;
 
 import java.sql.Time;
+import static java.sql.Time.valueOf;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -127,13 +128,13 @@ class Activity {
         //take array from travle data for start location and arrive location
         activity.setRoute(listRoute.get(Integer.parseInt(scan.nextLine())-1).getRoute());
         
-        System.out.print("\nInput start event(hh.mm) : ");
+        System.out.print("\nInput start event(hh:mm) : ");
         //take Date time for start event
-        activity.setStartEventTime((Time) formatTime.parseObject(scan.nextLine()));
+        activity.setStartEventTime(valueOf(scan.nextLine() + ":00"));
         
-        System.out.print("\nInput end event(hh.mm) : ");
+        System.out.print("\nInput end event(hh:mm) : ");
         //take Date time for end event
-        activity.setEndEventTime((Time) formatTime.parseObject(scan.nextLine()));
+        activity.setEndEventTime(valueOf(scan.nextLine() + ":00"));
         
         System.out.print("Prioritas(1-5) : ");
         //take value priority 
