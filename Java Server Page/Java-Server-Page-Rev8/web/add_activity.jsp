@@ -162,7 +162,7 @@
         </div>
 
         <div class="menunya">
-                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="icon/distance.svgs"><br>
+                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="icon/distance.svg"><br>
                   <span>Distance Management</span></a><!--Menu Bar (Distance Management)-->
            </div>
          </div>

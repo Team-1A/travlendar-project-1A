@@ -4,28 +4,26 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<!--%@page contentType="text/html" pageEncoding = "UTF-8"%-->
-
+<%@page contentType="text/html" pageEncoding = "UTF-8"%>
 <html>
-    <head>
-        <title>Travner</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS-->
-        <link rel="shortcut icon" type="image/png" href="icon/TravnerLogoClz.png" >
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/fullcalendar.min.css" rel="stylesheet">
-        <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
-        <link rel="stylesheet" type="text/css" href="css/responsive.css">
-        <link rel="stylesheet" type="text/css" href="css/popup.css">
-        <!-- JAVASCRIPT-->
-        <script type="text/javascript" src="css/popup.js"></script>
-        <script type="text/javascript" src="js/moment.min.js"></script>
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="js/fullcalendar.min.js"></script>
-
-    </head>
+  <head>
+      <title>Travner</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- CSS-->
+      <link rel="shortcut icon" type="image/png" href="icon/TravnerLogoClz.png" >
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/fullcalendar.min.css" rel="stylesheet">
+      <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
+      <link rel="stylesheet" type="text/css" href="css/popup.css">
+      <link href="css/responsive.css" rel="stylesheet">
+      <!-- JAVASCRIPT-->
+      <script type="text/javascript" src="js/popup.js"></script>
+      <script type="text/javascript" src="js/moment.min.js"></script>
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="js/fullcalendar.min.js"></script>
+  </head>
 
 <!--script calendar-->
     <script>
@@ -117,7 +115,7 @@ and open the template in the editor.
                            <th> </th>
                             <th>
                                 <!--Modal Delete-->
-                              <div class="delete_button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -198,7 +196,7 @@ and open the template in the editor.
                            <th> </th>
                             <th>
                                 <!--Modal Delete-->
-                              <div class="delete_button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -225,7 +223,7 @@ and open the template in the editor.
                            <th> </th>
                             <th>
                                 <!--Modal Delete-->
-                              <div class="delete_button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -252,7 +250,7 @@ and open the template in the editor.
                            <th> </th>
                            <th> </th>
                             <th>
-                              <div class="delete_button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -280,7 +278,7 @@ and open the template in the editor.
                            <th> </th>
                             <th>
                                 <!--Modal Delete-->
-                              <div class="delete_button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
+                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 

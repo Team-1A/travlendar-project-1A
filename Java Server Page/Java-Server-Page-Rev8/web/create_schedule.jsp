@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
         <link rel="stylesheet" type="text/css" href="css/popup.css">
         <!--Javascript-->
-        <script type="text/javascript" src="css/popup.js"></script>
+        <script type="text/javascript" src="js/popup.js"></script>
         <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -111,15 +111,16 @@
 
                         <div id="div2_create_schedule"><!--Field Tabel Schedule-->
                          <table id="table2_create_schedule"><!--tabel Schdule-->
-                          <tr style="background-color:blue;  border-bottom:4px solid white">
+                          <tr style= "border-bottom:4px solid white">
                               <!--Isi Tabel Lokasi-->
-                              <th bgcolor="red"></th>
+                              <th bgcolor="#B40404"></th>
                                  <th> Activity Name : Ke Bandara Soekarno Hatta<br>
                                     From : Rumah @Fatmawati<br>
                                     To : Bandara Soekarno-Hatta @Tangerang</th>
-                                 <th> </th>
-                                 <th> </th>
-                                 <th> </th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+
                                  <!--Modal Delete Lokasi-->
                             <th>
                               <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
@@ -143,8 +144,9 @@
                               </th>
                           </tr>
 
-                          <tr style="background-color:red;  ">
-                            <th></th>
+                          <tr style= "border-bottom:4px solid white">
+                              <!--Isi Tabel Lokasi-->
+                              <th bgcolor="#B40404"></th>
                                  <th> Activity Name : Ke Bandara Haluoleo<br>
                                       From : Bandara Soekarno-Hatta @Tangerang<br>
                                       To : Bandara Haluoleo @Kadia </th>
@@ -174,8 +176,9 @@
                               </th>
                           </tr>
 
-                          <tr style="background-color:orange;  ">
-                            <th></th>
+                          <tr style= "border-bottom:4px solid white">
+                              <!--Isi Tabel Lokasi-->
+                              <th bgcolor="#B43104"></th>
                                  <th>Activity Name : Hotel "X" @Kadia<br>
                                       From : Bandara Haluoleo, @Kadia<br>
                                       To : Hotel "X" @Kadia </th>
@@ -205,8 +208,9 @@
                               </th>
                           </tr>
 
-                          <tr style="background-color:yellow;  ">
-                            <th> </th>
+                          <tr style= "border-bottom:4px solid white">
+                              <!--Isi Tabel Lokasi-->
+                              <th bgcolor="#B18904"></th>
                                  <th>Activity Name : Ke Restoran @Poasia<br>
                                       From : Hotel "X" @Kadia<br>
                                       To : Restoran @Poasia </th>

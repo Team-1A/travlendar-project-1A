@@ -352,7 +352,7 @@ option{
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	border-radius: 5px;
 	float:left;
-	width: 475px;
+	width: 469px;
 	padding: 2px;
 	margin: 2px;
 	text-align: center;
@@ -375,7 +375,7 @@ option{
 	transition: 0.3s;
 }
 .menunya, a:hover{
-	color: #151B54;
+	color: #2c3e50;
 }
 
 .point {
@@ -388,7 +388,7 @@ option{
 	border-radius: 5px;
 	float: none;
         height:max-content;
-	width: 97%;
+	width: 99%;
 	padding: 7px;
 	margin: 7px;
 	text-align: center;
@@ -444,7 +444,7 @@ iframe{
 	float: left;
 	padding: 0px;
 	margin: 1px;
-	width: 600px;
+	width: 580px;
 	height: 420px;
 	border: 6px solid #ddd ;
 }
@@ -504,10 +504,7 @@ span{
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	border-radius: 5px;
 }
-.delete_button img{
-	width: 20px;
-	height: 20px;
-}
+
 
 .print_output{
 	padding: 7px;
@@ -586,14 +583,15 @@ span{
     width: 100%;
 }
 #table2_schedule th img{
-	width: 30px;
-	height: 30px;
+	width: 10px;
+	height: 10px;
 	float: right;
 }
 
 tr:nth-child(even){background-color: #2980b9}
 tr{
-	color:grey;
+
+	color:#424242;
 	border-bottom:4px solid white;
 }
 
@@ -668,6 +666,8 @@ tr:nth-child(even){background-color: #2980b9}
 }
 #table2_create_schedule
 {
+
+	object-position: right;
 	background-color: #CEECF5;
 	border-collapse: collapse;
   border-spacing: 0;

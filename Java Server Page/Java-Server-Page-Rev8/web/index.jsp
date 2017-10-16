@@ -224,7 +224,7 @@ and open the template in the editor.
                            <th> </th>
                             <th>
                                 <!--Modal Delete-->
-                              <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
+                    <div onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></div>
 
                               <div id="id01" class="modal">
 
@@ -322,33 +322,31 @@ and open the template in the editor.
 </div>
 
 
-<div id="Travel_Data" class="tabcontent">
+<div id="Travel_Data" class="tabcontent"><!--menuju page Travel Data -->
  <div class="content">
-  <div id="box">
-    <div class="box-top">Travel Data</div>
+  <div id="box"><!--kotak-->
+    <div class="box-top">Travel Data</div><!--Judul kotak-->
+       <div class="box-panel"><!--Isi Kotak-->
+          <div class="menu_atas"><!--Menu bar-->
 
-  <div class="box-panel">
-      <div class="menu_atas"> <!--Box Luar-->
-          <div class="menunya"> <!--Isi box-->
-            <div class="point"> <!--Box pointer-->
+        <div class="menunya"><!-- konten dari menu bar-->
+            <div class="point"><!--pointer menu bar-->
               <a href="location.jsp " id="defaultOpen" style="color: white"><img src="icon/location.svg"><br>
-                  <span>Location</span></a>
+                  <span>Location</span></a><!--Menu Bar (Location)-->
             </div>
         </div>
 
-        <div class="menunya"> <!--Isi box-->
+        <div class="menunya">
                 <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="icon/distance.svg"><br>
-                  <span>Distance Management</span></a>
-        </div>
+                  <span>Distance Management</span></a><!--Menu Bar (Distance Management)-->
+           </div>
+         </div>
 
-      </div>
-
-    <!--Field Kiri-->
-    <div class="kiri">
+    <div class="kiri"><!--field kiri-->
 
 
-                        <div id="div2_travel"> <!--Field (luar) kategori-->
-                         <table id="table2_travel"> <!--Field (dalam) kategori-->
+                        <div id="div2_travel"><!--field tabel lokasi-->
+                         <table id="table2_travel"><!--isi tabel lokasi-->
 
                             <tr>
                             <th>Rumah Fatmawati</th>
@@ -356,8 +354,8 @@ and open the template in the editor.
                             <th></th>
                             <th> </th>
 
-                            <!--Modal Delete-->
                             <th>
+                                <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
@@ -386,6 +384,7 @@ and open the template in the editor.
 
 
                             <th>
+                                <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
@@ -411,12 +410,13 @@ and open the template in the editor.
                             <th></th>
 
                             <th>
+                                <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
 
-                              <form class="modal-content animate" action="/action_page.php"> <!--Field animasi modal-->
-                              <div class="imgcontainer"> <!--Field (dalam) Modal-->
+                              <form class="modal-content animate" action="/action_page.php">
+                              <div class="imgcontainer">
 
 
                               <div class="container">
@@ -438,6 +438,7 @@ and open the template in the editor.
                             <th></th>
 
                             <th>
+                                <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
@@ -463,6 +464,7 @@ and open the template in the editor.
                             <th></th>
 
                             <th>
+                                <!--Modal Delete Lokasi-->
                               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
 
                               <div id="id02" class="modal">
@@ -487,15 +489,15 @@ and open the template in the editor.
 
     </div>
 
-  <div class="kanan">
-    <form action="#" class="location_form" method="post">
+  <div class="kanan"><!--Field Kanan-->
+    <form action="#" class="location_form" method="post"><!--add location-->
       <h2>Add Location</h2>
-          <span>Place's Name</span><br>
+          <span>Place's Name</span><br><!--Form Place name-->
           <input class="kotak_lo" type="text"  name="#" placeholder="Place's Name">
 
-          <span>Address</span><br>
+          <span>Address</span><br><!--Form Address-->
           <input class="kotak_lo" type="text"  name="#" placeholder="Address">
-           <input class="add_button" type="submit" name="#" value="Add">
+           <input class="add_button" type="submit" name="#" value="Add"><!--add Button-->
 
 
             </form>

@@ -77,8 +77,10 @@
 <a class="mobile">MENU</a>
 
 <!--sidebar-->
- <div class="tab">
-    <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule<img src="icon/schedule.svg" ></button>
+<div class="tab">
+   <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule<img src="icon/schedule.svg" ></button>
+   <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar<img src="icon/Calendar.svg" ></button>
+   <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data<img src="icon/travel data.svg" ></button>
 </div>
 
 
@@ -306,7 +308,203 @@
       </div>
   </div>
 </div>
-<!--Script Vertical Tab-->
+<div id="Calendar" class="tabcontent">
+<!--Field-->
+<div class="content">
+  <div id="box">
+    <div class="box-top">Calendar</div>
+      <div class="box-panel">
+       <div id='calendar'></div>
+     </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="Travel_Data" class="tabcontent">
+ <div class="content">
+  <div id="box">
+    <div class="box-top">Travel Data</div>
+
+  <div class="box-panel">
+      <div class="menu_atas"> <!--Box Luar-->
+          <div class="menunya"> <!--Isi box-->
+            <div class="point"> <!--Box pointer-->
+              <a href="location.jsp " id="defaultOpen" style="color: white"><img src="icon/location.svg"><br>
+                  <span>Location</span></a>
+            </div>
+        </div>
+
+        <div class="menunya"> <!--Isi box-->
+                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="icon/distance.svg"><br>
+                  <span>Distance Management</span></a>
+        </div>
+
+      </div>
+
+    <!--Field Kiri-->
+    <div class="kiri">
+
+
+                        <div id="div2_travel"> <!--Field (luar) kategori-->
+                         <table id="table2_travel"> <!--Field (dalam) kategori-->
+
+                            <tr>
+                            <th>Rumah Fatmawati</th>
+                            <th></th>
+                            <th></th>
+                            <th> </th>
+
+                            <!--Modal Delete-->
+                            <th>
+                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+
+                              <div id="id02" class="modal">
+
+                              <form class="modal-content animate" action="/action_page.php">
+                              <div class="imgcontainer">
+
+
+                              <div class="container">
+                              <label><b>LOCATION DELETION</b></label>
+
+                             <label><p>Are you sure want to delete it?</p></label>
+
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
+                          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
+</form>
+
+                              </th>
+                          </tr>
+
+                          <tr>
+                            <th>Bandara Soekarno-Hatta, Tangerang</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+
+
+                            <th>
+                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+
+                              <div id="id02" class="modal">
+
+                              <form class="modal-content animate" action="/action_page.php">
+                              <div class="imgcontainer">
+
+
+                              <div class="container">
+                              <label><b>LOCATION DELETION</b></label>
+
+                             <label><p>Are you sure want to delete it?</p></label>
+
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
+                          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
+</form>
+
+                              </th>
+                          <tr>
+                            <th>Bandara Haluoleo, Kadia</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+
+                            <th>
+                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+
+                              <div id="id02" class="modal">
+
+                              <form class="modal-content animate" action="/action_page.php"> <!--Field animasi modal-->
+                              <div class="imgcontainer"> <!--Field (dalam) Modal-->
+
+
+                              <div class="container">
+                              <label><b>LOCATION DELETION</b></label>
+
+                             <label><p>Are you sure want to delete it?</p></label>
+
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
+                          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
+</form>
+
+                              </th>
+
+
+                          <tr>
+                            <th>Hotel "X" Kadia</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+
+                            <th>
+                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+
+                              <div id="id02" class="modal">
+
+                              <form class="modal-content animate" action="/action_page.php">
+                              <div class="imgcontainer">
+
+
+                              <div class="container">
+                              <label><b>LOCATION DELETION</b></label>
+
+                             <label><p>Are you sure want to delete it?</p></label>
+
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
+                          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
+</form>
+                              </th>
+
+                              <tr>
+                            <th>Restoran, Poasia</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+
+                            <th>
+                              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button><img src="icon/settings.png">
+
+                              <div id="id02" class="modal">
+
+                              <form class="modal-content animate" action="/action_page.php">
+                              <div class="imgcontainer">
+
+
+                              <div class="container">
+                              <label><b>LOCATION DELETION</b></label>
+
+                             <label><p>Are you sure want to delete it?</p></label>
+
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button>
+                          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button>
+</form>
+                              </th>
+
+                          </table>
+                        </div>
+
+
+    </div>
+
+  <div class="kanan">
+    <form action="#" class="location_form" method="post">
+      <h2>Add Location</h2>
+          <span>Place's Name</span><br>
+          <input class="kotak_lo" type="text"  name="#" placeholder="Place's Name">
+
+          <span>Address</span><br>
+          <input class="kotak_lo" type="text"  name="#" placeholder="Address">
+           <input class="add_button" type="submit" name="#" value="Add">
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
 <script>
       function openPages(evt, pageName) {
       // Declare all variables
