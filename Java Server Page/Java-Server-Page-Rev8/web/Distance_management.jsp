@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<%@page contentType="text/html" pageEncoding = "UTF-8"%>
+<!--%@page contentType="text/html" pageEncoding = "UTF-8"%-->
 
 <html>
     <head>
@@ -76,7 +76,7 @@ and open the template in the editor.
 <!--judul-->
   <div id="header">
     <div class="logo">
-      <img src="css/logo.png " width="150px" height="35px">
+      <img src="css/logo.png " width="90px" height="35px">
     </div>
 </div>
 <a class="mobile">MENU</a>

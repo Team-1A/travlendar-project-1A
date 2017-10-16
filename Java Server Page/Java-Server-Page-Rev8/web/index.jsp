@@ -4,13 +4,14 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 
 <html>
     <head>
         <title>TRAVNER</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--        <%@page contentType="text/html" pageEncoding="UTF-8"%>    -->
         <!-- CSS-->
         <link rel="stylesheet" href="css/style.css">
         <link href="css/fullcalendar.min.css" rel="stylesheet">
@@ -74,16 +75,16 @@ and open the template in the editor.
 <!--judul-->
   <div id="header"><!--header-->
     <div class="logo"><!--logo Travner-->
-      <img src="css/logo.png " width="150px" height="35px">
+      <img src="css/logo.png " width="90px" height="35px">
     </div>
 </div>
 <a class="mobile">MENU</a>
 
 <!--sidebar-->
  <div class="tab">
-    <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule</button>
-    <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar</button>
-    <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data</button>
+    <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule<img src="icon/Calendar.svg" ></button>
+    <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar<img src="icon/Calendar.svg" ></button>
+    <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data<img src="icon/Data2.svg" ></button>
 </div>
 
 <!--isi dari sidebar-->
@@ -92,7 +93,7 @@ and open the template in the editor.
 <div id="My Schedule" class="tabcontent">
     <div class="content">
       <div id="box">
-        <div class="box-top">My Schedule</div><!--Kotak Judul-->
+        
       <div class="box-panel"><!--Isi Kotak-->
         <div class="menu_atas"><!--menu bar-->
           <div class="menunya2"><!--content menu bar-->
@@ -114,7 +115,7 @@ and open the template in the editor.
                            <th> </th>
                             <th>
                                 <!--Modal Delete-->
-                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/trash.png"></button>
+                              <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/ExitIcon.svg"></button>
 
                               <div id="id01" class="modal">
   

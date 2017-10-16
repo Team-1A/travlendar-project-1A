@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@page contentType="text/html" pageEncoding = "UTF-8"%>
+<!--%@page contentType="text/html" pageEncoding = "UTF-8"%-->
 
 <html>
     <head>
@@ -71,7 +71,7 @@
 <!--header-->
 <div id="header">
   <div class="logo"><!--logo travner-->
-    <img src="css/logo.png " width="150px" height="30px">
+    <img src="css/logo.png " width="90px" height="35px">
   </div>
 </div>
 
