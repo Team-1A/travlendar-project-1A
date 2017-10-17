@@ -9,8 +9,9 @@ import static java.lang.System.exit;
 import com.mysql.jdbc.Connection;
 import java.text.*;
 import java.util.*;
-import travlendarver2DAO.LocationDAO;
 import travlendarver2DAO.TransportationModeDAO;
+import travlendarver2DAO.DistanceDAO;
+import travlendarver2DAO.ActivityDAO;
 
 /**
  *
@@ -32,38 +33,10 @@ public class Travner {
         ArrayList<TravelData> listRoute = new ArrayList<>();
         ArrayList<TransportationMode> listTransportationmode = new ArrayList<>();
         TransportationMode transportationMode1 = new TransportationMode();
-        transportationMode1.setTransportation("Plane");
-        transportationMode1.setVelocity(990);
-        
+        ArrayList<Distance> listDistance = new ArrayList<>();
         listTransportationmode = (ArrayList<TransportationMode>) TransportationModeDAO.getAll();
         
-        Location loc = new Location();
-        loc.setNamePoint("Rumah");
-        loc.setAddressPoint("Jl. Fatmawatti No.23");
-        LocationDAO.save(loc);
-//        listTransportationmode.add(transportationMode1);
-//        TransportationMode transportationMode2 = new TransportationMode();
-//        transportationMode2.setTransportation("Car");
-//        transportationMode2.setVelocity(60);
-//        
-//        listTransportationmode.add(transportationMode2);
-//        TransportationMode transportationMode3 = new TransportationMode();
-//        transportationMode3.setTransportation("Motorcycle");
-//        transportationMode3.setVelocity(50);
-//        
-//        listTransportationmode.add(transportationMode3);
-//        TransportationMode transportationMode4 = new TransportationMode();
-//        transportationMode4.setTransportation("Bike");
-//        transportationMode4.setVelocity(15);
-//        
-//        TransportationModeDAO.save(transportationMode4);
-//        
-//        listTransportationmode.add(transportationMode4);
-//        TransportationMode transportationMode5 = new TransportationMode();
-//        transportationMode5.setTransportation("Walk");
-//        transportationMode5.setVelocity(1);
-//        
-//        listTransportationmode.add(transportationMode5);
+        
         ArrayList<Schedule> listSchedule = new ArrayList<>();
         //File dimasukan ke array list diatas
         
@@ -78,15 +51,20 @@ public class Travner {
                     do{
                         TravelData travelData = new TravelData();
                         System.out.println("Travel Data");
-                        if(!listRoute.isEmpty())
-                        {
-                            for(int x=0; x<listRoute.size(); x++)
-                            {
-                                System.out.println((x+1) + ". " + listRoute.get(x).getRoute().getStartPoint().getNamePoint() + "(" + listRoute.get(x).getRoute().getStartPoint().getAddressPoint() + ") - " + listRoute.get(x).getRoute().getPointArrived().getNamePoint() + "(" + listRoute.get(x).getRoute().getPointArrived().getAddressPoint() + ") = " + listRoute.get(x).getRoute().getDistanceKM() + "KM");
-                            }
-                        }else{
-                            System.out.println("List is Empty");
-                        }
+                        listDistance = (ArrayList<Distance>) DistanceDAO.getAll();
+                        int x=0;
+                        listDistance.forEach((Distance distance) -> {
+                            System.out.println(distance.getDistanceKM() + " " + distance.getDistanceM());
+                        });
+//                        if(!listRoute.isEmpty())
+//                        {
+//                            for(int x=0; x<listRoute.size(); x++)
+//                            {
+//                                System.out.println((x+1) + ". " + listRoute.get(x).getRoute().getStartPoint().getNamePoint() + "(" + listRoute.get(x).getRoute().getStartPoint().getAddressPoint() + ") - " + listRoute.get(x).getRoute().getPointArrived().getNamePoint() + "(" + listRoute.get(x).getRoute().getPointArrived().getAddressPoint() + ") = " + listRoute.get(x).getRoute().getDistanceKM() + "KM");
+//                            }
+//                        }else{
+//                            System.out.println("List is Empty");
+//                        }
                         //Line ini khusus print list travel datanya
                         System.out.println("1. Input Travel Data");
                         System.out.println("2. Back");
@@ -95,6 +73,9 @@ public class Travner {
                         switch(Integer.parseInt(scan.next())){
                             case 1:{
                                 listRoute.add(travelData.inputTravelData());
+                                listRoute.forEach((TravelData route) -> {
+                                    DistanceDAO.save(route.getRoute());
+                                });
                                 break;
                             }
                             case 2:{
@@ -137,8 +118,11 @@ public class Travner {
                                         }
                                         case 2:{
                                             schedule.setListactivity(listActivity);
-                                            listSchedule.add(schedule);
                                             Collections.sort(listActivity, Activity.activityComparator);
+                                            listSchedule.add(schedule);
+                                            listActivity.forEach((Activity activity) -> {
+                                                ActivityDAO.save(activity);
+                                            });
                                             loop = false;
                                             break;
                                         }
