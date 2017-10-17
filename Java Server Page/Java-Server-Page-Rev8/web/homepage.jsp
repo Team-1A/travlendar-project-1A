@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
+  <!--%@page contentType="text/html" pageEncoding = "UTF-8"%-->
 <html>
-  <%@page contentType="text/html" pageEncoding = "UTF-8"%>
 <head>
 <style>
 body{
-  background-image: url("background.jpg");
-  background-size: 1400px 750px;
+  background-image: url("icon/background.jpg");
+  background-size: 1368px 870px;
   background-repeat: no-repeat;
 
 }
@@ -17,7 +17,7 @@ body{
   height:max-content;
   width: 50%;
   padding: 6px;
-  margin: 450px 450px 330px 330px;
+  margin: 50px auto;
   text-align: center;
   font: 20px sans-serif;
   font-weight: bold;
@@ -38,6 +38,7 @@ body{
 </style>
 </head>
 <body >
+  <img src="icon/Travner1.png" style="width:450px; height:150px; display:block; margin: 300px auto 0px auto ;"></img>
 <div class="button_started"><a href="index.jsp" style="text-decoration:none;">GET STARTED</a></div>
 
 </body>
