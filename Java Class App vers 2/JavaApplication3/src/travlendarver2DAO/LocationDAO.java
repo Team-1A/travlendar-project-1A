@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package travlendarver2DAO;
 
 import com.mysql.jdbc.Connection;
@@ -42,7 +37,7 @@ public class LocationDAO extends DAO {
     }
     
     public static int save(Location _location){
-        int stats = 0;
+        Integer stats = 0;
         try{
             Connection con = getConnection();
             Statement st = con.createStatement();

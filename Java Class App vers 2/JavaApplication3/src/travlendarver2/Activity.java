@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package travlendarver2;
 
 import java.sql.Time;
@@ -28,7 +23,7 @@ public class Activity {
         Constructor pada class Activity
     */
     public Activity(){
-        id_Activity = 0;
+        id_Activity = null;
         id_StartLocation = 0;
         id_Destination = 0;
         TransportationCode = null;
@@ -163,14 +158,6 @@ public class Activity {
      */
     public void setEndEventTime(Time endEventTime) {
         this.endEventTime = endEventTime;
-    }
-    /**
-     * @param startEventTime the startEventTime to set
-     * @param endEventTime the endEventTime to set
-     */
-    public void setTime(Time startEventTime, Time endEventTime){
-        this.setStartEventTime(startEventTime);
-        this.setEndEventTime(endEventTime);
     }
     
     public static Comparator<Activity> activityComparator = new Comparator<Activity>() {//public create new object from Comparator

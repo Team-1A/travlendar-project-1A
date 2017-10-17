@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package travlendarver2;
 
 /**
@@ -13,7 +8,13 @@ public class TransportationMode {
     
     private String transportation_Code;
     private String transportation_Name;
-    private int velocity;
+    private Integer velocity;
+    
+    public TransportationMode() {
+        transportation_Code = null;
+        transportation_Name = null;
+        velocity = 0;
+    }
 
     /**
      * @return the transportation_Code
@@ -28,10 +29,6 @@ public class TransportationMode {
     public void setTransportation_Code(String transportation_Code) {
         this.transportation_Code = transportation_Code;
     }
-    
-    /*
-        Method inputTransportation() berfungsi untuk melakukan input moda transportasi dan kecepatan rata-rata
-    */
 
     /**
      * @return the transportation
@@ -50,7 +47,7 @@ public class TransportationMode {
     /**
      * @return the velocity
      */
-    public int getVelocity() {
+    public Integer getVelocity() {
         return velocity;
     }
 

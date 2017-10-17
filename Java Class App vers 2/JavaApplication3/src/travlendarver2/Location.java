@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package travlendarver2;
 
 /**
@@ -14,6 +9,12 @@ public class Location {
     private Integer id_Location;
     private String namePoint;
     private String addressPoint;
+    
+    public Location(){
+        id_Location = null;
+        namePoint = null;
+        addressPoint = null;
+    }
     
     /**
      * @return the id_Location
@@ -27,14 +28,6 @@ public class Location {
      */
     public void setId_Location(int id_Location) {
         this.id_Location = id_Location;
-    }
-    
-    /*
-        Getter dan Settter pada class Location
-    */
-    public Location(){
-        namePoint = null;
-        addressPoint = null;
     }
 
     /**

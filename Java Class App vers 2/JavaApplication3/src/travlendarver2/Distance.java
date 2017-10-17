@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package travlendarver2;
 
 /**
@@ -55,7 +50,7 @@ public class Distance {
     /**
      * @return the distanceKM
      */
-    public int getDistanceKM() {
+    public Integer getDistanceKM() {
         return distanceKM;
     }
 
@@ -69,7 +64,7 @@ public class Distance {
     /**
      * @return the distanceM
      */
-    public int getDistanceM() {
+    public Integer getDistanceM() {
         return distanceM;
     }
 

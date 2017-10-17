@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package travlendarver2DAO;
 
 import com.mysql.jdbc.Connection;
@@ -43,15 +38,16 @@ public class DistanceDAO extends DAO {
     }
     
     public static int save(Distance _distance){
-        int stats = 0;
+        Integer stats = 0;
         try{
             Connection con = getConnection();
             Statement st = con.createStatement();
             
             Integer id_StartLocation = _distance.getId_StartLocation();
             Integer id_Destination = _distance.getId_Destination();
-            int distKM = _distance.getDistanceKM();
-            int distM = _distance.getDistanceM();
+            Integer distKM = _distance.getDistanceKM();
+            Integer distM = _distance.getDistanceM();
+            
             String sql = "INSERT INTO distance (ID_StartLocation,ID_Destination,Distance_KM ,Distance_M) VALUES(\"" + id_StartLocation + "\",\"" + id_Destination + "\",\"" + distKM + "\",\"" + distM +"\");";
             stats = st.executeUpdate(sql);
         } catch (SQLException ex){
