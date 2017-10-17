@@ -6,7 +6,6 @@
 package travlendarver2DAO;
 
 import com.mysql.jdbc.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,17 +18,17 @@ import travlendarver2.Distance;
  *
  * @author kivla
  */
-public class DistanceDAO {
-    public static Connection getConnection(){
-        Connection con = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/travlendar", "root", "");
-        } catch (ClassNotFoundException | SQLException ex){
-            System.out.println(ex);
-        }
-        return con;
-    }
+public class DistanceDAO extends DAO{
+//    public static Connection getConnection(){
+//        Connection con = null;
+//        try {
+//            Class.forName("com.mysql.jdbc.Driver");
+//            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/travlendar", "root", "");
+//        } catch (ClassNotFoundException | SQLException ex){
+//            System.out.println(ex);
+//        }
+//        return con;
+//    }
     
     public static List<Distance> getAll(){
         List<Distance> distance = new ArrayList<>();
@@ -48,6 +47,7 @@ public class DistanceDAO {
         } catch (SQLException ex){
             System.out.println(ex);
         }
+        disconnect();
         return distance;
     }
     
@@ -65,6 +65,7 @@ public class DistanceDAO {
         } catch (SQLException ex){
             System.out.println(ex);
         }
+        disconnect();
         return stats;
     }
 }

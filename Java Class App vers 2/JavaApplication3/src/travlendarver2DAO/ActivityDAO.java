@@ -6,7 +6,6 @@
 package travlendarver2DAO;
 
 import com.mysql.jdbc.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,23 +14,22 @@ import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 import travlendarver2.Activity;
-import travlendarver2.Distance;
 
 /**
  *
  * @author kivla
  */
-public class ActivityDAO {
-    public static Connection getConnection(){
-        Connection con = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/travlendar", "root", "");
-        } catch (ClassNotFoundException | SQLException ex){
-            System.out.println(ex);
-        }
-        return con;
-    }
+public class ActivityDAO extends DAO{
+//    public static Connection getConnection(){
+//        Connection con = null;
+//        try {
+//            Class.forName("com.mysql.jdbc.Driver");
+//            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/travlendar", "root", "");
+//        } catch (ClassNotFoundException | SQLException ex){
+//            System.out.println(ex);
+//        }
+//        return con;
+//    }
     
     public static List<Activity> getAll(){
         List<Activity> Activity = new ArrayList<>();
@@ -52,6 +50,7 @@ public class ActivityDAO {
         } catch (SQLException ex){
             System.out.println(ex);
         }
+        disconnect();
         return Activity;
     }
     
@@ -71,6 +70,7 @@ public class ActivityDAO {
         } catch (SQLException ex){
             System.out.println(ex);
         }
+        disconnect();
         return stats;
     }
 }
