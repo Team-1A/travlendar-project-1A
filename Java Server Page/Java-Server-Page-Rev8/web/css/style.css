@@ -184,7 +184,7 @@ div.tab button:hover {
 
 /* Create an active/current "tab button" class */
 div.tab button.active {
-    background-color: #0174DF;
+    background-color: #191C20B3;
 }
 
 /* Style the tab content */
@@ -349,11 +349,10 @@ option{
 }
 
 .menunya{
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
 	border-radius: 5px;
 	float:left;
 	width: 469px;
-	padding: 2px;
 	margin: 2px;
 	text-align: center;
 	font: 14px sans-serif;
@@ -379,7 +378,8 @@ option{
 }
 
 .point {
-	border-radius: 12px;
+	width: 469px;
+	border-radius: 13px;
 	background:#2c3e50;
 }
 

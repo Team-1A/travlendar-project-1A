@@ -4,14 +4,13 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <html>
     <head>
         <title>Travner</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--        <%@page contentType="text/html" pageEncoding="UTF-8"%>    -->
         <!-- CSS-->
         <link rel="shortcut icon" type="image/png" href="icon/TravnerLogoClz.png" >
         <link rel="stylesheet" href="css/style.css">
