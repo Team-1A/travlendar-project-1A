@@ -41,7 +41,7 @@ public class TransportationMode {
     }
 
     /**
-     * @param transportation the transportation to set
+     * @param transportation_Name the transportation to set
      */
     public void setTransportation(String transportation_Name) {
         this.transportation_Name = transportation_Name;

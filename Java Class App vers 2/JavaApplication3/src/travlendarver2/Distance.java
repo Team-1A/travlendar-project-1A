@@ -5,53 +5,53 @@
  */
 package travlendarver2;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author ACER
  */
 public class Distance {
-    private Location startPoint;
-    private Location destinationPoint;
+    
+    private Integer id_StartLocation;
+    private Integer id_Destination;
     private Integer distanceKM;
     private Integer distanceM;
+
     
     public Distance(){
-        startPoint= null;
-        destinationPoint = null;
+        id_StartLocation = 0;
+        id_Destination = 0;
         distanceKM = 0;
         distanceM = 0;
     }
 
     /**
-     * @return the startPoint
+     * @return the id_StartLocation
      */
-    public Location getStartPoint() {
-        return startPoint;
+    public Integer getId_StartLocation() {
+        return id_StartLocation;
     }
 
     /**
-     * @param startPoint the startPoint to set
+     * @param id_StartLocation the id_StartLocation to set
      */
-    public void setStartPoint(Location startPoint) {
-        this.startPoint = startPoint;
+    public void setId_StartLocation(Integer id_StartLocation) {
+        this.id_StartLocation = id_StartLocation;
     }
 
     /**
-     * @return the pointArrived
+     * @return the id_Destination
      */
-    public Location getPointArrived() {
-        return destinationPoint;
+    public Integer getId_Destination() {
+        return id_Destination;
     }
 
     /**
-     * @param pointArrived the pointArrived to set
+     * @param id_Destination the id_Destination to set
      */
-    public void setPointArrived(Location destinationPoint) {
-        this.destinationPoint = destinationPoint;
+    public void setId_Destination(Integer id_Destination) {
+        this.id_Destination = id_Destination;
     }
-
+    
     /**
      * @return the distanceKM
      */
@@ -80,24 +80,4 @@ public class Distance {
         this.distanceM = distanceM;
     }
     
-    public void printRecommend(ArrayList<TransportationMode> listTransportationmode, ArrayList<Schedule> listSchedule, int choose, int index)    {
-        System.out.println("Recommend Transportation mode");
-        for(int j = 0; j<listTransportationmode.size(); j++){//to trace size listTransportationmode as counter j
-            // keep value to hours
-        int hours = listSchedule.get(choose).getListactivity().get(index).getRoute().getDistanceKM()/listTransportationmode.get(j).getVelocity();
-            //keep value to minutes
-        int minutes = listSchedule.get(choose).getListactivity().get(index).getRoute().getDistanceM()/(listTransportationmode.get(j).getVelocity()*(1000/60));
-            // keep value to totslminutes
-        int totalMinutes = (hours*60) + minutes;
-        hours = hours + (minutes/60);//hours keep value from hours and minute
-        minutes = minutes%60;//minutes keep value from minutes%60
-        // keep value from start event time hours to hours
-        hours = listSchedule.get(choose).getListactivity().get(index).getStartEventTime().getHours() - hours;
-        // keep value from start event time minutes to minutes
-        minutes = listSchedule.get(choose).getListactivity().get(index).getStartEventTime().getMinutes() - minutes;
-        //print estimation transportation and depature
-        System.out.println(listTransportationmode.get(j).getTransportation() + " estimation " + totalMinutes + ", Departure: " + hours + "." + minutes);
-        }//terjadi perhitungan
-         System.out.println();
-    }
 }

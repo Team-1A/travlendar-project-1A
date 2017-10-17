@@ -18,17 +18,7 @@ import travlendarver2.TransportationMode;
  *
  * @author kivla
  */
-public class TransportationModeDAO extends DAO{
-//    public static Connection getConnection(){
-//        Connection con = null;
-//        try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/travlendar", "root", "");
-//        } catch (ClassNotFoundException | SQLException ex){
-//            System.out.println(ex);
-//        }
-//        return con;
-//    }
+public class TransportationModeDAO extends DAO {
     
     public static List<TransportationMode> getAll(){
         List<TransportationMode> transports = new ArrayList<>();
@@ -61,7 +51,7 @@ public class TransportationModeDAO extends DAO{
             String transName = _transport.getTransportation();
             int transVelocity = _transport.getVelocity();
             
-            String sql = "INSERT INTO transportation VALUES(\""+ transCode +"\",\"" + transName + "\",\"" + transVelocity +"\");";
+            String sql = "INSERT INTO transportation VALUES(\"" + transCode + "\",\"" + transName + "\",\"" + transVelocity + "\");";
             stats = st.executeUpdate(sql);
         } catch (Exception ex){
             System.out.println(ex);

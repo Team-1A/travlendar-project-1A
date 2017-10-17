@@ -6,20 +6,21 @@
 package travlendarver2;
 
 import java.sql.Time;
-import static java.sql.Time.valueOf;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Comparator;
 
 /**
  *
  * @author Rohmat Dasuki
  */
 public class Activity {
+    
+    private Integer id_Activity;
+    private Integer id_StartLocation;
+    private Integer id_Destination;
+    private String TransportationCode;
     private String eventName;
     private Integer priority;
-    private Distance route;
-    private Date eventDate;
+    private java.sql.Date eventDate;
     private Time startEventTime;
     private Time endEventTime;
     
@@ -27,12 +28,72 @@ public class Activity {
         Constructor pada class Activity
     */
     public Activity(){
+        id_Activity = 0;
+        id_StartLocation = 0;
+        id_Destination = 0;
+        TransportationCode = null;
         eventName = null;
         priority = 0;
-        route = null;
+        eventDate = null;
         startEventTime = null;
         endEventTime = null;
-    }   
+    }
+    
+    /**
+     * @return the id_Activity
+     */
+    public Integer getId_Activity() {
+        return id_Activity;
+    }
+
+    /**
+     * @param id_Activity the id_Activity to set
+     */
+    public void setId_Activity(Integer id_Activity) {
+        this.id_Activity = id_Activity;
+    }
+
+    /**
+     * @return the id_StartLocation
+     */
+    public Integer getId_StartLocation() {
+        return id_StartLocation;
+    }
+
+    /**
+     * @param id_StartLocation the id_StartLocation to set
+     */
+    public void setId_StartLocation(Integer id_StartLocation) {
+        this.id_StartLocation = id_StartLocation;
+    }
+
+    /**
+     * @return the id_Destination
+     */
+    public Integer getId_Destination() {
+        return id_Destination;
+    }
+
+    /**
+     * @param id_Destination the id_Destination to set
+     */
+    public void setId_Destination(Integer id_Destination) {
+        this.id_Destination = id_Destination;
+    }
+
+    /**
+     * @return the TransportationCode
+     */
+    public String getTransportationCode() {
+        return TransportationCode;
+    }
+
+    /**
+     * @param TransportationCode the TransportationCode to set
+     */
+    public void setTransportationCode(String TransportationCode) {
+        this.TransportationCode = TransportationCode;
+    }
 
     /**
      * @return the eventName
@@ -61,19 +122,19 @@ public class Activity {
     public void setPriority(int priority) {
         this.priority = priority;
     }
-
+    
     /**
-     * @return the route
+     * @return the eventDate
      */
-    public Distance getRoute() {
-        return route;
+    public java.sql.Date getEventDate() {
+        return eventDate;
     }
 
     /**
-     * @param route the route to set
+     * @param eventDate the eventDate to set
      */
-    public void setRoute(Distance route) {
-        this.route = route;
+    public void setEventDate(java.sql.Date eventDate) {
+        this.eventDate = eventDate;
     }
 
     /**
@@ -104,43 +165,12 @@ public class Activity {
         this.endEventTime = endEventTime;
     }
     /**
-     * @param SetTime the endEventTime to set
+     * @param startEventTime the startEventTime to set
+     * @param endEventTime the endEventTime to set
      */
     public void setTime(Time startEventTime, Time endEventTime){
         this.setStartEventTime(startEventTime);
         this.setEndEventTime(endEventTime);
-    }
-    
-    public Activity inputActivity(ArrayList<TravelData> listRoute) throws ParseException {
-        Activity activity = new Activity();// create new object activity from class Activity
-        Scanner scan = new Scanner(System.in);//create new object scan 
-        SimpleDateFormat formatTime = new SimpleDateFormat("hh.mm"); // create new object formatTime from library SimpleDateFormat 
-        
-        System.out.print("Activity's title : ");
-        activity.setEventName(scan.nextLine());// input event name
-        System.out.println();
-        
-        for(int i = 0; i<listRoute.size(); i++){
-            // print name start location and address start location  //print name arrrive location and name arrive address location 
-            System.out.println((i+1) + ". " + listRoute.get(i).getRoute().getStartPoint().getNamePoint() +" (" + listRoute.get(i).getRoute().getStartPoint().getAddressPoint() + ") = " + listRoute.get(i).getRoute().getPointArrived().getNamePoint()  + " (" + listRoute.get(i).getRoute().getPointArrived().getAddressPoint() + ") ");
-        }
-        System.out.print("Choose : ");
-        //take array from travle data for start location and arrive location
-        activity.setRoute(listRoute.get(Integer.parseInt(scan.nextLine())-1).getRoute());
-        
-        System.out.print("\nInput start event(hh:mm) : ");
-        //take Date time for start event
-        activity.setStartEventTime(valueOf(scan.nextLine() + ":00"));
-        
-        System.out.print("\nInput end event(hh:mm) : ");
-        //take Date time for end event
-        activity.setEndEventTime(valueOf(scan.nextLine() + ":00"));
-        
-        System.out.print("Prioritas(1-5) : ");
-        //take value priority 
-        activity.setPriority(Integer.parseInt(scan.nextLine()));
-        
-        return activity;
     }
     
     public static Comparator<Activity> activityComparator = new Comparator<Activity>() {//public create new object from Comparator
@@ -152,6 +182,5 @@ public class Activity {
             return startDate1.compareTo(startDate2);
         }
     };
-    
     
 }

@@ -18,17 +18,7 @@ import travlendarver2.Distance;
  *
  * @author kivla
  */
-public class DistanceDAO extends DAO{
-//    public static Connection getConnection(){
-//        Connection con = null;
-//        try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/travlendar", "root", "");
-//        } catch (ClassNotFoundException | SQLException ex){
-//            System.out.println(ex);
-//        }
-//        return con;
-//    }
+public class DistanceDAO extends DAO {
     
     public static List<Distance> getAll(){
         List<Distance> distance = new ArrayList<>();
@@ -39,7 +29,8 @@ public class DistanceDAO extends DAO{
         
         while(rs.next()){
             Distance dist = new Distance();
-            // TODO : Set ID Start Loc & Destination
+            dist.setId_StartLocation(rs.getInt("ID_StartLocation"));
+            dist.setId_StartLocation(rs.getInt("ID_Destination"));
             dist.setDistanceKM(rs.getInt("Distance_KM"));
             dist.setDistanceM(rs.getInt("Distance_M"));
             distance.add(dist);
@@ -57,10 +48,11 @@ public class DistanceDAO extends DAO{
             Connection con = getConnection();
             Statement st = con.createStatement();
             
-            // TODO : Add ID Start Loc & Destination
+            Integer id_StartLocation = _distance.getId_StartLocation();
+            Integer id_Destination = _distance.getId_Destination();
             int distKM = _distance.getDistanceKM();
             int distM = _distance.getDistanceM();
-            String sql = "INSERT INTO distance (Distance_KM ,Distance_M) VALUES(\"" + distKM + "\",\"" + distM +"\");";
+            String sql = "INSERT INTO distance (ID_StartLocation,ID_Destination,Distance_KM ,Distance_M) VALUES(\"" + id_StartLocation + "\",\"" + id_Destination + "\",\"" + distKM + "\",\"" + distM +"\");";
             stats = st.executeUpdate(sql);
         } catch (SQLException ex){
             System.out.println(ex);
