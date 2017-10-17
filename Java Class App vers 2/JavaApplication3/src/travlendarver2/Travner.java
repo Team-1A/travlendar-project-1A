@@ -12,6 +12,7 @@ import java.util.*;
 import travlendarver2DAO.TransportationModeDAO;
 import travlendarver2DAO.DistanceDAO;
 import travlendarver2DAO.ActivityDAO;
+import travlendarver2DAO.LocationDAO;
 
 /**
  *
@@ -50,6 +51,9 @@ public class Travner {
                 case 1:{
                     do{
                         TravelData travelData = new TravelData();
+                        Location startLoc = new Location();
+                        Location arriveLoc = new Location();
+                        Distance route = new Distance();
                         System.out.println("Travel Data");
                         listDistance = (ArrayList<Distance>) DistanceDAO.getAll();
                         int x=0;
@@ -72,10 +76,28 @@ public class Travner {
                         
                         switch(Integer.parseInt(scan.next())){
                             case 1:{
-                                listRoute.add(travelData.inputTravelData());
-                                listRoute.forEach((TravelData route) -> {
-                                    DistanceDAO.save(route.getRoute());
-                                });
+//                                listRoute.add(travelData.inputTravelData());
+                                System.out.print("Start point name : ");
+                                startLoc.setNamePoint(scan.nextLine());// take value name start event
+                                System.out.print("Start point address : ");
+                                startLoc.setAddressPoint(scan.nextLine());// take value name arrive event 
+                                LocationDAO.save(startLoc);
+                                
+                                System.out.print("Arrival point name : ");
+                                arriveLoc.setNamePoint(scan.nextLine());// take value from place name arrival 
+                                System.out.print("Arrival point address : ");
+                                arriveLoc.setAddressPoint(scan.nextLine());// take vlue from address name arrival
+                                LocationDAO.save(arriveLoc);
+                                
+                                System.out.print("Distance(Km) : ");
+                                route.setDistanceKM(Integer.parseInt(scan.nextLine())); //take value distance from DistanceKM
+                                System.out.print("Distance(m) : ");
+                                route.setDistanceM(Integer.parseInt(scan.nextLine()));//take value distance from DistanceM
+                                DistanceDAO.save(route);
+                                
+//                                listRoute.forEach((TravelData route) -> {
+//                                    DistanceDAO.save(route.getRoute());
+//                                });
                                 break;
                             }
                             case 2:{
