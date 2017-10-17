@@ -8,7 +8,7 @@ and open the template in the editor.
 
 <html>
     <head>
-        <title>Travner</title>
+        <title>Travner : Your Travel Partner</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--        <%@page contentType="text/html" pageEncoding="UTF-8"%>    -->
