@@ -38,8 +38,8 @@ public class Travner {
         listTransportationmode = (ArrayList<TransportationMode>) TransportationModeDAO.getAll();
         
         Location loc = new Location();
-        loc.setNamePoint("BEC");
-        loc.setAddressPoint("Jl. Purnawarman No.21");
+        loc.setNamePoint("Rumah");
+        loc.setAddressPoint("Jl. Fatmawatti No.23");
         LocationDAO.save(loc);
 //        listTransportationmode.add(transportationMode1);
 //        TransportationMode transportationMode2 = new TransportationMode();
