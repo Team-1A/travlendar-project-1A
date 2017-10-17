@@ -38,7 +38,7 @@ body{
 </style>
 </head>
 <body >
-  <img src="icon/Travner1.png" style="width:450px; height:150px; display:block; margin: 300px auto 0px auto ;"></img>
+  <img src="icon/Travner1.png" style="width:450px; height:175px; display:block; margin: 300px auto 0px auto ;"></img>
 <div class="button_started"><a href="index.jsp" style="text-decoration:none;">GET STARTED</a></div>
 
 </body>
