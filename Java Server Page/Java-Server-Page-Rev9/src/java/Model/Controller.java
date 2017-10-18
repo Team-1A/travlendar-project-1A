@@ -16,12 +16,9 @@ import java.util.List;
 public class Controller {
     Location objLoc = new Location();
     
-    public void insertNameLoc(String Loc){
+    public void insertLoc(String Loc,String Addr){
         objLoc.setNamePoint(Loc);
-    }
-    
-    public void insertAddr(String addr){
-        objLoc.setAddressPoint(addr);
+        objLoc.setAddressPoint(Addr);
     }
     
     public Location out(){

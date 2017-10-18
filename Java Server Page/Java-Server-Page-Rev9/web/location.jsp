@@ -483,8 +483,7 @@ and open the template in the editor.
            <% 
             String nameLoc = request.getParameter("namePoint");
             String nameAddr = request.getParameter("addressPoint");
-            obj.insertNameLoc(nameLoc);
-            obj.insertAddr(nameAddr);
+            obj.insertLoc(nameLoc, nameAddr);
             obj.insertToDB(obj.out());
               %>
 
