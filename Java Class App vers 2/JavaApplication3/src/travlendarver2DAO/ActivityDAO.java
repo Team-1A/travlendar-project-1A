@@ -66,4 +66,31 @@ public class ActivityDAO extends DAO {
         disconnect();
         return stats;
     }
+    
+    public static List<Activity> getByDate(java.sql.Date calendar){
+        List<Activity> Activity = new ArrayList<>();
+        try {
+        Connection con = getConnection();
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM activity WHERE Date ="+calendar);
+        ResultSet rs = ps.executeQuery();
+        while(rs.next()){
+            Activity act = new Activity();
+            act.setId_Activity(rs.getInt("ID_Activity"));
+            act.setId_StartLocation(rs.getInt("ID_StartLocation"));
+            act.setId_Destination(rs.getInt("ID_Dastination"));
+            act.setTransportationCode(rs.getString("TransportationCode"));
+            act.setEventName(rs.getString("Activity_Name"));
+            act.setEventDate(rs.getDate("Date"));
+            act.setStartEventTime(rs.getTime("Start_Time"));
+            act.setEndEventTime(rs.getTime("End_Time"));
+            act.setPriority(rs.getInt("Priority_Scale"));
+            Activity.add(act);
+            }
+        } catch (SQLException ex){
+            System.out.println(ex);
+        
+        }
+        disconnect();
+        return Activity;
+    }
 }
