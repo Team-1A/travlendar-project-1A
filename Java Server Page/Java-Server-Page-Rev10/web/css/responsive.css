@@ -1,0 +1,135 @@
+@media screen and (max-width: 1080px) {
+
+div.tab button{
+	font-size: 12px;
+}
+
+.menu_atas{
+	width: auto;
+	
+}
+th, td{
+	padding:8px 30px;
+}
+#calendar{
+	width: auto;
+}
+.fc button{
+            height: 25px;
+            width: 50px;
+        }
+.fc button, .fc table, body .fc{
+        font-size: 12px;
+            
+        }
+div .menunya{
+	font-size: 12px;
+	width: 345px;
+	height: 60px;
+}
+.point{
+	font-size: 12px;
+	width: 345px;
+	height: 60px;
+}
+.kiri{
+	width: 700px;
+}
+.kanan{
+	width: 700px;
+}
+.kotak_lo{
+	width: 600px;
+}
+div.tab {
+	background-size: 200px 1100px;
+    height:1100px;
+
+}
+
+	
+}
+
+@media screen and (max-width: 780px) {
+	
+	div.tab button{
+	font-size: 9px;
+}
+.menu_atas{
+	width: auto;
+}
+th, td{
+	font-size: 10px;
+	padding:8px 5px;
+}
+#calendar{
+	max-width: 210px;
+}
+.fc button{
+            height: 15px;
+            width: 27px;
+        }
+.fc button, .fc table, body .fc{
+        font-size: 3px;
+            
+        }
+div .menunya{
+	border-radius: 5px;
+	font-size: 8px;
+	width: 80px;
+	height: 40px;
+}
+div .menunya img{
+	width: 15px;
+	height: 15px;
+}
+.point{
+	font-size: 8px;
+	border-radius: 5px;
+	width: 75px;
+	height: 35px;
+}
+.kiri{
+	width: 220px;
+}
+.kanan{
+	
+	width: 220px;
+	height: auto;
+}
+.kotak_lo{
+	font-size: 12px;
+	width: 150px;
+}
+div.tab {
+	background-size: 200px 1300px;
+    height:1300px;
+}
+*{
+	font-size: 12px;
+}
+.waktu{
+	font-size: 7px;
+	width: 40px;
+	height: 20px;
+}
+.add_button{
+	font-size: 12px;
+	width: 50px;
+	height: 30px;
+
+}
+div .menunya2{
+	padding-bottom: 40px;
+	font-size: 3px;
+	width: 170px;
+	height: 30px;
+}
+select{
+	width: 140px;
+}
+
+
+	
+
+}
