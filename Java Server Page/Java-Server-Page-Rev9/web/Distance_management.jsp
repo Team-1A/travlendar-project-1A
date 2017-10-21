@@ -438,17 +438,19 @@ and open the template in the editor.
 </table>
                         </div>
                                     </div>
-                                    <div class="kanan">
+                                    <div class="kanan 
+                                         <jsp:useBean id = "obj" class = "Model.Controller"/>
+                                        <div class="kanan"><!--Field Kanan-->
+                                        
                                         <form action="#" class="location_form" method="post">
                                             <h2>Add Distance</h2>
                                             <span>From</span><br>
-                                            <input class="kotak_lo" type="text"  name="#" placeholder="insert name"><input class="kotak_lo" type="text"  name="#" placeholder="insert address"><br>
-                                            <span>To</span><br>
-                                            <input class="kotak_lo" type="text"  name="#" placeholder="insert name"><input class="kotak_lo" type="text"  name="#" placeholder="insert address"><br>
-                                            <span>Distance</span><br>
-                                            <input class="ktk_distance" type="text"  name="#" placeholder="km">
-                                            <input class="ktk_distance" type="text"  name="#" placeholder="m"><br><br>
+                                            <input class="kotak_lo" type="text"  name="id_StartLocation" placeholder="insert name">
+                                            <input class="kotak_lo" type="text"  name="id_Destination" placeholder="insert name">
+                                            <input class="ktk_distance" type="text"  name="distanceKM" placeholder="km">
+                                            <input class="ktk_distance" type="text"  name="distanceM" placeholder="m"><br><br>
                                             <input class="add_button" type="submit" name="#" value="Add">
+                                           
             </form>
           </div>
         </div>
