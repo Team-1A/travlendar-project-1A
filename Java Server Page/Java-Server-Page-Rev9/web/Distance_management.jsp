@@ -438,8 +438,7 @@ and open the template in the editor.
 </table>
                         </div>
                                     </div>
-                                    <div class="kanan 
-                                         <jsp:useBean id = "obj" class = "Model.Controller"/>
+                                    
                                         <div class="kanan"><!--Field Kanan-->
                                         
                                         <form action="#" class="location_form" method="post">

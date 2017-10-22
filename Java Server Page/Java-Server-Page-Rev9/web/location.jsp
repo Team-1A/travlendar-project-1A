@@ -470,7 +470,7 @@ and open the template in the editor.
 
 
     </div>
-                              <jsp:useBean id = "obj" class = "Model.Controller"/>
+                              <jsp:useBean id = "obj" class = "Controller.LocationController"/>
   <div class="kanan"><!--Field Kanan-->
     <form action="#" class="location_form" method="post"><!--add location-->
       <h2>Add Location</h2>
@@ -483,8 +483,10 @@ and open the template in the editor.
            <% 
             String nameLoc = request.getParameter("namePoint");
             String nameAddr = request.getParameter("addressPoint");
+            if (nameLoc != null && nameAddr != null){
             obj.insertLoc(nameLoc, nameAddr);
             obj.insertToDB(obj.out());
+            }
               %>
 
             </form>
