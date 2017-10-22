@@ -54,4 +54,8 @@ public class TransportationModeDAO extends DAO {
         disconnect();
         return stats;
     }
+
+    TransportationModeDAO(String jdbcURL, String jdbcUsername, String jdbcPassword) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

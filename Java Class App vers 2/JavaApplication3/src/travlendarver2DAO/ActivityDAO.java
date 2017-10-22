@@ -93,4 +93,20 @@ public class ActivityDAO extends DAO {
         disconnect();
         return Activity;
     }
+
+    ActivityDAO(String jdbcURL, String jdbcUsername, String jdbcPassword) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    boolean simpan(Activity myActivity) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    List<Activity> listAllActivity(int halaman, int batasJmlItem) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    int getPageCount(int batasJmlItem) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

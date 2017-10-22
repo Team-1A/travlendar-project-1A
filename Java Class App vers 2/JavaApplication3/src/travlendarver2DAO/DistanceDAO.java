@@ -56,4 +56,8 @@ public class DistanceDAO extends DAO {
         disconnect();
         return stats;
     }
+
+    DistanceDAO(String jdbcURL, String jdbcUsername, String jdbcPassword) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

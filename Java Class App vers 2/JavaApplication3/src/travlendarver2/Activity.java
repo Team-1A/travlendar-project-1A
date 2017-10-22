@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 /**
  *
- * @author Rohmat Dasuki
+ * @author Rohmat Dasuki 
  */
 public class Activity {
     
@@ -160,14 +160,12 @@ public class Activity {
         this.endEventTime = endEventTime;
     }
     
-    public static Comparator<Activity> activityComparator = new Comparator<Activity>() {//public create new object from Comparator
-        @Override
-        public int compare(Activity activity1, Activity activity2) {
-            Time startDate1 = activity1.getStartEventTime();// create object start event
-            Time startDate2 = activity2.getStartEventTime();// create object end event
-            
-            return startDate1.compareTo(startDate2);
-        }
-    };
+    public static Comparator<Activity> activityComparator = (Activity activity1, Activity activity2) -> {
+        Time startDate1 = activity1.getStartEventTime();// create object start event
+        Time startDate2 = activity2.getStartEventTime();// create object end event
+        
+        return startDate1.compareTo(startDate2);
+    } //public create new object from Comparator
+    ;
     
 }
