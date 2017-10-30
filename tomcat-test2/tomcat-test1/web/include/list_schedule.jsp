@@ -18,9 +18,9 @@
 
       <div class="box-panel"><!--Isi Kotak-->
         <div class="menu_atas"><!--menu bar-->
-          <div class="menunya2"><!--content menu bar-->
-            <a href="create_schedule.jsp">Create Schedule</a>
-        </div>
+          <a href="create_schedule.jsp"><div class="menunya2" style="color: white"><!--content menu bar-->
+            Create Schedule
+        </div></a>
       </div>
      </div>
 

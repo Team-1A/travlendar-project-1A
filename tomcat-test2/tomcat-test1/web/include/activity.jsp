@@ -46,7 +46,7 @@
                   <option value="Necessary">Necessary</option>
               </select><br>
               <a href="create_schedule.jsp"><button  class="add_button">Add</button></a><!--Add Button-->
-              <a href="create_schedule.jsp"><button  class="add_button">Back</button></a><!--Back Button-->
+              <a href="index.jsp"><button  class="add_button">Back</button></a><!--Back Button-->
             <br><br>
          </form>
           </div>

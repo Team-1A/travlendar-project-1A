@@ -26,9 +26,9 @@
               <a href="detail_schedule.jsp"><button  class="add_button">Finish</button></a><!--Finish Button-->
               <a href="index.jsp"><button  class="add_button">Back</button></a><!--Back button-->
               <div class="activity"><br><br><br></div><!--Activity-->
-                  <div class="menunya2"><!--Add Activity Button-->
-                   <a href="add_activity.jsp">Add Activity</a>
-                  </div><br>
+                  <a href="add_activity.jsp"><div class="menunya2" style="color: white"><!--Add Activity Button-->
+                   Add Activity
+                  </div><br></a>
 
 
                         <div id="div2_create_schedule"><!--Field Tabel Schedule-->

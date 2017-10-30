@@ -19,16 +19,15 @@
           <div class="menu_atas"><!--Menu bar-->
 
         <div class="menunya"><!-- konten dari menu bar-->
-            <div class="point"><!--pointer menu bar-->
-              <a href="location.jsp " id="defaultOpen" style="color: white"><img src="icon/location.svg"><br>
-                  <span>Location</span></a><!--Menu Bar (Location)-->
-            </div>
+            <a href="location.jsp " id="defaultOpen" style="color: white"><div class="point"><!--pointer menu bar-->
+              <img src="icon/location.svg"><br>
+                  <span>Location</span><!--Menu Bar (Location)-->
+            </div></a>
         </div>
 
-        <div class="menunya">
-                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="icon/distance.svg"><br>
-                  <span>Distance Management</span></a><!--Menu Bar (Distance Management)-->
-        </div>
-         </div>
+        <a href="Distance_management.jsp " id="defaultOpen" ><div class="menunya"style="color: white">
+                <img src="icon/distance.svg"><br>
+                  <span>Distance Management</span><!--Menu Bar (Distance Management)-->
+         </div></a>
     </body>
 </html>

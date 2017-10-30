@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<%-- 
+    Document   : calendar.jsp
+    Created on : Oct 28, 2017, 7:17:27 PM
+    Author     : Rahmat Supriatna
+--%>
+
 <%@page contentType="text/html" pageEncoding = "UTF-8"%>
 <html>
   <head>
@@ -68,26 +68,12 @@ and open the template in the editor.
 
 <!--sidebar-->
 <div class="tab">
-  <%@include file="include/tab.jsp"%>
+ <%@include file="include/tab.jsp"%>
 </div>
 
-<!--isi dari sidebar-->
-
-<!--My Schedule-->
-
-
-<div id="Travel_Data" class="tabcontent"><!--menuju page Travel Data -->
-<%@include file="include/menu_travel_data2.jsp"%><!--manggil menu travel data-->
-
-<div class="box-panel"><!--Isi Kotak-->
-<div class="kiri"><!--field kiri-->
-<%@include file="include/field_kiri_travel_data.jsp"%><!--manggil field kiri-->
+<!--Calendar-->
+<div id="Calendar" class="tabcontent"><!--menuju page calendar-->
+<%@include file="include/calendar.jsp"%><!--manggil calendar-->
 </div>
-
-<div class="kanan">
-<%@include file="include/field_kanan_travel_data.jsp"%><!--manggil field kanan-->
-</div>
-<!--Script Vertical Tab-->
-
-    </body>
+</body>
 </html>

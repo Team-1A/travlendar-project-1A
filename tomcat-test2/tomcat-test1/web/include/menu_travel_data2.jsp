@@ -18,16 +18,16 @@
      <div class="box-panel"><!--Isi Kotak-->
       <div class="menu_atas"><!--Menu bar-->
           
-        <div class="menunya"><!-- konten dari menu bar-->
-            <a href="location.jsp " id="defaultOpen" style="color: white"><img src="icon/location.svg"><br>
-               <span>Location</span></a>
-        </div>
+        <a href="location.jsp " id="defaultOpen" ><div class="menunya" style="color: white"><!-- konten dari menu bar-->
+            <img src="icon/location.svg"><br>
+               <span>Location</span>
+        </div></a>
           
         <div class="menunya"><!-- konten dari menu bar-->
-            <div class="point"><!--pointer menu bar-->
-                <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><img src="icon/distance.svg"><br>
-                  <span>Distance Management</span></a><!--Menu Bar (Location)-->
-            </div>
+            <a href="Distance_management.jsp " id="defaultOpen" style="color: white"><div class="point"><!--pointer menu bar-->
+                <img src="icon/distance.svg"><br>
+                  <span>Distance Management</span><!--Menu Bar (Location)-->
+            </div></a>
         </div>
       </div>
     </div>

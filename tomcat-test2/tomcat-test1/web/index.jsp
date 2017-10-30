@@ -40,8 +40,8 @@ body{
 </head>
 <title>Travner</title>
 <body >
-  <img src="icon/Travner1.png" style="width:450px; height:175px; display:block; margin: 300px auto 0px auto ;"></img>
-<div class="button_started"><a href="main.jsp" style="text-decoration:none;">GET STARTED</a></div>
+  <a href="main.jsp" style="text-decoration:none;"><img src="icon/Travner1.png" style="width:450px; height:175px; display:block; margin: 300px auto 0px auto ;"></img>
+<div class="button_started">GET STARTED</div></a>
 
 </body>
 </html>

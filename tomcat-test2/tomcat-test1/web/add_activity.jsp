@@ -65,9 +65,7 @@
 
 <!--sidebar-->
 <div class="tab">
-   <button class="tablinks" onclick="openPages(event, 'My Schedule')" id="defaultOpen">My Schedule<img src="icon/schedule.svg" ></button>
-   <button class="tablinks" onclick="openPages(event, 'Calendar')">Calendar<img src="icon/calendar.png" ></button>
-   <button class="tablinks" onclick="openPages(event, 'Travel_Data')">Travel Data<img src="icon/travel data.svg" ></button>
+<%@include file="include/tab.jsp"%>
 </div>
 
 
@@ -77,22 +75,6 @@
  <div class = add_activity>
     <%@include file="include/activity.jsp"%><!--manggil form add activity-->
  </div>
-
-<!--Calendar-->
-  <div id="Calendar" class="tabcontent"><!--menuju page calendar-->
-      <%@include file="include/calendar.jsp"%><!--manggil calendar-->
- </div>
-
-
-<div id="Travel_Data" class="tabcontent"><!--menuju page Travel Data -->
-    <%@include file="include/menu_travel_data1.jsp"%> <!--manggil menu bar travel data-->
-    
-<div class="kiri"><!--field kiri-->
-    <%@include file="include/field_kiri_location.jsp"%><!--manggil fiel kiri-->
-</div>
-
-<div class="kanan">
-<%@include file="include/field_kanan_location.jsp"%><!--manggil fiel kanan-->
 </div>
 
 <!--Script Vertical Tab-->
