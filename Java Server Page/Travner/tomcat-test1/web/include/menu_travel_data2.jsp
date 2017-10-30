@@ -12,24 +12,25 @@
         <title>Travner</title>
     </head>
     <body>
-<div class="content">
-  <div id="box"><!--kotak-->
-    <div class="box-top">Travel Data</div><!--Judul kotak-->
-     <div class="box-panel"><!--Isi Kotak-->
-      <div class="menu_atas"><!--Menu bar-->
-          
-        <a href="location.jsp " id="defaultOpen" ><div class="menunya" style="color: white"><!-- konten dari menu bar-->
-            <img src="icon/location.svg"><br>
-               <span>Location</span>
-        </div></a>
-          
-        <a href="Distance_management.jsp " id="defaultOpen"><div class="menunya"  style="color: white"><!-- konten dari menu bar-->
-            <div class="point"><!--pointer menu bar-->
-                <img src="icon/distance.svg"><br>
-                  <span>Distance Management</span><!--Menu Bar (Location)-->
+        <div class="content">
+            <div id="box"><!--kotak-->
+                <div class="box-top">Travel Data</div><!--Judul kotak-->
+                <div class="box-panel"><!--Isi Kotak-->
+                    <div class="menu_atas"><!--Menu bar-->
+                        <a href="location.jsp " id="defaultOpen" >
+                            <div class="menunya" style="color: white"><!-- konten dari menu bar-->
+                                <img src="icon/location.svg"><br>
+                                <span>Location</span>
+                            </div></a>
+                        <a href="Distance_management.jsp " id="defaultOpen">
+                            <div class="menunya"  style="color: white"><!-- konten dari menu bar-->
+                                <div class="point"><!--pointer menu bar-->
+                                    <img src="icon/distance.svg"><br>
+                                    <span>Distance Management</span><!--Menu Bar (Location)-->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div></a>
-      </div>
-    </div>
     </body>
 </html>

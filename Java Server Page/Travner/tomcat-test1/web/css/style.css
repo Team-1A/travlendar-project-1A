@@ -7,6 +7,7 @@
 
 body {
 	font-family:sans-serif;
+        margin-bottom: auto;
 }
 
 a {
@@ -19,7 +20,7 @@ div#header {
  width: 100%;
  height: 55px;
  background:#4f9bff;
- background-repeat: none;
+ background-repeat:repeat-y;
  margin: 0 auto;
 }
 
@@ -104,20 +105,6 @@ div#box .box-panel {
 }
 
 
-a.mobile {
-	display: block;
-	color: #fff;
-	background: #000;
-	text-align: center;
-	padding: 7px;
-	cursor: pointer;
-}
-
-a.mobile:active{
-	background: #474747;
-}
-
-
 .sidebar {
 	width: 100%;
 	display: none;
@@ -142,7 +129,7 @@ a.mobile {
 	display: none;
 }
 
-div.tab {
+.tab {
 	background:#272727;
     float: left;
     width: 17%;
@@ -159,8 +146,25 @@ div.tab {
 
 }
 
+    .tab a{
+	width:100%;
+	display: block;
+	padding: 22px 16px;
+	text-align:left;
+	border: none;
+	outline: none;
+	white-space: normal;
+	float: none;
+	color: #fff !important;
+        font-size: 15px;
+        font-family: sans-serif;
+        font-weight:bold;
+        cursor: pointer;
+        transition:0.3s;
+}
+
 /* Style the buttons inside the tab */
-div.tab button {
+.tab-button {
     font-size: 15px;
 	font-family: sans-serif;
 	font-weight: bold;
@@ -177,13 +181,13 @@ div.tab button {
 }
 
 /* Change background color of buttons on hover */
-div.tab button:hover {
-
+.tab-button:hover {
+    color: #fff !important;
     background-color: #0174DF;
 }
 
 /* Create an active/current "tab button" class */
-div.tab button.active {
+tab-button.active {
     background-color: #191C20B3;
 }
 
@@ -449,19 +453,19 @@ iframe{
 	border: 6px solid #ddd ;
 }
 .kanan{
-background: #2980b9;
-color: #FFF;
+background: #FFF;
+color: #000;
 float: left;
-padding: 0px;
+padding: 3px;
 margin: 0px;
 width: 370px;
 height: 420px;
-border: 1px solid #ddd ;
+border: 0px solid #ddd ;
 overflow: hidden;
 }
 
 .location_form{
-	background: #2980b9;
+	background: #FFF;
 	padding: 5px;
 	margin: 5px;
 	float: left;
@@ -601,6 +605,7 @@ tr{
 	height: 30px;
 	width: 100%;
 	background-color:#2980b9;
+     
 }
 
 #table1_travel
@@ -609,7 +614,15 @@ tr{
 	width: 117%;
 	border-collapse: collapse;
 	color:white;
-	text-align: center;
+	
+}
+#table1_travel th, td {
+	font-size: 12px;
+	text-align: left;
+        border: none;
+        padding: 8px 52px;
+
+
 }
 #div2_travel
 {
@@ -631,14 +644,7 @@ tr{
 	height: 20px;
 	float: right;
 }
-th, td {
-	font-size: 12px;
-	text-align: left;
-    border: none;
-    padding: 8px 52px;
 
-
-}
 tr:nth-child(even){background-color: #2980b9}
 
 
@@ -685,8 +691,52 @@ th, td {
 	font-size: 12px;
 	text-align: left;
 	border:none;
-    padding: 8px 52px;
+    padding: 8px 89px;
 	text-align:left;
 
 }
 tr:nth-child(even){background-color: #2980b9}
+
+
+
+#div1_transportatin
+{
+	height: 30px;
+	width: 100%;
+	background-color:#2980b9;
+}
+
+#table1_transportation
+{
+	font-size: 12px;
+	width: 117%;
+	border-collapse: collapse;
+	color:white;
+	text-align: center;
+}
+#div2_transportation
+{
+	height:300px;
+	width:120%;
+	overflow-x:hidden;
+        
+}
+#table2_transportation
+{
+	background-color: #CEECF5;
+	border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        
+}
+tr:nth-child(even){background-color: #2980b9}
+
+.footer{
+    width: 100%;
+}
+.footer p{
+    text-align:center;
+    color:white;
+}
+
+

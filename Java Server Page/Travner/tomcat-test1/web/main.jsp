@@ -9,8 +9,9 @@ and open the template in the editor.
 <html>
     <head>
         <title>Travner</title>
-        <%@include file="include/link-another-page.jsp"%>
+        <%@include file="include/link-another-page.jsp"%><!--memanggil link another page-->
     </head>
+    
 <!--script calendar-->
 <script>
   $(document).ready(function() {
@@ -56,27 +57,27 @@ and open the template in the editor.
   });
 
 </script>
+
 <body>
-<!--judul-->
-  <div id="header"><!--header-->
-    <div class="logo"><!--logo Travner-->
-      <a href="index.jsp"><img src="css/logo.png " width="90px" height="35px"></a>
+    <!--judul-->
+    <div id="header"><!--header-->
+        <div class="logo"><!--logo Travner-->
+            <a href="index.jsp"><!--menuju page index-->
+                <img src="css/logo.png " width="90px" height="35px">
+            </a>
+        </div>
     </div>
-</div>
 
-<!--sidebar-->
- <div class="tab">
-     <%@include file="include/tab.jsp"%>
-</div>
+    <!--sidebar-->
+    <div class="tab">
+        <%@include file="include/tab.jsp"%>
+    </div>
 
-<!--isi dari sidebar-->
+    <!--isi dari sidebar-->
 
-<!--My Schedule-->
-<div id="My Schedule" class="tabcontent">
-<%@include file="include/list_schedule.jsp"%><!--manggil daftar schedule-->
-</div>
-
-
-
-    </body>
+    <!--My Schedule-->
+    <div id="My Schedule" class="tabcontent">
+        <%@include file="include/list_schedule.jsp"%><!--manggil daftar schedule-->
+    </div>
+</body>
 </html>

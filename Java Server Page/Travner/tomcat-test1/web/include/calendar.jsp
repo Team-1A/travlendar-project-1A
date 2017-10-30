@@ -10,17 +10,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Travner</title>
+        <title>Calendar</title>
     </head>
-    <body>
+    <body
         <div class="content">
-      <div id="box"><!--Kotak-->
-        <div class="box-top">Calendar</div><!--Judul Kotak-->
-            <div class="box-panel"><!--Isi Kotak-->
-                <div id='calendar'></div><!--manampilkan calendar-->
+            <div id="box"><!--Kotak-->
+                <div class="box-top">Calendar</div><!--Judul Kotak-->
+                <div class="box-panel"><!--Isi Kotak-->
+                    <div id='calendar'></div><!--manampilkan calendar-->
+                </div>
+                    
             </div>
+                
         </div>
-    </div>
         
     </body>
 </html>

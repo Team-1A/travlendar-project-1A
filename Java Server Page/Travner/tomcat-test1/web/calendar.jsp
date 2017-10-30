@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<%-- 
+    Document   : calendar.jsp
+    Created on : Oct 28, 2017, 7:17:27 PM
+    Author     : Rahmat Supriatna
+--%>
+
 <%@page contentType="text/html" pageEncoding = "UTF-8"%>
 <html>
   <head>
-      <title>Distance Management</title>
-      <%@include file="include/link-another-page.jsp"%>
+      <title>Calendar</title>
+      <%@include file="include/link-another-page.jsp"%> <!--memanggil link another page -->
   </head>
 
 <!--script calendar-->
-<script>
+    <script>
     $(document).ready(function() {
 
     $('#calendar').fullCalendar({
@@ -58,32 +58,23 @@ and open the template in the editor.
 
 
 <body>
-<!--judul-->
-<div id="header">
-    <div class="logo">
-      <a href="index.jsp">
-          <img src="css/logo.png " width="90px" height="35px"> <!--memanggil logo-->
-      </a>
-    </div>
-</div>
-
-<!--sidebar-->
-<div class="tab">
-    <%@include file="include/tab.jsp"%><!--menuju page tab-->
-</div>
-
-<div id="Travel_Data" class="tabcontent"><!--menuju page Travel Data -->
-<%@include file="include/menu_travel_data2.jsp"%><!--manggil menu travel data-->
-
-<div class="box-panel"><!--Isi Kotak-->
-    <div class="kiri"><!--field kiri-->
-        <jsp:include page="/DistanceTable"/><!--manggil field kiri-->
+    <!--judul-->
+    <div id="header">
+        <div class="logo">
+            <a href="index.jsp"> <!--menuju halaman utama -->
+                <img src="css/logo.png " width="90px" height="35px"> <!--memanggil logo -->
+        </a>
+        </div>
     </div>
 
-    <div class="kanan">
-        <jsp:include page="/DistanceMng"/><!--manggil field kanan-->
+    <!--sidebar-->
+    <div class="tab"> 
+        <%@include file="include/tab.jsp"%> <!--memanggil tab -->
     </div>
-</div>
-    
+
+    <!--Calendar-->
+    <div id="Calendar" class="tabcontent"><!--menuju page calendar-->
+        <%@include file="include/calendar.jsp"%><!--manggil calendar-->
+    </div>
 </body>
 </html>

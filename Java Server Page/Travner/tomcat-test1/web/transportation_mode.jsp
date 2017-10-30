@@ -8,11 +8,11 @@ and open the template in the editor.
 
 <html>
   <head>
-      <title>Travner</title>
-      <%@include file="include/link-another-page.jsp"%>
+      <title>Add Activity</title>
+      <%@include file="include/link-another-page.jsp"%><!--memanggil link another page-->
   </head>
-    <script>
 
+<script>
   $(document).ready(function() {
 
     $('#calendar').fullCalendar({
@@ -49,37 +49,41 @@ and open the template in the editor.
           title: 'Makan Sore',
           start: '2017-09-19T15:30:00',
           end: '2017-09-19T16:30:00'
-        },
+        };
       ]
     });
 
   });
 
 </script>
+
 <body>
-<!--judul-->
-<div id="header">
-    <div class="logo">
-      <a href="index.jsp"><img src="css/logo.png " width="90px" height="35px"></a>
+    <!--judul-->
+    <div id="header">
+        <div class="logo">
+            <a href="index.jsp"><img src="css/logo.png " width="90px" height="35px"></a>
+        </div>
     </div>
+    <!--sidebar-->
+    <div class="tab">
+        <%@include file="include/tab.jsp"%>
+    </div>
+    
+<div class="content">
+    <div id="box"><b>Transportation Mode</b></div><br><!--kotak-->
+    
+         <div class="box-panel"><!--Isi Kotak-->
+    
+    <div class="kiri"><!--field kiri-->
+        <jsp:include page="/Recommend"/><!--manggil field kiri-->
+    </div>
+
+    <div class="kanan"><!--Field Kanan-->
+        <jsp:include page="/Transportation"/><!--manggil field kanan-->    
+    </div>
+         
+     </div>
 </div>
-<a class="mobile">MENU</a>
 
-<!--sidebar-->
- <div class="tab">
-     <%@include file="include/tab.jsp"%>
-</div>
-
-
-
-<div class="kiri"><!--field kiri-->
-<jsp:include page="/Recommend"/><!--manggil field kiri-->
-</div>
-
-<div class="kanan"><!--Field Kanan-->
-<jsp:include page="/Transportation"/><!--manggil fiel kanan-->    
-</div>
-
-
-    </body>
+</body>
 </html>

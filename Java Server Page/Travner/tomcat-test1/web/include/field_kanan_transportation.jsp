@@ -13,6 +13,7 @@
         <title>Travner</title>
     </head>
     <body>
+        
         <form action="${pageContext.request.contextPath}/Recommend?action=Transport" class="" method="post"><br><br>
             <h5>Select Transportation</h5>
             <select name="transport" >
@@ -22,12 +23,5 @@
             </select><br>
             <input class="add_button" type="submit" name="#" value="Add"><!--add Button-->
         </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
- </div>
-
     </body>
 </html>

@@ -3,9 +3,8 @@
 
 <html>
     <head>
-        <title>Travner</title>
+        <title>Create Schedule</title>
         <%@include file="include/link-another-page.jsp"%>
-
     </head>
 <!--Script Calendar-->
 <script>
@@ -53,32 +52,27 @@
 
 </script>
 
-
 <body>
-<!--header-->
-<div id="header">
-  <div class="logo"><!--logo travner-->
-      <a href="index.jsp">
-          <img src="css/logo.png " width="90px" height="35px">
-      </a>
-  </div>
-</div>
+    <!--header-->
+    <div id="header">
+        <div class="logo"><!--logo travner-->
+            <a href="index.jsp"><!-- menuju page index -->
+                <img src="css/logo.png " width="90px" height="35px"> <!--memanggil logo-->
+            </a>
+        </div>
+    </div>
 
-<a class="mobile">MENU</a>
+    <!--sidebar-->
+        <div class="tab">
+            <%@include file="include/tab.jsp"%> <!--memanggil tab -->
+        </div>
 
-<!--sidebar-->
-<div class="tab">
-     <%@include file="include/tab.jsp"%>
-</div>
+    <!--isi dari sidebar-->
 
-
-<!--isi dari sidebar-->
-
-<!--My Schedule-->
-<div id="My Schedule" class="tabcontent">
-    <jsp:include page="/ScheduleController"/><!--manggil create schedule-->
-</div>
-
+    <!--My Schedule-->
+        <div id="My Schedule" class="tabcontent">
+            <jsp:include page="/ScheduleController"/><!--manggil create schedule-->
+        </div>
 
 </body>
 </html>

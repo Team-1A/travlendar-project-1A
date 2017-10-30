@@ -3,8 +3,7 @@
 <html>
     <head>
         <title>Travners</title>
-        <%@include file="include/link-another-page.jsp"%>
-
+        <%@include file="include/link-another-page.jsp"%> <!--memanggil link another page -->
     </head>
 <!--script calendar-->
     <script>
@@ -54,24 +53,23 @@
 
 
 <body>
-<!--judul-->
-  <div id="header">
-    <div class="logo">
-        <a href="index.jsp">
-        <img src="css/logo.png " width="90px" height="35px"></a>
+    <!--judul-->
+    <div id="header">
+        <div class="logo">
+            <a href="index.jsp"> <!--menuju page index -->
+                <img src="css/logo.png " width="90px" height="35px"> <!--memanggil logo -->
+            </a>
+        </div>
     </div>
-</div>
-<a class="mobile">MENU</a>
 
-<!--sidebar-->
- <div class="tab">
-     <%@include file="include/tab.jsp"%>
-</div>
+    <!--sidebar-->
+        <div class="tab">
+            <%@include file="include/tab.jsp"%> <!--memanggil tab-->
+        </div>
 
-<!--Detail Schedule-->
-<div id="My Schedule" class="tabcontent">
-<%@include file="include/list_detail_schedule.jsp"%> <!--manggil detail schedule-->    
-</div>
-
+    <!--Detail Schedule-->
+        <div id="My Schedule" class="tabcontent">
+            <%@include file="include/list_detail_schedule.jsp"%> <!--manggil detail schedule-->    
+        </div>
 </body>
 </html>

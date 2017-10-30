@@ -2,10 +2,11 @@
 <%@page contentType="text/html" pageEncoding = "UTF-8"%>
 <html>
     <head>
-        <title>Travner</title>
-        <%@include file="include/link-another-page.jsp"%>
+        <title>Add Activity</title>
+        <%@include file="include/link-another-page.jsp"%> <!--memanggil link another page -->
     </head>
-    <body>
+
+<body>
 <!--script calendar-->
 <script>
   $(document).ready(function() {
@@ -52,32 +53,29 @@
 </script>
 
 </head>
-<body>
-<!--header-->
-<div id="header">
-  <div class="logo"><!--logo travner-->
-  <a href="index.jsp"><img src="css/logo.png " width="90px" height="35px"></a>
-  </div>
-</div>
+    <!--header-->
+    <div id="header">
+        <div class="logo"><!--logo travner-->
+            <a href="index.jsp"><!--menuju halaman utama-->
+                <img src="css/logo.png " width="90px" height="35px"> <!--memanggil logo -->
+            </a> 
+        </div>
+    </div>
 
-<a class="mobile"></a>
+    <!--sidebar-->
+    <div class="tab">
+        <%@include file="include/tab.jsp"%> <!--memanggil tab -->
+    </div>
 
-
-<!--sidebar-->
- <div class="tab">
-     <%@include file="include/tab.jsp"%>
-</div>
-
-
-
-<div id="My Schedule" class="tabcontent">
-<!--add activity-->
- <div class = add_activity>
-    <jsp:include page="/ActController"/><!--manggil form add activity-->
- </div>
-
-<!--Script Vertical Tab-->
-<script>
+    <div id="My Schedule" class="tabcontent">
+        <!--add activity-->
+        <div class = add_activity>
+            <jsp:include page="/ActController"/><!--manggil form add activity-->
+        </div>
+    </div>
+        
+    <!--Script Vertical Tab-->
+    <script>
       function openPages(evt, pageName) {
       // Declare all variables
       var i, tabcontent, tablinks;
@@ -98,9 +96,9 @@
       document.getElementById(pageName).style.display = "block";
       evt.currentTarget.className += " active";
 
-  }
-  // Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
-    </body>
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+</body>
 </html>
