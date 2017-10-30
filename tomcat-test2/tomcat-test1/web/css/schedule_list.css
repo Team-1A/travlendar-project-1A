@@ -44,15 +44,15 @@ img#delete{
     float: right;
 }
 
-td, th {
+table#t00, table#t01, table#t02 td, th {
     text-align: left;
     padding: 8px;
 }
-th{
+table#t00 th{
     color: white;
     background-color: #D42222;
 }
-td{
+table#t00 td{
     color: black;
     background-color: #DF8181;
     }
