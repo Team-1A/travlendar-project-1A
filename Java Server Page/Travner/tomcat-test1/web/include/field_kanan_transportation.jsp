@@ -13,7 +13,7 @@
         <title>Travner</title>
     </head>
     <body>
-        <form action="${pageContext.request.contextPath}/Transportation" class="" method="post"><br><br>
+        <form action="${pageContext.request.contextPath}/Recommend?action=Transport" class="" method="post"><br><br>
             <h5>Select Transportation</h5>
             <select name="transport" >
                 <c:forEach items="${transportation}" var="tr">

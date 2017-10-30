@@ -73,7 +73,7 @@ and open the template in the editor.
 
 
 <div class="kiri"><!--field kiri-->
-<%@include file="include/field_kiri_transportation.jsp"%><!--manggil field kiri-->
+<jsp:include page="/Recommend"/><!--manggil field kiri-->
 </div>
 
 <div class="kanan"><!--Field Kanan-->

@@ -135,7 +135,7 @@ public class DisplayRecommend extends HttpServlet {
         transports.forEach((TransportationMode transport)->{
             TransportRecommend TR = new TransportRecommend();
             TR.setTransportName(transport.getTransportation());
-            TR.setDistance(DistanceDAO.getDistance(9, 20));
+            TR.setDistance(DistanceDAO.getDistance(ID_StartLoc, ID_EndLoc));
             TR.setTransportVelocity(transport.getVelocity());
             TR.setEstimation(TR.getDistance()/TR.getTransportVelocity());
             recomend.add(TR);

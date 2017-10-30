@@ -23,20 +23,19 @@
                   </a>
                    Create Schedule
               </h2>
-              <form action="${pageContext.request.contextPath}/ScheduleController" class="" method="post">
+              <form action="${pageContext.request.contextPath}/Recommend?action=Schedule" class="" method="post">
               <p><br>I want to create Schedule for : <br><!--Form Tanggal Schedule-->
                 <input class="waktu"  type="text" name="Date" placeholder="Date" required>
                 <input class="waktu" type="text" name="Month" placeholder="Month" required>
                 <input class="waktu" type="text" name="Year" placeholder="Year" required>
                 <button  class="add_button" type="submit">Finish</button></a><!--Finish Button-->
               </p>
-              </form>
               
               <div class="activity"><br><br><br></div><!--Activity-->
                   <div class="menunya2"><!--Add Activity Button-->
                    <a href="add_activity.jsp">Add Activity</a>
                   </div><br>
-
+                </form>
 
                         <div id="div2_create_schedule"><!--Field Tabel Schedule-->
                          <table id="table2_create_schedule"><!--tabel Schdule-->
