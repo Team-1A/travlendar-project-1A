@@ -12,6 +12,7 @@
         <!-- CSS-->
         <link rel="shortcut icon" type="image/png" href="icon/TravnerLogoClz.png" >
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/schedule_list.css">
         <link href="css/fullcalendar.min.css" rel="stylesheet">
         <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
         <link rel="stylesheet" type="text/css" href="css/responsive.css">

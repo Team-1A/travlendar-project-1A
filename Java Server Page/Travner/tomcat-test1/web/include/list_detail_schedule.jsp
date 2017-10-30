@@ -230,7 +230,7 @@
                           </tr>
                         </table>
                       </tbody>
-                  </table>
+                    </table>
                 </div>
             </div>
         </div>
