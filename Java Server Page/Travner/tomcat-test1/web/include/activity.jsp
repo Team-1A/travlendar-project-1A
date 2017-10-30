@@ -10,23 +10,23 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Travner</title>
+        <title>Activity</title>
     </head>
-    <body>
-<div id="box"><!--Kotak-->
-  <div class="box-top"></div><!--Kotak Judul-->
-    <div class="box-panel"><!--Isi kotak-->
-      <h2>
-          <a href="create_schedule.jsp">
-              <img id="back" src="css/icon/back.png"><!--Tombol back-->
-          </a>
-          Add Activity
-      </h2>
-         </div>
-         <form action="${pageContext.request.contextPath}/Recommend?action=Activity" class="" method="post">
+
+<body>
+    <div id="box"><!--Kotak-->
+        <div class="box-top"></div><!--Kotak Judul-->
+        <div class="box-panel"><!--Isi kotak-->
+            <h2>
+                <a href="create_schedule.jsp">
+                    <img id="back" src="css/icon/back.png"><!--Tombol back-->
+                </a>
+                Add Activity
+            </h2>
+        </div>
+        <form action="${pageContext.request.contextPath}/Recommend?action=Activity" class="" method="post">
             <span>Activity's Name</span><br><!--Activity Name-->
             <input class="kotak_lo" type="text"   name="ActivityName" placeholder="Add your activity"><br><!--Form Activity Name-->
-
             <span>Starting Point - Destination </span><br><!--Form dropdown Starting Point - Destination-->
             <select name="location" >
                   <c:forEach items="${Locations}" var="loc">
@@ -49,10 +49,11 @@
                   <option value="2">Important</option>
                   <option value="3">Necessary</option>
               </select><br>
-              <a href="transportation_mode.jsp"><button  class="add_button" type="submit">Add</button></a><!--Add Button-->
-            <br><br>
-         </form>
-          </div>
-
-    </body>
+              <a href="transportation_mode.jsp"><!--menuju transportation mode-->
+                  <button  class="add_button" type="submit">Add</button><!--button add-->
+              </a><!--Add Button-->
+              <br><br>
+        </form>
+    </div>
+</body>
 </html>

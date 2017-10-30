@@ -24,21 +24,18 @@
                     <th>Departure Time</th>
                     </tr>
                 </table>
-            </div>
+        </div>
         <div id="div2_transportation"><!--field tabel lokasi-->
-                         <table id="table2_transportation"><!--isi tabel lokasi-->
-
-                            <c:forEach items="${transportation}" var="tr">
-                                <tr>
-                                <th><img src="icon/car.png"><br><c:out value="${tr.getTransportName()}"/></th>
-                                <th><c:out value="${tr.getEstimation()}"/> Minutes </th>
-                                <th>-</th>
-                                <th> </th>
-                            </tr> 
+            <table id="table2_transportation"><!--isi tabel lokasi-->
+                <c:forEach items="${transportation}" var="tr">
+                    <tr>
+                        <th><br><c:out value="${tr.getTransportName()}"/></th> <!--mendapatkan nama transportasi-->
+                        <th><c:out value="${tr.getEstimation()}"/> Minutes </th> <!--mendapatkan rekomendasi waktu-->
+                        <th>-</th>
+                        <th> </th>
+                    </tr> 
                             </c:forEach>
-                            
-                          </table>
-                        </div>
-
+            </table>
+        </div>
     </body>
 </html>

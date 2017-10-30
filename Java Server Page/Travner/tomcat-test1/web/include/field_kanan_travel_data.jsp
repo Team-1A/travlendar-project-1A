@@ -30,14 +30,7 @@
             <span>Distance</span><br>
             <input class="ktk_distance" type="text"  name="distKM" placeholder="km">
             <input class="ktk_distance" type="text"  name="distM" placeholder="m"><br><br>
-            <input class="add_button" type="submit" name="#" value="Add">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
- </div>
-
+            <input class="add_button" type="submit" name="#" value="Add"><!--add button-->
+        </form>
     </body>
 </html>
