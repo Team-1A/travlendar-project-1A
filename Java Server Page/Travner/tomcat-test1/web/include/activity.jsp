@@ -18,7 +18,7 @@
     <div class="box-panel"><!--Isi kotak-->
       <h2>Add Activity</h2>
          </div>
-         <form action="${pageContext.request.contextPath}/ActController" class="" method="post">
+         <form action="${pageContext.request.contextPath}/Recommend?action=Activity" class="" method="post">
             <span>Activity's Name</span><br><!--Activity Name-->
             <input class="kotak_lo" type="text"   name="ActivityName" placeholder="Add your activity"><br><!--Form Activity Name-->
 

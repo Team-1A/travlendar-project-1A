@@ -130,14 +130,14 @@ public class ScheduleController extends HttpServlet {
     }
     
     private void save(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ParseException {
-        String date = request.getParameter("Date");
-        String month = request.getParameter("Month");
-        String year = request.getParameter("Year");
-        String format = date + "/" + month + "/" + year;
-        SimpleDateFormat formatDate = new SimpleDateFormat("dd/M/yyyy");  
-        eventDate = (java.sql.Date) formatDate.parseObject(format);
-        //.save(newLocation);
-        response.sendRedirect("./add_activity.jsp");
+//        String date = request.getParameter("Date");
+//        String month = request.getParameter("Month");
+//        String year = request.getParameter("Year");
+//        String format = date + "/" + month + "/" + year;
+//        SimpleDateFormat formatDate = new SimpleDateFormat("dd/M/yyyy");  
+//        eventDate = (java.sql.Date) formatDate.parseObject(format);
+//        //.save(newLocation);
+//        response.sendRedirect("./add_activity.jsp");
     }
     /**
      * Returns a short description of the servlet.

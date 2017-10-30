@@ -37,6 +37,25 @@ public class DistanceDAO extends DAO {
         return distance;
     }
     
+    public static int getDistance(int ID_Start,int ID_Destination){
+        int distance = 0;
+        try {
+        Connection con = getConnection();
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM distance where (ID_StartLocation = "+ ID_Start + ") and (ID_Destination = " + ID_Destination +")");
+        ResultSet rs = ps.executeQuery();
+        
+        while(rs.next()){
+            Distance dist = new Distance();
+            distance += rs.getInt("Distance_KM") * 1000;
+            distance += rs.getInt("Distance_M");
+        }
+        } catch (SQLException ex){
+            System.out.println(ex);
+        }
+        disconnect();
+        return distance;
+    }
+    
     public static int save(Distance _distance){
         Integer stats = 0;
         try{

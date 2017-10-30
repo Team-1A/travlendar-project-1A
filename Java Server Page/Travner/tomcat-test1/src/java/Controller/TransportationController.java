@@ -122,10 +122,10 @@ public class TransportationController extends HttpServlet {
 //        String endHour = request.getParameter("HourEnd");
 //        String endMinute = request.getParameter("MinuteEnd");
 //        int priority = Integer.parseInt(request.getParameter("Priority"));
-        ActivityController Activity = new ActivityController();
-        Activity act = new Activity();
-        String TransportationCode = request.getParameter("transport");
-        
+//        ActivityController Activity = new ActivityController();
+//        Activity act = new Activity();
+//        String TransportationCode = request.getParameter("transport");
+//        
 //        act.setTransportationCode(TransportationCode);
 //        act.setEventName(Activity.activityName);
 //        act.setEventDate(Activity.eventDate);
@@ -134,17 +134,17 @@ public class TransportationController extends HttpServlet {
 //        act.setStartEventTime(Activity.startTime);
 //        act.setEndEventTime(Activity.endTime);
 //        act.setPriority(Activity.priority);
-        act.setTransportationCode("101");
-        act.setEventName("menari");
-        act.setEventDate(Activity.eventDate);
-        act.setId_StartLocation(Activity.ID_StartLoc);
-        act.setId_Destination(Activity.ID_EndLoc);
-        act.setStartEventTime(Activity.startTime);
-        act.setEndEventTime(Activity.endTime);
-        act.setPriority(Activity.priority);
-        
-        ActivityDAO.save(act);
-        response.sendRedirect("./create_schedule.jsp");
+//        act.setTransportationCode("101");
+//        act.setEventName("menari");
+//        act.setEventDate(Activity.eventDate);
+//        act.setId_StartLocation(Activity.ID_StartLoc);
+//        act.setId_Destination(Activity.ID_EndLoc);
+//        act.setStartEventTime(Activity.startTime);
+//        act.setEndEventTime(Activity.endTime);
+//        act.setPriority(Activity.priority);
+//        
+//        ActivityDAO.save(act);
+//        response.sendRedirect("./create_schedule.jsp");
     }
     @Override
     public String getServletInfo() {

@@ -13,15 +13,15 @@
         <title>Travner</title>
     </head>
     <body>
-                                               <form action="${pageContext.request.contextPath}/Transportation" class="" method="post"><br><br>
-                                            <h5>Select Transportation</h5>
-                                                <select name="transport" >
-                                                    <c:forEach items="${transportation}" var="tr">
-                                                        <option value="${tr.getTransportation_Code()}"><c:out value="${tr.getTransportation()}"/></option>
-                                                    </c:forEach>
-            </select><br>
-             <input class="add_button" type="submit" name="#" value="Add"><!--add Button-->
-                                               </form>
+            <form action="${pageContext.request.contextPath}/Recommend?action=Transport" class="" method="post"><br><br>
+                <h5>Select Transportation</h5>
+                    <select name="transport" >
+                        <c:forEach items="${transportation}" var="tr">
+                            <option value="${tr.getTransportation_Code()}"><c:out value="${tr.getTransportation()}"/></option>
+                        </c:forEach>
+                    </select><br>
+                <input class="add_button" type="submit" name="#" value="Add"><!--add Button-->
+            </form>
           </div>
         </div>
       </div>

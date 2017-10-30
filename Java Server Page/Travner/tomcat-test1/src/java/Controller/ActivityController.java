@@ -140,37 +140,37 @@ public class ActivityController extends HttpServlet {
     }
     
     private void save(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ParseException {
-        ScheduleController date = new ScheduleController();
-        SimpleDateFormat format = new SimpleDateFormat ("HH:mm");
-        int[] A = new int[2];
-        int i = 0;
-        
-        String ActivityName = request.getParameter("ActivityName");
-        String fromTo = request.getParameter("location");
-        String startHour = request.getParameter("HourStart");
-        String startMinute = request.getParameter("MinuteStart");
-        String endHour = request.getParameter("HourEnd");
-        String endMinute = request.getParameter("MinuteEnd");
-        int _priority = Integer.parseInt(request.getParameter("Priority"));
-        
-        String start = startHour + ":" + startMinute;
-        String end = endHour + ":" + endMinute;
-        Scanner scanDelimeter = new Scanner(fromTo);
-        scanDelimeter.useDelimiter("-");
-        while(scanDelimeter.hasNext()){
-            A[i] = Integer.parseInt(scanDelimeter.next());
-            i++;
-        }
-        
-        activityName = ActivityName;
-        ID_StartLoc = A[0];
-        ID_EndLoc = A[1];
-        eventDate = (java.sql.Date) date.eventDate;
-        startTime = (java.sql.Time) valueOf("13:40:00");
-        endTime = (java.sql.Time) valueOf("15:15:00");
-        priority = _priority;
-        
-        response.sendRedirect("./transportation_mode.jsp");
+//        ScheduleController date = new ScheduleController();
+//        SimpleDateFormat format = new SimpleDateFormat ("HH:mm");
+//        int[] A = new int[2];
+//        int i = 0;
+//        
+//        String ActivityName = request.getParameter("ActivityName");
+//        String fromTo = request.getParameter("location");
+//        String startHour = request.getParameter("HourStart");
+//        String startMinute = request.getParameter("MinuteStart");
+//        String endHour = request.getParameter("HourEnd");
+//        String endMinute = request.getParameter("MinuteEnd");
+//        int _priority = Integer.parseInt(request.getParameter("Priority"));
+//        
+//        String start = startHour + ":" + startMinute;
+//        String end = endHour + ":" + endMinute;
+//        Scanner scanDelimeter = new Scanner(fromTo);
+//        scanDelimeter.useDelimiter("-");
+//        while(scanDelimeter.hasNext()){
+//            A[i] = Integer.parseInt(scanDelimeter.next());
+//            i++;
+//        }
+//        
+//        activityName = ActivityName;
+//        ID_StartLoc = A[0];
+//        ID_EndLoc = A[1];
+//        eventDate = (java.sql.Date) date.eventDate;
+//        startTime = (java.sql.Time) valueOf("13:40:00");
+//        endTime = (java.sql.Time) valueOf("15:15:00");
+//        priority = _priority;
+//        
+//        response.sendRedirect("./transportation_mode.jsp");
     }
     
     @Override
