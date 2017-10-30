@@ -1,7 +1,7 @@
 <%-- 
     Document   : link-another-page
     Created on : Oct 28, 2017, 11:15:35 AM
-    Author     : Rahmat Supriatna
+    Author     : netspy
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

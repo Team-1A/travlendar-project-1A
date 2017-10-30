@@ -8,7 +8,7 @@
 
     </head>
 <!--Script Calendar-->
-    <script>
+<script>
 
     $(document).ready(function() {
 
@@ -58,7 +58,9 @@
 <!--header-->
 <div id="header">
   <div class="logo"><!--logo travner-->
-    <a href="index.jsp"><img src="css/logo.png " width="90px" height="35px"></a>
+      <a href="index.jsp">
+          <img src="css/logo.png " width="90px" height="35px">
+      </a>
   </div>
 </div>
 

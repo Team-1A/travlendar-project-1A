@@ -15,21 +15,26 @@
     <body>
         <div class="content">
       <div id="box"><!--Kotak-->
-        <div class="box-top">My Schedule</div><!--Judul Kotak-->
+        <div class="box-top"></div><!--Judul Kotak-->
           <div class="box-panel"><!--Isi Kotak-->
-            <h2>Create Schedule</h2>
-              <p>I want to create Schedule for :<p><!--Form Tanggal Schedule-->
-              <form action="${pageContext.request.contextPath}/Recommend?action=Schedule" class="" method="post">
-              <input class="waktu"  type="text" name="Date" placeholder="Date" required>
-              <input class="waktu" type="text" name="Month" placeholder="Month" required>
-              <input class="waktu" type="text" name="Year" placeholder="Year" required>
-
-              <a href="detail_schedule.jsp"><button  class="add_button" type="submit">Finish</button></a><!--Finish Button-->
-              <a href="index.jsp"><button  class="add_button">Back</button></a><!--Back button-->
+              <h2>
+                  <a href="main.jsp">
+                      <img id="back" src="css/icon/back.png"><!--Tombol back-->
+                  </a>
+                   Create Schedule
+              </h2>
+              <form action="${pageContext.request.contextPath}/ScheduleController" class="" method="post">
+              <p><br>I want to create Schedule for : <br><!--Form Tanggal Schedule-->
+                <input class="waktu"  type="text" name="Date" placeholder="Date" required>
+                <input class="waktu" type="text" name="Month" placeholder="Month" required>
+                <input class="waktu" type="text" name="Year" placeholder="Year" required>
+                <button  class="add_button" type="submit">Finish</button></a><!--Finish Button-->
+              </p>
+              </form>
+              
               <div class="activity"><br><br><br></div><!--Activity-->
                   <div class="menunya2"><!--Add Activity Button-->
                    <a href="add_activity.jsp">Add Activity</a>
-                   </form>
                   </div><br>
 
 

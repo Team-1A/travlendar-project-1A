@@ -4,7 +4,6 @@
     Author     : netspv
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +12,10 @@
         <title>Travner</title>
     </head>
     <body>
-       <div id="div1_transportation"><!--field tabel lokasi-->
+        <a href="add_activity.jsp">
+            <img id="back" src="css/icon/back.png"><!--Tombol back-->
+        </a>
+        <div id="div1_transportation"><!--field tabel lokasi-->
                 <table id="table1_transportation"><!--isi tabel lokasi-->
                     <tr>
                     <th>Transportation</th>
@@ -32,16 +34,9 @@
                             <th></th>
                             <th>-</th>
                             </tr>
-                            <c:forEach items="${transportation}" var="tr">
+
                             <tr>
-                                <th><img src="icon/car.png"></th>
-                                <th><c:out value="${tr.getEstimation()}"/> Minutes </th>
-                                <th>3.00 AM</th>
-                                <th> </th>
-                            </tr> 
-                            </c:forEach>
-                            <tr>
-                            <th><img src="icon/valuecar.png"></th>
+                            <th><img src="icon/car.png"></th>
                             <th>90 min</th>
                             <th>3.00 AM</th>
                             <th> </th>

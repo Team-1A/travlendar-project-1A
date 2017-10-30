@@ -15,8 +15,13 @@
         <div class="content">
       <div id="box">
           <div class="box-panel">
-              <h2><a href="index.jsp"><img id="back" src="css/icon/back.png"></a>DETAIL SCHEDULE: 16 SEP '17
-                  <a href="add_activity.jsp"><img id="seting" src="css/icon/seting.png"></a>
+              <h2>
+                  <a href="create_schedule.jsp">
+                    <img id="back" src="css/icon/back.png">
+                  </a>DETAIL SCHEDULE: 16 SEP '17
+                  <a href="add_activity.jsp">
+                    <img id="seting" src="css/icon/seting.png">
+                  </a>
                   <button id="delete" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="icon/delete.png"></button>
 
                               <div id="id01" class="modal">
