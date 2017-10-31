@@ -1,0 +1,4 @@
+Activity(ID_Activity#,Activity_Name,Date,Start_Time,End_Time,Priority_Scale)
+Transportation(Transportation_Code#,Transportation_Name,Transportation_Velocity)
+location(ID_Location#,Location_Name,Location_Address)
+distance(Distance_KM,Distance_M)
