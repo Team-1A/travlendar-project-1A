@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.sql.Time;
-import static java.sql.Time.valueOf;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -86,7 +85,7 @@ public class DisplayRecommend extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getServletPath();
         try {
-                listLocation(request, response);
+                Display(request, response);
         } catch (SQLException | ParseException ex) {
                 Logger.getLogger(LocController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -126,7 +125,7 @@ public class DisplayRecommend extends HttpServlet {
      * @return a String containing servlet description
      */
     
-    public void listLocation(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException,  ParseException {
+    public void Display(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException,  ParseException {
 
         List<TransportationMode> transports = TransportationModeDAO.getAll();
         List<TransportRecommend> recomend = new ArrayList();
@@ -148,13 +147,7 @@ public class DisplayRecommend extends HttpServlet {
     }
     
     public void getActivity(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
-//            String activityName = null;
-//            int ID_StartLoc = 0;
-//            int ID_EndLoc = 0;
-//            Time startTime = null;
-//            Time endTime = null;
-//            int priority = 0;
-        
+
             SimpleDateFormat format = new SimpleDateFormat ("HH:mm");
             int[] A = new int[2];
             int i = 0;
@@ -184,8 +177,7 @@ public class DisplayRecommend extends HttpServlet {
     }
     
     public void getSchedule(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
-//            java.sql.Date eventDate = null;
-            
+
             String date = request.getParameter("Date");
             String month = request.getParameter("Month");
             String year = request.getParameter("Year");
@@ -196,64 +188,7 @@ public class DisplayRecommend extends HttpServlet {
     }
     
     private void save(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ParseException {
-//        java.sql.Date eventDate = null;
-//        String TransportationCode = null;
-//        String activityName = null;
-//        int ID_StartLoc = 0;
-//        int ID_EndLoc = 0;
-//        Time startTime = null;
-//        Time endTime = null;
-//        int priority = 0;
-//        
-//        String action = request.getParameter("action");
-//        switch (action) {
-//            case "Activity":
-//                {
-//                    SimpleDateFormat format = new SimpleDateFormat ("HH:mm");
-//                    int[] A = new int[2];
-//                    int i = 0;
-//                    String ActivityName = request.getParameter("ActivityName");
-//                    String fromTo = request.getParameter("location");
-//                    String startHour = request.getParameter("HourStart");
-//                    String startMinute = request.getParameter("MinuteStart");
-//                    String endHour = request.getParameter("HourEnd");
-//                    String endMinute = request.getParameter("MinuteEnd");
-//                    int _priority = Integer.parseInt(request.getParameter("Priority"));
-//                    String start = startHour + ":" + startMinute;
-//                    String end = endHour + ":" + endMinute;
-//                    Scanner scanDelimeter = new Scanner(fromTo);
-//                    scanDelimeter.useDelimiter("-");
-//                    while(scanDelimeter.hasNext()){
-//                        A[i] = Integer.parseInt(scanDelimeter.next());
-//                        i++;
-//                    }       
-//                    activityName = ActivityName;
-//                    ID_StartLoc = A[0];
-//                    ID_EndLoc = A[1];
-//                    startTime = (java.sql.Time) valueOf(start);
-//                    endTime = (java.sql.Time) valueOf(end);
-//                    priority = _priority;
-//                    response.sendRedirect("./transportation_mode.jsp");
-//                    break;
-//                }
-//            case "Schedule":
-//                {
-//                    String date = request.getParameter("Date");
-//                    String month = request.getParameter("Month");
-//                    String year = request.getParameter("Year");
-//                    String format = date + "/" + month + "/" + year;
-//                    SimpleDateFormat formatDate = new SimpleDateFormat("dd/M/yyyy");
-//                    eventDate = (java.sql.Date) formatDate.parseObject(format);
-//                    response.sendRedirect("./add_activity.jsp");
-//                    break;
-//                }
-//            case "Transport":
-//                TransportationCode = request.getParameter("transport");
-//                break;
-//            default:
-//                break;
-//        }
-        
+
         TransportationCode = request.getParameter("transport");
         
         Activity act = new Activity();

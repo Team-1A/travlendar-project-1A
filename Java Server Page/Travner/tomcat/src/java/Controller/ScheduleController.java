@@ -7,20 +7,15 @@ package Controller;
 
 import DAO.ActivityDAO;
 import DAO.DistanceDAO;
-import DAO.LocationDAO;
 import Model.Activities;
 import Model.Activity;
 import Model.Distance;
-import Model.DistanceLocation;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -77,7 +72,7 @@ public class ScheduleController extends HttpServlet {
             throws ServletException, IOException {
             String action = request.getServletPath();
         try {
-                listLocation(request, response);
+                display(request, response);
         } catch (SQLException | ParseException ex) {
                 Logger.getLogger(LocController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -103,7 +98,7 @@ public class ScheduleController extends HttpServlet {
         }
     }
     
-    public void listLocation(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException,  ParseException {
+    public void display(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException,  ParseException {
 
         List<Activity> activity = ActivityDAO.getAll();
         List<Activities> activ = new ArrayList<>();
@@ -130,14 +125,7 @@ public class ScheduleController extends HttpServlet {
     }
     
     private void save(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ParseException {
-//        String date = request.getParameter("Date");
-//        String month = request.getParameter("Month");
-//        String year = request.getParameter("Year");
-//        String format = date + "/" + month + "/" + year;
-//        SimpleDateFormat formatDate = new SimpleDateFormat("dd/M/yyyy");  
-//        eventDate = (java.sql.Date) formatDate.parseObject(format);
-//        //.save(newLocation);
-//        response.sendRedirect("./add_activity.jsp");
+        //TODO : Write a Code
     }
     /**
      * Returns a short description of the servlet.

@@ -5,19 +5,12 @@
  */
 package Controller;
 
-import DAO.ActivityDAO;
-import DAO.DistanceDAO;
-import DAO.LocationDAO;
 import DAO.TransportationModeDAO;
-import Model.Activity;
-import Model.Distance;
-import Model.DistanceLocation;
 import Model.TransportationMode;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -75,7 +68,7 @@ public class TransportationController extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getServletPath();
         try {
-                listLocation(request, response);
+                transportation(request, response);
         } catch (SQLException | ParseException ex) {
                 Logger.getLogger(LocController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -105,7 +98,7 @@ public class TransportationController extends HttpServlet {
      * @return a String containing servlet description
      */
     
-    public void listLocation(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException,  ParseException {
+    public void transportation(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException,  ParseException {
 
         List<TransportationMode> transports = TransportationModeDAO.getAll();
         
@@ -116,35 +109,7 @@ public class TransportationController extends HttpServlet {
     }
     
     private void save(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
-//        String ActivityName = request.getParameter("ActivityName");
-//        String startHour = request.getParameter("HourStart");
-//        String startMinute = request.getParameter("MinuteStart");
-//        String endHour = request.getParameter("HourEnd");
-//        String endMinute = request.getParameter("MinuteEnd");
-//        int priority = Integer.parseInt(request.getParameter("Priority"));
-//        ActivityController Activity = new ActivityController();
-//        Activity act = new Activity();
-//        String TransportationCode = request.getParameter("transport");
-//        
-//        act.setTransportationCode(TransportationCode);
-//        act.setEventName(Activity.activityName);
-//        act.setEventDate(Activity.eventDate);
-//        act.setId_StartLocation(Activity.ID_StartLoc);
-//        act.setId_Destination(Activity.ID_EndLoc);
-//        act.setStartEventTime(Activity.startTime);
-//        act.setEndEventTime(Activity.endTime);
-//        act.setPriority(Activity.priority);
-//        act.setTransportationCode("101");
-//        act.setEventName("menari");
-//        act.setEventDate(Activity.eventDate);
-//        act.setId_StartLocation(Activity.ID_StartLoc);
-//        act.setId_Destination(Activity.ID_EndLoc);
-//        act.setStartEventTime(Activity.startTime);
-//        act.setEndEventTime(Activity.endTime);
-//        act.setPriority(Activity.priority);
-//        
-//        ActivityDAO.save(act);
-//        response.sendRedirect("./create_schedule.jsp");
+        //TODO : Write a Code
     }
     @Override
     public String getServletInfo() {

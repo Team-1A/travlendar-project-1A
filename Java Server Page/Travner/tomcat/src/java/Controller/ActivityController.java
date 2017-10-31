@@ -7,20 +7,15 @@ package Controller;
 
 import DAO.DistanceDAO;
 import DAO.LocationDAO;
-import Model.Activity;
 import Model.Distance;
 import Model.DistanceLocation;
-import Model.Location;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.sql.Time;
-import static java.sql.Time.valueOf;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -85,7 +80,7 @@ public class ActivityController extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getServletPath();
         try {
-                listLocation(request, response);
+                Activity(request, response);
         } catch (SQLException | ParseException ex) {
                 Logger.getLogger(LocController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -116,7 +111,7 @@ public class ActivityController extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    public void listLocation(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException,  ParseException {
+    public void Activity(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException,  ParseException {
 
         List<Distance> distance = DistanceDAO.getAll();
         List<DistanceLocation> distLoc = new ArrayList<>();
@@ -140,37 +135,7 @@ public class ActivityController extends HttpServlet {
     }
     
     private void save(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ParseException {
-//        ScheduleController date = new ScheduleController();
-//        SimpleDateFormat format = new SimpleDateFormat ("HH:mm");
-//        int[] A = new int[2];
-//        int i = 0;
-//        
-//        String ActivityName = request.getParameter("ActivityName");
-//        String fromTo = request.getParameter("location");
-//        String startHour = request.getParameter("HourStart");
-//        String startMinute = request.getParameter("MinuteStart");
-//        String endHour = request.getParameter("HourEnd");
-//        String endMinute = request.getParameter("MinuteEnd");
-//        int _priority = Integer.parseInt(request.getParameter("Priority"));
-//        
-//        String start = startHour + ":" + startMinute;
-//        String end = endHour + ":" + endMinute;
-//        Scanner scanDelimeter = new Scanner(fromTo);
-//        scanDelimeter.useDelimiter("-");
-//        while(scanDelimeter.hasNext()){
-//            A[i] = Integer.parseInt(scanDelimeter.next());
-//            i++;
-//        }
-//        
-//        activityName = ActivityName;
-//        ID_StartLoc = A[0];
-//        ID_EndLoc = A[1];
-//        eventDate = (java.sql.Date) date.eventDate;
-//        startTime = (java.sql.Time) valueOf("13:40:00");
-//        endTime = (java.sql.Time) valueOf("15:15:00");
-//        priority = _priority;
-//        
-//        response.sendRedirect("./transportation_mode.jsp");
+        //TODO : Write a Code
     }
     
     @Override

@@ -9,7 +9,6 @@ import DAO.DistanceDAO;
 import DAO.LocationDAO;
 import Model.Distance;
 import Model.DistanceLocation;
-import Model.Location;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -72,7 +71,7 @@ public class DisplayDistanceControl extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getServletPath();
         try {
-                listLocation(request, response);
+                Distance(request, response);
         } catch (SQLException | ParseException ex) {
                 Logger.getLogger(LocController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -97,7 +96,7 @@ public class DisplayDistanceControl extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    public void listLocation(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException,  ParseException {
+    public void Distance(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException,  ParseException {
         List<Distance> distances = DistanceDAO.getAll();
         List<DistanceLocation> distLoc = new ArrayList<>();
       

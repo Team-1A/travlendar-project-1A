@@ -86,7 +86,7 @@ public class ActivityDAO extends DAO {
             Activity act = new Activity();
             act.setId_Activity(rs.getInt("ID_Activity"));
             act.setId_StartLocation(rs.getInt("ID_StartLocation"));
-            act.setId_Destination(rs.getInt("ID_Dastination"));
+            act.setId_Destination(rs.getInt("ID_Destination"));
             act.setTransportationCode(rs.getString("TransportationCode"));
             act.setEventName(rs.getString("Activity_Name"));
             act.setEventDate(rs.getDate("Date"));
