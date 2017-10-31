@@ -8,7 +8,7 @@ and open the template in the editor.
 
 <html>
   <head>
-      <title>Add Activity</title>
+      <title>Transportation Mode</title>
       <%@include file="include/link-another-page.jsp"%><!--memanggil link another page-->
   </head>
 
@@ -70,7 +70,11 @@ and open the template in the editor.
     </div>
     
 <div class="content">
-    <div id="box"><b>Transportation Mode</b></div><br><!--kotak-->
+    <div id="box">
+        <a href="add_activity.jsp">
+            <img id="back" src="css/icon/back.png"><!--Tombol back-->
+        </a>
+    </div><br><!--kotak-->
     
          <div class="box-panel"><!--Isi Kotak-->
     

@@ -13,9 +13,7 @@
         <title>Travner</title>
     </head>
     <body>
-        <a href="add_activity.jsp">
-            <img id="back" src="css/icon/back.png"><!--Tombol back-->
-        </a>
+        
         <div id="div1_transportation"><!--field tabel lokasi-->
                 <table id="table1_transportation"><!--isi tabel lokasi-->
                     <tr>

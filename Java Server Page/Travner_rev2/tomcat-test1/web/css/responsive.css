@@ -53,7 +53,7 @@ div.tab {
 @media screen and (max-width: 780px) {
 	
 	div.tab button{
-	font-size: 9px;
+	font-size:  0px;
 }
 .menu_atas{
 	width: auto;
