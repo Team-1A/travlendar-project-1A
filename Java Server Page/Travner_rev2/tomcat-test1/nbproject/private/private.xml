@@ -3,15 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/netspv/Documents/test-2/Travner/tomcat-test1/web/css/style.css</file>
-            <file>file:/C:/Users/netspv/Documents/test-2/Travner/tomcat-test1/web/transportation_mode.jsp</file>
-            <file>file:/C:/Users/netspv/Documents/test-2/Travner/tomcat-test1/web/create_schedule.jsp</file>
-            <file>file:/C:/Users/netspv/Documents/test-2/Travner/tomcat-test1/web/location.jsp</file>
-            <file>file:/C:/Users/netspv/Documents/test-2/Travner/tomcat-test1/web/include/list_schedule.jsp</file>
-            <file>file:/C:/Users/netspv/Documents/test-2/Travner/tomcat-test1/web/include/footer.jsp</file>
-            <file>file:/C:/Users/netspv/Documents/test-2/Travner/tomcat-test1/web/main.jsp</file>
-            <file>file:/C:/Users/netspv/Documents/test-2/Travner/tomcat-test1/web/index.jsp</file>
-            <file>file:/C:/Users/netspv/Documents/test-2/Travner/tomcat-test1/web/include/schedule.jsp</file>
+            <file>file:/C:/Users/netspv/Documents/test-2/Travner_rev2/tomcat-test1/web/transportation_mode.jsp</file>
+            <file>file:/C:/Users/netspv/Documents/test-2/Travner_rev2/tomcat-test1/web/include/calendar.jsp</file>
+            <file>file:/C:/Users/netspv/Documents/test-2/Travner_rev2/tomcat-test1/web/include/schedule.jsp</file>
+            <file>file:/C:/Users/netspv/Documents/test-2/Travner_rev2/tomcat-test1/web/css/style%20calendar.css</file>
+            <file>file:/C:/Users/netspv/Documents/test-2/Travner_rev2/tomcat-test1/web/css/style.css</file>
+            <file>file:/C:/Users/netspv/Documents/test-2/Travner_rev2/tomcat-test1/web/icon/field_kiri_travel_data.jsp</file>
+            <file>file:/C:/Users/netspv/Documents/test-2/Travner_rev2/tomcat-test1/web/css/responsive.css</file>
+            <file>file:/C:/Users/netspv/Documents/test-2/Travner_rev2/tomcat-test1/web/include/list_schedule.jsp</file>
+            <file>file:/C:/Users/netspv/Documents/test-2/Travner_rev2/tomcat-test1/web/include/field_kiri_transportation.jsp</file>
+            <file>file:/C:/Users/netspv/Documents/test-2/Travner_rev2/tomcat-test1/web/include/link-another-page.jsp</file>
         </group>
     </open-files>
 </project-private>
