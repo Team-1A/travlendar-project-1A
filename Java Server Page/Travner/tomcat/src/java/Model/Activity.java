@@ -16,8 +16,8 @@ public class Activity {
     private String eventName;
     private Integer priority;
     private java.sql.Date eventDate;
-    private Time startEventTime;
-    private Time endEventTime;
+    private java.sql.Time startEventTime;
+    private java.sql.Time endEventTime;
     
     /*
         Constructor pada class Activity
@@ -135,34 +135,34 @@ public class Activity {
     /**
      * @return the startEventTime
      */
-    public Time getStartEventTime() {
+    public java.sql.Time getStartEventTime() {
         return startEventTime;
     }
 
     /**
      * @param startEventTime the startEventTime to set
      */
-    public void setStartEventTime(Time startEventTime) {
+    public void setStartEventTime(java.sql.Time startEventTime) {
         this.startEventTime = startEventTime;
     }
 
     /**
      * @return the endEventTime
      */
-    public Time getEndEventTime() {
+    public java.sql.Time getEndEventTime() {
         return endEventTime;
     }
 
     /**
      * @param endEventTime the endEventTime to set
      */
-    public void setEndEventTime(Time endEventTime) {
+    public void setEndEventTime(java.sql.Time endEventTime) {
         this.endEventTime = endEventTime;
     }
     
     public static Comparator<Activity> activityComparator = (Activity activity1, Activity activity2) -> {
-        Time startDate1 = activity1.getStartEventTime();// create object start event
-        Time startDate2 = activity2.getStartEventTime();// create object end event
+        java.sql.Time startDate1 = activity1.getStartEventTime();// create object start event
+        java.sql.Time startDate2 = activity2.getStartEventTime();// create object end event
         
         return startDate1.compareTo(startDate2);
     } //public create new object from Comparator

@@ -35,7 +35,7 @@ public class ActivityDAO extends DAO {
                 Activity act = new Activity();
                 act.setId_Activity(rs.getInt("ID_Activity"));
                 act.setId_StartLocation(rs.getInt("ID_StartLocation"));
-                act.setId_Destination(rs.getInt("ID_Dastination"));
+                act.setId_Destination(rs.getInt("ID_Destination"));
                 act.setTransportationCode(rs.getString("TransportationCode"));
                 act.setEventName(rs.getString("Activity_Name"));
                 act.setEventDate(rs.getDate("Date"));
@@ -63,11 +63,11 @@ public class ActivityDAO extends DAO {
             String transportationCode = _activity.getTransportationCode();
             String eventName = _activity.getEventName();
             java.sql.Date eventDate = (java.sql.Date) _activity.getEventDate();
-            Time startTime = _activity.getStartEventTime();
-            Time endTime = _activity.getEndEventTime();
+            java.sql.Time startTime = _activity.getStartEventTime();
+            java.sql.Time endTime = _activity.getEndEventTime();
             Integer priority = _activity.getPriority();
             
-            String sql = "INSERT INTO activity (ID_StartLocation,ID_Destination,TransportationCode,Activity_Name,Start_Time,End_Time,Priority_Scale) VALUES(\"" + id_StartLocation + "\",\"" + id_Destination + "\",\"" + transportationCode + "\",\"" + eventName + "\",\"" + eventDate + "\",\"" + startTime + "\",\"" + endTime + "\",\"" + priority + "\");";
+            String sql = "INSERT INTO activity (ID_StartLocation,ID_Destination,TransportationCode,Activity_Name,Date,Start_Time,End_Time,Priority_Scale) VALUES(\"" + id_StartLocation + "\",\"" + id_Destination + "\",\"" + transportationCode + "\",\"" + eventName + "\",\"" + eventDate + "\",\"" + startTime + "\",\"" + endTime + "\",\"" + priority + "\");";
             stats = st.executeUpdate(sql);
         } catch (SQLException ex){
             System.out.println(ex);

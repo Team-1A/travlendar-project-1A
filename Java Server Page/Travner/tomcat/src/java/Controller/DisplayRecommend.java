@@ -39,8 +39,8 @@ public class DisplayRecommend extends HttpServlet {
         private String activityName = null;
         private int ID_StartLoc = 0;
         private int ID_EndLoc = 0;
-        private Time startTime = null;
-        private Time endTime = null;
+        private java.sql.Time startTime = null;
+        private java.sql.Time endTime = null;
         private int priority = 0;
         private java.sql.Date eventDate = null;
         private String TransportationCode = null;
@@ -154,12 +154,12 @@ public class DisplayRecommend extends HttpServlet {
             String ActivityName = request.getParameter("ActivityName");
             String fromTo = request.getParameter("location");
             String startHour = request.getParameter("HourStart");
-            String startMinute = request.getParameter("MinuteStart");
+            String startMinute = request.getParameter("MinutesStart");
             String endHour = request.getParameter("HourEnd");
-            String endMinute = request.getParameter("MinuteEnd");
+            String endMinute = request.getParameter("MinutesEnd");
             int _priority = Integer.parseInt(request.getParameter("Priority"));
-            String start = startHour + ":" + startMinute;
-            String end = endHour + ":" + endMinute;
+            String start = startHour + ":" + startMinute + ":00";
+            String end = endHour + ":" + endMinute + ":00";
             Scanner scanDelimeter = new Scanner(fromTo);
             scanDelimeter.useDelimiter("-");
             while(scanDelimeter.hasNext()){
@@ -169,8 +169,8 @@ public class DisplayRecommend extends HttpServlet {
             activityName = ActivityName;
             ID_StartLoc = A[0];
             ID_EndLoc = A[1];
-            //startTime = (java.sql.Time) format.parseObject(start);
-            //endTime = (java.sql.Time) format.parseObject(end);
+            startTime = java.sql.Time.valueOf(start);
+            endTime = java.sql.Time.valueOf(end);
             priority = _priority;
             
             response.sendRedirect("./transportation_mode.jsp");
@@ -181,9 +181,9 @@ public class DisplayRecommend extends HttpServlet {
             String date = request.getParameter("Date");
             String month = request.getParameter("Month");
             String year = request.getParameter("Year");
-            String format = date + "/" + month + "/" + year;
+            String format = year + "-" + month + "-" + date;
             SimpleDateFormat formatDate = new SimpleDateFormat("dd/M/yyyy");
-            eventDate = (java.sql.Date) formatDate.parseObject(format);
+            eventDate = java.sql.Date.valueOf(format);
             response.sendRedirect("./add_activity.jsp");
     }
     
