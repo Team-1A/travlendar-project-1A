@@ -33,19 +33,7 @@
                                 <img src="icon/trash.png"> <!--menampilkan gambar trash-->
                             </button>
                             <img src="icon/settings.png"> <!--menampilkan gambar setting-->
-                            <div id="id02" class="modal">
-                                <form class="modal-content animate" action="/action_page.php">
-                                    <div class="imgcontainer">
-                                        <div class="container">
-                                            <label>
-                                                <b>LOCATION DELETION</b>
-                                            </label>
-                                    <label>
-                                        <p>Are you sure want to delete it?</p>
-                                    </label>
-                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Yes</button> <!--modal konfirmasi-->
-                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">No</button> <!--modal konfirmasi-->
-                        </th>
+                                                  </th>
                                 
                     </tr>
                 </c:forEach>

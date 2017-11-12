@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      #map {
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <!-- Google Maps JS API -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <!-- GMaps Library -->
+    <script src="gmaps.js"></script>
+    <script>
+      /* Map Object */
+      var mapObj = new GMaps({
+        el: '#map',
+        lat: 41.857,
+        lng: 2.295,
+        zoom: 15
+      });
+
+      GMaps.geolocate({
+        success: function(position) {
+          mapObj.setCenter(position.coords.latitude, position.coords.longitude);
+          var m = mapObj.addMarker({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+            title: 'Your current position'
+          }); 
+        },
+        error: function(error) {
+          alert('Geolocation failed: ' + error.message);
+        },
+        not_supported: function() {
+          alert("Your browser does not support geolocation");
+        }
+      });        
+    </script>
+  </body>
+</html>
