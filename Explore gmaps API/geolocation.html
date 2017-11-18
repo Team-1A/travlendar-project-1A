@@ -17,21 +17,16 @@
     <script src="gmaps.js"></script>
     <script>
       /* Map Object */
-      var mapObj = new GMaps({
+      var map = new GMaps({
         el: '#map',
-        lat: 41.857,
-        lng: 2.295,
-        zoom: 15
+        lat: -12.043333,
+        lng: -77.028333,
+        zoom: 12
       });
 
       GMaps.geolocate({
         success: function(position) {
-          mapObj.setCenter(position.coords.latitude, position.coords.longitude);
-          var m = mapObj.addMarker({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-            title: 'Your current position'
-          }); 
+          map.setCenter(position.coords.latitude, position.coords.longitude);
         },
         error: function(error) {
           alert('Geolocation failed: ' + error.message);
@@ -39,7 +34,7 @@
         not_supported: function() {
           alert("Your browser does not support geolocation");
         }
-      });        
+      });
     </script>
   </body>
 </html>

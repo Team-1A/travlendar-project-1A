@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Geocoding service</title>
+    <style>
+   html { height: 100% }
+   #panel{padding:5px;}
+      .input {
+   height: 25px;
+   padding: 2px;
+   width: 200px;
+      }
+   #btn{
+     height: 31px;
+     background: #267BA8;
+     border: none;
+     padding: 5px;
+     color: #fff;
+   }
+   #map-canvas { height: 400px; width:100%; }
+   *{
+   margin: 0;
+   padding: 0;
+  }
+  body {
+   text-align:center;
+   background-color:#61b3de;
+   font-family:Arial, Helvetica, sans-serif;
+   font-size:80%;
+   color:#666;
+  }
+  .wrap {
+   background: #f3f8fb;
+   width:730px;
+   margin:30px auto;
+   border: 4px dashed #61b3de;
+   border-radius:4px;
+   padding: 20px 5px;
+  }
+  h1 {
+   font-family:Georgia, "Times New Roman", Times, serif;
+   font-size:24px;
+   color:#645348;
+   font-style:italic;
+   text-decoration:none;
+   font-weight:100;
+   padding: 10px;
+  }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+  var directionsDisplay;
+  var directionsService = new google.maps.DirectionsService();
+  var map;
+   
+function initialize() {
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var latlng = new google.maps.LatLng(-6.187931, 107.031279);
+    var map = new google.maps.
+    var mapOptions = {
+        zoom: 12,
+        center: latlng
+    }
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    directionsDisplay.setMap(map);
+}
+ 
+function calcRoute() {
+    var start = document.getElementById('start').value;
+    var end = document.getElementById('end').value;
+    var request = {
+        origin:start,
+        destination:end,
+        travelMode: google.maps.TravelMode.DRIVING
+    };
+    directionsService.route(request, function(response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+        }
+    });
+  }
+ 
+  google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+ <div class="wrap">
+  <h1>Jin Toples Programming</h1>
+  <h1>Membuat Drections Map dengan API Google Maps</h1>
+  <div id="panel">
+    <input class="input" id="start" type="text" value="Kebalen, bekasi">
+    <input class="input" id="end" type="text" value="Universitas bhayangkara, bekasi">
+    <input id="btn" type="button" value="Search" onclick="calcRoute()">
+  </div>
+  <div id="map-canvas"></div>
+ </div>
+  </body>
+</html>
