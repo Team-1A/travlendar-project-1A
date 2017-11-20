@@ -1,0 +1,138 @@
+body {
+    background-size: 100%;
+    background-image: url('css/background.jpg');
+    background-color: #F7F9F9;  
+    font-family: "Lato", sans-serif;
+
+    
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 4px 4px 4px 32px;
+    text-decoration: none;
+    font-size: 10px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.header{
+
+    border-radius: 10px;
+    margin-right: 70px;
+    margin-left: 70px;
+    height: 50px;
+    background-color: #F4F6F7;
+}
+.search{
+    height: 50px;
+    margin-right: 70px;
+    margin-left: 70px;
+    /*box-shadow: 2px 10px 30px #888888;*/
+    border-radius: 10px;
+    background-color:  none;
+
+}
+.search #search {
+  opacity: 0.9;
+  background-color: white;
+  background-image: url('css/search.svg');
+  background-position: 4px 4px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  width: 45%;
+  font-size: 16px;
+  padding: 5px 20px 5px 40px;
+  border: 1px solid  #1A5276;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+
+}
+.left{
+    opacity: 0.8;
+    float: left;
+    margin-left: 120px;
+    margin-top: 20px;
+    width: 650px;
+    height: 420px; 
+    /*box-shadow: 2px 10px 30px #888888;*/
+    border-radius: 10px;
+    background-color: #F4F6F7;
+}
+
+.right {
+   
+    float: left;
+    margin-left: 25px;
+    margin-right: 120px;
+    margin-top: 20px;
+    width: 315px;
+    height: 420px; 
+    
+    border-radius: 10px;
+    background-color:  #F4F6F7;
+}
+input{
+  margin-left: 20px;
+  background-color: white;
+  background-image: url('css/location.svg');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 12px;
+  
+  width: 60%;
+  font-size: 12px;
+  padding: 15px 40px 5px 50px;
+  border: 1px solid  #1A5276;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 2px;
+  margin-bottom: 16px;
+  border-radius: 5px;
+
+}
+
+ #map {
+          border-radius: 10px;
+          width: 650px;
+          height: 420px;
+          border: 1px solid #a0a0a0;
+        }
+
