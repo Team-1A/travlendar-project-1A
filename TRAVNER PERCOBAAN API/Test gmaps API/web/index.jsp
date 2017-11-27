@@ -1,7 +1,8 @@
 <%-- 
     Document   : test map
     Created on : Nov 26, 2017, 11:44:05 AM
-    Author     : Hydrolyze
+    Author     : Fadhil
+    
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -27,8 +28,8 @@
         <script src="gmaps.js"></script>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <form name="form" action="/LokasiController" method="POST">
+        <h1>Test Map</h1>
+        <form name="form" action="/LokasiController" method="POST" id="geocoding_form">
             <table border="1">
                 <thead>
                     <tr>
@@ -38,19 +39,17 @@
                 <tbody>
                     <tr>
                         <td>Lokasi awal : </td>
-                        <td><input type="text" id="startloc" size="50" /></td>
-                        <td><input type="text" id="startlat" size="50" /></td>
-                        <td><input type="text" id="startlng" size="50" /></td>
+                        <td><input type="text" id="orig" size="50" name="orig" /></td>
+                        <td><input type="submit" value="Search" name="searchorig" /></td>
                     </tr>
                     <tr>
                         <td>Lokasi tujuan : </td>
-                        <td><input type="text" id="destinationloc" size="50" /></td>
-                        <td><input type="text" id="destinationlat" size="50" /></td>
-                        <td><input type="text" id="destinationlng" size="50" /></td>
+                        <td><input type="text" id="dest" size="50" name="dest"/></td>
+                        <td><input type="submit" value="Search" name="seachdest" /></td>
                     </tr>
                     <tr>
                         <td>Jarak : </td>
-                        <td><input type="text" id="distance" size="50" /></td>
+                        <td><input type="text" id="dist" size="50" /></td>
                     </tr>
                 </tbody>
             </table>
@@ -59,121 +58,116 @@
         </form>
         <div id="map">Maps Event</div>
         <script>
-//            $(document).ready()( function(){
-                var marker1 = null, marker2 = null;
-                var marker1pos, marker2pos;
-                var a = false, b = true;
-                var map = new GMaps({
+          // JQuery
+            $(document).ready( function(){  // Ketika web udah siap
+//		prettyPrint();
+                var marker1, marker2;
+                var a = false, b = false;
+                var mapObj = new GMaps({
                     el: '#map',
-                    lat: 41.8902421, //latitude awal
-                    lng: 12.4924991, //longitude awal
-                    zoom: 15,
-                    click: function(e) {
-                        if (a) {
-                            map.removeMarker((b) ? marker1 : marker2); //jika false, hapus marker dari lokasi sebelumnya
-                            map.removePolylines(); //menghapus garis rute
-                        }
-
-                        if (b) {
-                            //menempatkan marker
-                            marker1 = map.addMarker({
-                                lat: e.latLng.lat(),//latitude dari lokasi awal
-                                lng: e.latLng.lng()//longitude dari lokasi awal
-                                //icon: sourceIcon
-                            });
-                        marker1pos = marker1.getPosition();
-                        } 
-                        else {
-                            //menempatkan marker
-                            marker2 = map.addMarker({
-                                lat: e.latLng.lat(),//latitude dari lokasi tujuan
-                                lng: e.latLng.lng()//longitude dari lokasi tujuan
-                                //icon: destinationIcon
-                            });
-                            marker2pos = marker2.getPosition();
-                        }
-                        // jika kedua marker sudah ditempatkan, langsung gambar rute
-                        if (marker1 !== null && marker2 !== null) {
-                            a = true;
-                            //menggambar rute dari dua marker
-                            map.drawRoute({
-                                origin: [marker1pos.lat(), marker1pos.lng()], //lokasi awal
-                                destination: [marker2pos.lat(), marker2pos.lng()],//lokasi tujuan
-                                travelMode: 'driving', //bisa diganti menjadi 'walking' atau 'transit'
-                                strokeColor: '#131540',
-                                strokeOpacity: 0.6,
-                                strokeWeight: 6
-                            });
-//                            
-//                            $.ajax({
-//                                type: "POST", // method post
-//                                url: "json", // url controller
-//                                dataType:'JSON',
-//                             //   data: {listjson: JSON.stringify(listJson)},
-//                                data: {latitude: marker2pos.lat(), longitude: marker2pos.lng(), desc: document.getElementById("desc").value},
-//                                    async: false, // dikirim ketika semua beres
-//                                    success: function(data){alert(data);},
-//                                    failure: function(errMsg) {
-//                                        alert(errMsg);
-//                                    }
-//                            });
-                        }
-                        b = !b;
-
-                        var start = new google.maps.LatLng(marker1pos.lat(),marker1pos.lng()),
-                        destination = new google.maps.LatLng(marker2pos.lat(),marker2pos.lng()),
-                        service = new google.maps.DistanceMatrixService();
-
-                        service.getDistanceMatrix(
-                            {
-                                origins: [marker1pos.lat(),marker1pos.lng()],
-                                destinations: [marker2pos.lat(),marker2pos.lng()],
-                                travelMode: google.maps.TravelMode.DRIVING,
-                                avoidHighways: false,
-                                avoidTolls: false
-                            }, 
-                            callback
-                        );
-
-                        function callback(response, status) {
-                            var startloc = document.getElementById("startloc"),
-                            startlat = document.getElementById("startlat"),
-                            startlng = document.getElementById("startlng"),
-                            destinationloc = document.getElementById("destinationloc"),
-                            destinationlat = document.getElementById("destinationlat"),
-                            destinationlng = document.getElementById("destinationlng"),
-                            distance = document.getElementById("distance");
-
-                            if(status=="OK") {
-                                startloc.value = response.startAddresses[0];
-                                startlat.value = response.startLatitude[0];
-                                startlng.value = response.startLongitude[0];
-                                destinationloc.value = response.destinationAddresses[0];
-                                destinationlat.value = response.destinationLatitude[0];
-                                destinationlng.value = response.destinationLongitude[0];
-            //                    dest.value = response.destinationAddresses[0];
-            //                    orig.value = response.originAddresses[0];
-                                distance.value = response.rows[0].elements[0].distance.text;
-                            } 
-                            else {
-                                alert("Error: " + status);
+                    lat: -6.914744,
+                    lng: 107.609810,
+                    zoom: 14
+                }); // tutup instansiasi gmaps
+                $('#geocoding_form').submit(function(e){
+                    e.preventDefault();
+                    GMaps.geocode({
+                        address: $('#orig').val().trim(),
+                        callback: function(results, status){
+                            if(status=='OK'){
+                                var latlng = results[0].geometry.location;
+                                mapObj.setCenter(latlng.lat(), latlng.lng());
+                                if(a){
+                                    mapObj.removeMarker(marker1);
+                                }
+                                marker1 = mapObj.addMarker({
+                                    lat: latlng.lat(),
+                                    lng: latlng.lng()
+                                });
+                                a = true;
                             }
                         }
-                    }
-                });
-
-                GMaps.geolocate({
-                    success: function(position) {
-                      map.setCenter(position.coords.latitude, position.coords.longitude);
-                    },
-                    error: function(error) {
-                      alert('Geolocation failed: ' + error.message);
-                    },
-                    not_supported: function() {
-                      alert("Your browser does not support geolocation");
-                    }
-                });
-//            });
+                    });
+		});
+                $('#geocoding_form').submit(function(e){
+                    e.preventDefault();
+                    GMaps.geocode({
+                        address: $('#dest').val().trim(),
+                        callback: function(results, status){
+                            if(status=='OK'){
+                                var latlng = results[0].geometry.location;
+                                mapObj.setCenter(latlng.lat(), latlng.lng());
+                                if(b){
+                                    mapObj.removeMarker(marker2);
+                                }
+                                marker2 = mapObj.addMarker({
+                                    lat: latlng.lat(),
+                                    lng: latlng.lng()
+                                });
+                                b = true;
+                            }
+                        }
+                    });
+		});
+//                click: function(results, status){
+//                    if(status=='OK'){
+//                        var latlng = results[0].geometry.location;
+//                        mapObj.setCenter(latlng.lat(), latlng.lng());
+//
+//                        if(a){
+//                            mapObj.removeMarker(m1);
+//                            mapObj.removePolylines();
+//                        }
+//
+//                        m1 = mapObj.addMarker({
+//                            lat: latlng.lat(),
+//                            lng: latlng.lng()
+//                        });
+//
+//                        m1pos = m1.getPosition();
+//
+//                        mapObj.drawRoute({
+//                            origin: [m1pos.lat(), m1pos.lng()],
+//                            destination: [m2pos.lat(), m2pos.lng()],
+//                            travelMode: 'driving',
+//                            strokeColor: '#131540',
+//                            strokeOpacity: 0.6,
+//                            strokeWeight: 6
+//                        });
+//
+//                        var origin = new google.maps.LatLng(m1pos.lat(),m1pos.lng()),
+//                        destination = new google.maps.LatLng(m2pos.lat(),m2pos.lng()),
+//                        service = new google.maps.DistanceMatrixService();
+//
+//                        service.getDistanceMatrix(
+//                            {
+//                                origins: [origin],
+//                                destinations: [destination],
+//                                travelMode: google.maps.TravelMode.DRIVING,
+//                                avoidHighways: false,
+//                                avoidTolls: false
+//                            }, 
+//                            callback
+//                        );
+//
+//                        function callback(response, status) 
+//                        {
+//                            var orig = document.getElementById("orig"),
+//                            dest = document.getElementById("dest"),
+//                            dist = document.getElementById("dist");
+//
+//                            if(status=="OK") {
+//                                dest.value = response.destinationAddresses[0];
+//                                orig.value = response.originAddresses[0];
+//                                dist.value = response.rows[0].elements[0].distance.text;
+//                            } 
+//                            else {
+//                                alert("Error: " + status);
+//                            }
+//                        }
+//                    }
+//                };
+            }); // tutup JQuery    
         </script>
     </body>
 </html>

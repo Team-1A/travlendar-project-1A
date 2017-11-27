@@ -5,12 +5,8 @@
  */
 package Controller;
 
-import DAO.LokasiDAO;
-import Model.Lokasi;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.text.ParseException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Hydrolyze
  */
-@WebServlet(name = "LokasiController", urlPatterns = {"/LokasiController"})
-public class LokasiController extends HttpServlet {
+@WebServlet(name = "TestMapsController", urlPatterns = {"/TestMapsController"})
+public class TestMapsController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +37,10 @@ public class LokasiController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LokasiController</title>");            
+            out.println("<title>Servlet TestMapsController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LokasiController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet TestMapsController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -76,15 +72,7 @@ public class LokasiController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Lokasi lokasi = new Lokasi();
-        lokasi.setStartloc(request.getParameter("startloc"));
-        lokasi.setStartlat(request.getParameter("startlat"));
-        lokasi.setStartlng(request.getParameter("startlng"));
-        lokasi.setDestinationloc(request.getParameter("destinationloc"));
-        lokasi.setDestinationlat(request.getParameter("destinationlat"));
-        lokasi.setDestinationlng(request.getParameter("destinationlng"));
-        lokasi.setDistance(Integer.parseInt(request.getParameter("distance")));
-        LokasiDAO.add(lokasi);
+        processRequest(request, response);
     }
 
     /**
@@ -96,8 +84,5 @@ public class LokasiController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-//    
-//    private void save(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ParseException {
-//        
-//    }
+
 }
