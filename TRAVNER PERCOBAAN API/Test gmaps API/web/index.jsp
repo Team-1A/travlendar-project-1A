@@ -13,27 +13,31 @@
         <title>Add New Event</title>
         <style>
             #map{
-		width: 100%;
-		height: 500px;
-		border: 1px solid #a0a0a0;
+                width: 100%;
+                height: 500px;
+                border: 1px solid #a0a0a0;
             }
         </style>
         <!-- Google Maps JS API -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s"></script>
-        
+
         <!-- JQuery Library -->
         <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
-        
+
         <!-- GMaps Library -->
         <script src="gmaps.js"></script>
     </head>
+    <link rel="stylesheet" type="text/css" href="map.css">
     <body>
         <h1>Test Map</h1>
-        <form name="form" action="/LokasiController" method="POST" id="geocoding_form">
+        <form name="form" action="" method="POST" id="geocoding_form">
             <table border="1">
                 <thead>
                     <tr>
                         <th>GMAPS</th>
+                        <th></th>
+                        <th></th>
+                        <th>Gunakan Klik</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,132 +45,325 @@
                         <td>Lokasi awal : </td>
                         <td><input type="text" id="orig" size="50" name="orig" /></td>
                         <td><input type="submit" value="Search" name="searchorig" /></td>
+                        <td><label class="switch">
+                                <input type="checkbox" id="mark1">
+                                <span class="slider round"></span>
+                            </label>
+                        </td>
                     </tr>
                     <tr>
                         <td>Lokasi tujuan : </td>
                         <td><input type="text" id="dest" size="50" name="dest"/></td>
                         <td><input type="submit" value="Search" name="seachdest" /></td>
-                    </tr>
-                    <tr>
-                        <td>Jarak : </td>
-                        <td><input type="text" id="dist" size="50" /></td>
+                        <td><label class="switch">
+                                <input type="checkbox" id="mark2">
+                                <span class="slider round"></span>
+                            </label>
+                        </td>
                     </tr>
                 </tbody>
             </table>
-            <input type="reset" value="Clear" name="clear" />
+        </form>
+        <form name="form" action="${pageContext.request.contextPath}/LokasiController" method="POST">
+            <input type="Hidden" id="getOrig" name="Orig">
+            <input type="Hidden" id="getDest" name="Dest">
+            <input type="Hidden" id="getDist" name="Dist">
             <input type="submit" value="Submit" name="submit" />
         </form>
         <div id="map">Maps Event</div>
         <script>
-          // JQuery
-            $(document).ready( function(){  // Ketika web udah siap
+            // JQuery
+            $(document).ready(function () {  // Ketika web udah siap
 //		prettyPrint();
                 var marker1, marker2;
+                var marker1pos, marker2pos;
                 var a = false, b = false;
+                var corvo = false, attano = true;
                 var mapObj = new GMaps({
                     el: '#map',
                     lat: -6.914744,
                     lng: 107.609810,
-                    zoom: 14
-                }); // tutup instansiasi gmaps
-                $('#geocoding_form').submit(function(e){
+                    zoom: 14,
+                    click: function(e){
+                        if($('input#mark1').is(':checked')){
+                            if(a){
+                                mapObj.removeMarker(marker1);
+                                mapObj.removePolylines();
+                            }
+                            
+                            marker1 = mapObj.addMarker({
+                                lat: e.latLng.lat(),
+                                lng: e.latLng.lng()
+                            });
+                            
+                            a = true;
+                            $('input#mark1').prop('checked',false);
+                            
+                            marker1pos = marker1.getPosition();
+
+                            if (marker1 !== null && marker2 !== null) {
+                                mapObj.drawRoute({
+                                    origin: [marker1pos.lat(), marker1pos.lng()],
+                                    destination: [marker2pos.lat(), marker2pos.lng()],
+                                    travelMode: 'driving',
+                                    strokeColor: '#131540',
+                                    strokeOpacity: 0.6,
+                                    strokeWeight: 6
+                                });
+
+                                var origin = new google.maps.LatLng(marker1pos.lat(), marker1pos.lng()),
+                                destination = new google.maps.LatLng(marker2pos.lat(), marker2pos.lng()),
+                                service = new google.maps.DistanceMatrixService();
+
+                                service.getDistanceMatrix(
+                                    {
+                                        origins: [origin],
+                                        destinations: [destination],
+                                        travelMode: google.maps.TravelMode.DRIVING,
+                                        avoidHighways: false,
+                                        avoidTolls: false
+                                    },
+                                    callback
+                                );
+
+                                function callback(response, status)
+                                {
+                                    var orig = document.getElementById("orig"),
+                                    dest = document.getElementById("dest"),
+                                    getOrig = document.getElementById("getOrig"),
+                                    getDest = document.getElementById("getDest"),
+                                    getDist = document.getElementById("getDist");
+
+                                    if (status == "OK") {
+                                        dest.value = response.destinationAddresses[0];
+                                        orig.value = response.originAddresses[0];
+                                        getDist.value = response.rows[0].elements[0].distance.text;
+                                        getOrig.value = orig.value;
+                                        getDest.value = dest.value;
+                                    } else {
+                                        alert("Error: " + status);
+                                    }
+                                }
+                            }
+                        }
+                        
+                        if($('input#mark2').is(':checked')){
+                            if(b){
+                                mapObj.removeMarker(marker2);
+                                mapObj.removePolylines();
+                            }
+                            
+                            marker2 = mapObj.addMarker({
+                                lat: e.latLng.lat(),
+                                lng: e.latLng.lng()
+                            });
+                            
+                            b = true;
+                            $('input#mark2').prop('checked',false);
+                            
+                            marker2pos = marker2.getPosition();
+
+                            if (marker1 !== null && marker2 !== null) {
+                                mapObj.drawRoute({
+                                    origin: [marker1pos.lat(), marker1pos.lng()],
+                                    destination: [marker2pos.lat(), marker2pos.lng()],
+                                    travelMode: 'driving',
+                                    strokeColor: '#131540',
+                                    strokeOpacity: 0.6,
+                                    strokeWeight: 6
+                                });
+
+                                var origin = new google.maps.LatLng(marker1pos.lat(), marker1pos.lng()),
+                                destination = new google.maps.LatLng(marker2pos.lat(), marker2pos.lng()),
+                                service = new google.maps.DistanceMatrixService();
+
+                                service.getDistanceMatrix(
+                                    {
+                                        origins: [origin],
+                                        destinations: [destination],
+                                        travelMode: google.maps.TravelMode.DRIVING,
+                                        avoidHighways: false,
+                                        avoidTolls: false
+                                    },
+                                    callback
+                                );
+
+                                function callback(response, status)
+                                {
+                                    var orig = document.getElementById("orig"),
+                                    dest = document.getElementById("dest"),
+                                    getOrig = document.getElementById("getOrig"),
+                                    getDest = document.getElementById("getDest"),
+                                    getDist = document.getElementById("getDist");
+
+                                    if (status == "OK") {
+                                        dest.value = response.destinationAddresses[0];
+                                        orig.value = response.originAddresses[0];
+                                        getDist.value = response.rows[0].elements[0].distance.text;
+                                        getOrig.value = orig.value;
+                                        getDest.value = dest.value;
+                                    } else {
+                                        alert("Error: " + status);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                $('#geocoding_form').submit(function (e) {
                     e.preventDefault();
                     GMaps.geocode({
                         address: $('#orig').val().trim(),
-                        callback: function(results, status){
-                            if(status=='OK'){
+                        callback: function (results, status) {
+                            if (status == 'OK') {
                                 var latlng = results[0].geometry.location;
                                 mapObj.setCenter(latlng.lat(), latlng.lng());
-                                if(a){
+                                if (a) {
                                     mapObj.removeMarker(marker1);
+                                    mapObj.removePolylines();
                                 }
+
                                 marker1 = mapObj.addMarker({
                                     lat: latlng.lat(),
                                     lng: latlng.lng()
                                 });
+
                                 a = true;
+
+                                marker1pos = marker1.getPosition();
+
+                                if (marker1 !== null && marker2 !== null) {
+                                    mapObj.drawRoute({
+                                        origin: [marker1pos.lat(), marker1pos.lng()],
+                                        destination: [marker2pos.lat(), marker2pos.lng()],
+                                        travelMode: 'driving',
+                                        strokeColor: '#131540',
+                                        strokeOpacity: 0.6,
+                                        strokeWeight: 6
+                                    });
+
+                                    var origin = new google.maps.LatLng(marker1pos.lat(), marker1pos.lng()),
+                                    destination = new google.maps.LatLng(marker2pos.lat(), marker2pos.lng()),
+                                    service = new google.maps.DistanceMatrixService();
+
+                                    service.getDistanceMatrix(
+                                        {
+                                            origins: [origin],
+                                            destinations: [destination],
+                                            travelMode: google.maps.TravelMode.DRIVING,
+                                            avoidHighways: false,
+                                            avoidTolls: false
+                                        },
+                                        callback
+                                    );
+
+                                    function callback(response, status)
+                                    {
+                                        var orig = document.getElementById("orig"),
+                                        dest = document.getElementById("dest"),
+                                        getOrig = document.getElementById("getOrig"),
+                                        getDest = document.getElementById("getDest"),
+                                        getDist = document.getElementById("getDist");
+
+                                        if (status == "OK") {
+                                            dest.value = response.destinationAddresses[0];
+                                            orig.value = response.originAddresses[0];
+                                            getDist.value = response.rows[0].elements[0].distance.text;
+                                            getOrig.value = orig.value;
+                                            getDest.value = dest.value;
+                                        } else {
+                                            alert("Error: " + status);
+                                        }
+                                    }
+                                }
                             }
                         }
                     });
-		});
-                $('#geocoding_form').submit(function(e){
+                });
+                
+                $('#geocoding_form').submit(function (e) {
                     e.preventDefault();
                     GMaps.geocode({
                         address: $('#dest').val().trim(),
-                        callback: function(results, status){
-                            if(status=='OK'){
+                        callback: function (results, status) {
+                            if (status == 'OK') {
                                 var latlng = results[0].geometry.location;
                                 mapObj.setCenter(latlng.lat(), latlng.lng());
-                                if(b){
+                                if (b) {
                                     mapObj.removeMarker(marker2);
+                                    mapObj.removePolylines();
                                 }
+
                                 marker2 = mapObj.addMarker({
                                     lat: latlng.lat(),
                                     lng: latlng.lng()
                                 });
+
                                 b = true;
+
+                                marker2pos = marker2.getPosition();
+
+                                if (marker1 !== null && marker2 !== null) {
+                                    mapObj.drawRoute({
+                                        origin: [marker1pos.lat(), marker1pos.lng()],
+                                        destination: [marker2pos.lat(), marker2pos.lng()],
+                                        travelMode: 'driving',
+                                        strokeColor: '#131540',
+                                        strokeOpacity: 0.6,
+                                        strokeWeight: 6
+                                    });
+
+                                    var origin = new google.maps.LatLng(marker1pos.lat(), marker1pos.lng()),
+                                    destination = new google.maps.LatLng(marker2pos.lat(), marker2pos.lng()),
+                                    service = new google.maps.DistanceMatrixService();
+
+                                    service.getDistanceMatrix(
+                                        {
+                                            origins: [origin],
+                                            destinations: [destination],
+                                            travelMode: google.maps.TravelMode.DRIVING,
+                                            avoidHighways: false,
+                                            avoidTolls: false
+                                        },
+                                        callback
+                                    );
+
+                                    function callback(response, status)
+                                    {
+                                        var orig = document.getElementById("orig"),
+                                        dest = document.getElementById("dest"),
+                                        getOrig = document.getElementById("getOrig"),
+                                        getDest = document.getElementById("getDest"),
+                                        getDist = document.getElementById("getDist");
+
+                                        if (status == "OK") {
+                                            dest.value = response.destinationAddresses[0];
+                                            orig.value = response.originAddresses[0];
+                                            getDist.value = response.rows[0].elements[0].distance.text;
+                                            getOrig.value = orig.value;
+                                            getDest.value = dest.value;
+                                        } else {
+                                            alert("Error: " + status);
+                                        }
+                                    }
+                                }
                             }
                         }
                     });
-		});
-//                click: function(results, status){
-//                    if(status=='OK'){
-//                        var latlng = results[0].geometry.location;
-//                        mapObj.setCenter(latlng.lat(), latlng.lng());
-//
-//                        if(a){
-//                            mapObj.removeMarker(m1);
-//                            mapObj.removePolylines();
-//                        }
-//
-//                        m1 = mapObj.addMarker({
-//                            lat: latlng.lat(),
-//                            lng: latlng.lng()
-//                        });
-//
-//                        m1pos = m1.getPosition();
-//
-//                        mapObj.drawRoute({
-//                            origin: [m1pos.lat(), m1pos.lng()],
-//                            destination: [m2pos.lat(), m2pos.lng()],
-//                            travelMode: 'driving',
-//                            strokeColor: '#131540',
-//                            strokeOpacity: 0.6,
-//                            strokeWeight: 6
-//                        });
-//
-//                        var origin = new google.maps.LatLng(m1pos.lat(),m1pos.lng()),
-//                        destination = new google.maps.LatLng(m2pos.lat(),m2pos.lng()),
-//                        service = new google.maps.DistanceMatrixService();
-//
-//                        service.getDistanceMatrix(
-//                            {
-//                                origins: [origin],
-//                                destinations: [destination],
-//                                travelMode: google.maps.TravelMode.DRIVING,
-//                                avoidHighways: false,
-//                                avoidTolls: false
-//                            }, 
-//                            callback
-//                        );
-//
-//                        function callback(response, status) 
-//                        {
-//                            var orig = document.getElementById("orig"),
-//                            dest = document.getElementById("dest"),
-//                            dist = document.getElementById("dist");
-//
-//                            if(status=="OK") {
-//                                dest.value = response.destinationAddresses[0];
-//                                orig.value = response.originAddresses[0];
-//                                dist.value = response.rows[0].elements[0].distance.text;
-//                            } 
-//                            else {
-//                                alert("Error: " + status);
-//                            }
-//                        }
-//                    }
-//                };
+                });
+                
+                $('input#mark1').change(function(){
+                    if($(this).prop('checked')){
+                        $('input#mark2').prop('checked',false);
+                    }
+                });
+                
+                $('input#mark2').change(function(){
+                    if($(this).prop('checked')){
+                        $('input#mark1').prop('checked',false);
+                    }
+                });
             }); // tutup JQuery    
         </script>
     </body>
