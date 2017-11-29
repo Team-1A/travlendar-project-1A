@@ -11,12 +11,12 @@ package Model;
  */
 public class Lokasi {
     private String startloc;
-    private String startlat;
-    private String startlng;
+    private Double startlat;
+    private Double startlng;
     private String destinationloc;
-    private String destinationlat;
-    private String destinationlng;
-    private Integer distance;
+    private Double destinationlat;
+    private Double destinationlng;
+    private Double distance;
     
     public Lokasi(){
         startloc = null;
@@ -25,7 +25,7 @@ public class Lokasi {
         destinationloc = null;
         destinationlat = null;
         destinationlng = null;
-        distance = 0;
+        distance = null;
     }
 
     /**
@@ -45,28 +45,28 @@ public class Lokasi {
     /**
      * @return the startlat
      */
-    public String getStartlat() {
+    public Double getStartlat() {
         return startlat;
     }
 
     /**
      * @param startlat the startlat to set
      */
-    public void setStartlat(String startlat) {
+    public void setStartlat(Double startlat) {
         this.startlat = startlat;
     }
 
     /**
      * @return the startlng
      */
-    public String getStartlng() {
+    public Double getStartlng() {
         return startlng;
     }
 
     /**
      * @param startlng the startlng to set
      */
-    public void setStartlng(String startlng) {
+    public void setStartlng(Double startlng) {
         this.startlng = startlng;
     }
 
@@ -87,42 +87,43 @@ public class Lokasi {
     /**
      * @return the destinationlat
      */
-    public String getDestinationlat() {
+    public Double getDestinationlat() {
         return destinationlat;
     }
 
     /**
      * @param destinationlat the destinationlat to set
      */
-    public void setDestinationlat(String destinationlat) {
+    public void setDestinationlat(Double destinationlat) {
         this.destinationlat = destinationlat;
     }
 
     /**
      * @return the destinationlng
      */
-    public String getDestinationlng() {
+    public Double getDestinationlng() {
         return destinationlng;
     }
 
     /**
      * @param destinationlng the destinationlng to set
      */
-    public void setDestinationlng(String destinationlng) {
+    public void setDestinationlng(Double destinationlng) {
         this.destinationlng = destinationlng;
     }
 
     /**
      * @return the distance
      */
-    public Integer getDistance() {
+    public Double getDistance() {
         return distance;
     }
 
     /**
      * @param distance the distance to set
      */
-    public void setDistance(Integer distance) {
+    public void setDistance(Double distance) {
         this.distance = distance;
     }
+
 }

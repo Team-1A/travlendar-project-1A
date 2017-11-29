@@ -28,12 +28,12 @@ public class LokasiDAO extends DAO{
             Statement statement = connect.createStatement();
             
             String startloc = lokasi.getStartloc();
-            String startlat = lokasi.getStartlat();
-            String startlng = lokasi.getStartlng();
+            Double startlat = lokasi.getStartlat();
+            Double startlng = lokasi.getStartlng();
             String destinationloc = lokasi.getDestinationloc();
-            String destinationlat = lokasi.getDestinationlat();
-            String destinationlng = lokasi.getDestinationlng();
-            Integer distance = lokasi.getDistance();
+            Double destinationlat = lokasi.getDestinationlat();
+            Double destinationlng = lokasi.getDestinationlng();
+            Double distance = lokasi.getDistance();
             
             String toSQL = "INSERT INTO data_lokasi (startloc,startlat,startlng,destinationloc,destinationlat,destinationlng,distance) VALUES(\"" + startloc + "\",\"" + startlat + "\",\"" + startlng + "\",\"" + destinationloc + "\",\"" + destinationlat + "\",\"" + destinationlng + "\",\"" + distance + "\");";
             status = statement.executeUpdate(toSQL);
@@ -54,12 +54,12 @@ public class LokasiDAO extends DAO{
             while(result.next()){
                 Lokasi lokasi = new Lokasi();
                 lokasi.setStartloc(result.getString("startloc"));
-                lokasi.setStartlat(result.getString("startlat"));
-                lokasi.setStartlng(result.getString("startlng"));
+                lokasi.setStartlat(result.getDouble("startlat"));
+                lokasi.setStartlng(result.getDouble("startlng"));
                 lokasi.setDestinationloc(result.getString("sestinationloc"));
-                lokasi.setDestinationlat(result.getString("sestinationlat"));
-                lokasi.setDestinationlng(result.getString("sestinationlng"));
-                lokasi.setDistance(result.getInt("distance"));
+                lokasi.setDestinationlat(result.getDouble("sestinationlat"));
+                lokasi.setDestinationlng(result.getDouble("sestinationlng"));
+                lokasi.setDistance(result.getDouble("distance"));
             }
         } catch (SQLException ex){
             System.out.println(ex);

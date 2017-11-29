@@ -76,15 +76,18 @@ public class LokasiController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String orig,Dest;
         Lokasi lokasi = new Lokasi();
-        //lokasi.setStartloc(request.getParameter("Orig"));
-        orig  = request.getParameter("Orig");
-        //lokasi.setDestinationloc(request.getParameter("Dest"));
-        Dest = request.getParameter("Dest");
-        //lokasi.setDistance(Integer.parseInt(request.getParameter("Dist")));
-        //LokasiDAO.add(lokasi);
-        response.sendRedirect("./TestMaps.jsp");
+        lokasi.setStartloc(request.getParameter("Orig"));
+        lokasi.setStartlat(Double.parseDouble(request.getParameter("marker1_lat")));
+        lokasi.setStartlng(Double.parseDouble(request.getParameter("marker1_lng")));
+        lokasi.setDestinationloc(request.getParameter("Dest"));
+        lokasi.setDestinationlat(Double.parseDouble(request.getParameter("marker2_lat")));
+        lokasi.setDestinationlng(Double.parseDouble(request.getParameter("marker2_lng")));
+        String cString[] = request.getParameter("Dist").split(" ");
+        String distance = cString[0].replace(",", ".");
+        lokasi.setDistance(Double.parseDouble(distance));
+        LokasiDAO.add(lokasi);
+        response.sendRedirect("./inputform.jsp");
     }
 
     /**

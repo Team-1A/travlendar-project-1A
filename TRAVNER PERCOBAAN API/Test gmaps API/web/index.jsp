@@ -68,6 +68,10 @@
             <input type="Hidden" id="getOrig" name="Orig">
             <input type="Hidden" id="getDest" name="Dest">
             <input type="Hidden" id="getDist" name="Dist">
+            <input type="Hidden" id="lat1" name="marker1_lat">
+            <input type="Hidden" id="lng1" name="marker1_lng">
+            <input type="Hidden" id="lat2" name="marker2_lat">
+            <input type="Hidden" id="lng2" name="marker2_lng">
             <input type="submit" value="Submit" name="submit" />
         </form>
         <div id="map">Maps Event</div>
@@ -79,12 +83,14 @@
                 var marker1pos, marker2pos;
                 var a = false, b = false;
                 var corvo = false, attano = true;
+                var geocoder;
                 var mapObj = new GMaps({
                     el: '#map',
                     lat: -6.914744,
                     lng: 107.609810,
                     zoom: 14,
                     click: function(e){
+                        geocoder = new google.maps.Geocoder();
                         if($('input#mark1').is(':checked')){
                             if(a){
                                 mapObj.removeMarker(marker1);
@@ -97,9 +103,8 @@
                             });
                             
                             a = true;
-                            $('input#mark1').prop('checked',false);
-                            
                             marker1pos = marker1.getPosition();
+                            $('input#mark1').prop('checked',false);
 
                             if (marker1 !== null && marker2 !== null) {
                                 mapObj.drawRoute({
@@ -132,7 +137,11 @@
                                     dest = document.getElementById("dest"),
                                     getOrig = document.getElementById("getOrig"),
                                     getDest = document.getElementById("getDest"),
-                                    getDist = document.getElementById("getDist");
+                                    getDist = document.getElementById("getDist"),
+                                    lat1 = document.getElementById("lat1"),
+                                    lng1 = document.getElementById("lng1"),
+                                    lat2 = document.getElementById("lat2"),
+                                    lng2 = document.getElementById("lng2");
 
                                     if (status == "OK") {
                                         dest.value = response.destinationAddresses[0];
@@ -140,6 +149,10 @@
                                         getDist.value = response.rows[0].elements[0].distance.text;
                                         getOrig.value = orig.value;
                                         getDest.value = dest.value;
+                                        lat1.value = marker1pos.lat();
+                                        lng1.value = marker1pos.lng();
+                                        lat2.value = marker2pos.lat();
+                                        lng2.value = marker2pos.lng();
                                     } else {
                                         alert("Error: " + status);
                                     }
@@ -159,9 +172,8 @@
                             });
                             
                             b = true;
-                            $('input#mark2').prop('checked',false);
-                            
                             marker2pos = marker2.getPosition();
+                            $('input#mark2').prop('checked',false);
 
                             if (marker1 !== null && marker2 !== null) {
                                 mapObj.drawRoute({
@@ -194,7 +206,11 @@
                                     dest = document.getElementById("dest"),
                                     getOrig = document.getElementById("getOrig"),
                                     getDest = document.getElementById("getDest"),
-                                    getDist = document.getElementById("getDist");
+                                    getDist = document.getElementById("getDist"),
+                                    lat1 = document.getElementById("lat1"),
+                                    lng1 = document.getElementById("lng1"),
+                                    lat2 = document.getElementById("lat2"),
+                                    lng2 = document.getElementById("lng2");
 
                                     if (status == "OK") {
                                         dest.value = response.destinationAddresses[0];
@@ -202,6 +218,10 @@
                                         getDist.value = response.rows[0].elements[0].distance.text;
                                         getOrig.value = orig.value;
                                         getDest.value = dest.value;
+                                        lat1.value = marker1pos.lat();
+                                        lng1.value = marker1pos.lng();
+                                        lat2.value = marker2pos.lat();
+                                        lng2.value = marker2pos.lng();
                                     } else {
                                         alert("Error: " + status);
                                     }
@@ -264,7 +284,11 @@
                                         dest = document.getElementById("dest"),
                                         getOrig = document.getElementById("getOrig"),
                                         getDest = document.getElementById("getDest"),
-                                        getDist = document.getElementById("getDist");
+                                        getDist = document.getElementById("getDist"),
+                                        lat1 = document.getElementById("lat1"),
+                                        lng1 = document.getElementById("lng1"),
+                                        lat2 = document.getElementById("lat2"),
+                                        lng2 = document.getElementById("lng2");
 
                                         if (status == "OK") {
                                             dest.value = response.destinationAddresses[0];
@@ -272,6 +296,10 @@
                                             getDist.value = response.rows[0].elements[0].distance.text;
                                             getOrig.value = orig.value;
                                             getDest.value = dest.value;
+                                            lat1.value = marker1pos.lat();
+                                            lng1.value = marker1pos.lng();
+                                            lat2.value = marker2pos.lat();
+                                            lng2.value = marker2pos.lng();
                                         } else {
                                             alert("Error: " + status);
                                         }
@@ -335,7 +363,11 @@
                                         dest = document.getElementById("dest"),
                                         getOrig = document.getElementById("getOrig"),
                                         getDest = document.getElementById("getDest"),
-                                        getDist = document.getElementById("getDist");
+                                        getDist = document.getElementById("getDist"),
+                                        lat1 = document.getElementById("lat1"),
+                                        lng1 = document.getElementById("lng1"),
+                                        lat2 = document.getElementById("lat2"),
+                                        lng2 = document.getElementById("lng2");
 
                                         if (status == "OK") {
                                             dest.value = response.destinationAddresses[0];
@@ -343,6 +375,10 @@
                                             getDist.value = response.rows[0].elements[0].distance.text;
                                             getOrig.value = orig.value;
                                             getDest.value = dest.value;
+                                            lat1.value = marker1pos.lat();
+                                            lng1.value = marker1pos.lng();
+                                            lat2.value = marker2pos.lat();
+                                            lng2.value = marker2pos.lng();
                                         } else {
                                             alert("Error: " + status);
                                         }
