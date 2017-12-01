@@ -83,14 +83,13 @@
                 var marker1pos, marker2pos;
                 var a = false, b = false;
                 var corvo = false, attano = true;
-                var geocoder;
+                var geocoder, route;
                 var mapObj = new GMaps({
                     el: '#map',
                     lat: -6.914744,
                     lng: 107.609810,
                     zoom: 14,
                     click: function(e){
-                        geocoder = new google.maps.Geocoder();
                         if($('input#mark1').is(':checked')){
                             if(a){
                                 mapObj.removeMarker(marker1);
@@ -120,6 +119,22 @@
                                 destination = new google.maps.LatLng(marker2pos.lat(), marker2pos.lng()),
                                 service = new google.maps.DistanceMatrixService();
 
+//                                mapObj.getRoutes({
+//                                    origins: [origin],
+//                                    destinations: [destination],
+//                                    travelMode: google.maps.TravelMode.DRIVING,
+//                                    callback: function(e){
+//                                        route = new GMaps.Route({
+//                                            map: mapObj,
+//                                            route: e[0]
+//                                        });
+//                                    }
+//                                });
+//                                
+//                                for(route.step_count;route.step_count<route.steps_length;route.forward()){
+//                                    $('steps').append('<li>' + route.steps[route.step_count].instructions + '</li>');
+//                                }
+                                
                                 service.getDistanceMatrix(
                                     {
                                         origins: [origin],
@@ -402,5 +417,8 @@
                 });
             }); // tutup JQuery    
         </script>
+        <div class="row">
+            <ul id="steps"></ul>
+        </div>
     </body>
 </html>
