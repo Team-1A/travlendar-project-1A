@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package tesdbtravner;
+import Model.User_Account;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -46,10 +47,11 @@ public class User_AccountDAO extends TesDBTravner {
             com.mysql.jdbc.Connection con = (com.mysql.jdbc.Connection) getConnection();
             Statement st = con.createStatement();
             
-            Double Location_Long = _user_account.getNamePoint();
-            Double Location_Lat = _user_account.getAddressPoint();
+            Integer User_ID = _user_account.getUser_ID();
+            String Username = _user_account.getUsername();
+            String Password = _user_account.getPassword();
             
-            String sql = "INSERT INTO location (Location_Long,Location_Lat) VALUES(\"" + Location_Long + "\",\"" + Location_Lat +"\");";
+            String sql = "INSERT INTO User_Account (User_ID,Username,Password) VALUES(\"" + User_ID + "\",\"" + Username + "\",\"" + Password + "\");";
             stats = st.executeUpdate(sql);
         } catch (SQLException ex){
             System.out.println(ex);
