@@ -10,6 +10,10 @@ package Model;
  * @author Fadhil
  */
 public class Vehicle {
+
+    public static void add(Vehicle act) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private String Vehicle_Name;
     private Integer User_ID;
     
