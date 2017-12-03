@@ -1,64 +1,59 @@
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
     background-size: 100%;
-    background-color: #2980B9;  
-    font-family: "Raleway", sans-serif;
+    background-color: #333333; 
+    font-family:sans-serif;
 
     
 }
+#header {
 
-
-.header{
-  border: 10px solid #CACFD2;
-    margin-top: 10px; 
-    margin-left: 20px;
-    margin-right: 20px;
-    opacity: 0.9;
-    border-radius: 5px;
-    height: 50px;
-    background-color: #F4F6F7;
+ width: 100%;
+ height: 55px;
+ background:#4f9bff;
 }
+
+#header img{
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 100px;
+  height: 30px;
+}
+
 
 
 .left{
-  margin-left: 20px;
+
+  margin-left:20px; 
+  padding:30px;
   float: left;
   overflow: hidden;
-  opacity: 0.9;
-  margin-top: 10px;
-  background-color: #CACFD2;
+  opacity: 1;
+  margin-top: 30px;
+  background-color: #F8F9F9;
   border-radius: 5px;
-  height:auto;
+  height:500px;
   width: 600px;
 }
-.box-left{
-  margin: 10px;
-  padding: 10px;
-  background-color: #F8F9F9;
-  border-radius: 5px;
-  height: 450px;
-  width: 560px; 
-}
+
 .right{
   float: left;
+  padding: 20px;
   overflow: hidden;
-  opacity: 0.9;
-  margin-top: 10px;
+  opacity: 1;
+  margin-top: 30px;
   margin-left: 20px;
   margin-bottom: 20px;
-  background-color: #CACFD2;
+  background-color:#F8F9F9;
   border-radius: 5px;
-  height:auto;
+  height:500px;
   width:690px;
-}
-.box-right{
-  margin: 10px;
-  padding: 10px;
-  background-color: #F8F9F9;
-  border-radius: 5px;
-  height: 450px;
-  width: 650px; 
 }
 
 
@@ -113,50 +108,50 @@ div.panel {
 }
 
 #regForm {
-  font-weight: bold;
-  font-size: 10px;
+  font-size: 14px;
   margin: 1px auto;
-  font-family: Raleway;
   padding: 40px;
   width: 70%;
   min-width: 300px;
 }
 
 h1 {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;  
 }
 h2{
   font-weight: bold;
-  font-size: 13px;
+  font-size: 16px;
 }
+
 
 input {
   background-color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px;
-  width: 90%;
-  height: 7px;
-  font-size: 10px;
-  font-family: Raleway;
+  width: 93%;
+  height: 30px;
+  font-size: 12px;
   border: 1px solid #aaaaaa;
 }
 
 input[type="date"]{
-  height: 7px;
-  width: 35%;
+
+  
+  width: 45%;
 }
 
 input[type="time"]{
-  height: 7px;
-  width: 15%;
-  margin-left: 100px;
+  
+  width: 25%;
+  margin-left: 50px;
 }
 
 input[type="radio"]{
-  font-size: 12px;
-  width: 5%;
+  margin: 10px;
+  font-size: 7px;
+  width: 4%;
 }
 
 /* Mark input boxes that gets an error on validation: */
@@ -180,7 +175,6 @@ button {
   border: none;
   padding: 10px 20px;
   font-size: 12px;
-  font-family: Raleway;
   cursor: pointer;
 }
 
@@ -214,11 +208,28 @@ button:hover {
   background-color: #2980B9;
 }
 img{
-  width: 20px;
-  height: 20px;
+  margin-top: 5px;
+  width: 15px;
+  height: 15px;
 }
 #map{
                 width: 20%;
                 height: 500px;
                 border: 1px solid #a0a0a0;
             }
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
