@@ -1,6 +1,5 @@
-
-
 <!DOCTYPE html>
+
 <html>
 <head>
     
@@ -18,10 +17,10 @@
         <!-- GMaps Library -->
         <script src="Test_Gmaps_API/gmaps.js"></script>
     
-<link   href="css/fullcalendar.min.css" rel="stylesheet">
-<link   href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
-<link   rel="stylesheet" type="text/css" href="css/style.css">
-<link   rel="stylesheet" type="text/css" href="css/map.css">
+<link href="css/fullcalendar.min.css" rel="stylesheet">
+<link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/map.css">
     
 <script type="text/javascript" src="js/moment.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -33,84 +32,29 @@
 
 
 <body>
-
-	<!--script calendar-->
-<script>
-  $(document).ready(function() {
-
-    $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay,listWeek'
-      },
-      defaultDate: '2017-09-12',
-      navLinks: true, // can click day/week names to navigate views
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: [
-
-        {
-          title: 'Kegiatan di Bandara',
-          start: '2017-09-19T04:30:00',
-          end: '2017-09-19T16:10:00'
-        },
-
-		{
-          title: 'Sampai di Bandara Kendari',
-          start: '2017-09-19T11:10:00',
-          end: '2017-09-19T11:30:00'
-        },
-
-		{
-          title: 'Pertemuan dengan Departement Agama',
-          start: '2017-09-19T12:00:00',
-          end: '2017-09-19T15:15:00'
-        },
-
-		{
-          title: 'Makan Sore',
-          start: '2017-09-19T15:30:00',
-          end: '2017-09-19T16:30:00'
-        }
-      ]
-    });
-
-  });
-
-</script>
-
-
-
-
-<div id="main">
-
-	  <div id="header"><!--header-->
-    <img src="css/logo.png">
-</div>
-
-
-
-	<div id="main">
-	<!--calendar-->
-	<div class="left">
-					
-			<div id='calendar'></div>
-		
-    </div>
+    <div id="main">
+        <div id="header"><!--header-->
+            <img src="css/logo.png">
+        </div>
+        
+        <div id="main">
+	       <!--calendar-->
+	    <div class="left">
+		  <div id='calendar'></div>
+        </div>
 
     <!--form-->
 	<div class="right">
+<!--
 		
 			<form id="regForm" action="/action_page.php">
+-->
 				
-				<div class="tab">
+        <div class="tab">
 				<form name="form" action="" method="POST" id="geocoding_form">
             
                         <h1>Add Location</h1>
                      
-                   
-                
                         <p>Lokasi awal :</p>
                         <input type="location" id="orig" size="50" name="orig" />
                         <input type="submit" value="Search" name="searchorig" />
@@ -131,6 +75,7 @@
         </form>
 
         <form name="form" action="${pageContext.request.contextPath}/LokasiController" method="POST">
+            
             <input type="Hidden" id="getOrig" name="Orig">
             <input type="Hidden" id="getDest" name="Dest">
             <input type="Hidden" id="getDist" name="Dist">
@@ -139,7 +84,7 @@
             <input type="Hidden" id="lat2" name="marker2_lat">
             <input type="Hidden" id="lng2" name="marker2_lng">
             <input type="submit" value="Submit" name="submit" />
-        </form>
+        </form>,
         <div id="map">Maps Event</div>
         <script>
             // JQuery
@@ -489,7 +434,7 @@
                         	
 				</div>
 
-		<!--form1-->
+		    <!--form1-->
   			<div class="tab">
   				<h1>Add Activity</h1><br>
   				<h2>Title</h2>
