@@ -49,26 +49,8 @@
 
     <!--Tab Utama-->
 	<div class="right">
-        
-            <!--form1-->
-  			<div class="tab">
-  				<h1>Add Activity</h1><br>
-  				<h2>Title</h2>
-  				<p>give a name to your activity</p>
-  				<p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
-  				<h2>Time of Activity</h2><br>
-  				<p>When does the activity started?<p>
-    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
-    			<p>When does the activity ended?<p>
-    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
-    			<p>spare time(if you want to come erlier before the activity start)<p>
-    			<p><input type="radio" name="sparetime" value="none" checked> none
-      		   	   <input type="radio" name="sparetime" value="fivemins"> 5 mins
-      		   	   <input type="radio" name="sparetime" value="tenmins"> 10 mins
-      	       	   <input type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
-  			</div>
-
-				
+            
+            <!--Add Location-->
             <div class="tab">
 				<form name="form" action="" method="POST" id="geocoding_form">
             
@@ -116,10 +98,28 @@
 -->
                         	
 				</div>
-
-		    
-  			
-  			<!--form3-->		
+        
+        
+            <!--Add Activity-->
+  			<div class="tab">
+  				<h1>Add Activity</h1><br>
+  				<h2>Title</h2>
+  				<p>give a name to your activity</p>
+  				<p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
+  				<h2>Time of Activity</h2><br>
+  				<p>When does the activity started?<p>
+    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+    			<p>When does the activity ended?<p>
+    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+    			<p>spare time(if you want to come erlier before the activity start)<p>
+    			<p>
+                    <input type="radio" name="sparetime" value="none" checked> none
+      		   	   <input type="radio" name="sparetime" value="fivemins"> 5 mins
+      		   	   <input type="radio" name="sparetime" value="tenmins"> 10 mins
+      	       	   <input type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
+  			</div>
+        
+  			<!--Transportation Mode-->		
   			<div class="tab">
   				<h1>Recommendation Transportation Mode</h1>
   				<p>Estimated you will arrive at "07:30" by uaing these transportation mode</p>
@@ -193,7 +193,7 @@
 	</div>
 
 
-	<!--script calendar-->
+	<!-- script calendar -->
 <script>
   $(document).ready(function() {
 
@@ -238,7 +238,7 @@
   });
 
 </script>
-
+    <!-- Script Gmaps -->
 <script>
             // JQuery
             $(document).ready(function () {  // Ketika web udah siap
@@ -581,7 +581,7 @@
                 });
             }); // tutup JQuery    
         </script>     
-
+    <!-- script tab -->
 <script>
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the crurrent tab

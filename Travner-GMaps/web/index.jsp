@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : Dec 4, 2017, 9:48:29 PM
-    Author     : Rohmat Dasuki
+    Author     : Adhitya Noor Muslim
 --%>
 <!DOCTYPE html>
 
@@ -20,7 +20,7 @@
         <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
 
         <!-- GMaps Library -->
-        <script src="Test_Gmaps_API/gmaps.js"></script>
+        <script src="js/gmaps.js"></script>
     
 <link href="css/fullcalendar.min.css" rel="stylesheet">
 <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
@@ -56,7 +56,11 @@
 	<div class="right">
         
             <!--form1-->
-  			<div class="tab">
+            
+            
+            
+            
+            <div class="tab">
   				<h1>Add Activity</h1><br>
   				<h2>Title</h2>
   				<p>give a name to your activity</p>
@@ -73,8 +77,7 @@
       	       	   <input type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
   			</div>
 
-				
-            <div class="tab">
+	<div class="tab">
 				<form name="form" action="" method="POST" id="geocoding_form">
             
                         <h1>Add Location</h1>
@@ -109,7 +112,8 @@
             <input type="Hidden" id="lng2" name="marker2_lng">
             <input type="submit" value="Submit" name="submit" />
             
-        </form>,
+        </form>
+        
         <div id="map">Maps Event</div>
                 
        
@@ -120,12 +124,12 @@
         </div>
 -->
                         	
-				</div>
+				</div>	
+            
 
 		    
-  			
-  			<!--form3-->		
-  			<div class="tab">
+  	    <!--form3-->		
+            <div class="tab">
   				<h1>Recommendation Transportation Mode</h1>
   				<p>Estimated you will arrive at "07:30" by uaing these transportation mode</p>
   
@@ -178,23 +182,24 @@
 			
   			</div>
 
-  				<div style="overflow:auto;">
-    			<div style="float:right;"><br>
+  			<div style="overflow:auto;">
+                            <div style="float:right;"><br>
       				<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
       				<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-    			</div>
+                            </div>
   			</div>
   
   		
   	<!-- Circles which indicates the steps of the form: -->
         <form id="regForm" action="/action_page.php">
-  			<div style="text-align:center;margin-top:20px;">
-    			<span class="step"></span>
-    			<span class="step"></span>
-    			<span class="step"></span>
-    			<span class="step"></span>
-  			</div>
-		</form>
+            <div style="text-align:center;margin-top:20px;">
+    		<span class="step"></span>
+    		<span class="step"></span>
+    		<span class="step"></span>
+    		<span class="step"></span>
+            </div>
+	</form>
+        
 	</div>
 
 
@@ -327,7 +332,7 @@
                                     lat2 = document.getElementById("lat2"),
                                     lng2 = document.getElementById("lng2");
 
-                                    if (status == "OK") {
+                                    if (status === "OK") {
                                         dest.value = response.destinationAddresses[0];
                                         orig.value = response.originAddresses[0];
                                         getDist.value = response.rows[0].elements[0].distance.text;
@@ -396,7 +401,7 @@
                                     lat2 = document.getElementById("lat2"),
                                     lng2 = document.getElementById("lng2");
 
-                                    if (status == "OK") {
+                                    if (status === "OK") {
                                         dest.value = response.destinationAddresses[0];
                                         orig.value = response.originAddresses[0];
                                         getDist.value = response.rows[0].elements[0].distance.text;
@@ -420,7 +425,7 @@
                     GMaps.geocode({
                         address: $('#orig').val().trim(),
                         callback: function (results, status) {
-                            if (status == 'OK') {
+                            if (status === 'OK') {
                                 var latlng = results[0].geometry.location;
                                 mapObj.setCenter(latlng.lat(), latlng.lng());
                                 if (a) {
@@ -474,7 +479,7 @@
                                         lat2 = document.getElementById("lat2"),
                                         lng2 = document.getElementById("lng2");
 
-                                        if (status == "OK") {
+                                        if (status === "OK") {
                                             dest.value = response.destinationAddresses[0];
                                             orig.value = response.originAddresses[0];
                                             getDist.value = response.rows[0].elements[0].distance.text;
@@ -499,7 +504,7 @@
                     GMaps.geocode({
                         address: $('#dest').val().trim(),
                         callback: function (results, status) {
-                            if (status == 'OK') {
+                            if (status === 'OK') {
                                 var latlng = results[0].geometry.location;
                                 mapObj.setCenter(latlng.lat(), latlng.lng());
                                 if (b) {
@@ -553,7 +558,7 @@
                                         lat2 = document.getElementById("lat2"),
                                         lng2 = document.getElementById("lng2");
 
-                                        if (status == "OK") {
+                                        if (status === "OK") {
                                             dest.value = response.destinationAddresses[0];
                                             orig.value = response.originAddresses[0];
                                             getDist.value = response.rows[0].elements[0].distance.text;
@@ -596,25 +601,25 @@ function showTab(n) {
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
   //... and fix the Previous/Next buttons:
-  if (n == 0) {
+  if (n === 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-  if (n == (x.length - 1)) {
+  if (n === (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Submit";
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
   //... and run a function that will display the correct step indicator:
-  fixStepIndicator(n)
+  fixStepIndicator(n);
 }
 
 function nextPrev(n) {
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
+  if (n === 1 && !validateForm()) return false;
   // Hide the current tab:
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
@@ -637,7 +642,7 @@ function validateForm() {
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
-    if (y[i].value == "") {
+    if (y[i].value === "") {
       // add an "invalid" class to the field:
       y[i].className += " invalid";
       // and set the current valid status to false
