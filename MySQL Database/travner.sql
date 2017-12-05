@@ -20,37 +20,41 @@ CREATE TABLE `activity` (
   `ACTIVITY_ID` int(11) NOT NULL,
   `TRAVEL_ID` int(11) DEFAULT NULL,
   `USER_ID` int(11) DEFAULT NULL,
-  `ACTIVITY_NAME` varchar(30) DEFAULT NULL,
+  `ACTIVITY_NAME` varchar(60) DEFAULT NULL,
   `TIME_START` datetime NOT NULL,
   `TIME_END` datetime NOT NULL,
   `SPARE_TIME` time DEFAULT NULL,
   PRIMARY KEY (`ACTIVITY_ID`),
   KEY `FK_DOING_AN_ACTIVITY` (`USER_ID`),
   KEY `FK_RELATIONSHIP_1` (`TRAVEL_ID`),
-  CONSTRAINT `FK_RELATIONSHIP_1` FOREIGN KEY (`TRAVEL_ID`) REFERENCES `travel` (`TRAVEL_ID`),
-  CONSTRAINT `FK_DOING_AN_ACTIVITY` FOREIGN KEY (`USER_ID`) REFERENCES `user_account` (`USER_ID`)
+  CONSTRAINT `FK_DOING_AN_ACTIVITY` FOREIGN KEY (`USER_ID`) REFERENCES `user_account` (`USER_ID`),
+  CONSTRAINT `FK_RELATIONSHIP_1` FOREIGN KEY (`TRAVEL_ID`) REFERENCES `travel` (`TRAVEL_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `activity` */
 
+insert  into `activity`(`ACTIVITY_ID`,`TRAVEL_ID`,`USER_ID`,`ACTIVITY_NAME`,`TIME_START`,`TIME_END`,`SPARE_TIME`) values (1,1,1,'Menunggu keberangkatan pesawat ke kendari','2017-09-19 05:10:00','2017-09-19 05:10:00','00:40:00'),(2,2,1,'Sampai di bandara Kendari','2017-09-19 11:10:00','2017-09-19 11:10:00','00:00:00'),(3,3,1,'Sampai di hotel untuk ishoma Tartil dan diskusi dengan depar','2017-09-19 12:30:00','2017-09-19 15:00:00','00:30:00'),(4,4,1,'Makan sore','2017-09-19 15:30:00','2017-09-19 16:30:00','00:00:00'),(5,5,1,'Kunjungan korban Narkoba','2017-09-19 17:00:00','2017-09-19 18:30:00','00:12:00'),(6,6,1,'Kembali ke hotel','2017-09-19 19:00:00','2017-09-19 00:00:00','00:00:00');
+
 /*Table structure for table `location` */
 
 CREATE TABLE `location` (
-  `LOCATION_LONG` decimal(10,0) NOT NULL,
-  `LOCATION_LAT` decimal(10,0) NOT NULL,
+  `LOCATION_LONG` decimal(14,10) NOT NULL,
+  `LOCATION_LAT` decimal(14,10) NOT NULL,
   PRIMARY KEY (`LOCATION_LONG`,`LOCATION_LAT`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `location` */
 
+insert  into `location`(`LOCATION_LONG`,`LOCATION_LAT`) values (-6.3065247000,106.7989756000),(-6.1253505000,106.6578245000),(-4.0773177000,122.4157904000),(-4.0329527000,122.5320514000),(-3.9855385000,122.4907418000),(-3.9242358000,122.4767668000);
+
 /*Table structure for table `travel` */
 
 CREATE TABLE `travel` (
   `TRAVEL_ID` int(11) NOT NULL,
-  `STARTLOCATION_LONG` decimal(10,0) NOT NULL,
-  `STARTLOCATION_LAT` decimal(10,0) NOT NULL,
-  `DESTLOCATION_LONG` decimal(10,0) NOT NULL,
-  `DESTLOCATION_LAT` decimal(10,0) NOT NULL,
+  `STARTLOCATION_LONG` decimal(14,10) NOT NULL,
+  `STARTLOCATION_LAT` decimal(14,10) NOT NULL,
+  `DESTLOCATION_LONG` decimal(14,10) NOT NULL,
+  `DESTLOCATION_LAT` decimal(14,10) NOT NULL,
   `TRANSPORTATION_MODE` varchar(15) NOT NULL,
   `DEPARTURE_TIME` datetime NOT NULL,
   PRIMARY KEY (`TRAVEL_ID`),
@@ -61,6 +65,8 @@ CREATE TABLE `travel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `travel` */
+
+insert  into `travel`(`TRAVEL_ID`,`STARTLOCATION_LONG`,`STARTLOCATION_LAT`,`DESTLOCATION_LONG`,`DESTLOCATION_LAT`,`TRANSPORTATION_MODE`,`DEPARTURE_TIME`) values (1,-6.3065247000,106.7989756000,-6.1253505000,106.6578245000,'Mobil Pribadi','2017-09-19 03:30:00'),(2,-6.1253505000,106.6578245000,-4.0773177000,122.4157904000,'Pesawat','2017-09-19 05:10:00'),(3,-4.0773177000,122.4157904000,-3.9855385000,122.4907418000,'Mobil Dinas','2017-09-19 11:30:00'),(4,-3.9855385000,122.4907418000,-4.0329527000,122.5320514000,'Jalan Kaki','2017-09-19 03:15:00'),(5,-4.0329527000,122.5320514000,-3.9242358000,122.4767668000,'Mobil Dinas','2017-09-19 16:30:00'),(6,-3.9242358000,122.4767668000,-3.9855385000,122.4907418000,'Mobil Dinas','2017-09-19 19:21:00');
 
 /*Table structure for table `user_account` */
 
@@ -73,6 +79,8 @@ CREATE TABLE `user_account` (
 
 /*Data for the table `user_account` */
 
+insert  into `user_account`(`USER_ID`,`USERNAME`,`PASSWORD`) values (1,'sitti','password');
+
 /*Table structure for table `vehicle` */
 
 CREATE TABLE `vehicle` (
@@ -84,6 +92,8 @@ CREATE TABLE `vehicle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `vehicle` */
+
+insert  into `vehicle`(`VEHICLE_NAME`,`USER_ID`) values ('Mobil',1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
