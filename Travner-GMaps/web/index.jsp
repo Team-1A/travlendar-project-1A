@@ -108,7 +108,7 @@
     <!--form-->
 	<div class="right">
 		
-			<form id="regForm" action="/action_page.php">
+			<form id="regForm" action="${pageContext.request.contextPath}/Travner?Action=Act" method="POST">
 				
 
 		<!--form1-->
@@ -119,9 +119,9 @@
   				<p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
   				<h2>Time of Activity</h2><br>
   				<p>When does the activity started?<p>
-    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="starttime"><img src="css/clock.svg"></p>
     			<p>When does the activity ended?<p>
-    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="endtime"><img src="css/clock.svg"></p>
     			<p>spare time(if you want to come earlier before the activity start)<p>
     			<p><input type="radio" name="sparetime" value="none" checked> none
       		   	   <input type="radio" name="sparetime" value="fivemins"> 5 mins
@@ -157,7 +157,7 @@
                         
         </form>
 
-        <form name="form" action="${pageContext.request.contextPath}/LokasiController" method="POST">
+        <form name="form" action="${pageContext.request.contextPath}/Travner?Action=Loc" method="POST">
             <input type="Hidden" id="getOrig" name="Orig">
             <input type="Hidden" id="getDest" name="Dest">
             <input type="Hidden" id="getDist" name="Dist">

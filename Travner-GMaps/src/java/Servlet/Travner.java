@@ -78,12 +78,24 @@ public class Travner extends HttpServlet {
         processRequest(request, response);
     }
 
-    public void getData(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
+    public void getDataAct(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
 //            java.sql.Date eventDate = null;
             
-            String date = request.getParameter("Date");
+            String activityName = request.getParameter("ActivityName");
+            String startTime = request.getParameter("starttime");
+            String endTime = request.getParameter("endtime");
+            String spareTime = request.getParameter("sparetime");
 
             response.sendRedirect("./add_activity.jsp");
+    }
+    
+    public void getDataLoc(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
+        
+            String startLoc_Lat = request.getParameter("");
+            String startLoc_Long = request.getParameter("");
+            
+            String destLoc_Lat = request.getParameter("");
+            String destLoc_Long = request.getParameter("");
     }
     /**
      * Returns a short description of the servlet.
