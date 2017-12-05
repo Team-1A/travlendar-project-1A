@@ -3,11 +3,11 @@
     Created on : Dec 4, 2017, 9:48:29 PM
     Author     : Rohmat Dasuki
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
 <head>
+    
 	<title>Travner</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -22,23 +22,181 @@
         <!-- GMaps Library -->
         <script src="Test_Gmaps_API/gmaps.js"></script>
     
-    <link href="css/fullcalendar.min.css" rel="stylesheet">
+<link href="css/fullcalendar.min.css" rel="stylesheet">
 <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/map.css">
-<script type="text/javascript" src=""></script>
+    
 <script type="text/javascript" src="js/moment.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/fullcalendar.min.js"></script>
 <script type="text/javascript" src="js/accordion_activity.js"></script>
 
-    
-
 </head>
 
 
 <body>
+    <div id="main">
+        <div id="header"><!--header-->
+            <img src="css/logo.png">
+        </div>
+        
+        <div id="main">
+            
+            <!--calendar-->
+            
+	    <div class="left">
+            
+		  <div id='calendar'></div>
+            
+        </div>
+
+    <!--Tab Utama-->
+	<div class="right">
+        
+            <!--form1-->
+  			<div class="tab">
+  				<h1>Add Activity</h1><br>
+  				<h2>Title</h2>
+  				<p>give a name to your activity</p>
+  				<p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
+  				<h2>Time of Activity</h2><br>
+  				<p>When does the activity started?<p>
+    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+    			<p>When does the activity ended?<p>
+    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+    			<p>spare time(if you want to come erlier before the activity start)<p>
+    			<p><input type="radio" name="sparetime" value="none" checked> none
+      		   	   <input type="radio" name="sparetime" value="fivemins"> 5 mins
+      		   	   <input type="radio" name="sparetime" value="tenmins"> 10 mins
+      	       	   <input type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
+  			</div>
+
+				
+            <div class="tab">
+				<form name="form" action="" method="POST" id="geocoding_form">
+            
+                        <h1>Add Location</h1>
+                     
+                        <p>Lokasi awal :</p>
+                        <input type="location" id="orig" size="50" name="orig" />
+                        <input type="submit" value="Search" name="searchorig" />
+                        <label class="switch">
+                                <input type="checkbox" id="mark1">
+                                <span class="slider round"></span>
+                            </label><br>
+
+                        <p>Lokasi tujuan :</p> 
+                        <input type="Location" id="dest" size="50" name="dest"/>
+                        <input type="submit" value="Search" name="searchdest" />
+                        <label class="switch">
+                                <input type="checkbox" id="mark2">
+                                <span class="slider round"></span>
+                            </label>
+
+                        
+        </form>
+
+        <form name="form" action="${pageContext.request.contextPath}/LokasiController" method="POST">
+            
+            <input type="Hidden" id="getOrig" name="Orig">
+            <input type="Hidden" id="getDest" name="Dest">
+            <input type="Hidden" id="getDist" name="Dist">
+            <input type="Hidden" id="lat1" name="marker1_lat">
+            <input type="Hidden" id="lng1" name="marker1_lng">
+            <input type="Hidden" id="lat2" name="marker2_lat">
+            <input type="Hidden" id="lng2" name="marker2_lng">
+            <input type="submit" value="Submit" name="submit" />
+            
+        </form>,
+        <div id="map">Maps Event</div>
+                
+       
+<!--
+                
+        <div class="row">
+            <ul id="steps"></ul>
+        </div>
+-->
+                        	
+				</div>
+
+		    
+  			
+  			<!--form3-->		
+  			<div class="tab">
+  				<h1>Recommendation Transportation Mode</h1>
+  				<p>Estimated you will arrive at "07:30" by uaing these transportation mode</p>
+  
+  				<table>
+  
+  				<tr>
+    				<td><img src="css/car.svg"></td>
+    				<td>80 mins</td>
+    				<td>Leave at 8.45 AM</td>
+    				<td><img src="css/route.svg"></td>
+  				</tr>
+
+				 <tr>
+				    <td><img src="css/motorcycle.svg"></td>
+				    <td>180 mins</td>
+				    <td>Leave at 9.00 AM</td>
+				    <td><img src="css/route.svg"></td>  
+				 </tr>
+
+				  <tr>
+				    <td><img src="css/plane.svg"></td>
+				    <td>-</td>
+				    <td>-</td>
+				    <td><img src="css/route.svg"></td>
+				  </tr>
+
+				  <tr>
+				    <td><img src="css/walk.svg"></td>
+				    <td>-</td>
+				    <td>-</td>
+				    <td><img src="css/route.svg"></td>
+				  </tr>
+
+				  <tr>
+				  	<td><img src="css/bicycle.svg"></td>
+				  	<td>-</td>
+				    <td>-</td>
+				    <td><img src="css/route.svg"></td>
+				  </tr>
+
+				</table>
+    			
+    		<select name="transportation">
+			  <option value="car">Car</option>
+			  <option value="plane">Plane</option>
+			  <option value="motorcycle">Motorcycle</option>
+			  <option value="walk">Walk</option>
+			  <option value="bicycle">bicycle</option>
+			</select>
+			
+  			</div>
+
+  				<div style="overflow:auto;">
+    			<div style="float:right;"><br>
+      				<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      				<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    			</div>
+  			</div>
+  
+  		
+  	<!-- Circles which indicates the steps of the form: -->
+        <form id="regForm" action="/action_page.php">
+  			<div style="text-align:center;margin-top:20px;">
+    			<span class="step"></span>
+    			<span class="step"></span>
+    			<span class="step"></span>
+    			<span class="step"></span>
+  			</div>
+		</form>
+	</div>
+
 
 	<!--script calendar-->
 <script>
@@ -86,89 +244,7 @@
 
 </script>
 
-
-
-
-<div id="main">
-
-	  <div id="header"><!--header-->
-    <img src="css/logo.png">
-</div>
-
-
-
-	<div id="main">
-	<!--calendar-->
-	<div class="left">
-					
-			<div id='calendar'></div>
-		
-    </div>
-
-    <!--form-->
-	<div class="right">
-		
-			<form id="regForm" action="${pageContext.request.contextPath}/Travner?Action=Act" method="POST">
-				
-
-		<!--form1-->
-  			<div class="tab">
-  				<h1>Add Activity</h1><br>
-  				<h2>Title</h2>
-  				<p>give a name to your activity</p>
-  				<p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
-  				<h2>Time of Activity</h2><br>
-  				<p>When does the activity started?<p>
-    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="starttime"><img src="css/clock.svg"></p>
-    			<p>When does the activity ended?<p>
-    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="endtime"><img src="css/clock.svg"></p>
-    			<p>spare time(if you want to come earlier before the activity start)<p>
-    			<p><input type="radio" name="sparetime" value="none" checked> none
-      		   	   <input type="radio" name="sparetime" value="fivemins"> 5 mins
-      		   	   <input type="radio" name="sparetime" value="tenmins"> 10 mins
-      	       	   <input type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
-  			</div>
-                
-                
-                
-				<div class="tab">
-				<form name="form" action="" method="POST" id="geocoding_form">
-            
-                        <h1>Add Location</h1>
-                     
-                   
-                
-                        <p>Lokasi awal :</p>
-                        <input type="location" id="orig" size="50" name="orig" />
-                        <input type="submit" value="Search" name="searchorig" />
-                        <label class="switch">
-                                <input type="checkbox" id="mark1">
-                                <span class="slider round"></span>
-                            </label><br>
-
-                        <p>Lokasi tujuan :</p> 
-                        <input type="Location" id="dest" size="50" name="dest"/>
-                        <input type="submit" value="Search" name="searchdest" />
-                        <label class="switch">
-                                <input type="checkbox" id="mark2">
-                                <span class="slider round"></span>
-                            </label>
-
-                        
-        </form>
-
-        <form name="form" action="${pageContext.request.contextPath}/Travner?Action=Loc" method="POST">
-            <input type="Hidden" id="getOrig" name="Orig">
-            <input type="Hidden" id="getDest" name="Dest">
-            <input type="Hidden" id="getDist" name="Dist">
-            <input type="Hidden" id="lat1" name="marker1_lat">
-            <input type="Hidden" id="lng1" name="marker1_lng">
-            <input type="Hidden" id="lat2" name="marker2_lat">
-            <input type="Hidden" id="lng2" name="marker2_lng">
-            <input type="submit" value="Submit" name="submit" />
-        </form>
-        <div id="map">Maps Event</div>
-        <script>
+<script>
             // JQuery
             $(document).ready(function () {  // Ketika web udah siap
 //		prettyPrint();
@@ -509,89 +585,7 @@
                     }
                 });
             }); // tutup JQuery    
-        </script>
-        <div class="row">
-            <ul id="steps"></ul>
-        </div>
-                        	
-				</div>
-  			
-  			<!--form3-->		
-  			<div class="tab">
-  				<h1>Recommendation Transportation Mode</h1>
-  				<p>Estimated you will arrive at "07:30" by uaing these transportation mode</p>
-  
-  				<table>
-  
-  				<tr>
-    				<td><img src="css/car.svg"></td>
-    				<td>80 mins</td>
-    				<td>Leave at 8.45 AM</td>
-    				<td><img src="css/route.svg"></td>
-  				</tr>
-
-				 <tr>
-				    <td><img src="css/motorcycle.svg"></td>
-				    <td>180 mins</td>
-				    <td>Leave at 9.00 AM</td>
-				    <td><img src="css/route.svg"></td>  
-				 </tr>
-
-				  <tr>
-				    <td><img src="css/plane.svg"></td>
-				    <td>-</td>
-				    <td>-</td>
-				    <td><img src="css/route.svg"></td>
-				  </tr>
-
-				  <tr>
-				    <td><img src="css/walk.svg"></td>
-				    <td>-</td>
-				    <td>-</td>
-				    <td><img src="css/route.svg"></td>
-				  </tr>
-
-				  <tr>
-				  	<td><img src="css/bicycle.svg"></td>
-				  	<td>-</td>
-				    <td>-</td>
-				    <td><img src="css/route.svg"></td>
-				  </tr>
-
-				</table>
-    			
-    		<select name="transportation">
-			  <option value="car">Car</option>
-			  <option value="plane">Plane</option>
-			  <option value="motorcycle">Motorcycle</option>
-			  <option value="walk">Walk</option>
-			  <option value="bicycle">bicycle</option>
-			</select>
-			
-  			</div>
-
-  				<div style="overflow:auto;">
-    			<div style="float:right;"><br>
-      				<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-      				<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-    			</div>
-  			</div>
-  
-  		
-  	<!-- Circles which indicates the steps of the form: -->
-  			<div style="text-align:center;margin-top:20px;">
-    			<span class="step"></span>
-    			<span class="step"></span>
-    			<span class="step"></span>
-    			<span class="step"></span>
-  			</div>
-		</form>
-	</div>
-
-
-	
-
-        
+        </script>     
 
 <script>
 var currentTab = 0; // Current tab is set to be the first tab (0)
