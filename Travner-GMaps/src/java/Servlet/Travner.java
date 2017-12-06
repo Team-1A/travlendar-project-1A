@@ -10,6 +10,8 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -75,7 +77,13 @@ public class Travner extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            getData(request,response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void getDataAct(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
@@ -96,6 +104,22 @@ public class Travner extends HttpServlet {
             
             String destLoc_Lat = request.getParameter("");
             String destLoc_Long = request.getParameter("");
+    }
+    
+    public void getData(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
+        
+            String activityName = request.getParameter("ActivityName");
+            String startTime = request.getParameter("starttime");
+            String endTime = request.getParameter("endtime");
+            String spareTime = request.getParameter("sparetime");
+            
+            String startLoc_Lat = request.getParameter("marker1_lat");
+            String startLoc_Long = request.getParameter("marker1_lng");
+            
+            String destLoc_Lat = request.getParameter("marker2_lat");
+            String destLoc_Long = request.getParameter("marker2_lng");
+
+            response.sendRedirect("./add_activity.jsp");
     }
     /**
      * Returns a short description of the servlet.

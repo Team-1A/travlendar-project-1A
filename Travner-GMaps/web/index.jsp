@@ -59,60 +59,61 @@
             
             
             
-            
+            <form id="regForm" action="${pageContext.request.contextPath}/Travner" method="POST"></form>
+            <form name="form" action="" method="POST" id="geocoding_form"></form>
             <div class="tab">
   				<h1>Add Activity</h1><br>
   				<h2>Title</h2>
   				<p>give a name to your activity</p>
-  				<p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
+                                <p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName" form="regForm"></p><br>
   				<h2>Time of Activity</h2><br>
   				<p>When does the activity started?<p>
-    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+    			<p><input form="regForm" type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
     			<p>When does the activity ended?<p>
-    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+    			<p><input form="regForm" type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
     			<p>spare time(if you want to come erlier before the activity start)<p>
-    			<p><input type="radio" name="sparetime" value="none" checked> none
-      		   	   <input type="radio" name="sparetime" value="fivemins"> 5 mins
-      		   	   <input type="radio" name="sparetime" value="tenmins"> 10 mins
-      	       	   <input type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
+    			<p><input form="regForm" type="radio" name="sparetime" value="none" checked> none
+      		   	   <input form="regForm" type="radio" name="sparetime" value="fivemins"> 5 mins
+      		   	   <input form="regForm" type="radio" name="sparetime" value="tenmins"> 10 mins
+      	       	   <input form="regForm" type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
   			</div>
 
 	<div class="tab">
-				<form name="form" action="" method="POST" id="geocoding_form">
+				<!--<form name="form" action="" method="POST" id="geocoding_form">-->
             
                         <h1>Add Location</h1>
                      
                         <p>Lokasi awal :</p>
-                        <input type="location" id="orig" size="50" name="orig" />
-                        <input type="submit" value="Search" name="searchorig" />
+                        <input type="location" id="orig" size="50" name="orig" form="geocoding_form"/>
+                        <input type="submit" value="Search" name="searchorig" form="geocoding_form"/>
                         <label class="switch">
-                                <input type="checkbox" id="mark1">
+                                <input type="checkbox" id="mark1" form="geocoding_form">
                                 <span class="slider round"></span>
                             </label><br>
 
                         <p>Lokasi tujuan :</p> 
-                        <input type="Location" id="dest" size="50" name="dest"/>
-                        <input type="submit" value="Search" name="searchdest" />
+                        <input type="Location" id="dest" size="50" name="dest" form="geocoding_form"/>
+                        <input type="submit" value="Search" name="searchdest" form="geocoding_form"/>
                         <label class="switch">
-                                <input type="checkbox" id="mark2">
+                                <input type="checkbox" id="mark2" form="geocoding_form">
                                 <span class="slider round"></span>
                             </label>
 
                         
-        </form>
+        <!--</form>-->
 
-        <form name="form" action="${pageContext.request.contextPath}/LokasiController" method="POST">
+        <!--<form name="form" action="${pageContext.request.contextPath}/LokasiController" method="POST">-->
             
-            <input type="Hidden" id="getOrig" name="Orig">
-            <input type="Hidden" id="getDest" name="Dest">
-            <input type="Hidden" id="getDist" name="Dist">
-            <input type="Hidden" id="lat1" name="marker1_lat">
-            <input type="Hidden" id="lng1" name="marker1_lng">
-            <input type="Hidden" id="lat2" name="marker2_lat">
-            <input type="Hidden" id="lng2" name="marker2_lng">
-            <input type="submit" value="Submit" name="submit" />
+            <input form="regForm" type="Hidden" id="getOrig" name="Orig">
+            <input form="regForm" type="Hidden" id="getDest" name="Dest">
+            <input form="regForm" type="Hidden" id="getDist" name="Dist">
+            <input form="regForm" type="Hidden" id="lat1" name="marker1_lat">
+            <input form="regForm" type="Hidden" id="lng1" name="marker1_lng">
+            <input form="regForm" type="Hidden" id="lat2" name="marker2_lat">
+            <input form="regForm" type="Hidden" id="lng2" name="marker2_lng">
+            <!--<input form="regForm" type="submit" value="Submit" name="submit" />-->
             
-        </form>
+        <!--</form>-->
         
         <div id="map">Maps Event</div>
                 
@@ -191,14 +192,14 @@
   
   		
   	<!-- Circles which indicates the steps of the form: -->
-        <form id="regForm" action="/action_page.php">
+        
             <div style="text-align:center;margin-top:20px;">
     		<span class="step"></span>
     		<span class="step"></span>
     		<span class="step"></span>
     		<span class="step"></span>
             </div>
-	</form>
+	<!--</form>-->
         
 	</div>
 
