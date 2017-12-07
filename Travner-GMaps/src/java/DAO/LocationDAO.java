@@ -19,17 +19,16 @@ public class LocationDAO extends DAO {
     public static List<Location> getAll(){
         List<Location> location = new ArrayList<>();
         try {
-        Connection con = (Connection) getConnection();
-        PreparedStatement ps = con.prepareStatement("SELECT * FROM location");
-        ResultSet rs = ps.executeQuery();
-        
-        while(rs.next()){
-            Location locObj = new Location();
-            locObj.setLocation_Lat(rs.getDouble("LOCATION_LAT"));
-            locObj.setLocation_Long(rs.getDouble("LOCATION_LONG"));
-            
-            location.add(locObj);
-        }
+            Connection con = (Connection) getConnection();
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM location");
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                Location locObj = new Location();
+                locObj.setLocation_Long(rs.getDouble("LOCATION_LONG"));
+                locObj.setLocation_Lat(rs.getDouble("LOCATION_LAT"));
+                location.add(locObj);
+            }
         } catch (SQLException ex){
             System.out.println(ex);
         }

@@ -54,7 +54,7 @@ public class TravelDAO extends DAO{
             java.sql.Date Departure_Time = (java.sql.Date) _travel.getDeparture_Time();
            
             
-            String sql = "INSERT INTO travel (TRAVEL_ID,STARTLOCATION_LONG,STARTLOCATION_LAT,DESTLOCATION_LONG,DESTLOCATION_LAT,TRANSPORTATION_MODE,DEPARTURE_TIME) VALUES(\"" + Travel_ID + "\",\"" + StartLocation_Long + "\",\"" + StartLocation_Lat + "\",\"" + DestLocation_Long + "\",\"" + DestLocation_Lat + "\",\"" + Transportation_Mode  + "\",\"" +  "\",\"" + Departure_Time +  "\");";
+            String sql = "INSERT INTO travel (TRAVEL_ID,STARTLOCATION_LONG,STARTLOCATION_LAT,DESTLOCATION_LONG,DESTLOCATION_LAT,TRANSPORTATION_MODE,DEPARTURE_TIME) VALUES(\"" + Travel_ID + "\",\"" + StartLocation_Long + "\",\"" + StartLocation_Lat + "\",\"" + DestLocation_Long + "\",\"" + DestLocation_Lat + "\",\"" + Transportation_Mode  + "\",\"" + Departure_Time +  "\");";
             stats = st.executeUpdate(sql);
         } catch (SQLException ex){
             System.out.println(ex);
