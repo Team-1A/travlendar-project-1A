@@ -1,10 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package tesdbtravner;
-import DAO.DAO;
+package DAO;
+
 import Model.Activity;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,17 +9,15 @@ import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 /**
  *
  * @author A455LF-WIN10
  */
+
 public class ActivityDAO extends DAO {
     
     public static List<Activity> getAll(){
-        List<Activity> Activity;
-        Activity = new ArrayList<>();
+        List<Activity> activity = new ArrayList<>();
         try {
             java.sql.Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement("SELECT * FROM activity");
@@ -32,20 +25,20 @@ public class ActivityDAO extends DAO {
 
             while(rs.next()){
                 Activity act = new Activity();
-                act.setActivity_ID(rs.getInt("Activity_ID"));
-                act.setTravel_ID(rs.getInt("Travel_ID"));
-                act.setUser_ID(rs.getInt("User_ID"));
-                act.setActivity_Name(rs.getString("Activity_Name"));
-                act.setTime_Start(rs.getDate("Time_Start"));
-                act.setTime_End(rs.getDate("Time_End"));
-                act.setSpare_Time(rs.getTime("Spare_Time"));
-                Activity.add(act);
+                act.setActivity_ID(rs.getInt("ACTIVITY_ID"));
+                act.setTravel_ID(rs.getInt("TRAVEL_ID"));
+                act.setUser_ID(rs.getInt("USER_ID"));
+                act.setActivity_Name(rs.getString("ACTIVITY_NAME"));
+                act.setTime_Start(rs.getDate("TIME_START"));
+                act.setTime_End(rs.getDate("TIME_END"));
+                act.setSpare_Time(rs.getTime("SPARE_TIME"));
+                activity.add(act);
             }
         } catch (SQLException ex){
             System.out.println(ex);
         }
         disconnect();
-        return Activity;
+        return activity;
     }
     
     public static int save(Activity _activity){
@@ -63,7 +56,7 @@ public class ActivityDAO extends DAO {
             Time Spare_Time = _activity.getSpare_Time();
            
             
-            String sql = "INSERT INTO activity (Activity_ID,Travel_ID,User_ID,Activity_Name,Time_Start,Time_End_) VALUES(\"" + Activity_ID+ "\",\"" + Travel_ID + "\",\"" + User_ID + "\",\"" + Activity_Name + "\",\"" + Time_Start + "\",\"" + Time_End + "\",\"" + Spare_Time + "\");";
+            String sql = "INSERT INTO activity (ACTIVITY_ID,TRAVEL_ID,USER_ID,ACTIVITY_NAME,TIME_START,TIME_END) VALUES(\"" + Activity_ID + "\",\"" + Travel_ID + "\",\"" + User_ID + "\",\"" + Activity_Name + "\",\"" + Time_Start + "\",\"" + Time_End + "\",\"" + Spare_Time + "\");";
             stats = st.executeUpdate(sql);
         } catch (SQLException ex){
             System.out.println(ex);

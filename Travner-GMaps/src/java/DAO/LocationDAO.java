@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DAO;
 
-/**
- *
- * @author A455LF-WIN10
- */
 import Model.Location;
 import com.mysql.jdbc.Connection;
 import java.sql.PreparedStatement;
@@ -18,15 +9,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  *
- * @author kivla
+ * @author A455LF-WIN10
  */
+
 public class LocationDAO extends DAO {
     
     public static List<Location> getAll(){
-        List<Location> locations = new ArrayList<>();
+        List<Location> location = new ArrayList<>();
         try {
         Connection con = (Connection) getConnection();
         PreparedStatement ps = con.prepareStatement("SELECT * FROM location");
@@ -34,16 +25,16 @@ public class LocationDAO extends DAO {
         
         while(rs.next()){
             Location locObj = new Location();
-            locObj.setLocation_Lat(rs.getDouble("Lat"));
-            locObj.setLocation_Long(rs.getDouble("Long"));
+            locObj.setLocation_Lat(rs.getDouble("LOCATION_LAT"));
+            locObj.setLocation_Long(rs.getDouble("LOCATION_LONG"));
             
-            locations.add(locObj);
+            location.add(locObj);
         }
         } catch (SQLException ex){
             System.out.println(ex);
         }
         disconnect();
-        return locations;
+        return location;
     }
     
     public static int save(Location _location){
@@ -55,7 +46,7 @@ public class LocationDAO extends DAO {
             Double Long = _location.getLocation_Long();
             Double Lat = _location.getLocation_Lat();
             
-            String sql = "INSERT INTO location (Location_Long,Location_Lat) VALUES(\"" + Long + "\",\"" + Lat +"\");";
+            String sql = "INSERT INTO location (LOCATION_LONG,LOCATION_LAT) VALUES(\"" + Long + "\",\"" + Lat +"\");";
             stats = st.executeUpdate(sql);
         } catch (SQLException ex){
             System.out.println(ex);
@@ -64,4 +55,3 @@ public class LocationDAO extends DAO {
         return stats;
     }
 }
-    
