@@ -14,27 +14,6 @@ MySQL - 5.6.16 : Database - travner
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 USE `travner`;
 
-/*Table structure for table `activity` */
-
-CREATE TABLE `activity` (
-  `ACTIVITY_ID` int(11) NOT NULL,
-  `TRAVEL_ID` int(11) DEFAULT NULL,
-  `USER_ID` int(11) DEFAULT NULL,
-  `ACTIVITY_NAME` varchar(60) DEFAULT NULL,
-  `TIME_START` datetime NOT NULL,
-  `TIME_END` datetime NOT NULL,
-  `SPARE_TIME` time DEFAULT NULL,
-  PRIMARY KEY (`ACTIVITY_ID`),
-  KEY `FK_DOING_AN_ACTIVITY` (`USER_ID`),
-  KEY `FK_RELATIONSHIP_1` (`TRAVEL_ID`),
-  CONSTRAINT `FK_DOING_AN_ACTIVITY` FOREIGN KEY (`USER_ID`) REFERENCES `user_account` (`USER_ID`),
-  CONSTRAINT `FK_RELATIONSHIP_1` FOREIGN KEY (`TRAVEL_ID`) REFERENCES `travel` (`TRAVEL_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `activity` */
-
-insert  into `activity`(`ACTIVITY_ID`,`TRAVEL_ID`,`USER_ID`,`ACTIVITY_NAME`,`TIME_START`,`TIME_END`,`SPARE_TIME`) values (1,1,1,'Menunggu keberangkatan pesawat ke kendari','2017-09-19 05:10:00','2017-09-19 05:10:00','00:40:00'),(2,2,1,'Sampai di bandara Kendari','2017-09-19 11:10:00','2017-09-19 11:10:00','00:00:00'),(3,3,1,'Sampai di hotel untuk ishoma Tartil dan diskusi dengan depar','2017-09-19 12:30:00','2017-09-19 15:00:00','00:30:00'),(4,4,1,'Makan sore','2017-09-19 15:30:00','2017-09-19 16:30:00','00:00:00'),(5,5,1,'Kunjungan korban Narkoba','2017-09-19 17:00:00','2017-09-19 18:30:00','00:12:00'),(6,6,1,'Kembali ke hotel','2017-09-19 19:00:00','2017-09-19 00:00:00','00:00:00');
-
 /*Table structure for table `location` */
 
 CREATE TABLE `location` (
@@ -94,6 +73,28 @@ CREATE TABLE `vehicle` (
 /*Data for the table `vehicle` */
 
 insert  into `vehicle`(`VEHICLE_NAME`,`USER_ID`) values ('Mobil',1);
+
+/*Table structure for table `activity` */
+
+CREATE TABLE `activity` (
+  `ACTIVITY_ID` int(11) NOT NULL,
+  `TRAVEL_ID` int(11) DEFAULT NULL,
+  `USER_ID` int(11) DEFAULT NULL,
+  `ACTIVITY_NAME` varchar(60) DEFAULT NULL,
+  `TIME_START` datetime NOT NULL,
+  `TIME_END` datetime NOT NULL,
+  `SPARE_TIME` time DEFAULT NULL,
+  PRIMARY KEY (`ACTIVITY_ID`),
+  KEY `FK_DOING_AN_ACTIVITY` (`USER_ID`),
+  KEY `FK_RELATIONSHIP_1` (`TRAVEL_ID`),
+  CONSTRAINT `FK_DOING_AN_ACTIVITY` FOREIGN KEY (`USER_ID`) REFERENCES `user_account` (`USER_ID`),
+  CONSTRAINT `FK_RELATIONSHIP_1` FOREIGN KEY (`TRAVEL_ID`) REFERENCES `travel` (`TRAVEL_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `activity` */
+
+insert  into `activity`(`ACTIVITY_ID`,`TRAVEL_ID`,`USER_ID`,`ACTIVITY_NAME`,`TIME_START`,`TIME_END`,`SPARE_TIME`) values (1,1,1,'Menunggu keberangkatan pesawat ke kendari','2017-09-19 05:10:00','2017-09-19 05:10:00','00:40:00'),(2,2,1,'Sampai di bandara Kendari','2017-09-19 11:10:00','2017-09-19 11:10:00','00:00:00'),(3,3,1,'Sampai di hotel untuk ishoma Tartil dan diskusi dengan depar','2017-09-19 12:30:00','2017-09-19 15:00:00','00:30:00'),(4,4,1,'Makan sore','2017-09-19 15:30:00','2017-09-19 16:30:00','00:00:00'),(5,5,1,'Kunjungan korban Narkoba','2017-09-19 17:00:00','2017-09-19 18:30:00','00:12:00'),(6,6,1,'Kembali ke hotel','2017-09-19 19:00:00','2017-09-19 00:00:00','00:00:00');
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
