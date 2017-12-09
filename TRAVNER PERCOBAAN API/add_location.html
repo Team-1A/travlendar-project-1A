@@ -43,37 +43,52 @@
             
 	    <div class="left">
             
-		  <div id='calendar'></div>
+		  <div id='calendar'>
             
         </div>
+    </div>
 
     <!--Tab Utama-->
 	<div class="right">
-            
-            <!--Add Location-->
+                    <!--Add Activity-->
             <div class="tab">
-				<form name="form" action="" method="POST" id="geocoding_form">
-            
-                        <h1>Add Location</h1>
+                <h1>Add Activity</h1>
+                <h2>Title</h2>
+                <p>give a name to your activity</p>
+                <p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
+                <h2>Time of Activity</h2>
+                <p>When does the activity started?<p>
+                <p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+                <p>When does the activity ended?<p>
+                <p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+                <p>spare time(if you want to come erlier before the activity start)<p>
+                <p>
+                    <input type="radio" name="sparetime" value="none" checked> none
+                   <input type="radio" name="sparetime" value="fivemins"> 5 mins
+                   <input type="radio" name="sparetime" value="tenmins"> 10 mins
+                   <input type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
+
+
+            <form name="form" action="" method="POST" id="geocoding_form">
+                    <h1>Add Location</h1>
                      
                         <p>Lokasi awal :</p>
-                        <input type="location" id="orig" size="50" name="orig" />
-                        <input type="submit" value="Search" name="searchorig" />
-                        <label class="switch">
+                        <p><input type="location" id="orig" size="50" name="orig" />
+                        <input type="submit" value="Search" name="searchorig" /></p>
+                        <!--p><label class="switch">
                                 <input type="checkbox" id="mark1">
-                                <span class="slider round"></span>
-                            </label><br>
+                                <span class="slider_round"></span>
+                            </label></p>-->        
 
                         <p>Lokasi tujuan :</p> 
-                        <input type="Location" id="dest" size="50" name="dest"/>
-                        <input type="submit" value="Search" name="searchdest" />
-                        <label class="switch">
+                        <p><input type="location" id="dest" size="50" name="dest"/>
+                        <input type="submit" value="Search" name="searchdest" /></p>
+                       <!-- <p><label class="switch">
                                 <input type="checkbox" id="mark2">
                                 <span class="slider round"></span>
-                            </label>
-
+                            </label></p>-->
                         
-        </form>
+            </form>
 
         <form name="form" action="${pageContext.request.contextPath}/LokasiController" method="POST">
             
@@ -84,10 +99,10 @@
             <input type="Hidden" id="lng1" name="marker1_lng">
             <input type="Hidden" id="lat2" name="marker2_lat">
             <input type="Hidden" id="lng2" name="marker2_lng">
-            <input type="submit" value="Submit" name="submit" />
+            <!--<input type="submit" value="Submit" name="submit" />-->
             
-        </form>,
-        <div id="map">Maps Event</div>
+        </form>
+        <br><div id="map">Maps Event</div>
                 
        
 <!--
@@ -96,28 +111,8 @@
             <ul id="steps"></ul>
         </div>
 -->
-                        	
-				</div>
-        
-        
-            <!--Add Activity-->
-  			<div class="tab">
-  				<h1>Add Activity</h1><br>
-  				<h2>Title</h2>
-  				<p>give a name to your activity</p>
-  				<p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
-  				<h2>Time of Activity</h2><br>
-  				<p>When does the activity started?<p>
-    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
-    			<p>When does the activity ended?<p>
-    			<p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
-    			<p>spare time(if you want to come erlier before the activity start)<p>
-    			<p>
-                    <input type="radio" name="sparetime" value="none" checked> none
-      		   	   <input type="radio" name="sparetime" value="fivemins"> 5 mins
-      		   	   <input type="radio" name="sparetime" value="tenmins"> 10 mins
-      	       	   <input type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
-  			</div>
+            </div>
+
         
   			<!--Transportation Mode-->		
   			<div class="tab">
@@ -183,7 +178,7 @@
   		
   	<!-- Circles which indicates the steps of the form: -->
         <form id="regForm" action="/action_page.php">
-  			<div style="text-align:center;margin-top:20px;">
+  			<div style="text-align:center;">
     			<span class="step"></span>
     			<span class="step"></span>
     			<span class="step"></span>
