@@ -46,7 +46,8 @@
 
     <!--Tab Utama-->
 	<div class="right">
-         <a href="index.html"><p style="float: right;text-align: right;font-size: 20px;margin: 10px;"><b>X</p></a>
+         <a href="index.html"><p style="float: right;text-align: right;font-size: 20px;margin: 10px;"><b>X</p></a><br><br>
+            
                     <!--Add Activity and Add Location-->
             <div class="tab">
                 <h1>Add Activity</h1>
@@ -122,7 +123,9 @@
     				<td><img src="css/car.svg"></td>
     				<td>80 mins</td>
     				<td>Leave at 8.45 AM</td>
-    				<td><img src="css/route.svg"></td>
+    				<td>
+
+                        <img src="css/route.svg"></td>
   				</tr>
 
 				 <tr>
@@ -164,6 +167,12 @@
 			</select>
 			
   			</div>
+
+            <!--Activity has been add-->
+            <div class="tab">
+                <h1 style="font-size: 20px; text-align: center; margin-top:100px;">Your Activity has been Recorded</h1><br>
+                <p style="text-align: center;">See your activity on the List or you can see it on the calendar as it marked</p>
+            </div>
 
   				<div style="overflow:auto;">
     			<div style="float:right;"><br>
@@ -646,6 +655,36 @@ function fixStepIndicator(n) {
   }
   //... and adds the "active" class on the current step:
   x[n].className += " active";
+}
+</script>
+
+
+<!--modeal route-->
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 </script>
 
