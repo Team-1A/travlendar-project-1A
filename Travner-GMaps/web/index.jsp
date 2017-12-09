@@ -8,30 +8,28 @@
 <html>
 <head>
     
-	<title>Travner</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <title>Travner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!-- Google Maps JS API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s"></script>
 
-	
-        <!-- Google Maps JS API -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s"></script>
+    <!-- JQuery Library -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
 
-        <!-- JQuery Library -->
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+    <!-- GMaps Library -->
+    <script src="js/gmaps.js"></script>
 
-        <!-- GMaps Library -->
-        <script src="js/gmaps.js"></script>
-    
-<link href="css/fullcalendar.min.css" rel="stylesheet">
-<link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/map.css">
-    
-<script type="text/javascript" src="js/moment.min.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/fullcalendar.min.js"></script>
-<script type="text/javascript" src="js/accordion_activity.js"></script>
+    <link href="css/fullcalendar.min.css" rel="stylesheet">
+    <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/map.css">
+
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="js/accordion_activity.js"></script>
 
 </head>
 
@@ -43,152 +41,122 @@
         </div>
         
         <div id="main">
-            
             <!--calendar-->
-            
-	    <div class="left">
-            
-		  <div id='calendar'></div>
-            
-        </div>
+	    <div class="left">           
+		  <div id='calendar'></div>           
+            </div>
 
     <!--Tab Utama-->
 	<div class="right">
         
-            <!--form1-->
-            
-            
-            
+            <!--form1--> 
             <form id="regForm" action="${pageContext.request.contextPath}/Travner" method="POST"></form>
             <form name="form" action="" method="POST" id="geocoding_form"></form>
             <div class="tab">
-  				<h1>Add Activity</h1><br>
-  				<h2>Title</h2>
-  				<p>give a name to your activity</p>
-                                <p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName" form="regForm"></p><br>
-  				<h2>Time of Activity</h2><br>
-  				<p>When does the activity started?<p>
-    			<p><input form="regForm" type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
-    			<p>When does the activity ended?<p>
-    			<p><input form="regForm" type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
-    			<p>spare time(if you want to come erlier before the activity start)<p>
-    			<p><input form="regForm" type="radio" name="sparetime" value="none" checked> none
-      		   	   <input form="regForm" type="radio" name="sparetime" value="fivemins"> 5 mins
-      		   	   <input form="regForm" type="radio" name="sparetime" value="tenmins"> 10 mins
-      	       	   <input form="regForm" type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
-  			</div>
+                <h1>Add Activity</h1><br>
+                <h2>Title</h2>
+                <p>give a name to your activity</p>
+                <p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName" form="regForm"></p><br>
+                <h2>Time of Activity</h2><br>
+                <p>When does the activity started?<p>
+                <p><input form="regForm" type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+                <p>When does the activity ended?<p>
+                <p><input form="regForm" type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+                <p>spare time(if you want to come erlier before the activity start)<p>
+                <p><input form="regForm" type="radio" name="sparetime" value="none" checked> none
+                   <input form="regForm" type="radio" name="sparetime" value="fivemins"> 5 mins
+                   <input form="regForm" type="radio" name="sparetime" value="tenmins"> 10 mins
+                   <input form="regForm" type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
+            </div>
 
-	<div class="tab">
-				<!--<form name="form" action="" method="POST" id="geocoding_form">-->
-            
-                        <h1>Add Location</h1>
-                     
-                        <p>Lokasi awal :</p>
-                        <input type="location" id="orig" size="50" name="orig" form="geocoding_form"/>
-                        <input type="submit" value="Search" name="searchorig" form="geocoding_form"/>
-                        <label class="switch">
-                                <input type="checkbox" id="mark1" form="geocoding_form">
-                                <span class="slider round"></span>
-                            </label><br>
+            <div class="tab">	       
+                <h1>Add Location</h1>
 
-                        <p>Lokasi tujuan :</p> 
-                        <input type="Location" id="dest" size="50" name="dest" form="geocoding_form"/>
-                        <input type="submit" value="Search" name="searchdest" form="geocoding_form"/>
-                        <label class="switch">
-                                <input type="checkbox" id="mark2" form="geocoding_form">
-                                <span class="slider round"></span>
-                            </label>
+                <p>Lokasi awal :</p>
+                <input type="location" id="orig" size="50" name="orig" form="geocoding_form"/>
+                <input type="submit" value="Search" name="searchorig" form="geocoding_form"/>
+                <label class="switch">
+                        <input type="checkbox" id="mark1" form="geocoding_form">
+                        <span class="slider round"></span>
+                </label><br>
 
-                        
-        <!--</form>-->
+                <p>Lokasi tujuan :</p> 
+                <input type="Location" id="dest" size="50" name="dest" form="geocoding_form"/>
+                <input type="submit" value="Search" name="searchdest" form="geocoding_form"/>
+                <label class="switch">
+                        <input type="checkbox" id="mark2" form="geocoding_form">
+                        <span class="slider round"></span>
+                </label>
 
-        <!--<form name="form" action="${pageContext.request.contextPath}/LokasiController" method="POST">-->
-            
-            <input form="regForm" type="Hidden" id="getOrig" name="Orig">
-            <input form="regForm" type="Hidden" id="getDest" name="Dest">
-            <input form="regForm" type="Hidden" id="getDist" name="Dist">
-            <input form="regForm" type="Hidden" id="lat1" name="marker1_lat">
-            <input form="regForm" type="Hidden" id="lng1" name="marker1_lng">
-            <input form="regForm" type="Hidden" id="lat2" name="marker2_lat">
-            <input form="regForm" type="Hidden" id="lng2" name="marker2_lng">
-            <!--<input form="regForm" type="submit" value="Submit" name="submit" />-->
-            
-        <!--</form>-->
+                <input form="regForm" type="Hidden" id="getOrig" name="Orig">
+                <input form="regForm" type="Hidden" id="getDest" name="Dest">
+                <input form="regForm" type="Hidden" id="getDist" name="Dist">
+                <input form="regForm" type="Hidden" id="lat1" name="marker1_lat">
+                <input form="regForm" type="Hidden" id="lng1" name="marker1_lng">
+                <input form="regForm" type="Hidden" id="lat2" name="marker2_lat">
+                <input form="regForm" type="Hidden" id="lng2" name="marker2_lng">
         
-        <div id="map">Maps Event</div>
-                
-       
-<!--
-                
-        <div class="row">
-            <ul id="steps"></ul>
-        </div>
--->
-                        	
-				</div>	
-            
-
-		    
-  	    <!--form3-->		
+                <div id="map">Maps Event</div>
+	
+            </div>	
+            		
             <div class="tab">
-  				<h1>Recommendation Transportation Mode</h1>
-  				<p>Estimated you will arrive at "07:30" by uaing these transportation mode</p>
-  
-  				<table>
-  
-  				<tr>
-    				<td><img src="css/car.svg"></td>
-    				<td>80 mins</td>
-    				<td>Leave at 8.45 AM</td>
-    				<td><img src="css/route.svg"></td>
-  				</tr>
+                <h1>Recommendation Transportation Mode</h1>
+                <p>Estimated you will arrive at "07:30" by uaing these transportation mode</p>
 
-				 <tr>
-				    <td><img src="css/motorcycle.svg"></td>
-				    <td>180 mins</td>
-				    <td>Leave at 9.00 AM</td>
-				    <td><img src="css/route.svg"></td>  
-				 </tr>
+                <table>    
+                    <tr>
+                        <td><img src="css/car.svg"></td>
+                        <td>80 mins</td>
+                        <td>Leave at 8.45 AM</td>
+                        <td><img src="css/route.svg"></td>
+                    </tr>
 
-				  <tr>
-				    <td><img src="css/plane.svg"></td>
-				    <td>-</td>
-				    <td>-</td>
-				    <td><img src="css/route.svg"></td>
-				  </tr>
+                    <tr>
+                        <td><img src="css/motorcycle.svg"></td>
+                        <td>180 mins</td>
+                        <td>Leave at 9.00 AM</td>
+                        <td><img src="css/route.svg"></td>  
+                    </tr>
 
-				  <tr>
-				    <td><img src="css/walk.svg"></td>
-				    <td>-</td>
-				    <td>-</td>
-				    <td><img src="css/route.svg"></td>
-				  </tr>
+                    <tr>
+                        <td><img src="css/plane.svg"></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><img src="css/route.svg"></td>
+                    </tr>
 
-				  <tr>
-				  	<td><img src="css/bicycle.svg"></td>
-				  	<td>-</td>
-				    <td>-</td>
-				    <td><img src="css/route.svg"></td>
-				  </tr>
+                    <tr>
+                        <td><img src="css/walk.svg"></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><img src="css/route.svg"></td>
+                    </tr>
 
-				</table>
+                    <tr>
+                        <td><img src="css/bicycle.svg"></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><img src="css/route.svg"></td>
+                    </tr>
+                </table>
     			
     		<select name="transportation">
-			  <option value="car">Car</option>
-			  <option value="plane">Plane</option>
-			  <option value="motorcycle">Motorcycle</option>
-			  <option value="walk">Walk</option>
-			  <option value="bicycle">bicycle</option>
-			</select>
+                    <option value="car">Car</option>
+                    <option value="plane">Plane</option>
+                    <option value="motorcycle">Motorcycle</option>
+                    <option value="walk">Walk</option>
+                    <option value="bicycle">bicycle</option>
+                </select>
 			
-  			</div>
+            </div>
 
-  			<div style="overflow:auto;">
-                            <div style="float:right;"><br>
-      				<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-      				<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                            </div>
-  			</div>
+            <div style="overflow:auto;">
+                <div style="float:right;"><br>
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
+            </div>
   
   		
   	<!-- Circles which indicates the steps of the form: -->
@@ -670,14 +638,7 @@ function fixStepIndicator(n) {
 
 
 		
-		</div>
-	</div>
-</div>
-	
-</div>
-
-
-	</body>
-
-
+        </div>
+    </div>
+</body>
 </html>
