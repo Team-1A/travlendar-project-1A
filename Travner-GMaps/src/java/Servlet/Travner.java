@@ -159,7 +159,7 @@ public class Travner extends HttpServlet {
             
             List<Integer> id = TravelDAO.getID();
             int size = id.size();
-            int travID = id.get(size - 1) + 1;
+            int travID = size + 1;
             trav.setTravel_ID(travID);
             
             TravelDAO.save(trav);
