@@ -5,23 +5,8 @@
  */
 package Servlet;
 
-import DAO.ActivityDAO;
-import DAO.LocationDAO;
-import DAO.TravelDAO;
-import Model.Activity;
-import Model.Location;
-import Model.Travel;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -87,110 +72,9 @@ public class Travner extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            getData(request,response);
-        } catch (SQLException ex) {
-            Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ParseException ex) {
-            Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
-    public void getDataAct(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
-//            java.sql.Date eventDate = null;
-            
-            String activityName = request.getParameter("ActivityName");
-            String startTime = request.getParameter("starttime");
-            String endTime = request.getParameter("endtime");
-            String spareTime = request.getParameter("sparetime");
-
-            response.sendRedirect("./add_activity.jsp");
-    }
-    
-    public void getDataLoc(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
-        
-            String startLoc_Lat = request.getParameter("");
-            String startLoc_Long = request.getParameter("");
-            
-            String destLoc_Lat = request.getParameter("");
-            String destLoc_Long = request.getParameter("");
-    }
-    
-    public void getData(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
-        
-            String activityName = request.getParameter("ActivityName");
-            
-            String startDay = request.getParameter("startday");
-            String endDay = request.getParameter("endday");
-            String startTime = request.getParameter("starttime");
-            String endTime = request.getParameter("endtime");
-            
-            String spareTime = request.getParameter("sparetime");
-            
-            String startLoc_Lat = request.getParameter("marker1_lat");
-            String startLoc_Long = request.getParameter("marker1_lng");
-            
-            Location loc = new Location();
-            Double lat = Double.parseDouble(startLoc_Lat);
-            Double lng = Double.parseDouble(startLoc_Long);
-            loc.setLocation_Lat(Double.parseDouble(startLoc_Lat));
-            loc.setLocation_Long(Double.parseDouble(startLoc_Long));
-            LocationDAO.save(loc);
-            
-            Location locn = new Location();
-            String destLoc_Lat = request.getParameter("marker2_lat");
-            String destLoc_Long = request.getParameter("marker2_lng");
-            locn.setLocation_Lat(Double.parseDouble(destLoc_Lat));
-            locn.setLocation_Long(Double.parseDouble(destLoc_Long));
-            LocationDAO.save(locn);
-            
-            Travel trav = new Travel();
-            trav.setStartLocation_Lat(Double.parseDouble(startLoc_Lat));
-            trav.setStartLocation_Long(Double.parseDouble(startLoc_Long));
-            trav.setDestLocation_Lat(Double.parseDouble(destLoc_Lat));
-            trav.setDestLocation_Long(Double.parseDouble(destLoc_Long));
-            trav.setTransportation_Mode("Mobil Dinas");
-            
-            String departure = "2017-03-11";
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            java.util.Date dt = sdf.parse(departure);
-            java.sql.Date Departure_Time = new java.sql.Date(dt.getTime());
-            trav.setDeparture_Time(Departure_Time);
-            
-            List<Integer> id = TravelDAO.getID();
-            int size = id.size();
-            int travID = id.get(size - 1) + 1;
-            trav.setTravel_ID(travID);
-            
-            TravelDAO.save(trav);
-            
-            Activity act = new Activity();
-            String TIME_START = startDay + " " + startTime + ":00";
-            String TIME_END = endDay + " " + endTime + ":00";
-            SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            java.util.Date ts = sd.parse(TIME_START);
-            java.util.Date te = sd.parse(TIME_END);
-            java.sql.Date time_start = new java.sql.Date(ts.getTime());
-            java.sql.Date time_end = new java.sql.Date(te.getTime());
-            
-            String spareTimex = "00:35:00";
-            SimpleDateFormat tm = new SimpleDateFormat("HH:mm:ss");
-            java.util.Date st = tm.parse(spareTimex);
-            java.sql.Time tms = new java.sql.Time(st.getTime());
-            
-            act.setTime_Start(time_start);
-            act.setTime_End(time_end);
-            act.setSpare_Time(tms);
-            act.setActivity_Name(activityName);
-            
-            act.setTravel_ID(travID);
-            act.setUser_ID(1);
-            
-            ActivityDAO.save(act);
-            
-            //act.setSpare_Time(Spare_Time);
-            response.sendRedirect("./add_activity.jsp");
-    }
     /**
      * Returns a short description of the servlet.
      *
