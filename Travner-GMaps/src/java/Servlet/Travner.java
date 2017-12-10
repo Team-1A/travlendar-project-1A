@@ -8,9 +8,11 @@ package Servlet;
 import DAO.ActivityDAO;
 import DAO.LocationDAO;
 import DAO.TravelDAO;
+import DAO.User_AccountDAO;
 import Model.Activity;
 import Model.Location;
 import Model.Travel;
+import Model.User_Account;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
@@ -130,11 +132,10 @@ public class Travner extends HttpServlet {
     
     public void getDataLoc(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
         
-            String startLoc_Lat = request.getParameter("");
-            String startLoc_Long = request.getParameter("");
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
             
-            String destLoc_Lat = request.getParameter("");
-            String destLoc_Long = request.getParameter("");
+            List<User_Account> users = User_AccountDAO.getUser(username, password);
     }
     
     public void getData(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {

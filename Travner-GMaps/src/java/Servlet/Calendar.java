@@ -78,7 +78,7 @@ public class Calendar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Activity> listAct = ActivityDAO.getAll(0);
+        List<Activity> listAct = ActivityDAO.getAll(1);
         List<Activity_JSON> listActJSON = new ArrayList<>();
         listAct.forEach((Activity act)->{
             Activity_JSON actJSON = new Activity_JSON(act.getActivity_ID(),act.getActivity_Name(),act.getTime_Start(),act.getTime_End());

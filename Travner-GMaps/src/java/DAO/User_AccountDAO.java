@@ -37,6 +37,28 @@ public class User_AccountDAO extends DAO {
         return User_Account;
     }
     
+    public static List<User_Account> getUser(String username,String password){
+        List<User_Account> User_Account = new ArrayList<>();
+        try {
+        com.mysql.jdbc.Connection con = (com.mysql.jdbc.Connection) getConnection();
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM user_account where USERNAME = " + username + " AND PASSWORD = " + password + " ;");
+        ResultSet rs = ps.executeQuery();
+        
+        while(rs.next()){
+            User_Account User = new User_Account();
+            User.setUser_ID(rs.getInt("USER_ID"));
+            User.setUsername(rs.getString("USERNAME"));
+            User.setPassword(rs.getString("PASSWORD"));
+            
+            User_Account.add(User);
+        }
+        } catch (SQLException ex){
+            System.out.println(ex);
+        }
+        disconnect();
+        return User_Account;
+    }
+    
     public static int save(User_Account _user_account){
         Integer stats = 0;
         try{
