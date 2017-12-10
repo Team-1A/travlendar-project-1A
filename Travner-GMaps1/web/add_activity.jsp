@@ -1,11 +1,18 @@
+<%-- 
+    Document   : add_activity
+    Created on : Dec 10, 2017, 7:47:54 AM
+    Author     : netspv
+--%>
 
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
 <head>
+    
 	<title>Travner</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
 	
         <!-- Google Maps JS API -->
@@ -15,24 +22,186 @@
         <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
 
         <!-- GMaps Library -->
-        <script src="js/gmaps.js"></script>
-
-</head>
-
+        <script src="Test_Gmaps_API/gmaps.js"></script>
+    
 <link href="css/fullcalendar.min.css" rel="stylesheet">
 <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
 <link rel="stylesheet" type="text/css" href="css/style.css">
- <link rel="stylesheet" type="text/css" href="css/map.css">
-
+<link rel="stylesheet" type="text/css" href="css/map.css">
+    
 <script type="text/javascript" src="js/moment.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/fullcalendar.min.js"></script>
 <script type="text/javascript" src="js/accordion_activity.js"></script>
 
-<body>
+</head>
 
-	<!--script calendar-->
+
+<body>
+    <div id="main">
+        <div id="header"><!--header-->
+            <img src="css/logo.png">
+        </div>
+        
+        <div id="main">
+            
+            <!--calendar-->
+	    <div class="left">
+		  <div id='calendar'></div>
+        </div>
+
+    <!--Tab Utama-->
+	<div class="right">
+         <a href="index.html"><p style="float: right;text-align: right;font-size: 20px;margin: 10px;"><b>X</p></a><br><br>
+            
+                    <!--Add Activity and Add Location-->
+            <div class="tab">
+                <h1>Add Activity</h1>
+                <h2>Title</h2>
+                <p>give a name to your activity</p>
+                <p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
+                <h2>Time of Activity</h2>
+                <p>When does the activity started?<p>
+                <p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+                <p>When does the activity ended?<p>
+                <p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+                <p>spare time (if you want to come erlier before the activity start)<p>
+                <p>
+                    <input type="radio" name="sparetime" value="none" checked> none
+                   <input type="radio" name="sparetime" value="fivemins"> 5 mins
+                   <input type="radio" name="sparetime" value="tenmins"> 10 mins
+                   <input type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
+
+
+            <form name="form" action="" method="POST" id="geocoding_form">
+                    <h1>Add Location</h1>
+                     
+                        <p>Lokasi awal :</p>
+                        <p><input type="location" id="orig" size="50" name="orig" />
+                        <input type="submit" value="Search" name="searchorig" /></p>
+                        <!--p><label class="switch">
+                                <input type="checkbox" id="mark1">
+                                <span class="slider_round"></span>
+                            </label></p>-->        
+
+                        <p>Lokasi tujuan :</p> 
+                        <p><input type="location" id="dest" size="50" name="dest"/>
+                        <input type="submit" value="Search" name="searchdest" /></p>
+                       <!-- <p><label class="switch">
+                                <input type="checkbox" id="mark2">
+                                <span class="slider round"></span>
+                            </label></p>-->
+                        
+            </form>
+
+        <form name="form" action="${pageContext.request.contextPath}/LokasiController" method="POST">
+            
+            <input type="Hidden" id="getOrig" name="Orig">
+            <input type="Hidden" id="getDest" name="Dest">
+            <input type="Hidden" id="getDist" name="Dist">
+            <input type="Hidden" id="lat1" name="marker1_lat">
+            <input type="Hidden" id="lng1" name="marker1_lng">
+            <input type="Hidden" id="lat2" name="marker2_lat">
+            <input type="Hidden" id="lng2" name="marker2_lng">
+            <!--<input type="submit" value="Submit" name="submit" />-->
+            
+        </form>
+        <br><div id="map">Maps Event</div>
+                
+       
+<!--
+                
+        <div class="row">
+            <ul id="steps"></ul>
+        </div>
+-->
+            </div>
+
+        
+  			<!--Transportation Mode-->		
+  			<div class="tab">
+  				<h1>Recommendation Transportation Mode</h1>
+  				<p>Estimated you will arrive at "07:30" by uaing these transportation mode</p>
+  
+  				<table>
+  
+  				<tr>
+    				<td><img src="css/car.svg"></td>
+    				<td>80 mins</td>
+    				<td>Leave at 8.45 AM</td>
+    				<td>
+
+                        <img src="css/route.svg"></td>
+  				</tr>
+
+				 <tr>
+				    <td><img src="css/motorcycle.svg"></td>
+				    <td>180 mins</td>
+				    <td>Leave at 9.00 AM</td>
+				    <td><img src="css/route.svg"></td>  
+				 </tr>
+
+				  <tr>
+				    <td><img src="css/plane.svg"></td>
+				    <td>-</td>
+				    <td>-</td>
+				    <td><img src="css/route.svg"></td>
+				  </tr>
+
+				  <tr>
+				    <td><img src="css/walk.svg"></td>
+				    <td>-</td>
+				    <td>-</td>
+				    <td><img src="css/route.svg"></td>
+				  </tr>
+
+				  <tr>
+				  	<td><img src="css/bicycle.svg"></td>
+				  	<td>-</td>
+				    <td>-</td>
+				    <td><img src="css/route.svg"></td>
+				  </tr>
+
+				</table>
+    			
+    		<select name="transportation">
+			  <option value="car">Car</option>
+			  <option value="plane">Plane</option>
+			  <option value="motorcycle">Motorcycle</option>
+			  <option value="walk">Walk</option>
+			  <option value="bicycle">bicycle</option>
+			</select>
+			
+  			</div>
+
+            <!--Activity has been add-->
+            <div class="tab">
+                <h1 style="font-size: 20px; text-align: center; margin-top:100px;">Your Activity has been Recorded</h1><br>
+                <p style="text-align: center;">See your activity on the List or you can see it on the calendar as it marked</p>
+            </div>
+
+  				<div style="overflow:auto;">
+    			<div style="float:right;"><br>
+      				<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      				<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    			</div>
+  			</div>
+  
+  		
+  	<!-- Circles which indicates the steps of the form: -->
+        <form id="regForm" action="/action_page.php">
+  			<div style="text-align:center;">
+    			<span class="step"></span>
+    			<span class="step"></span>
+    			<span class="step"></span>
+    			<span class="step"></span>
+  			</div>
+		</form>
+	</div>
+
+
+	<!-- script calendar -->
 <script>
   $(document).ready(function() {
 
@@ -53,7 +222,7 @@
           start: '2017-09-19T04:30:00',
           end: '2017-09-19T16:10:00'
         },
-
+ 
 		{
           title: 'Sampai di Bandara Kendari',
           start: '2017-09-19T11:10:00',
@@ -77,96 +246,8 @@
   });
 
 </script>
-
-
-
-
-<div id="main">
-
-	<div class="header">
-		<img src="css/Travner1.png" style="width: 80px; height: 30px; margin-left: 47%; margin-top: 10px; ">
-	</div>
-
-
-
-	<div id="main">
-	<div class="left">
-		<div class="box-left">			
-			<div id='calendar'></div>
-		</div>	
-    </div>
-
-	<div class="right">
-		<div class="box-right">
-			<form id="regForm" action="/action_page.php">
-				
-  		<div class="tab">
-  			<h1>Route</h1>
-  			<h2>See this route between the two locations</h2>
-                        <div id="googleMap1" style="width:400px;height:300px;"></div>
-                        <script>
-                            function myMap() {
-                                var mapOptions1 = {
-                                    center: new google.maps.LatLng(51.508742,-0.120850),zoom:9, mapTypeId: google.maps.MapTypeId.ROADMAP};
-                                var map1 = new google.maps.Map(document.getElementById("googleMap1"),mapOptions1); </script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
-
-  		</div>
-
-  		<div class="tab">
-  			<h1>Add Activity</h1>
-  			<h2>Add Location</h2>
-    		<form name="form" action="" method="POST" id="geocoding_form">
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>GMAPS</th>
-                        <th></th>
-                        <th></th>
-                        <th>Gunakan Klik</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lokasi awal : </td>
-                        <td><input type="text" id="orig" size="50" name="orig" /></td>
-                        <td><input type="submit" value="Search" name="searchorig" /></td>
-                        <td><label class="switch">
-                                <input type="checkbox" id="mark1">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Lokasi tujuan : </td>
-                        <td><input type="text" id="dest" size="50" name="dest"/></td>
-                        <td><input type="submit" value="Search" name="seachdest" /></td>
-                        <td><label class="switch">
-                                <input type="checkbox" id="mark2">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
-        <form name="form" action="${pageContext.request.contextPath}/LokasiController" method="POST">
-            <input type="Hidden" id="getOrig" name="Orig">
-            <input type="Hidden" id="getDest" name="Dest">
-            <input type="Hidden" id="getDist" name="Dist">
-            <input type="Hidden" id="lat1" name="marker1_lat">
-            <input type="Hidden" id="lng1" name="marker1_lng">
-            <input type="Hidden" id="lat2" name="marker2_lat">
-            <input type="Hidden" id="lng2" name="marker2_lng">
-            <input type="submit" value="Submit" name="submit" />
-        </form>
-        <div id="map">Maps Event</div>
-        <script>
+    <!-- Script Gmaps -->
+<script>
             // JQuery
             $(document).ready(function () {  // Ketika web udah siap
 //		prettyPrint();
@@ -507,37 +588,8 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
                     }
                 });
             }); // tutup JQuery    
-        </script>
-        <div class="row">
-            <ul id="steps"></ul>
-        </div>
-
-
-  		</div>
-
-  		<div class="tab">Login Info:
-    		<p>< placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-    		<p><input   placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
-  		</div>
-
-  		<div style="overflow:auto;">
-    		<div style="float:right;">
-      			<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-      			<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-    		</div>
-  		</div>
-  
-  	<!-- Circles which indicates the steps of the form: -->
-  			<div style="text-align:center;margin-top:40px;">
-    			<span class="step"></span>
-    			<span class="step"></span>
-    			<span class="step"></span>
-    			<span class="step"></span>
-  			</div>
-		</form>
-	</div>
-</div>
-
+        </script>     
+    <!-- script tab -->
 <script>
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the crurrent tab
@@ -614,6 +666,36 @@ function fixStepIndicator(n) {
 </script>
 
 
+<!--modeal route-->
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
 		
 		</div>
 	</div>
@@ -621,6 +703,8 @@ function fixStepIndicator(n) {
 	
 </div>
 
+
 	</body>
+
 
 </html>
