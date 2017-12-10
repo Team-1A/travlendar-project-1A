@@ -16,11 +16,11 @@ import java.util.List;
 
 public class ActivityDAO extends DAO {
     
-    public static List<Activity> getAll(){
+    public static List<Activity> getAll(int userID){
         List<Activity> activity = new ArrayList<>();
         try {
             java.sql.Connection con = getConnection();
-            PreparedStatement ps = con.prepareStatement("SELECT * FROM activity");
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM activity WHERE USER_ID = " + userID + " ;");
             ResultSet rs = ps.executeQuery();
 
             while(rs.next()){
