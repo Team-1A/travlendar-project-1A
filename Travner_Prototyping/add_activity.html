@@ -112,60 +112,63 @@
         </div>
 -->
             </div>
-
-        
-  			<!--Transportation Mode-->		
-  			<div class="tab">
-  				<h1>Recommendation Transportation Mode</h1>
-  				<p>Estimated you will arrive at "07:30" by uaing these transportation mode</p>
-  
-  				<table>
-  
-  				<tr>
-    				<td><img src="css/car.svg"></td>
+                    <!--Transportation Mode-->
+                    <div class="tab">
+                        <h1>Recommendation Transportation Mode</h1>
+                        <p>Estimated you will arrive at "07:30" by uaing these transportation mode</p><br> <!--estimasi waktu sementara-->
+                        <div class="outline">
+                        <table>
+                            <!--Perjalanan dengan mobil-->
+                            <tr>
+                                <td><img src="css/Assets/icon/car.svg"></td>
     				<td>80 mins</td>
     				<td>Leave at 8.45 AM</td>
-    				<td>
-
-                        <img src="css/route.svg"></td>
-  				</tr>
-
-				 <tr>
-				    <td><img src="css/motorcycle.svg"></td>
+                                <td>
+                                    <img src="css/Assets/icon/route.svg"></td>
+                            </tr>
+                            <!--Perjalanan dengan motor-->
+                            <tr>
+				    <td><img src="css/Assets/icon/motorcycle.svg"></td>
 				    <td>180 mins</td>
 				    <td>Leave at 9.00 AM</td>
-				    <td><img src="css/route.svg"></td>  
-				 </tr>
-
-				  <tr>
-				    <td><img src="css/plane.svg"></td>
-				    <td>-</td>
-				    <td>-</td>
-				    <td><img src="css/route.svg"></td>
-				  </tr>
-
-				  <tr>
-				    <td><img src="css/walk.svg"></td>
-				    <td>-</td>
-				    <td>-</td>
-				    <td><img src="css/route.svg"></td>
-				  </tr>
-
-				  <tr>
-				  	<td><img src="css/bicycle.svg"></td>
-				  	<td>-</td>
-				    <td>-</td>
-				    <td><img src="css/route.svg"></td>
-				  </tr>
-
-				</table>
-    			
-    		<select name="transportation">
-			  <option value="car">Car</option>
-			  <option value="plane">Plane</option>
-			  <option value="motorcycle">Motorcycle</option>
-			  <option value="walk">Walk</option>
-			  <option value="bicycle">bicycle</option>
+				    <td><img src="css/Assets/icon/route.svg"></td>
+                            </tr>
+                            <!--Perjalanan dengan pesawat-->
+                            <tr>
+                                <td><img src="css/Assets/icon/plane.svg"></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><img src="css/Assets/icon/route.svg"></td>
+                            </tr>
+                            <!--Perjalanan dengan sepeda-->
+                            <tr>
+                                <td><img src="css/Assets/icon/bicycle.svg"></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><img src="css/Assets/icon/route.svg"></td>
+                            </tr>
+                            <!--Perjalanan dengan berjalan kaki-->
+                            <tr>
+                                <td><img src="css/Assets/icon/walk.svg"></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><img src="css/Assets/icon/route.svg"></td>
+                            </tr>
+                            <!--Perjalanan dengan sepeda-->
+                            <tr>
+                                <td><img src="css/Assets/icon/bicycle.svg"></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><img src="css/Assets/icon/route.svg"></td>
+                            </tr>
+                        </table>
+                        </div>
+                        <br><select name="transportation">
+                            <option value="car">Car</option>
+                            <option value="plane">Plane</option>
+                            <option value="motorcycle">Motorcycle</option>
+                            <option value="walk">Walk</option>
+                            <option value="bicycle">bicycle</option>
 			</select>
 			
   			</div>
@@ -175,12 +178,11 @@
                 <h1 style="font-size: 20px; text-align: center; margin-top:100px;">Your Activity has been Recorded</h1><br>
                 <p style="text-align: center;">See your activity on the List or you can see it on the calendar as it marked</p>
             </div>
-
-  				<div style="overflow:auto;">
-    			<div style="float:right;"><br>
-      				<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-      				<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-    			</div>
+            <div style="overflow: auto">
+                <div style="float:right;"><br>
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
   			</div>
   
   		
