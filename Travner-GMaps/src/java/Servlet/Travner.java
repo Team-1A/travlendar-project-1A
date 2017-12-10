@@ -194,7 +194,22 @@ public class Travner extends HttpServlet {
             java.sql.Timestamp time_start = new java.sql.Timestamp(ts.getTime());
             java.sql.Timestamp time_end = new java.sql.Timestamp(te.getTime());
             
-            String spareTimex = "00:35:00";
+            String spareTimex = null;
+            switch(spareTime){
+                case "fivemins":{
+                    spareTimex = "00:05:00";  
+                    break;
+                }
+                case "tenmins":{
+                    spareTimex = "00:10:00"; 
+                    break;
+                }
+                case "fifteenmins":{
+                    spareTimex = "00:15:00";
+                    break;
+                }
+            }
+            
             SimpleDateFormat tm = new SimpleDateFormat("HH:mm:ss");
             java.util.Date st = tm.parse(spareTimex);
             java.sql.Time tms = new java.sql.Time(st.getTime());
