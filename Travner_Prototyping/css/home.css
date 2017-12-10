@@ -6,18 +6,17 @@
 }
 
 body {
+    background-image: url(Assets/BackGround.jpg);
+background-size: cover; 
+    font-family: 'Quicksand', sans-serif;
 
-    background-size: 100%;
-    background-color: #333333; 
-   font-family:'HelveticaNeue','Arial', sans-serif;
-    
 }
 #header {
- position: fixed;
- z-index: 9999; 
+z-index: 9999;
+position: fixed;
  width: 100%;
- height: 60px;
- background:#4f9bff;
+ height: 55px;
+ background:#2980B9;
  text-align: center;
 }
 
@@ -26,7 +25,7 @@ text-align: center;
 align-content: center;
 margin-top: 10px;
 width: 70px;
-height: 30px;
+\height: 30px;
 }
 
 
@@ -41,10 +40,9 @@ height: 30px;
   margin-top: 80px;
   background-color: #F8F9F9;
   border-radius: 5px;
-  height:800px;
-  width: 810px;
-}
-.content-left{
+  height:500px;
+  width: 600px;
+}.content-left{
   opacity: 1;
 }
 
@@ -58,15 +56,25 @@ height: 30px;
   margin-bottom: 20px;
   background-color:#F8F9F9;
   border-radius: 5px;
-  height:800px;
-  width:810px;
-}
-.content-right{
+  height:500px;
+  width:690px;
+}.content-right{
   position: absolute;
   z-index: 2;
   opacity: 99;
 }
 
+
+
+
+.right img{
+  opacity: 0.2;
+  margin-top: 60px;
+  margin-right: 80px;
+  margin-left: 80px; 
+  width: 520px;
+  height: 250px;   
+}
 
 .footer{
   margin-top: 20px;
@@ -75,9 +83,16 @@ height: 30px;
   color: white;
   text-align: center;
   }
+
 #calendar{
-  margin: 20px;
-  max-width: 870px;
+overflow: hidden;
+margin: 20px;
+max-width: 520px;
+height: 800px;
+}
+.fc-center{
+  font-size: 16px;
+
 }
 .fc button{
             height: 30px;
@@ -89,14 +104,16 @@ height: 30px;
         }
 
 
-button.accordion {
-    border-radius: 5px;
+
+button.activity {
+    font-weight: bold;
+    border-radius: 5px; 
     background-color: #2980B9; 
     color: white;
     cursor: pointer;
     padding: 2px;
     width: 100%;
-    height: 30px;
+    height: 80px;
     border: none;
     text-align: center;
     outline: none;
@@ -118,36 +135,39 @@ div.panel {
 }
 
 #regForm {
-  font-size: 14px;
+  font-size: 10px;
   margin: 1px auto;
   padding: 40px;
   width: 70%;
   min-width: 300px;
 }
+p {
+  font-size: 10px;
+}
 
 h1 {
-  font-size: 18px;
-  text-align: center;  
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;  
 }
 h2{
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 10px;
 }
-p{
-  font-size: 14px;
-}
-
 
 
 input {
   background-color: white;
   border-radius: 5px;
-  padding: 10px;
   width: 93%;
-  height: 30px;
+  height: 20px;
   font-size: 12px;
   border: 1px solid #aaaaaa;
 }
-
+label {
+  width: 10px;
+  height: 20px;
+}
 input[type="date"]{
 
   
@@ -155,9 +175,7 @@ input[type="date"]{
 }
 
 input[type="time"]{
-  background-image: url('css/clock.svg');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
+  
   width: 25%;
   margin-left: 50px;
 }
@@ -165,21 +183,22 @@ input[type="time"]{
 input[type="radio"]{
   margin: 10px;
   font-size: 7px;
-  width: 2%;
+  width: 4%;
+  height: 2em;
+  border: 0px;
 }
 input[type="location"]{
   font-size: 12px;
-  width: 85%;
+  width: 80%;
 }
 
 input[type="submit"]{
-  margin: 2px;
+  font-weight: bold;
   background-color:#4f9bff; 
   font-size: 12px;
   color: #fff;
   width: 10%;
 }
-
 
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
@@ -260,3 +279,4 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
