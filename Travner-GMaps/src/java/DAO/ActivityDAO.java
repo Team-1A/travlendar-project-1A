@@ -56,7 +56,7 @@ public class ActivityDAO extends DAO {
             Time Spare_Time = _activity.getSpare_Time();
            
             
-            String sql = "INSERT INTO activity (ACTIVITY_ID,TRAVEL_ID,USER_ID,ACTIVITY_NAME,TIME_START,TIME_END,SPARE_TIME) VALUES(\"" + Activity_ID + "\",\"" + Travel_ID + "\",\"" + User_ID + "\",\"" + Activity_Name + "\",\"" + Time_Start + "\",\"" + Time_End + "\",\"" + Spare_Time + "\");";
+            String sql = "INSERT INTO activity (TRAVEL_ID,USER_ID,ACTIVITY_NAME,TIME_START,TIME_END,SPARE_TIME) VALUES(\"" + Travel_ID + "\",\"" + User_ID + "\",\"" + Activity_Name + "\",\"" + Time_Start + "\",\"" + Time_End + "\",\"" + Spare_Time + "\");";
             stats = st.executeUpdate(sql);
         } catch (SQLException ex){
             System.out.println(ex);

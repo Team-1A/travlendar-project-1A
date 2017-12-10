@@ -1,5 +1,6 @@
 package DAO;
 
+import Model.Location;
 import Model.Travel;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -39,13 +40,31 @@ public class TravelDAO extends DAO{
         return travel;
     }
     
+    public static List<Integer> getID(){
+        List<Integer> id = new ArrayList<>();
+        try {
+            java.sql.Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("SELECT TRAVEL_ID FROM travel");
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                int ID = rs.getInt("TRAVEL_ID");
+                id.add(ID);
+            }
+        } catch (SQLException ex){
+            System.out.println(ex);
+        }
+        disconnect();
+        return id;
+    }
+    
     public static int save(Travel _travel){
         Integer stats = 0;
         try{
             java.sql.Connection con = getConnection();
             Statement st = con.createStatement();
             
-            Integer Travel_ID = _travel.getTravel_ID();
+            int Travel_ID = _travel.getTravel_ID();
             Double StartLocation_Long = _travel.getStartLocation_Long();
             Double StartLocation_Lat = _travel.getStartLocation_Lat();
             Double DestLocation_Long = _travel.getDestLocation_Long();

@@ -59,10 +59,10 @@
                 <p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName" form="regForm"></p><br>
                 <h2>Time of Activity</h2><br>
                 <p>When does the activity started?<p>
-                <p><input form="regForm" type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+                <p><input form="regForm" type="date" name="startday"><img src="css/calendar.svg"> <input form="regForm" type="time" name="starttime"><img src="css/clock.svg"></p>
                 <p>When does the activity ended?<p>
-                <p><input form="regForm" type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
-                <p>spare time(if you want to come erlier before the activity start)<p>
+                <p><input form="regForm" type="date" name="endday"><img src="css/calendar.svg"> <input form="regForm" type="time" name="endtime"><img src="css/clock.svg"></p>
+                <p>spare time(if you want to come earlier before the activity start)<p>
                 <p><input form="regForm" type="radio" name="sparetime" value="none" checked> none
                    <input form="regForm" type="radio" name="sparetime" value="fivemins"> 5 mins
                    <input form="regForm" type="radio" name="sparetime" value="tenmins"> 10 mins
