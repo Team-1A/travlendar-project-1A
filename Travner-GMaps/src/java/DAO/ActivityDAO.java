@@ -29,8 +29,8 @@ public class ActivityDAO extends DAO {
                 act.setTravel_ID(rs.getInt("TRAVEL_ID"));
                 act.setUser_ID(rs.getInt("USER_ID"));
                 act.setActivity_Name(rs.getString("ACTIVITY_NAME"));
-                act.setTime_Start(rs.getDate("TIME_START"));
-                act.setTime_End(rs.getDate("TIME_END"));
+                act.setTime_Start(rs.getTimestamp("TIME_START"));
+                act.setTime_End(rs.getTimestamp("TIME_END"));
                 act.setSpare_Time(rs.getTime("SPARE_TIME"));
                 activity.add(act);
             }
@@ -51,8 +51,8 @@ public class ActivityDAO extends DAO {
             Integer Travel_ID = _activity.getTravel_ID();
             Integer User_ID = _activity.getUser_ID();
             String Activity_Name = _activity.getActivity_Name();
-            java.sql.Date Time_Start = (java.sql.Date) _activity.getTime_Start();
-            java.sql.Date Time_End = (java.sql.Date) _activity.getTime_End();
+            java.sql.Timestamp Time_Start = _activity.getTime_Start();
+            java.sql.Timestamp Time_End = _activity.getTime_End();
             Time Spare_Time = _activity.getSpare_Time();
            
             

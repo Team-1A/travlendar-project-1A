@@ -6,6 +6,7 @@
 package Model;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
@@ -18,7 +19,7 @@ public class Travel {
     private Double DestLocation_Lat;
     private Double DestLocation_Long;
     private String Transportation_Mode;
-    private Date Departure_Time;
+    private java.sql.Timestamp Departure_Time;
     
     public Travel(){
         Travel_ID = 0;
@@ -117,14 +118,14 @@ public class Travel {
     /**
      * @return the Departure_Time
      */
-    public Date getDeparture_Time() {
+    public Timestamp getDeparture_Time() {
         return Departure_Time;
     }
 
     /**
      * @param Departure_Time the Departure_Time to set
      */
-    public void setDeparture_Time(Date Departure_Time) {
+    public void setDeparture_Time(java.sql.Timestamp Departure_Time) {
         this.Departure_Time = Departure_Time;
     }
     

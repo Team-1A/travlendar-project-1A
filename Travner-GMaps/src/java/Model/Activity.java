@@ -7,6 +7,7 @@ package Model;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.sql.Timestamp;
 
 /**
  *
@@ -17,8 +18,8 @@ public class Activity {
     private Integer Travel_ID;
     private Integer User_ID;
     private String Activity_Name;
-    private Date Time_Start;
-    private Date Time_End;
+    private java.sql.Timestamp Time_Start;
+    private java.sql.Timestamp Time_End;
     private Time Spare_Time;
     
     public Activity(){
@@ -90,28 +91,28 @@ public class Activity {
     /**
      * @return the Time_Start
      */
-    public Date getTime_Start() {
+    public Timestamp getTime_Start() {
         return Time_Start;
     }
 
     /**
      * @param Time_Start the Time_Start to set
      */
-    public void setTime_Start(Date Time_Start) {
+    public void setTime_Start(java.sql.Timestamp Time_Start) {
         this.Time_Start = Time_Start;
     }
 
     /**
      * @return the Time_End
      */
-    public Date getTime_End() {
+    public Timestamp getTime_End() {
         return Time_End;
     }
 
     /**
      * @param Time_End the Time_End to set
      */
-    public void setTime_End(Date Time_End) {
+    public void setTime_End(java.sql.Timestamp Time_End) {
         this.Time_End = Time_End;
     }
 

@@ -11,6 +11,8 @@ import DAO.TravelDAO;
 import Model.Activity;
 import Model.Location;
 import Model.Travel;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
@@ -34,7 +36,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "Travner", urlPatterns = {"/Travner"})
 public class Travner extends HttpServlet {
-
+    ObjectMapper mapper;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -73,7 +75,18 @@ public class Travner extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String param = request.getParameter("action");
+        
+        switch(param){
+            case "activitycal":{
+            try {
+                System.out.print("hello");
+                DisplayActCalendar(request,response);
+            } catch (SQLException | ParseException ex) {
+                Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
+        }
     }
 
     /**
@@ -96,15 +109,23 @@ public class Travner extends HttpServlet {
         }
     }
 
-    public void getDataAct(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
+    @SuppressWarnings("empty-statement")
+    public void DisplayActCalendar(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
 //            java.sql.Date eventDate = null;
-            
-            String activityName = request.getParameter("ActivityName");
-            String startTime = request.getParameter("starttime");
-            String endTime = request.getParameter("endtime");
-            String spareTime = request.getParameter("sparetime");
 
-            response.sendRedirect("./add_activity.jsp");
+            List<Activity> Act = ActivityDAO.getAll(1);
+            Activity ac = Act.get(5);
+            
+            try
+                {
+                    String jsonStr = this.mapper.writeValueAsString(ac);           
+                    this.responseJson(response, jsonStr);;
+                }
+                catch (JsonProcessingException ex)
+                {
+                    ex.printStackTrace();
+                }
+            
     }
     
     public void getDataLoc(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
@@ -154,7 +175,7 @@ public class Travner extends HttpServlet {
             String departure = "2017-03-11";
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             java.util.Date dt = sdf.parse(departure);
-            java.sql.Date Departure_Time = new java.sql.Date(dt.getTime());
+            java.sql.Timestamp Departure_Time = new java.sql.Timestamp(dt.getTime());
             trav.setDeparture_Time(Departure_Time);
             
             List<Integer> id = TravelDAO.getID();
@@ -170,8 +191,8 @@ public class Travner extends HttpServlet {
             SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             java.util.Date ts = sd.parse(TIME_START);
             java.util.Date te = sd.parse(TIME_END);
-            java.sql.Date time_start = new java.sql.Date(ts.getTime());
-            java.sql.Date time_end = new java.sql.Date(te.getTime());
+            java.sql.Timestamp time_start = new java.sql.Timestamp(ts.getTime());
+            java.sql.Timestamp time_end = new java.sql.Timestamp(te.getTime());
             
             String spareTimex = "00:35:00";
             SimpleDateFormat tm = new SimpleDateFormat("HH:mm:ss");
@@ -190,6 +211,20 @@ public class Travner extends HttpServlet {
             
             //act.setSpare_Time(Spare_Time);
             response.sendRedirect("./add_activity.jsp");
+    }
+    
+    private void responseJson(HttpServletResponse response, String strJson)
+    {
+        try 
+        {
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(strJson);
+        } 
+        catch (IOException ex) 
+        {
+            Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     /**
      * Returns a short description of the servlet.

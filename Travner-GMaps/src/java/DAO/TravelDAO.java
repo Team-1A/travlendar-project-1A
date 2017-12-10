@@ -30,7 +30,7 @@ public class TravelDAO extends DAO{
                 tra.setDestLocation_Long(rs.getDouble("DESTLOCATION_LONG"));
                 tra.setDestLocation_Lat(rs.getDouble("DESTLOCATION_LAT"));
                 tra.setTransportation_Mode(rs.getString("TRANSPORTATION_MODE"));
-                tra.setDeparture_Time(rs.getDate("DEPARTURE_TIME"));
+                tra.setDeparture_Time(rs.getTimestamp("DEPARTURE_TIME"));
                 travel.add(tra);
             }
         } catch (SQLException ex){
@@ -70,7 +70,7 @@ public class TravelDAO extends DAO{
             Double DestLocation_Long = _travel.getDestLocation_Long();
             Double DestLocation_Lat = _travel.getDestLocation_Lat();
             String Transportation_Mode=_travel.getTransportation_Mode();
-            java.sql.Date Departure_Time = (java.sql.Date) _travel.getDeparture_Time();
+            java.sql.Timestamp Departure_Time = _travel.getDeparture_Time();
            
             
             String sql = "INSERT INTO travel (TRAVEL_ID,STARTLOCATION_LONG,STARTLOCATION_LAT,DESTLOCATION_LONG,DESTLOCATION_LAT,TRANSPORTATION_MODE,DEPARTURE_TIME) VALUES(\"" + Travel_ID + "\",\"" + StartLocation_Long + "\",\"" + StartLocation_Lat + "\",\"" + DestLocation_Long + "\",\"" + DestLocation_Lat + "\",\"" + Transportation_Mode  + "\",\"" + Departure_Time +  "\");";
