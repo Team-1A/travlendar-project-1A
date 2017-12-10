@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    
-	<title>Travner- Home</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-
-	
+    <head>
+        <title>Travner- Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        
         <!-- Google Maps JS API -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s"></script>
 
@@ -16,46 +14,38 @@
 
         <!-- GMaps Library -->
         <script src="Test_Gmaps_API/gmaps.js"></script>
-    
-<link href="css/fullcalendar.min.css" rel="stylesheet">
-<link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
-<link rel="stylesheet" type="text/css" href="css/home.css">
-<link rel="stylesheet" type="text/css" href="css/map.css">
-<link rel="stylesheet" type="text/css" href="css/responsive_index.css">
-
-<script type="text/javascript" src="js/moment.min.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/fullcalendar.min.js"></script>
-<script type="text/javascript" src="js/accordion_activity.js"></script>
-
-</head>
-
-
-<body>
-    <div id="main">
-        <div id="header"><!--header-->
-            <img src="css/logo.png">
-        </div>
         
-        <div id="main">
-            
-            <!--calendar-->
-	    <div class="left">
-		  <div id='calendar'></div>
-        </div>
-
-    <!--Tab Utama-->
-	<div class="right">
-               
-        <a href="add_activity.html"><button class="activity">Add Activity</button></a>
-        <img src="css/Assets/Travner1.png">
-    </div>
-
-
+        <link href="css/fullcalendar.min.css" rel="stylesheet">
+        <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" type="text/css" href="css/map.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive_index.css">
+        
+        <script type="text/javascript" src="js/moment.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/fullcalendar.min.js"></script>
+        <script type="text/javascript" src="js/accordion_activity.js"></script>
+    </head>
     
-                   
-	<!-- script calendar -->
+    <body>
+        <div id="main">
+            <div id="header"><!--header-->
+                <img src="css/logo.png">
+            </div>
+            
+            <div id="main">
+                <!--calendar-->
+                <div class="left">
+                    <div id='calendar'></div>
+                </div>
+                
+                <!--Tab Utama-->
+                <div class="right">
+                    <a href="add_activity.html"><button class="activity">Add Activity</button></a>
+                    <img src="css/Assets/Travner1.png">
+                </div>
+                <!-- script calendar -->
 <script>
   $(document).ready(function() {
 
@@ -518,17 +508,7 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 </script>
-		
-		</div>
-
-	</div>
-
-</div>
-	
-</div>
-
-
-	</body>
-
-
+            </div>
+        </div>
+    </body>
 </html>
