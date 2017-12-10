@@ -1,0 +1,3 @@
+default masih xml
+belum di cek karena belum menambahkan data database yang pastinya
+masih belum tau bentuk json dari xml
