@@ -22,6 +22,7 @@
 <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/map.css">
+<link rel="stylesheet" type="text/css" href="css/responsive_add_activity.css">
     
 <script type="text/javascript" src="js/moment.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -56,16 +57,16 @@
                 <p>give a name to your activity</p>
                 <p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
                 <h2>Time of Activity</h2>
-                <p>When does the activity started?<p>
-                <p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
-                <p>When does the activity ended?<p>
-                <p><input type="date" name="day"><img src="css/calendar.svg"> <input type="time" name="time"><img src="css/clock.svg"></p>
+                <p>When does the activity started?</p>
+                <p><input type="date" name="day"><input type="time" name="time"></p>
+                <p>When does the activity ended?</p>
+                <p><input type="date" name="day"><input type="time" name="time"></p>
                 <p>spare time (if you want to come erlier before the activity start)<p>
                 <p>
                     <input type="radio" name="sparetime" value="none" checked> none
                    <input type="radio" name="sparetime" value="fivemins"> 5 mins
                    <input type="radio" name="sparetime" value="tenmins"> 10 mins
-                   <input type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
+                   <input type="radio" name="sparetime" value="fifteenmins"> 15 mins</p><br>
 
 
             <form name="form" action="" method="POST" id="geocoding_form">

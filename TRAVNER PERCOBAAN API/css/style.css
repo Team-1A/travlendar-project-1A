@@ -6,26 +6,27 @@
 }
 
 body {
+
     background-size: 100%;
     background-color: #333333; 
    font-family:'HelveticaNeue','Arial', sans-serif;
     
 }
 #header {
-
+ position: fixed;
+ z-index: 9999; 
  width: 100%;
- height: 55px;
+ height: 60px;
  background:#4f9bff;
  text-align: center;
 }
 
 #header img{
 text-align: center;
-  align-content: center;
-  margin-top: 10px;
-
-  width: 70px;
-  height: 30px;
+align-content: center;
+margin-top: 10px;
+width: 70px;
+height: 30px;
 }
 
 
@@ -37,11 +38,14 @@ text-align: center;
   float: left;
   overflow: hidden;
   opacity: 1;
-  margin-top: 30px;
+  margin-top: 80px;
   background-color: #F8F9F9;
   border-radius: 5px;
   height:800px;
-  width: 600px;
+  width: 810px;
+}
+.content-left{
+  opacity: 1;
 }
 
 .right{
@@ -49,13 +53,18 @@ text-align: center;
   padding: 20px;
   overflow: hidden;
   opacity: 1;
-  margin-top: 30px;
+  margin-top: 80px;
   margin-left: 20px;
   margin-bottom: 20px;
   background-color:#F8F9F9;
   border-radius: 5px;
   height:800px;
-  width:690px;
+  width:810px;
+}
+.content-right{
+  position: absolute;
+  z-index: 2;
+  opacity: 99;
 }
 
 
@@ -67,8 +76,8 @@ text-align: center;
   text-align: center;
   }
 #calendar{
-  margin-left: 20px;
-  max-width: 520px;
+  margin: 20px;
+  max-width: 870px;
 }
 .fc button{
             height: 30px;
@@ -117,14 +126,14 @@ div.panel {
 }
 
 h1 {
-  font-size: 12px;
+  font-size: 18px;
   text-align: center;  
 }
 h2{
-  font-size: 10px;
+  font-size: 16px;
 }
 p{
-  font-size: 10px;
+  font-size: 14px;
 }
 
 
@@ -146,7 +155,9 @@ input[type="date"]{
 }
 
 input[type="time"]{
-  
+  background-image: url('css/clock.svg');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
   width: 25%;
   margin-left: 50px;
 }
