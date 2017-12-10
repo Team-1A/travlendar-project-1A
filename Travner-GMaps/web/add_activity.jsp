@@ -1,33 +1,35 @@
+<%-- 
+    Document   : index
+    Created on : Dec 4, 2017, 9:48:29 PM
+    Author     : Adhitya Noor Muslim
+--%>
 <!DOCTYPE html>
 
 <html>
 <head>
     
-	<title>Travner</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <title>Travner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!-- Google Maps JS API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s"></script>
 
-	
-        <!-- Google Maps JS API -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s"></script>
+    <!-- JQuery Library -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
 
-        <!-- JQuery Library -->
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+    <!-- GMaps Library -->
+    <script src="js/gmaps.js"></script>
 
-        <!-- GMaps Library -->
-        <script src="Test_Gmaps_API/gmaps.js"></script>
-    
-<link href="css/fullcalendar.min.css" rel="stylesheet">
-<link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
-<link rel="stylesheet" type="text/css" href="css/index.css">
-<link rel="stylesheet" type="text/css" href="css/map.css">
-<link rel="stylesheet" type="text/css" href="css/responsive_index.css">
+    <link href="css/fullcalendar.min.css" rel="stylesheet">
+    <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/map.css">
 
-<script type="text/javascript" src="js/moment.min.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/fullcalendar.min.js"></script>
-<script type="text/javascript" src="js/accordion_activity.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="js/accordion_activity.js"></script>
 
 </head>
 
@@ -39,22 +41,138 @@
         </div>
         
         <div id="main">
-            
             <!--calendar-->
-	    <div class="left">
-		  <div id='calendar'></div>
-        </div>
+	    <div class="left">           
+		  <div id='calendar'></div>           
+            </div>
 
     <!--Tab Utama-->
 	<div class="right">
-               
-        <a href="add_activity.html"><button class="activity">Add Activity</button></a>
-        <img src="css/Travner1.png">
-    </div>
+        
+            <!--form1--> 
+            <form id="regForm" action="${pageContext.request.contextPath}/Travner" method="POST"></form>
+            <form name="form" action="" method="POST" id="geocoding_form"></form>
+            
+            <div class="tab">
+                <h1>Add Activity</h1><br>
+                <h2>Title</h2>
+                <p>give a name to your activity</p>
+                <p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName" form="regForm"></p><br>
+                <h2>Time of Activity</h2><br>
+                <p>When does the activity started?<p>
+                <p><input form="regForm" type="date" name="startday"><img src="css/calendar.svg"> <input form="regForm" type="time" name="starttime"><img src="css/clock.svg"></p>
+                <p>When does the activity ended?<p>
+                <p><input form="regForm" type="date" name="endday"><img src="css/calendar.svg"> <input form="regForm" type="time" name="endtime"><img src="css/clock.svg"></p>
+                <p>spare time(if you want to come earlier before the activity start)<p>
+                <p><input form="regForm" type="radio" name="sparetime" value="none" checked> none
+                   <input form="regForm" type="radio" name="sparetime" value="fivemins"> 5 mins
+                   <input form="regForm" type="radio" name="sparetime" value="tenmins"> 10 mins
+                   <input form="regForm" type="radio" name="sparetime" value="fifteenmins"> 15 mins</p>
+            </div>
 
-    
-                   
-	<!-- script calendar -->
+            <div class="tab">	       
+                <h1>Add Location</h1>
+
+                <p>Lokasi awal :</p>
+                <input type="location" id="orig" size="50" name="orig" form="geocoding_form"/>
+                <input type="submit" value="Search" name="searchorig" form="geocoding_form"/>
+                <label class="switch">
+                        <input type="checkbox" id="mark1" form="geocoding_form">
+                        <span class="slider round"></span>
+                </label><br>
+
+                <p>Lokasi tujuan :</p> 
+                <input type="Location" id="dest" size="50" name="dest" form="geocoding_form"/>
+                <input type="submit" value="Search" name="searchdest" form="geocoding_form"/>
+                <label class="switch">
+                        <input type="checkbox" id="mark2" form="geocoding_form">
+                        <span class="slider round"></span>
+                </label>
+
+                <input form="regForm" type="Hidden" id="getOrig" name="Orig">
+                <input form="regForm" type="Hidden" id="getDest" name="Dest">
+                <input form="regForm" type="Hidden" id="getDist" name="Dist">
+                <input form="regForm" type="Hidden" id="lat1" name="marker1_lat">
+                <input form="regForm" type="Hidden" id="lng1" name="marker1_lng">
+                <input form="regForm" type="Hidden" id="lat2" name="marker2_lat">
+                <input form="regForm" type="Hidden" id="lng2" name="marker2_lng">
+        
+                <div id="map">Maps Event</div>
+	
+            </div>	
+            		
+            <div class="tab">
+                <h1>Recommendation Transportation Mode</h1>
+                <p>Estimated you will arrive at "07:30" by uaing these transportation mode</p>
+
+                <table>    
+                    <tr>
+                        <td><img src="css/car.svg"></td>
+                        <td>80 mins</td>
+                        <td>Leave at 8.45 AM</td>
+                        <td><img src="css/route.svg"></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="css/motorcycle.svg"></td>
+                        <td>180 mins</td>
+                        <td>Leave at 9.00 AM</td>
+                        <td><img src="css/route.svg"></td>  
+                    </tr>
+
+                    <tr>
+                        <td><img src="css/plane.svg"></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><img src="css/route.svg"></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="css/walk.svg"></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><img src="css/route.svg"></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="css/bicycle.svg"></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><img src="css/route.svg"></td>
+                    </tr>
+                </table>
+    			
+    		<select name="transportation">
+                    <option value="car">Car</option>
+                    <option value="plane">Plane</option>
+                    <option value="motorcycle">Motorcycle</option>
+                    <option value="walk">Walk</option>
+                    <option value="bicycle">bicycle</option>
+                </select>
+			
+            </div>
+
+            <div style="overflow:auto;">
+                <div style="float:right;"><br>
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
+            </div>
+  
+  		
+  	<!-- Circles which indicates the steps of the form: -->
+        
+            <div style="text-align:center;margin-top:20px;">
+    		<span class="step"></span>
+    		<span class="step"></span>
+    		<span class="step"></span>
+            </div>
+	<!--</form>-->
+        
+	</div>
+
+
+	<!--script calendar-->
 <script>
   $(document).ready(function() {
 
@@ -75,7 +193,7 @@
           start: '2017-09-19T04:30:00',
           end: '2017-09-19T16:10:00'
         },
- 
+
 		{
           title: 'Sampai di Bandara Kendari',
           start: '2017-09-19T11:10:00',
@@ -99,7 +217,7 @@
   });
 
 </script>
-    <!-- Script Gmaps -->
+
 <script>
             // JQuery
             $(document).ready(function () {  // Ketika web udah siap
@@ -183,7 +301,7 @@
                                     lat2 = document.getElementById("lat2"),
                                     lng2 = document.getElementById("lng2");
 
-                                    if (status == "OK") {
+                                    if (status === "OK") {
                                         dest.value = response.destinationAddresses[0];
                                         orig.value = response.originAddresses[0];
                                         getDist.value = response.rows[0].elements[0].distance.text;
@@ -252,7 +370,7 @@
                                     lat2 = document.getElementById("lat2"),
                                     lng2 = document.getElementById("lng2");
 
-                                    if (status == "OK") {
+                                    if (status === "OK") {
                                         dest.value = response.destinationAddresses[0];
                                         orig.value = response.originAddresses[0];
                                         getDist.value = response.rows[0].elements[0].distance.text;
@@ -276,7 +394,7 @@
                     GMaps.geocode({
                         address: $('#orig').val().trim(),
                         callback: function (results, status) {
-                            if (status == 'OK') {
+                            if (status === 'OK') {
                                 var latlng = results[0].geometry.location;
                                 mapObj.setCenter(latlng.lat(), latlng.lng());
                                 if (a) {
@@ -330,7 +448,7 @@
                                         lat2 = document.getElementById("lat2"),
                                         lng2 = document.getElementById("lng2");
 
-                                        if (status == "OK") {
+                                        if (status === "OK") {
                                             dest.value = response.destinationAddresses[0];
                                             orig.value = response.originAddresses[0];
                                             getDist.value = response.rows[0].elements[0].distance.text;
@@ -355,7 +473,7 @@
                     GMaps.geocode({
                         address: $('#dest').val().trim(),
                         callback: function (results, status) {
-                            if (status == 'OK') {
+                            if (status === 'OK') {
                                 var latlng = results[0].geometry.location;
                                 mapObj.setCenter(latlng.lat(), latlng.lng());
                                 if (b) {
@@ -409,7 +527,7 @@
                                         lat2 = document.getElementById("lat2"),
                                         lng2 = document.getElementById("lng2");
 
-                                        if (status == "OK") {
+                                        if (status === "OK") {
                                             dest.value = response.destinationAddresses[0];
                                             orig.value = response.originAddresses[0];
                                             getDist.value = response.rows[0].elements[0].distance.text;
@@ -442,7 +560,7 @@
                 });
             }); // tutup JQuery    
         </script>     
-    <!-- script tab -->
+
 <script>
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the crurrent tab
@@ -452,25 +570,25 @@ function showTab(n) {
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
   //... and fix the Previous/Next buttons:
-  if (n == 0) {
+  if (n === 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-  if (n == (x.length - 1)) {
+  if (n === (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Submit";
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
   //... and run a function that will display the correct step indicator:
-  fixStepIndicator(n)
+  fixStepIndicator(n);
 }
 
 function nextPrev(n) {
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
+  if (n === 1 && !validateForm()) return false;
   // Hide the current tab:
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
@@ -493,7 +611,7 @@ function validateForm() {
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
-    if (y[i].value == "") {
+    if (y[i].value === "") {
       // add an "invalid" class to the field:
       y[i].className += " invalid";
       // and set the current valid status to false
@@ -517,17 +635,10 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 </script>
+
+
 		
-		</div>
-
-	</div>
-
-</div>
-	
-</div>
-
-
-	</body>
-
-
+        </div>
+    </div>
+</body>
 </html>

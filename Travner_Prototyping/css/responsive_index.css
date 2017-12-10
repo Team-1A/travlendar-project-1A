@@ -37,8 +37,8 @@
 
 .left{
 
-  margin-left:40px;
-  margin-right: 40px; 
+  margin-left:20px;
+  margin-right: 20px; 
   padding:30px;
   float: left;
   overflow: hidden;
@@ -55,8 +55,8 @@
   overflow: hidden;
   opacity: 1;
   margin-top: 30px;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
   margin-bottom: 20px;
   background-color:#F8F9F9;
   border-radius: 5px;
@@ -137,6 +137,11 @@ body {
             
         }
 
+input[type="radio"]{
+  margin: 2px;
+  font-size: 3px;
+  width: 2%;
+}
 
 
 }
