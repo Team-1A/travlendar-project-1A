@@ -226,7 +226,7 @@ public class Travner extends HttpServlet {
             ActivityDAO.save(act);
             
             //act.setSpare_Time(Spare_Time);
-            response.sendRedirect("./add_activity.jsp");
+            response.sendRedirect("./index.jsp");
     }
     
     private void responseJson(HttpServletResponse response, String strJson)
