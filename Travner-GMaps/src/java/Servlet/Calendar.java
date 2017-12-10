@@ -64,7 +64,16 @@ public class Calendar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        List<Activity> listAct = ActivityDAO.getAll(1);
+        List<Activity_JSON> listActJSON = new ArrayList<>();
+        listAct.forEach((Activity act)->{
+            Activity_JSON actJSON = new Activity_JSON(act.getActivity_ID(),act.getActivity_Name(),act.getTime_Start(),act.getTime_End());
+            listActJSON.add(actJSON);
+        });
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.write(new Gson().toJson(listActJSON));
     }
 
     /**
