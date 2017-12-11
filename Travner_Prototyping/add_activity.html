@@ -10,11 +10,16 @@
     <!-- Google Maps JS API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s"></script>
     
+    <!-- Travel Mode -->
+    <script src="https://maps.googleapis.com/maps/api/directions/json?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s"></script>   
+    
     <!-- JQuery Library -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
     
     <!-- GMaps Library -->
     <script src="Test_Gmaps_API/gmaps.js"></script>
+    
+    
     
     <link href="css/fullcalendar.min.css" rel="stylesheet">
     <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
@@ -27,45 +32,16 @@
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/fullcalendar.min.js"></script>
     <script type="text/javascript" src="js/accordion_activity.js"></script>
-     <script type="text/javascript" src="js/index.js"></script>
+
 </head>
 
 
 <body>
     <div id="main">
-            <div id="header"><!--header-->
-                <img src="css/Assets/icon/logo.png">
-                <div class="account-btn">
-                   
-                    <img class="account-img" src="css/Assets/icon/chevron-pointing-to-the-left.svg" style="width: 10px ; height:10px;"/>
-                </div>
-            
-            <div id="account-panel">
-
-            <div class="account-header">
-
-                <div id="profile-pic"></div>
-                <div id="profile-details">
-                    <h1>Adhitya</h1>
-                    <h2>JustAdhita3798@gmail.com<h2>
-                    <div id="profile-buttons">
-                        <div class="view-profile">View Profile</div>
-                        <div class="add-account" >Activities</div>
-                    </div>
-                </div>
-
-            </div><!--end account-header-->
-
-            <div class="account-menu">
-
-                <ul class="account-menu-list">
-                    <a href=index.html> <li>Sign Out</li> </a>
-                </ul>
-
-            </div><!--end account-menu-->
-
+        <div id="header"><!--header-->
+            <img src="css/Assets/icon/logo.png">
         </div>
-            </div>
+        
         <div id="main">
             <!--calendar-->
 	    <div class="left">
@@ -109,7 +85,8 @@
 
                         <p>Lokasi tujuan :</p> 
                         <p><input type="location" id="dest" size="50" name="dest"/>
-                        <input type="submit" value="Search" name="searchdest" /></p>
+                            <input type="submit" value="Search" name="searchdest" />
+                        </p>
                         <!-- <p><label class="switch">
                         <input type="checkbox" id="mark2">
                         <span class="slider round"></span>
@@ -138,51 +115,45 @@
                     <h1>Recommendation Transportation Mode</h1>
                     <p>Estimated you will arrive at "07:30" by uaing these transportation mode</p><br> <!--estimasi waktu sementara-->
                     <div class="outline">
-                        <table>
+                        <div id="mode">
+                            <table>
                             <!--Perjalanan dengan mobil-->
                             <tr>
-                                <td><img src="css/Assets/icon/car.svg"></td>
-    				<td>80 mins</td>
+                                <td value="DRIVING"><img src="css/Assets/icon/car.svg"></td>
+    				<td></td>
     				<td>Leave at 8.45 AM</td>
-                                <td>
-                                    <img src="css/Assets/icon/route.svg"></td>
+                                <td><img src="css/Assets/icon/route.svg"></td>
                             </tr>
                             <!--Perjalanan dengan motor-->
                             <tr>
-                                <td><img src="css/Assets/icon/motorcycle.svg"></td>
+                                <td value="DRIVING"><img src="css/Assets/icon/motorcycle.svg"></td>
                                 <td>180 mins</td>
                                 <td>Leave at 9.00 AM</td>
                                 <td><img src="css/Assets/icon/route.svg"></td>
                             </tr>
                             <!--Perjalanan dengan pesawat-->
                             <tr>
-                                <td><img src="css/Assets/icon/plane.svg"></td>
+                                <td value="TRANSIT"><img src="css/Assets/icon/plane.svg"></td>
                                 <td>-</td>
                                 <td>-</td>
                                 <td><img src="css/Assets/icon/route.svg"></td>
                             </tr>
                             <!--Perjalanan dengan sepeda-->
                             <tr>
-                                <td><img src="css/Assets/icon/bicycle.svg"></td>
+                                <td value="BICYCLING"><img src="css/Assets/icon/bicycle.svg"></td>
                                 <td>-</td>
                                 <td>-</td>
                                 <td><img src="css/Assets/icon/route.svg"></td>
                             </tr>
                             <!--Perjalanan dengan berjalan kaki-->
                             <tr>
-                                <td><img src="css/Assets/icon/walk.svg"></td>
+                                <td value="WALKING"><img src="css/Assets/icon/walk.svg"></td>
                                 <td>-</td>
                                 <td>-</td>
                                 <td><img src="css/Assets/icon/route.svg"></td>
                             </tr>
-                            <!--Perjalanan dengan sepeda-->
-                            <tr>
-                                <td><img src="css/Assets/icon/bicycle.svg"></td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td><img src="css/Assets/icon/route.svg"></td>
-                            </tr>
-                        </table>
+                            </table>
+                        </div>
                     </div>
                     <br><select name="transportation">
                         <option value="car">Car</option>
@@ -336,6 +307,7 @@
                                 {
                                     var orig = document.getElementById("orig"),
                                     dest = document.getElementById("dest"),
+                                    trans = document.getElementById("mode"),
                                     getOrig = document.getElementById("getOrig"),
                                     getDest = document.getElementById("getDest"),
                                     getDist = document.getElementById("getDist"),
@@ -347,6 +319,7 @@
                                     if (status == "OK") {
                                         dest.value = response.destinationAddresses[0];
                                         orig.value = response.originAddresses[0];
+                                        trans.value = response.travelMode[0];
                                         getDist.value = response.rows[0].elements[0].distance.text;
                                         getOrig.value = orig.value;
                                         getDest.value = dest.value;
@@ -354,6 +327,7 @@
                                         lng1.value = marker1pos.lng();
                                         lat2.value = marker2pos.lat();
                                         lng2.value = marker2pos.lng();
+                                        
                                     } else {
                                         alert("Error: " + status);
                                     }
@@ -408,6 +382,7 @@
                                     getOrig = document.getElementById("getOrig"),
                                     getDest = document.getElementById("getDest"),
                                     getDist = document.getElementById("getDist"),
+                                    trans = document.getElementById("trans");
                                     lat1 = document.getElementById("lat1"),
                                     lng1 = document.getElementById("lng1"),
                                     lat2 = document.getElementById("lat2"),
@@ -416,9 +391,11 @@
                                     if (status == "OK") {
                                         dest.value = response.destinationAddresses[0];
                                         orig.value = response.originAddresses[0];
+                                        trans.value = response.travelMode[0];
                                         getDist.value = response.rows[0].elements[0].distance.text;
                                         getOrig.value = orig.value;
                                         getDest.value = dest.value;
+                                        trans.value = travelMode.value;
                                         lat1.value = marker1pos.lat();
                                         lng1.value = marker1pos.lng();
                                         lat2.value = marker2pos.lat();
