@@ -91,6 +91,8 @@ CREATE TABLE `activity` (
   CONSTRAINT `FK_RELATIONSHIP_1` FOREIGN KEY (`TRAVEL_ID`) REFERENCES `travel` (`TRAVEL_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+ALTER TABLE `activity` CHANGE `ACTIVITY_ID` `ACTIVITY_ID` INT(11) NOT NULL AUTO_INCREMENT;
+
 /*Data for the table `activity` */
 
 insert  into `activity`(`ACTIVITY_ID`,`TRAVEL_ID`,`USER_ID`,`ACTIVITY_NAME`,`TIME_START`,`TIME_END`,`SPARE_TIME`) values (1,1,1,'Menunggu keberangkatan pesawat ke kendari','2017-09-19 05:10:00','2017-09-19 05:10:00','00:40:00'),(2,2,1,'Sampai di bandara Kendari','2017-09-19 11:10:00','2017-09-19 11:10:00','00:00:00'),(3,3,1,'Sampai di hotel untuk ishoma Tartil dan diskusi dengan depar','2017-09-19 12:30:00','2017-09-19 15:00:00','00:30:00'),(4,4,1,'Makan sore','2017-09-19 15:30:00','2017-09-19 16:30:00','00:00:00'),(5,5,1,'Kunjungan korban Narkoba','2017-09-19 17:00:00','2017-09-19 18:30:00','00:12:00'),(6,6,1,'Kembali ke hotel','2017-09-19 19:00:00','2017-09-19 00:00:00','00:00:00');
