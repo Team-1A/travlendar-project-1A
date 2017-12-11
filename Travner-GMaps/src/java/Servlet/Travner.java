@@ -13,16 +13,11 @@ import Model.Activity;
 import Model.Location;
 import Model.Travel;
 import Model.User_Account;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import java.sql.SQLException;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -38,7 +33,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "Travner", urlPatterns = {"/Travner"})
 public class Travner extends HttpServlet {
-    ObjectMapper mapper;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -113,21 +107,7 @@ public class Travner extends HttpServlet {
 
     @SuppressWarnings("empty-statement")
     public void DisplayActCalendar(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
-//            java.sql.Date eventDate = null;
-
-            List<Activity> Act = ActivityDAO.getAll(1);
-            Activity ac = Act.get(5);
-            
-            try
-                {
-                    String jsonStr = this.mapper.writeValueAsString(ac);           
-                    this.responseJson(response, jsonStr);;
-                }
-                catch (JsonProcessingException ex)
-                {
-                    ex.printStackTrace();
-                }
-            
+        //TODO Write a Code
     }
     
     public void getDataLoc(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
