@@ -29,7 +29,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author kivla
+ * @author KIVLAN AZIZ AL-FALAAH
  */
 @WebServlet(name = "Travner", urlPatterns = {"/Travner"})
 public class Travner extends HttpServlet {
@@ -110,12 +110,17 @@ public class Travner extends HttpServlet {
         //TODO Write a Code
     }
     
-    public void getDataLoc(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
+    public void getDataUser(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
         
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             
             List<User_Account> users = User_AccountDAO.getUser(username, password);
+            if (users.isEmpty()){
+                //TODO : Send Message to Client User Not Found!
+            } else {
+                
+            }
     }
     
     public void getData(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
