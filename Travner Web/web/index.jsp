@@ -22,7 +22,7 @@
         <!-- GMaps Library -->
         <script src="Test_Gmaps_API/gmaps.js"></script>
     
-    <link href="css/fullcalendar.min.css" rel="stylesheet">
+<link href="css/fullcalendar.min.css" rel="stylesheet">
 <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/map.css">
