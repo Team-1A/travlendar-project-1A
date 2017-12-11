@@ -1,273 +1,170 @@
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-    background-size: 100%;
-    background-color: #333333; 
-    font-family: 'Quicksand', sans-serif;
+body{
+background-image: url(Assets/BackGround.jpg);
+background-size: cover;
+font-family:'HelveticaNeue','Arial', sans-serif;
 
 }
-#header {
-  z-index: 9999;
-position: fixed;
- width: 100%;
- height: 55px;
- background:#4f9bff;
- text-align: center;
+a{color:#58bff6;text-decoration: none;}
+a:hover{color:#aaa; }
+.pull-right{float: right;}
+.pull-left{float: left;}
+.clear-fix{clear:both;}
+div.logo{text-align: center; margin: 20px 20px 30px 20px; fill: #566375;}
+
+div.logo img{
+	width:180px;
+	height:100px;
 }
 
-#header img{
-text-align: center;
-  align-content: center;
-  margin-top: 10px;
-
-  width: 70px;
-  height: 30px;
+div.CloseSignup img{
+	width:10px;
+	height:10px;
 }
 
-
-
-.left{
-
-  margin-left:20px; 
-  padding:30px;
-  float: left;
-  overflow: hidden;
-  opacity: 1;
-  margin-top: 80px;
-  background-color: #F8F9F9;
-  border-radius: 5px;
-  height:500px;
-  width: 600px;
-}
-
-.right{
-  float: left;
-  padding: 20px;
-  overflow: hidden;
-  opacity: 1;
-  margin-top: 80px;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  background-color:#F8F9F9;
-  border-radius: 5px;
-  height:500px;
-  width:690px;
-}
-.right img{
-  opacity: 0.2;
-  margin-top: 60px;
-  margin-right: 80px;
-  margin-left: 80px; 
-  width: 520px;
-  height: 250px;   
-}
-
-.footer{
-  margin-top: 20px;
-  font-size: 14px;
-  opacity: 0.5;
-  color: white;
-  text-align: center;
-  }
-
-#calendar{
-overflow: hidden;
-margin: 20px;
-max-width: 520px;
-height: 800px;
-}
-.fc-center{
-  font-size: 16px;
-
-}
-.fc button{
-            height: 30px;
-            width: 55px;
-        }
-.fc button, .fc table, body .fc{
-        font-size: 12px;
-            
-        }
-
-
-
-button.activity {
-    font-weight: bold;
-    border-radius: 5px; 
-    background-color: #2980B9; 
-    color: white;
-    cursor: pointer;
-    padding: 2px;
-    width: 100%;
-    height: 80px;
-    border: none;
-    text-align: center;
-    outline: none;
-    font-size: 16px;
-    transition: 0.4s;
-}
-
-button.accordion.active, button.accordion:hover {
+.logo-active{
+ 
     
-    background-color: #2980B9; 
-    color: white;
+    }
+
+#formWrapper{
+	background: rgba(0,0,0,.2); 
+	width:100%; 
+	height:100%; 
+	position: absolute; 
+	top:0; 
+	left:0;
+	transition:all .3s ease;}
+.darken-bg{background: rgba(0,0,0,.5) !important; transition:all .3s ease;}
+
+div#form{
+	position: absolute;
+	width:360px;
+	height:320px;
+	height:auto;
+	background-color: #fff;
+	margin:auto;
+	border-radius: 5px;
+	padding:20px;
+	left:50%;
+	top:50%;
+	margin-left:-180px;
+	margin-top:-200px;
+}
+div.form-item{position: relative; display: block; margin-bottom: 20px;}
+ input{transition: all .2s ease;}
+ input.form-style{
+	color:#8a8a8a;
+	display: block;
+	width: 90%;
+	height: 44px;
+	padding: 5px 5%;
+	border:1px solid #ccc;
+	-moz-border-radius: 27px;
+	-webkit-border-radius: 27px;
+	border-radius: 27px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	background-color: #fff;
+	font-family:'HelveticaNeue','Arial', sans-serif;
+	font-size: 105%;
+	letter-spacing: .8px;
+}
+div.form-item .form-style:focus{outline: none; border:1px solid #58bff6; color:#58bff6; }
+div.form-item p.formLabel {
+	position: absolute;
+	left:26px;
+	top:2px;
+	transition:all .4s ease;
+	color:#bbb;}
+.formTop{top:-22px !important; left:26px; background-color: #fff; padding:0 5px; font-size: 14px; color:#58bff6 !important;}
+.formStatus{color:#8a8a8a !important;}
+input[type="submit"].login{
+	float:right;
+	width: 112px;
+	height: 37px;
+	-moz-border-radius: 19px;
+	-webkit-border-radius: 19px;
+	border-radius: 19px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	background-color: #55b1df;
+	border:1px solid #55b1df;
+	border:none;
+	color: #fff;
+	font-weight: bold;
+}
+input[type="submit"].login:hover{background-color: #fff; border:1px solid #55b1df; color:#55b1df; cursor:pointer;}
+input[type="submit"].login:focus{outline: none;}
+
+
+
+
+
+
+/*SignUPCSS*/
+
+.wrap {
+  position: absolute;
+  overflow: hidden;
+  top: 10%;
+  right: 10%;
+  bottom: 85px;
+  left: 10%;
+  padding: 20px 50px;
+  display: block;
+  border-radius: 4px;
+  transform: translateY(20px);
+  transition: all 0.5s;
+  visibility: hidden;
 }
 
-div.panel {
-    padding: 0 18px;
-    border: 1px solid #2980B9;;
-    display: none;
-    background-color: white;
+.wrap .content {
+  opacity: 0;
 }
-
-#regForm {
-  font-size: 10px;
-  margin: 1px auto;
-  padding: 40px;
-  width: 70%;
-  min-width: 300px;
-}
-p {
-  font-size: 10px;
-}
-
-h1 {
-  font-size: 12px;
-  font-weight: bold;
-  text-align: left;  
-}
-h2{
-  font-weight: bold;
-  font-size: 10px;
-}
-
-
-input {
-  background-color: white;
-  border-radius: 5px;
-  width: 93%;
-  height: 20px;
-  font-size: 12px;
-  border: 1px solid #aaaaaa;
-}
-label {
-  width: 10px;
-  height: 20px;
-}
-input[type="date"]{
-
-  
-  width: 45%;
-}
-
-input[type="time"]{
-  
-  width: 25%;
-  margin-left: 50px;
-}
-
-input[type="radio"]{
-  margin: 10px;
-  font-size: 7px;
-  width: 4%;
-  height: 2em;
-  border: 0px;
-}
-input[type="location"]{
-  font-size: 12px;
-  width: 80%;
-}
-
-input[type="submit"]{
-  font-weight: bold;
-  background-color:#4f9bff; 
-  font-size: 12px;
+.wrap:before {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  content: "";
+  bottom: 10px;
+  left: 50%;
+  top: 95%;
   color: #fff;
-  width: 10%;
-}
-
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-  background-color: #ffdddd;
-}
-
-/* Hide all steps by default: */
-.tab {
-  display: none;
-}
-
-button {
-  text-align: center;
-  height: 30px;
-  width: 80px;
-  font-weight: bold;
-  border-radius:5px;
-  background-color:  #2980B9; 
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-#prevBtn {
-
-  background-color: #2980B9;
-}
-
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 10px;
-  width: 10px;
-  margin: 0 2px;
-  background-color: #2980B9; 
-  border: none;  
   border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
+  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrap.active {
+  display: block;
+  visibility: visible;
+  box-shadow: 2px 3px 16px silver;
+  transition: all 600ms;
+  transform: translateY(0px);
+  transition: all 0.5s;
 }
 
-.step.active {
+.wrap.inactive {
+    visibility: hidden;
+    overflow: hidden;
+}
+.wrap.active:before {
+  height: 2000px;
+  width: 2000px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-left: -1000px;
+  margin-top: -1000px;
+  display: block;
+  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrap.active .content {
+  position: relative;
+  z-index: 1;
   opacity: 1;
+  transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #2980B9;
-}
-img{
-  margin-top: 5px;
-  width: 15px;
-  height: 15px;
-}
-#map{
-                width: 100%;
-                height: 200px;
-                border: 1px solid #a0a0a0;
-            }
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-

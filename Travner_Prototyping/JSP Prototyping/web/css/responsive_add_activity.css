@@ -1,0 +1,146 @@
+@media screen and (max-width: 1080px) {
+	
+.left{
+
+  margin-left:20px; 
+  padding:30px;
+  float: left;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 100px;
+  background-color: #F8F9F9;
+  border-radius: 5px;
+  height:800px;
+  width: 510px;
+}
+.right{
+  float: left;
+  padding: 20px;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 100px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-color:#F8F9F9;
+  border-radius: 5px;
+  height:800px;
+  width:460px;
+}
+
+input[type="submit"]{
+  margin: 2px;
+  background-color:#4f9bff; 
+  font-size: 8px;
+  color: #fff;
+  width: 10%;
+}
+}
+
+@media screen and (max-width: 780px){
+
+.left{
+
+  margin-left:40px;
+  margin-right: 40px; 
+  padding:30px;
+  float: left;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 100px;
+  background-color: #F8F9F9;
+  border-radius: 5px;
+  height:580px;
+  width: 700px;
+}
+.right{
+  float: left;
+  padding: 20px;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  background-color:#F8F9F9;
+  border-radius: 5px;
+  height:800px;
+  width:700px;
+}
+.right img{
+  width: 180px;
+  height: 90px;
+}
+
+#calendar{
+  margin-left: 20px;
+  max-width: 580px;
+}
+
+}
+@media screen and (max-width: 420px){
+
+body {
+    
+    background-color: #333333; 
+   font-family:'HelveticaNeue','Arial', sans-serif;
+    
+}
+
+#header {
+
+ width: 100%;
+ height: 55px;
+ background:#4f9bff;
+ text-align: center;
+}
+
+.left{
+
+  margin-left:10px;
+  margin-right: 10px; 
+  padding:30px;
+  float: left;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 100px;
+  background-color: #F8F9F9;
+  border-radius: 5px;
+  height:400px;
+  width: 95%;
+}
+.right{
+  float: left;
+  padding: 20px;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  background-color:#F8F9F9;
+  border-radius: 5px;
+  height:820px;
+  width:95%;
+}
+.right img{
+  width: 180px;
+  height: 90px;
+}
+#calendar{
+  margin-left: 20px;
+  max-width: auto;
+  max-height: 500px;
+}
+.fc button{
+            height: 15px;
+            width: 28px;
+        }
+.fc button, .fc table, body .fc{
+        font-size: 7px;
+            
+        }
+
+
+
+}
+
