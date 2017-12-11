@@ -76,7 +76,7 @@
               <div class="form-item">
                   <p class="formLabel">Password</p>
 			     <input type="password" name="password" id="password" class="form-style" />
-                  <!-- <div class="pw-view"><i class="fa fa-eye"></i></div> -->
+              
               </div>
             
 		      <div class="form-item">
