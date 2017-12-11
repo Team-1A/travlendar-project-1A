@@ -29,7 +29,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author kivla
+ * @author KIVLAN AZIZ AL-FALAAH
  */
 @WebServlet(name = "Travner", urlPatterns = {"/Travner"})
 public class Travner extends HttpServlet {
@@ -110,12 +110,17 @@ public class Travner extends HttpServlet {
         //TODO Write a Code
     }
     
-    public void getDataLoc(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
+    public void getDataUser(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
         
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             
             List<User_Account> users = User_AccountDAO.getUser(username, password);
+            if (users.isEmpty()){
+                //TODO : Send Message to Client User Not Found!
+            } else {
+                
+            }
     }
     
     public void getData(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
@@ -160,7 +165,7 @@ public class Travner extends HttpServlet {
             trav.setDeparture_Time(Departure_Time);
             
             List<Integer> id = TravelDAO.getID();
-            int size = id.size();
+            int size = id.get(id.size() - 1);
             int travID = size + 1;
             trav.setTravel_ID(travID);
             
@@ -206,7 +211,7 @@ public class Travner extends HttpServlet {
             ActivityDAO.save(act);
             
             //act.setSpare_Time(Spare_Time);
-            response.sendRedirect("./index.jsp");
+            response.sendRedirect("./Home.jsp");
     }
     
     private void responseJson(HttpServletResponse response, String strJson)

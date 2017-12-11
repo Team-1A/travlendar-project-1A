@@ -76,6 +76,9 @@
 	    <div class="left">
 		  <div id='calendar'></div>
         </div>
+            
+            <form id="regForm" action="${pageContext.request.contextPath}/Travner" method="POST"></form>
+            <form name="form" action="" method="POST" id="geocoding_form"></form>
             <!--Tab Utama-->
             <div class="right">
                 <a href="Home.jsp">
@@ -87,50 +90,47 @@
                     <h1>Add Activity</h1>
                     <h2>Title</h2>
                     <p>Give a name to your activity</p>
-                    <p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
+                    <p><input form="regForm" placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
                     <h2>Time of Activity</h2>
                     <p>When does the activity started?</p>
-                    <p><input type="date" name="day"><input type="time" name="time"></p>
+                    <p><input form="regForm" type="date" name="startday"><input form="regForm" type="time" name="starttime"></p>
                     <p>When does the activity ended?</p>
-                    <p><input type="date" name="day"><input type="time" name="time"></p>
-                    <p>spare time (if you want to come erlier before the activity start)<p>
+                    <p><input form="regForm" type="date" name="endday"><input form="regForm" type="time" name="endtime"></p>
+                    <p>spare time (if you want to come earlier before the activity start)<p>
                     <p>
-                        <input type="radio" name="sparetime" value="none" checked> none
-                        <input type="radio" name="sparetime" value="fivemins"> 5 mins
-                        <input type="radio" name="sparetime" value="tenmins"> 10 mins
-                        <input type="radio" name="sparetime" value="fifteenmins"> 15 mins
+                        <input form="regForm" type="radio" name="sparetime" value="none" checked> none
+                        <input form="regForm" type="radio" name="sparetime" value="fivemins"> 5 mins
+                        <input form="regForm" type="radio" name="sparetime" value="tenmins"> 10 mins
+                        <input form="regForm" type="radio" name="sparetime" value="fifteenmins"> 15 mins
                     </p><br>
-                    
-                    <form name="form" action="" method="POST" id="geocoding_form">
+
                         <h1>Add Location</h1>
                         
                         <p>Lokasi awal :</p>
-                        <p><input type="location" id="orig" size="50" name="orig" />
-                            <input type="submit" value="Search" name="searchorig" /></p>
+                        <p><input form="geocoding_form" type="location" id="orig" size="50" name="orig" />
+                            <input form="geocoding_form" type="submit" value="Search" name="searchorig" /></p>
                         <!--p><label class="switch">
                         <input type="checkbox" id="mark1">
                         <span class="slider_round"></span>
                         </label></p>-->        
 
                         <p>Lokasi tujuan :</p> 
-                        <p><input type="location" id="dest" size="50" name="dest"/>
-                        <input type="submit" value="Search" name="searchdest" /></p>
+                        <p><input form="geocoding_form"  type="location" id="dest" size="50" name="dest"/>
+                        <input form="geocoding_form" type="submit" value="Search" name="searchdest" /></p>
                         <!-- <p><label class="switch">
                         <input type="checkbox" id="mark2">
                         <span class="slider round"></span>
                         </label></p>-->
-                    </form>
                     
-                    <form name="form" action="${pageContext.request.contextPath}/LokasiController" method="POST">
-                        <input type="Hidden" id="getOrig" name="Orig">
-                        <input type="Hidden" id="getDest" name="Dest">
-                        <input type="Hidden" id="getDist" name="Dist">
-                        <input type="Hidden" id="lat1" name="marker1_lat">
-                        <input type="Hidden" id="lng1" name="marker1_lng">
-                        <input type="Hidden" id="lat2" name="marker2_lat">
-                        <input type="Hidden" id="lng2" name="marker2_lng">
+                        <input form="regForm" type="Hidden" id="getOrig" name="Orig">
+                        <input form="regForm" type="Hidden" id="getDest" name="Dest">
+                        <input form="regForm" type="Hidden" id="getDist" name="Dist">
+                        <input form="regForm" type="Hidden" id="lat1" name="marker1_lat">
+                        <input form="regForm" type="Hidden" id="lng1" name="marker1_lng">
+                        <input form="regForm" type="Hidden" id="lat2" name="marker2_lat">
+                        <input form="regForm" type="Hidden" id="lng2" name="marker2_lng">
                         <!--<input type="submit" value="Submit" name="submit" />-->
-                    </form>
+
                     <br><div id="map">Maps Event</div>
                     <!--
                     <div class="row">
@@ -189,12 +189,12 @@
                             </tr>
                         </table>
                     </div>
-                    <br><select name="transportation">
-                        <option value="car">Car</option>
-                        <option value="plane">Plane</option>
-                        <option value="motorcycle">Motorcycle</option>
-                        <option value="walk">Walk</option>
-                        <option value="bicycle">bicycle</option>
+                    <br><select form="regForm" name="transportation">
+                        <option form="regForm" value="car">Car</option>
+                        <option form="regForm" value="plane">Plane</option>
+                        <option form="regForm" value="motorcycle">Motorcycle</option>
+                        <option form="regForm" value="walk">Walk</option>
+                        <option form="regForm" value="bicycle">bicycle</option>
                     </select>
                 </div>
                 <!--Activity has been add-->
@@ -209,61 +209,33 @@
                     </div>
                 </div>
                 <!-- Circles which indicates the steps of the form: -->
-                <form id="regForm" action="/action_page.php">
+
                     <div style="text-align:center;">
                         <span class="step"></span>
     			<span class="step"></span>
     			<span class="step"></span>
     			<span class="step"></span>
                     </div>
-                </form>
+
             </div>
 
 
 	<!-- script calendar -->
 <script>
-  $(document).ready(function() {
-
+$(document).ready(function () {
     $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay,listWeek'
-      },
-      defaultDate: '2017-09-12',
-      navLinks: true, // can click day/week names to navigate views
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: [
-
-        {
-          title: 'Kegiatan di Bandara',
-          start: '2017-09-19T04:30:00',
-          end: '2017-09-19T16:10:00'
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay,listWeek'
         },
- 
-		{
-          title: 'Sampai di Bandara Kendari',
-          start: '2017-09-19T11:10:00',
-          end: '2017-09-19T11:30:00'
-        },
-
-		{
-          title: 'Pertemuan dengan Departement Agama',
-          start: '2017-09-19T12:00:00',
-          end: '2017-09-19T15:15:00'
-        },
-
-		{
-          title: 'Makan Sore',
-          start: '2017-09-19T15:30:00',
-          end: '2017-09-19T16:30:00'
-        }
-      ]
+        defaultDate: '2017-09-12',
+        navLinks: true, // can click day/week names to navigate views
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events
+        events: "/Travner-GMaps/Calendar"
     });
-
-  });
-
+});
 </script>
     <!-- Script Gmaps -->
 <script>
