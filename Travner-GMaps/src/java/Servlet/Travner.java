@@ -195,7 +195,7 @@ public class Travner extends HttpServlet {
             java.sql.Timestamp time_start = new java.sql.Timestamp(ts.getTime());
             java.sql.Timestamp time_end = new java.sql.Timestamp(te.getTime());
             
-            String spareTimex = null;
+            String spareTimex = "00:00:00";
             switch(spareTime){
                 case "fivemins":{
                     spareTimex = "00:05:00";  
