@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="Travner-GMaps" default="default" basedir=".">
-    <description>Builds, tests, and runs the project Travner-GMaps.</description>
+<project name="Travner-GMaps[PROTOTYPE]" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Travner-GMaps[PROTOTYPE].</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
