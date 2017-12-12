@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     
     <!-- Google Maps JS API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s&sensor=false&libraries=places" ></script>
     
     <!-- JQuery Library -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
@@ -85,6 +85,7 @@
                 
                 <!--Add Activity and Add Location-->
                 <div class="tab">
+                    
                     <h1>Add Activity</h1>
                     <h2>Title</h2>
                     <p>Give a name to your activity</p>
@@ -219,7 +220,53 @@
 
             <form id="regForm" action="${pageContext.request.contextPath}/Travner" method="POST"></form>
             <form name="form" action="" method="POST" id="geocoding_form"></form>
-	<!-- script calendar -->
+            
+           
+<script>
+    var inp_orig = document.getElementById("orig");
+    var inp_dest = document.getElementById("dest");
+    
+    var autocompleteorig = new google.maps.places.Autocomplete(inp_orig);
+    var autocompletedest = new google.maps.places.Autocomplete(inp_dest);
+    
+    autocompleteorig.addListener('place_changed', function() {
+          var place = autocompleteorig.getPlace();
+          if (!place.geometry) {
+            // User entered the name of a Place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            //window.alert("No details available for input: '" + place.name + "'");
+            return;
+            }
+          var addressOrig = '';
+          if (place.address_components) {
+            addressOrig = [
+              (place.address_components[0] && place.address_components[0].short_name || ''),
+              (place.address_components[1] && place.address_components[1].short_name || ''),
+              (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
+          }
+      });
+    
+    autocompletedest.addListener('place_changed', function() {
+          var place = autocompletedest.getPlace();
+          if (!place.geometry) {
+            // User entered the name of a Place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            //window.alert("No details available for input: '" + place.name + "'");
+            return;
+            }
+            var address = '';
+          if (place.address_components) {
+            address = [
+              (place.address_components[0] && place.address_components[0].short_name || ''),
+              (place.address_components[1] && place.address_components[1].short_name || ''),
+              (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
+          }
+      });
+</script>
+
+        <!-- script calendar -->
 <script>
 $(document).ready(function () {
     $('#calendar').fullCalendar({
