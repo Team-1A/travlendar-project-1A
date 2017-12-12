@@ -4,7 +4,7 @@
     Author     : netspv
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>s
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +14,7 @@
         <!--    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>-->
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <script src="https://code.jquery.com/jquery-2.1.0.min.js" ></script>
-        <script type="text/javascript" src="js/Index.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     </head>
     <body>
         <div id="formWrapper">

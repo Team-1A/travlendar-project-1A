@@ -1,7 +1,7 @@
 <%-- 
     Document   : add_activity
     Created on : Dec 4, 2017, 9:48:29 PM
-    Author     : Adhitya Noor Muslim
+    Author     : netspv
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -59,7 +59,7 @@
                     </div>
                 </div>
 
-            </div><!--end account-header-->s
+            </div><!--end account-header-->
 
             <div class="account-menu">
 
@@ -77,12 +77,10 @@
 		  <div id='calendar'></div>
         </div>
             
-            <form id="regForm" action="${pageContext.request.contextPath}/Travner" method="POST"></form>
-            <form name="form" action="" method="POST" id="geocoding_form"></form>
             <!--Tab Utama-->
             <div class="right">
                 <a href="Home.jsp">
-                    <p style="float: right;text-align: right;font-size: 20px;margin: 10px;"><b>X</p>
+                    <p style="float: right;text-align: right;font-size: 20px;margin: 10px;"><b>X</b><p>
                 </a><br><br>
                 
                 <!--Add Activity and Add Location-->
@@ -219,7 +217,8 @@
 
             </div>
 
-
+            <form id="regForm" action="${pageContext.request.contextPath}/Travner" method="POST"></form>
+            <form name="form" action="" method="POST" id="geocoding_form"></form>
 	<!-- script calendar -->
 <script>
 $(document).ready(function () {
@@ -688,4 +687,4 @@ window.onclick = function(event) {
         </div>
     </div>
 </body>
-</html>s
+</html>
