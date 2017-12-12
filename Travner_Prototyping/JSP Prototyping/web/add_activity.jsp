@@ -104,7 +104,7 @@
 
                         <h1>Add Location</h1>
                         
-                        <p>Lokasi awal :</p>
+                        <p>Starting Location :</p>
                         <p><input form="geocoding_form" type="location" id="orig" size="50" name="orig" />
                             <input form="geocoding_form" type="submit" value="Search" name="searchorig" /></p>
                         <!--p><label class="switch">
@@ -112,7 +112,7 @@
                         <span class="slider_round"></span>
                         </label></p>-->        
 
-                        <p>Lokasi tujuan :</p> 
+                        <p>Destination :</p> 
                         <p><input form="geocoding_form"  type="location" id="dest" size="50" name="dest"/>
                         <input form="geocoding_form" type="submit" value="Search" name="searchdest" /></p>
                         <!-- <p><label class="switch">
