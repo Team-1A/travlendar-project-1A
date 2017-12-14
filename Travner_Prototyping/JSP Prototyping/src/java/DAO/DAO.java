@@ -16,7 +16,8 @@ public class DAO {
     public static Connection getConnection(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/travner", "root", "");
+            connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3307/travner", "root", "");//khusus fadhil
+//            connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/travner", "root", "");//untuk kelompok
         } catch (ClassNotFoundException | SQLException ex){
             System.out.println(ex);
         }
