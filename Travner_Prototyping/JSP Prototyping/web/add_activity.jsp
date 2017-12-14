@@ -106,16 +106,16 @@
                                                 <h1>Add Location</h1>
 
                                                 <p>Starting Location :</p>
-                                                <p><input form="geocoding_form" type="location" id="orig" size="50" name="orig" />
-                                                    <input form="geocoding_form" type="submit" value="Search" name="searchorig" /></p>
+                                                <p><input type="location" id="orig" size="50" name="orig" />
+                                                    <input type="submit" value="Search" id="searchorig" /></p>
                                                 <!--p><label class="switch">
                                                 <input type="checkbox" id="mark1">
                                                 <span class="slider_round"></span>
                                                 </label></p>-->        
 
                                                 <p>Destination :</p> 
-                                                <p><input form="geocoding_form"  type="location" id="dest" size="50" name="dest"/>
-                                                    <input form="geocoding_form" type="submit" value="Search" name="searchdest" /></p>
+                                                <p><input type="location" id="dest" size="50" name="dest"/>
+                                                    <input type="button" value="Search" id="searchdest" /></p>
                                                 <!-- <p><label class="switch">
                                                 <input type="checkbox" id="mark2">
                                                 <span class="slider round"></span>
@@ -301,7 +301,7 @@
                                                     center: {lat: -34.397, lng: 150.644},
                                                     zoom: 13
                                                 });
-                                                
+
 //                                                event when map clicked
 //                                                google.maps.event.addListener(map, 'click', function (event) {
 //                                                    placeMarker(event.latLng);
@@ -331,21 +331,59 @@
                                                 } else {
                                                 }
 
-                                                $('#geocoding_form').submit(function (e) {
+                                                document.getElementById('searchorig').addEventListener('click', function () {
+                                                    geocodeOrig(geocoder, mapObj, marker1);
+                                                });
+
+                                                function geocodeOrig(geocoder, resultsMap, marker) {
                                                     var orig = document.getElementById('orig').value;
-                                                    geocoder.geocode({
-                                                        'address': orig
-                                                    }, function(results,status) {
-                                                        if(status == 'OK'){
-                                                            mapObj.setCenter(results[0].geometry.location);
-                                                            marker1 = new google.maps.Marker({
-                                                                map: mapObj,
+                                                    geocoder.geocode({address: orig}, function (results, status) {
+                                                        if (status === 'OK') {
+                                                            resultsMap.setCenter(results[0].geometry.location);
+                                                            marker = new google.maps.Marker({
+                                                                map: resultsMap,
                                                                 position: results[0].geometry.location
                                                             });
                                                         } else {
                                                             alert('Geocode was not successful for the following reason: ' + status);
                                                         }
                                                     });
+                                                }
+                                                
+                                                document.getElementById('searchdest').addEventListener('click', function () {
+                                                    geocodeDest(geocoder, mapObj, marker2);
+                                                });
+
+                                                function geocodeDest(geocoder, resultsMap, marker) {
+                                                    var dest = document.getElementById('dest').value;
+                                                    geocoder.geocode({address: dest}, function (results, status) {
+                                                        if (status === 'OK') {
+                                                            resultsMap.setCenter(results[0].geometry.location);
+                                                            marker = new google.maps.Marker({
+                                                                map: resultsMap,
+                                                                position: results[0].geometry.location
+                                                            });
+                                                        } else {
+                                                            alert('Geocode was not successful for the following reason: ' + status);
+                                                        }
+                                                    });
+                                                }
+
+//                                                $('#geocoding_form').submit(function (e) {
+//                                                    var orig = document.getElementById('orig').value;
+//                                                    geocoder.geocode({
+//                                                        address: orig
+//                                                    }, function (results, status) {
+//                                                        if (status == 'OK') {
+//                                                            mapObj.setCenter(results[0].geometry.location);
+//                                                            marker1 = new google.maps.Marker({
+//                                                                map: mapObj,
+//                                                                position: results[0].geometry.location
+//                                                            });
+//                                                        } else {
+//                                                            alert('Geocode was not successful for the following reason: ' + status);
+//                                                        }
+//                                                    });
 //                                                    GMaps.geocode({
 //                                                        address: $('#orig').val().trim(),
 //                                                        callback: function (results, status) {
@@ -415,23 +453,23 @@
 //                                                            }
 //                                                        }
 //                                                    });
-                                                });
+//                                                });
 
-                                                $('#geocoding_form').submit(function (e) {
-                                                    var dest = document.getElementById('dest').value;
-                                                    geocoder.geocode({
-                                                        address: dest
-                                                    }, function(results,status) {
-                                                        if(status == 'OK'){
-                                                            mapObj.setCenter(results[0].geometry.location);
-                                                            marker2 = new google.maps.Marker({
-                                                                map: mapObj,
-                                                                position: results[0].geometry.location
-                                                            });
-                                                        } else {
-                                                            alert('Geocode was not successful for the following reason: ' + status);
-                                                        }
-                                                    });
+//                                                $('#geocoding_form').submit(function (e) {
+//                                                    var dest = document.getElementById('dest').value;
+//                                                    geocoder.geocode({
+//                                                        address: dest
+//                                                    }, function (results, status) {
+//                                                        if (status == 'OK') {
+//                                                            mapObj.setCenter(results[0].geometry.location);
+//                                                            marker2 = new google.maps.Marker({
+//                                                                map: mapObj,
+//                                                                position: results[0].geometry.location
+//                                                            });
+//                                                        } else {
+//                                                            alert('Geocode was not successful for the following reason: ' + status);
+//                                                        }
+//                                                    });
 //                                                    GMaps.geocode({
 //                                                        address: $('#dest').val().trim(),
 //                                                        callback: function (results, status) {
@@ -501,30 +539,30 @@
 //                                                            }
 //                                                        }
 //                                                    });
-                                                });
+//                                                });
 
-                                                function displayRoute(directionsDisplay, directionsService, mapObj) {
-                                                    directionsService.route({
-                                                        origin: document.getElementById("orig").value,
-                                                        destination: document.getElementById("dest").value,
-                                                        travelMode: 'DRIVING'
-                                                    }, function (response, status) {
-                                                        if (status == google.maps.DirectionsStatus.OK) {
-                                                            for (var i = 0; i < response.routes.length; i++) {
-                                                                var poly = google.maps.Polyline({
-                                                                    map: mapObj,
-                                                                    path: response.routes[i].overview_path,
-                                                                    strokeColor: '#131540'
-                                                                });
-                                                                directionsDisplay.setRoute(i);
-                                                                directionsDisplay.setDirections(response);
-                                                            }
-                                                        } else {
-                                                            $("#error").append("Unable to retrieve your route<br />");
-                                                        }
-                                                    }
-                                                    );
-                                                }
+//                                                function displayRoute(directionsDisplay, directionsService, mapObj) {
+//                                                    directionsService.route({
+//                                                        origin: document.getElementById("orig").value,
+//                                                        destination: document.getElementById("dest").value,
+//                                                        travelMode: 'DRIVING'
+//                                                    }, function (response, status) {
+//                                                        if (status == google.maps.DirectionsStatus.OK) {
+//                                                            for (var i = 0; i < response.routes.length; i++) {
+//                                                                var poly = google.maps.Polyline({
+//                                                                    map: mapObj,
+//                                                                    path: response.routes[i].overview_path,
+//                                                                    strokeColor: '#131540'
+//                                                                });
+//                                                                directionsDisplay.setRoute(i);
+//                                                                directionsDisplay.setDirections(response);
+//                                                            }
+//                                                        } else {
+//                                                            $("#error").append("Unable to retrieve your route<br />");
+//                                                        }
+//                                                    }
+//                                                    );
+//                                                }
 
                                                 $('input#mark1').change(function () {
                                                     if ($(this).prop('checked')) {

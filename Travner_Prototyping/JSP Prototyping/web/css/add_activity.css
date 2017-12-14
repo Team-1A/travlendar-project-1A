@@ -219,7 +219,7 @@ input[type="location"]{
   width: 80%;
 }
 
-input[type="submit"]{
+input[type="button"]{
   margin: 2px;
   background-color:#4f9bff; 
   font-size: 12px;
