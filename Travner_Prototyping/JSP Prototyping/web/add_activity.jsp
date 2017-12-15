@@ -13,7 +13,8 @@
         <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
         <!-- Google Maps JS API -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s&sensor=false&libraries=places&callback=initMap" ></script>
+        <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s&sensor=false&libraries=places&callback=initMap" async defer ></script>-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkmRXiWxa2lmWdsxjcqahurk8g_rtHM1s&sensor=false&libraries=places" ></script>
 
         <!-- JQuery Library -->
         <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
