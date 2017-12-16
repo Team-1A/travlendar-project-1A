@@ -40,8 +40,8 @@ public class TravelDAO extends DAO{
         return travel;
     }
     
-    public static List<Integer> getID(){
-        List<Integer> id = new ArrayList<>();
+    public static ArrayList<Integer> getID(){
+        ArrayList<Integer> id = new ArrayList<>();
         try {
             java.sql.Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement("SELECT TRAVEL_ID FROM travel");
@@ -50,6 +50,23 @@ public class TravelDAO extends DAO{
             while(rs.next()){
                 int ID = rs.getInt("TRAVEL_ID");
                 id.add(ID);
+            }
+        } catch (SQLException ex){
+            System.out.println(ex);
+        }
+        disconnect();
+        return id;
+    }
+    
+    public static int getLastID(){
+        int id = 0;
+        try {
+            java.sql.Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("SELECT TRAVEL_ID FROM travel");
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                id = rs.getInt("TRAVEL_ID");
             }
         } catch (SQLException ex){
             System.out.println(ex);
@@ -73,7 +90,7 @@ public class TravelDAO extends DAO{
             java.sql.Timestamp Departure_Time = _travel.getDeparture_Time();
            
             
-            String sql = "INSERT INTO travel (TRAVEL_ID,STARTLOCATION_LONG,STARTLOCATION_LAT,DESTLOCATION_LONG,DESTLOCATION_LAT,TRANSPORTATION_MODE,DEPARTURE_TIME) VALUES(\"" + Travel_ID + "\",\"" + StartLocation_Long + "\",\"" + StartLocation_Lat + "\",\"" + DestLocation_Long + "\",\"" + DestLocation_Lat + "\",\"" + Transportation_Mode  + "\",\"" + Departure_Time +  "\");";
+            String sql = "INSERT INTO travel (STARTLOCATION_LONG,STARTLOCATION_LAT,DESTLOCATION_LONG,DESTLOCATION_LAT,TRANSPORTATION_MODE,DEPARTURE_TIME) VALUES(\"" + StartLocation_Long + "\",\"" + StartLocation_Lat + "\",\"" + DestLocation_Long + "\",\"" + DestLocation_Lat + "\",\"" + Transportation_Mode  + "\",\"" + Departure_Time +  "\");";
             stats = st.executeUpdate(sql);
         } catch (SQLException ex){
             System.out.println(ex);

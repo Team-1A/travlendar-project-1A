@@ -18,6 +18,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -181,10 +182,11 @@ public class Travner extends HttpServlet {
             java.sql.Timestamp Departure_Time = new java.sql.Timestamp(dt.getTime());
             trav.setDeparture_Time(Departure_Time);
             
-            List<Integer> id = TravelDAO.getID();
-            int size = id.get(id.size() - 1);
-            int travID = size + 1;
-            trav.setTravel_ID(travID);
+//            ArrayList<Integer> id = (ArrayList<Integer>) TravelDAO.getID();
+//            int test = id.size() - 1;
+//            Integer size = id.get(test);
+//            int travID = size + 1;
+//            trav.setTravel_ID(travID);
             
             TravelDAO.save(trav);
             
@@ -222,7 +224,8 @@ public class Travner extends HttpServlet {
             act.setSpare_Time(tms);
             act.setActivity_Name(activityName);
             
-            act.setTravel_ID(travID);
+            int idT = TravelDAO.getLastID();
+            act.setTravel_ID(idT);
             act.setUsername(this.username);
             
             ActivityDAO.save(act);
