@@ -117,6 +117,13 @@
                                                 <p>Destination :</p> 
                                                 <p><input type="location" id="dest" size="50" name="dest"/>
                                                     <input type="button" value="Search" id="searchdest" /></p>
+                                                
+                                                <select id="mode">
+                                                  <option value="DRIVING">Driving</option>
+                                                  <option value="WALKING">Walking</option>
+                                                  <option value="BICYCLING">Bicycling</option>
+                                                  <option value="TRANSIT">Transit</option>
+                                                </select>
                                                 <!-- <p><label class="switch">
                                                 <input type="checkbox" id="mark2">
                                                 <span class="slider round"></span>
@@ -425,10 +432,11 @@
                                                                 routes[i].setMap(null);
                                                             }
                                                         }
+                                                        var transportMode = document.getElementById('mode').value;
                                                         directionsService.route({
                                                             origin: document.getElementById('orig').value,
                                                             destination: document.getElementById('dest').value,
-                                                            travelMode: 'DRIVING',
+                                                            travelMode: google.maps.TravelMode[transportMode],
                                                             provideRouteAlternatives: true
                                                         }, function (response, status) {
                                                             if (status === 'OK') {
