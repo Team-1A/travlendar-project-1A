@@ -276,7 +276,7 @@
                                                         center: 'title',
                                                         right: 'month,agendaWeek,agendaDay,listWeek'
                                                     },
-                                                    defaultDate: '2017-09-12',
+                                                    defaultDate: '2017-12-12',
                                                     navLinks: true, // can click day/week names to navigate views
                                                     editable: true,
                                                     eventLimit: true, // allow "more" link when too many events
@@ -334,7 +334,19 @@
                                                     });
                                                 } else {
                                                 }
-
+                                                function geocodePosition(pos,marker) {
+                                                  geocoder.geocode({
+                                                    latLng: pos
+                                                  }, function(responses) {
+                                                    if (responses && responses.length > 0) {
+                                                      marker.formatted_address = responses[0].formatted_address;
+                                                    } else {
+                                                      marker.formatted_address = 'Cannot determine address at this location.';
+                                                    }
+                                                    infowindow.setContent(marker.formatted_address + "<br>coordinates: " + marker.getPosition().toUrlValue(6));
+                                                    infowindow.open(mapObj, marker);
+                                                  });
+                                                }
                                                 document.getElementById('searchorig').addEventListener('click', function () {
                                                     var orig = document.getElementById('orig').value;
                                                     if (a) {
@@ -343,9 +355,23 @@
                                                     geocoder.geocode({address: orig}, function (results, status) {
                                                         if (status === 'OK') {
                                                             mapObj.setCenter(results[0].geometry.location);
+                                                            //document.getElementById("lat1").value = results[0].geometry.location.lat();
                                                             marker1 = new google.maps.Marker({
                                                                 map: mapObj,
-                                                                position: results[0].geometry.location
+                                                                position: results[0].geometry.location,
+                                                                draggable: true
+                                                            });
+                                                            google.maps.event.addListener(marker1, 'dragend', function() {
+                                                                geocodePosition(marker1.getPosition(),marker1);
+                                                                document.getElementById('orig').value = marker1.formatted_address;
+                                                            });
+                                                            google.maps.event.addListener(marker1, 'click', function() {
+                                                                if (marker1.formatted_address) {
+                                                                  infowindow.setContent(marker1.formatted_address + "<br>coordinates: " + marker1.getPosition().toUrlValue(6));
+                                                                } else {
+                                                                  infowindow.setContent(orig + "<br>coordinates: " + orig.getPosition().toUrlValue(6));
+                                                                }
+                                                                infowindow.open(mapObj, marker1);
                                                             });
                                                         } else {
                                                             alert('Geocode was not successful for the following reason: ' + status);
@@ -364,7 +390,20 @@
                                                             mapObj.setCenter(results[0].geometry.location);
                                                             marker2 = new google.maps.Marker({
                                                                 map: mapObj,
-                                                                position: results[0].geometry.location
+                                                                position: results[0].geometry.location,
+                                                                draggable:true
+                                                            });
+                                                            google.maps.event.addListener(marker2, 'dragend', function() {
+                                                                geocodePosition(marker2.getPosition(),marker2);
+                                                                document.getElementById('dest').value = marker2.formatted_address;
+                                                            });
+                                                            google.maps.event.addListener(marker2, 'click', function() {
+                                                                if (marker2.formatted_address) {
+                                                                  infowindow.setContent(marker2.formatted_address + "<br>coordinates: " + marker2.getPosition().toUrlValue(6));
+                                                                } else {
+                                                                  infowindow.setContent(orig + "<br>coordinates: " + orig.getPosition().toUrlValue(6));
+                                                                }
+                                                                infowindow.open(mapObj, marker2);
                                                             });
                                                         } else {
                                                             alert('Geocode was not successful for the following reason: ' + status);
