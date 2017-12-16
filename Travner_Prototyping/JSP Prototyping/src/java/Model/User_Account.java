@@ -10,28 +10,14 @@ package Model;
  * @author Fadhil
  */
 public class User_Account {
-    private Integer User_ID;
+    private String Email;
     private String Username;
     private String Password;
     
     public User_Account(){
-        User_ID = 0;
+        Email = null;
         Username = null;
         Password = null;
-    }
-
-    /**
-     * @return the User_ID
-     */
-    public Integer getUser_ID() {
-        return User_ID;
-    }
-
-    /**
-     * @param User_ID the User_ID to set
-     */
-    public void setUser_ID(Integer User_ID) {
-        this.User_ID = User_ID;
     }
 
     /**
@@ -60,6 +46,20 @@ public class User_Account {
      */
     public void setPassword(String Password) {
         this.Password = Password;
+    }
+
+    /**
+     * @return the Email
+     */
+    public String getEmail() {
+        return Email;
+    }
+
+    /**
+     * @param Email the Email to set
+     */
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
     
 }

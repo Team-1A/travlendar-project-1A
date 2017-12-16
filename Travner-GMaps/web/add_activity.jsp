@@ -50,7 +50,7 @@
 	<div class="right">
         
             <!--form1--> 
-            <form id="regForm" action="${pageContext.request.contextPath}/Travner" method="POST"></form>
+            <form id="regForm" action="${pageContext.request.contextPath}/Travner?action=InputData" method="POST"></form>
             <form name="form" action="" method="POST" id="geocoding_form"></form>
             
             <div class="tab">

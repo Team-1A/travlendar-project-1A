@@ -25,12 +25,12 @@
                 <!-- masukkan email-->
                 <div class="form-item">
                     <p class="formLabel">Email</p>
-                    <input type="email" name="email" id="email" class="form-style" autocomplete="off"/>
+                    <input form="login" type="text" name="username" id="email" class="form-style" autocomplete="off"/>
                 </div>
                 <!-- masukkan password-->
                 <div class="form-item">
                     <p class="formLabel">Password</p>
-                    <input type="password" name="password" id="password" class="form-style" />
+                    <input form="login" type="password" name="password" id="password" class="form-style" />
                     <!-- <div class="pw-view"><i class="fa fa-eye"></i></div> -->
                     <!-- klik untuk lupa password-->
                     <p><a href="#" ><small>Forgot Password ?</small></a></p>
@@ -39,7 +39,7 @@
                     <!-- klik untuk membuat akun baru-->
                     <p class="pull-left"><a href="#"><small>Sign Up</small></a></p>
                     <a class='button glyphicon cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-                    <a href="Home.jsp"><input type="submit" class="login pull-right" value="Log In" ></a>
+                    <input form="login" type="submit" class="login pull-right" value="Log In" >
                     <div class="clear-fix"></div>
                 </div>
             </div>
@@ -77,5 +77,6 @@
                 </div>
             </div>
         </div>
+        <form id="login" action="${pageContext.request.contextPath}/Travner?action=Login" method="POST"></form>
     </body>
 </html>

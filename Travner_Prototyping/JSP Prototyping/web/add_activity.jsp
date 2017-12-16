@@ -129,9 +129,9 @@
                                                 <span class="slider round"></span>
                                                 </label></p>-->
 
-                                                <input form="regForm" type="Hidden" id="getOrig" name="Orig">
+                                                <!--<input form="regForm" type="Hidden" id="getOrig" name="Orig">
                                                 <input form="regForm" type="Hidden" id="getDest" name="Dest">
-                                                <input form="regForm" type="Hidden" id="getDist" name="Dist">
+                                                <!--<input form="regForm" type="Hidden" id="getDist" name="Dist">-->
                                                 <input form="regForm" type="Hidden" id="lat1" name="marker1_lat">
                                                 <input form="regForm" type="Hidden" id="lng1" name="marker1_lng">
                                                 <input form="regForm" type="Hidden" id="lat2" name="marker2_lat">
@@ -226,7 +226,7 @@
 
                                         </div>
 
-                                        <form id="regForm" action="${pageContext.request.contextPath}/Travner" method="POST"></form>
+                                        <form id="regForm" action="${pageContext.request.contextPath}/Travner?action=InputData" method="POST"></form>
                                         <form name="form" action="" method="POST" id="geocoding_form"></form>
 
 
@@ -287,7 +287,7 @@
                                                     navLinks: true, // can click day/week names to navigate views
                                                     editable: true,
                                                     eventLimit: true, // allow "more" link when too many events
-                                                    events: "/Travner-GMaps/Calendar"
+                                                    events: "/JSP_Prototyping/Calendar"
                                                 });
                                             });
                                         </script>
@@ -371,6 +371,8 @@
                                                             google.maps.event.addListener(marker1, 'dragend', function() {
                                                                 geocodePosition(marker1.getPosition(),marker1);
                                                                 document.getElementById('orig').value = marker1.formatted_address;
+                                                                document.getElementById('lat1').value = marker1.getPosition().lat();
+                                                                document.getElementById('lng1').value = marker1.getPosition().lng();
                                                             });
                                                             google.maps.event.addListener(marker1, 'click', function() {
                                                                 if (marker1.formatted_address) {
@@ -403,6 +405,8 @@
                                                             google.maps.event.addListener(marker2, 'dragend', function() {
                                                                 geocodePosition(marker2.getPosition(),marker2);
                                                                 document.getElementById('dest').value = marker2.formatted_address;
+                                                                document.getElementById('lat2').value = marker2.getPosition().lat();
+                                                                document.getElementById('lng2').value = marker2.getPosition().lng();
                                                             });
                                                             google.maps.event.addListener(marker2, 'click', function() {
                                                                 if (marker2.formatted_address) {

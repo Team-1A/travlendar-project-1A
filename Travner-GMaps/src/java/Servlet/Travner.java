@@ -33,6 +33,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "Travner", urlPatterns = {"/Travner"})
 public class Travner extends HttpServlet {
+    String username = null;
+    String password = null;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -96,12 +98,23 @@ public class Travner extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            getData(request,response);
-        } catch (SQLException ex) {
-            Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ParseException ex) {
-            Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
+        String param = request.getParameter("action");
+        
+        switch(param){
+            case "InputData":{
+                try {
+                    getData(request,response);
+                } catch (SQLException | ParseException ex) {
+                    Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            case "Login":{
+                try {
+                    getDataUser(request,response);
+                } catch (SQLException | ParseException ex) {
+                    Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
     }
 
@@ -112,14 +125,15 @@ public class Travner extends HttpServlet {
     
     public void getDataUser(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
         
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
+            this.username = request.getParameter("username");
+            this.password = request.getParameter("password");
             
-            List<User_Account> users = User_AccountDAO.getUser(username, password);
+            List<User_Account> users = User_AccountDAO.getUser(this.username, this.password);
             if (users.isEmpty()){
                 //TODO : Send Message to Client User Not Found!
+                response.sendError(0, "Data Not Found!");
             } else {
-                
+                response.sendRedirect("./index.jsp");
             }
     }
     

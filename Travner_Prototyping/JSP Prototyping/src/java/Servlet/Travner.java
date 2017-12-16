@@ -33,6 +33,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "Travner", urlPatterns = {"/Travner"})
 public class Travner extends HttpServlet {
+    String username = null;
+    String password = null;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -96,12 +98,25 @@ public class Travner extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            getData(request,response);
-        } catch (SQLException ex) {
-            Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ParseException ex) {
-            Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
+        String param = request.getParameter("action");
+        
+        switch(param){
+            case "InputData":{
+                try {
+                    getData(request,response);
+                } catch (SQLException | ParseException ex) {
+                    Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            }
+            case "Login":{
+                try {
+                    getDataUser(request,response);
+                } catch (SQLException | ParseException ex) {
+                    Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            }
         }
     }
 
@@ -112,14 +127,16 @@ public class Travner extends HttpServlet {
     
     public void getDataUser(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
         
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
+            this.username = request.getParameter("username");
+            this.password = request.getParameter("password");
             
-            List<User_Account> users = User_AccountDAO.getUser(username, password);
-            if (users.isEmpty()){
-                //TODO : Send Message to Client User Not Found!
+            User_Account user = User_AccountDAO.getUser(this.username, this.password);
+            String test = user.getUsername();
+            if (user.getUsername() == null ? username == null : user.getUsername().equals(username)){
+                response.sendRedirect("./Home.jsp");
             } else {
-                
+                //TODO : Send Message to Client User Not Found!
+                response.sendError(0, "Data Not Found!");
             }
     }
     
@@ -206,7 +223,7 @@ public class Travner extends HttpServlet {
             act.setActivity_Name(activityName);
             
             act.setTravel_ID(travID);
-            act.setUser_ID(1);
+            act.setUsername(this.username);
             
             ActivityDAO.save(act);
             

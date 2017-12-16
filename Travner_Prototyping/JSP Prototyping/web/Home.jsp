@@ -96,7 +96,7 @@
         navLinks: true, // can click day/week names to navigate views
         editable: true,
         eventLimit: true, // allow "more" link when too many events
-        events: "/Travner-GMaps/Calendar"
+        events: "/JSP_Prototyping/Calendar"
     });
 });
 

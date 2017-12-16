@@ -16,7 +16,7 @@ import java.sql.Timestamp;
 public class Activity {
     private Integer Activity_ID;
     private Integer Travel_ID;
-    private Integer User_ID;
+    private String Username;
     private String Activity_Name;
     private java.sql.Timestamp Time_Start;
     private java.sql.Timestamp Time_End;
@@ -25,7 +25,7 @@ public class Activity {
     public Activity(){
         Activity_ID = 0;
         Travel_ID = 0;
-        User_ID = 0;
+        Username = null;
         Activity_Name = null;
         Time_Start = null;
         Time_End = null;
@@ -58,20 +58,6 @@ public class Activity {
      */
     public void setTravel_ID(Integer Travel_ID) {
         this.Travel_ID = Travel_ID;
-    }
-
-    /**
-     * @return the User_ID
-     */
-    public Integer getUser_ID() {
-        return User_ID;
-    }
-
-    /**
-     * @param User_ID the User_ID to set
-     */
-    public void setUser_ID(Integer User_ID) {
-        this.User_ID = User_ID;
     }
 
     /**
@@ -128,6 +114,20 @@ public class Activity {
      */
     public void setSpare_Time(Time Spare_Time) {
         this.Spare_Time = Spare_Time;
+    }
+
+    /**
+     * @return the Username
+     */
+    public String getUsername() {
+        return Username;
+    }
+
+    /**
+     * @param Username the Username to set
+     */
+    public void setUsername(String Username) {
+        this.Username = Username;
     }
     
 }
