@@ -62,7 +62,7 @@ public class TravelDAO extends DAO{
         int id = 0;
         try {
             java.sql.Connection con = getConnection();
-            PreparedStatement ps = con.prepareStatement("SELECT TRAVEL_ID FROM travel");
+            PreparedStatement ps = con.prepareStatement("SELECT TRAVEL_ID FROM travel order by TRAVEL_ID DESC LIMIT 1");
             ResultSet rs = ps.executeQuery();
 
             while(rs.next()){

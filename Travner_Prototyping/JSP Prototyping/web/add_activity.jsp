@@ -423,12 +423,14 @@
                                                 document.getElementById('searchdest').addEventListener('click', onChangeHandler);
 
                                                 function geocodePosition(pos, marker, num, addr) {
+                                                    var lat = 'lat' + num;
+                                                    var lng = 'lng' + num;
                                                     geocoder.geocode({location: pos}, function (results, status) {
                                                         if (status === 'OK') {
                                                             marker.formatted_address = results[0].formatted_address;
                                                             document.getElementById(addr).value = marker.formatted_address;
-                                                            document.getElementById('lat' + num).value = marker.getPosition().lat();
-                                                            document.getElementById('lng' + num).value = marker.getPosition().lng();
+                                                            document.getElementById(lat).value = marker.getPosition().lat();
+                                                            document.getElementById(lng).value = marker.getPosition().lng();
                                                         } else {
                                                             marker.formatted_address = 'Cannot determine address at this location.';
                                                         }
