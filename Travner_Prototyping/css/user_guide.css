@@ -1,0 +1,212 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-image: url(Assets/BackGround.jpg);
+    background-size: cover; 
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+#header {
+  z-index: 9999;
+  position: top;
+  width: 100%;
+  height: 55px;
+  background:#2980B9;
+  text-align: center;
+}
+
+#header img{
+text-align: center;
+align-content: center;
+margin-top: 10px;
+width: 70px;
+height: 30px;
+}
+
+
+/*Profile Tab*/
+
+.account-btn {
+    line-height: 35px;
+    width: 750px;
+   display:block;
+    color: white;
+    padding-right: 25px;
+    padding-left: 10px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.account-btn:hover {
+    background-color: #116AB8;
+/*
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+*/
+    border-radius: 7px;
+    -webkit-transition: background-color 0.5s linear;
+    -ms-transition: background-color 0.5s linear;
+    transition: background-color 0.5s linear;
+}
+
+.account-img {
+    
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    
+}
+
+#account-panel {
+    width: 365px;
+    height: 200px;
+    background-color: #F5F7F8;
+    border-radius: 7px;
+    float: right;
+    position:absolute;
+    right: 5px;
+    top: 60px;
+    -webkit-box-shadow: 0px 8px 31px -2px rgba(25,118,210,0.28);
+    -moz-box-shadow: 0px 8px 31px -2px rgba(25,118,210,0.28);
+    box-shadow: 0px 8px 31px -2px rgba(25,118,210,0.28);
+    display: none;
+}
+
+.account-header {
+    background-color: white;
+    height: 160px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+
+}
+
+#profile-pic {
+    height: 90px;
+    width: 90px;
+    margin-left: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 35px;
+    background: url(Assets/Adhitya.png) -10px -5px no-repeat;
+    background-size: 110px;
+}
+
+#profile-details {
+    width: 220px;
+    float: right;
+    height: 100px;
+    margin-left: 20px;
+    margin-top: 35px;
+}
+
+
+#main{
+  margin-left:20px; 
+  padding:30px;
+  position: center-top;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 80px;
+  background-color: #F8F9F9;
+  border-radius: 5px;
+  height:800px;
+  width: 700px;
+}
+
+.fc button{
+            height: 30px;
+            width: 55px;
+}
+
+.fc button, .fc table, body .fc{
+        font-size: 12px;       
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #2980B9; 
+    color: white;
+}
+
+div.panel {
+    padding: 0 18px;
+    border: 1px solid #2980B9;;
+    display: none;
+    background-color: white;
+}
+
+#regForm {
+  font-size: 14px;
+  margin: 1px auto;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+
+h1 {
+  font-size: 18px;
+  text-align: center;
+}
+
+p{
+  font-size: 14px;
+}
+
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  text-align: center;
+  height: 30px;
+  width: 80px;
+  font-weight: bold;
+  border-radius:5px;
+  background-color:  #2980B9; 
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+img{
+  margin-top: 5px;
+  width: 15px;
+  height: 15px;
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.outline {
+    outline-style: solid;    
+}
+
+
+td, th {
+    
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
