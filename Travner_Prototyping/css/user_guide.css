@@ -108,16 +108,17 @@ height: 30px;
 
 
 #main{
-  margin-left:20px; 
+  margin-left:auto;
+  margin-right: auto;
   padding:30px;
-  position: center-top;
+  position: center;
   overflow: hidden;
   opacity: 1;
-  margin-top: 80px;
+  margin-top: 30px;
   background-color: #F8F9F9;
   border-radius: 5px;
-  height:800px;
-  width: 700px;
+  height:600px;
+  width: 1000px;
 }
 
 .fc button{
