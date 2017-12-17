@@ -139,6 +139,7 @@
                                                 <!--<input type="submit" value="Submit" name="submit" />-->
 
                                                 <div id="map">Maps Event</div>
+                                                <div id="distM">List Distance Matrix</div>
                                                 <!--
                                                 <div class="row">
                                                 <ul id="steps"></ul>
@@ -309,6 +310,7 @@
                                                 var geocoder = new google.maps.Geocoder();
                                                 var route;
                                                 var directionsService = new google.maps.DirectionsService;
+                                                var distMatrixService = new google.maps.DistanceMatrixService;
                                                 var mapObj;
                                                 mapObj = new google.maps.Map(document.getElementById('map'), {
                                                     center: {lat: -34.397, lng: 150.644},
@@ -461,6 +463,23 @@
                                                                 }
                                                             } else {
                                                                 window.alert('Directions request failed due to ' + status);
+                                                            }
+                                                        });
+                                                        distMatrixService.getDistanceMatrix({
+                                                            origin: document.getElementById('orig').value,
+                                                            destination: document.getElementById('dest').value,
+                                                            travelMode: google.maps.TravelMode[transportMode]
+                                                        }, function (response, status) {
+                                                            if (status === 'OK') {
+                                                                var text = "";
+                                                                for (var i = 0; i < response.rows.length; i++) {
+                                                                    text += "from " + response.originAddresses[0] + " to " + response.destinationAddresses[0] + "<br>";
+                                                                    text += response.rows[i].elements[0].distance.text + "<br>";
+                                                                    text += response.rows[i].elements[0].duration.text + "<br>";
+                                                                }
+                                                                document.getElementById('distM').innerHTML = text;
+                                                            } else {
+                                                                window.alert('Distance Matrix request failed due to ' + status);
                                                             }
                                                         });
                                                     }
