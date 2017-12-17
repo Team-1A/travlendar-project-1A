@@ -117,12 +117,12 @@
                                                 <p>Destination :</p> 
                                                 <p><input type="location" id="dest" size="50" name="dest"/>
                                                     <input type="button" value="Search" id="searchdest" /></p>
-                                                
+
                                                 <select id="mode">
-                                                  <option value="DRIVING">Driving</option>
-                                                  <option value="WALKING">Walking</option>
-                                                  <option value="BICYCLING">Bicycling</option>
-                                                  <option value="TRANSIT">Transit</option>
+                                                    <option value="DRIVING">Driving</option>
+                                                    <option value="WALKING">Walking</option>
+                                                    <option value="BICYCLING">Bicycling</option>
+                                                    <option value="TRANSIT">Transit</option>
                                                 </select>
                                                 <!-- <p><label class="switch">
                                                 <input type="checkbox" id="mark2">
@@ -296,7 +296,13 @@
                                             // JQuery
                                             $(document).ready(function () {  // Ketika web udah siap
                                                 //		prettyPrint();
-                                                var marker1 = null, marker2 = null;
+                                                var marker1 = new google.maps.Marker({
+                                                    map: mapObj,
+                                                    draggable: true
+                                                }), marker2 = new google.maps.Marker({
+                                                    map: mapObj,
+                                                    draggable: true
+                                                });
                                                 var routes = [];
                                                 var marker1pos, marker2pos;
                                                 var a = false, b = false;
@@ -341,19 +347,7 @@
                                                     });
                                                 } else {
                                                 }
-                                                function geocodePosition(pos,marker) {
-                                                  geocoder.geocode({
-                                                    latLng: pos
-                                                  }, function(responses) {
-                                                    if (responses && responses.length > 0) {
-                                                      marker.formatted_address = responses[0].formatted_address;
-                                                    } else {
-                                                      marker.formatted_address = 'Cannot determine address at this location.';
-                                                    }
-                                                    infowindow.setContent(marker.formatted_address + "<br>coordinates: " + marker.getPosition().toUrlValue(6));
-                                                    infowindow.open(mapObj, marker);
-                                                  });
-                                                }
+
                                                 document.getElementById('searchorig').addEventListener('click', function () {
                                                     var orig = document.getElementById('orig').value;
                                                     if (a) {
@@ -363,25 +357,27 @@
                                                         if (status === 'OK') {
                                                             mapObj.setCenter(results[0].geometry.location);
                                                             //document.getElementById("lat1").value = results[0].geometry.location.lat();
-                                                            marker1 = new google.maps.Marker({
-                                                                map: mapObj,
-                                                                position: results[0].geometry.location,
-                                                                draggable: true
-                                                            });
-                                                            google.maps.event.addListener(marker1, 'dragend', function() {
-                                                                geocodePosition(marker1.getPosition(),marker1);
-                                                                document.getElementById('orig').value = marker1.formatted_address;
-                                                                document.getElementById('lat1').value = marker1.getPosition().lat();
-                                                                document.getElementById('lng1').value = marker1.getPosition().lng();
-                                                            });
-                                                            google.maps.event.addListener(marker1, 'click', function() {
-                                                                if (marker1.formatted_address) {
-                                                                  infowindow.setContent(marker1.formatted_address + "<br>coordinates: " + marker1.getPosition().toUrlValue(6));
-                                                                } else {
-                                                                  infowindow.setContent(orig + "<br>coordinates: " + orig.getPosition().toUrlValue(6));
-                                                                }
-                                                                infowindow.open(mapObj, marker1);
-                                                            });
+                                                            marker1.setPosition(results[0].geometry.location);
+                                                            marker1.setMap(mapObj);
+//                                                            marker1 = new google.maps.Marker({
+//                                                                map: mapObj,
+//                                                                position: results[0].geometry.location,
+//                                                                draggable: true
+//                                                            });
+//                                                            google.maps.event.addListener(marker1, 'dragend', function () {
+//                                                                geocodePosition(marker1.getPosition(), marker1);
+//                                                                document.getElementById('orig').value = marker1.formatted_address;
+//                                                                document.getElementById('lat1').value = marker1.getPosition().lat();
+//                                                                document.getElementById('lng1').value = marker1.getPosition().lng();
+//                                                            });
+//                                                            google.maps.event.addListener(marker1, 'click', function () {
+//                                                                if (marker1.formatted_address) {
+//                                                                    infowindow.setContent(marker1.formatted_address + "<br>coordinates: " + marker1.getPosition().toUrlValue(6));
+//                                                                } else {
+//                                                                    infowindow.setContent(orig + "<br>coordinates: " + orig.getPosition().toUrlValue(6));
+//                                                                }
+//                                                                infowindow.open(mapObj, marker1);
+//                                                            });
                                                         } else {
                                                             alert('Geocode was not successful for the following reason: ' + status);
                                                         }
@@ -397,37 +393,46 @@
                                                     geocoder.geocode({address: dest}, function (results, status) {
                                                         if (status === 'OK') {
                                                             mapObj.setCenter(results[0].geometry.location);
-                                                            marker2 = new google.maps.Marker({
-                                                                map: mapObj,
-                                                                position: results[0].geometry.location,
-                                                                draggable:true
-                                                            });
-                                                            google.maps.event.addListener(marker2, 'dragend', function() {
-                                                                geocodePosition(marker2.getPosition(),marker2);
-                                                                document.getElementById('dest').value = marker2.formatted_address;
-                                                                document.getElementById('lat2').value = marker2.getPosition().lat();
-                                                                document.getElementById('lng2').value = marker2.getPosition().lng();
-                                                            });
-                                                            google.maps.event.addListener(marker2, 'click', function() {
-                                                                if (marker2.formatted_address) {
-                                                                  infowindow.setContent(marker2.formatted_address + "<br>coordinates: " + marker2.getPosition().toUrlValue(6));
-                                                                } else {
-                                                                  infowindow.setContent(orig + "<br>coordinates: " + orig.getPosition().toUrlValue(6));
-                                                                }
-                                                                infowindow.open(mapObj, marker2);
-                                                            });
+                                                            marker2.setPosition(results[0].geometry.location);
+                                                            marker2.setMap(mapObj);
                                                         } else {
                                                             alert('Geocode was not successful for the following reason: ' + status);
                                                         }
                                                     });
                                                     b = true;
-//                                                    if (marker1 !== null && marker2 !== null) {
-//                                                        getDirect();        
-//                                                    }
                                                 });
+
+                                                google.maps.event.addListener(marker1, 'dragend', function () {
+                                                    geocodePosition(marker1.getPosition(), marker1);
+                                                    document.getElementById('orig').value = marker1.formatted_address;
+                                                    document.getElementById('lat1').value = marker1.getPosition().lat();
+                                                    document.getElementById('lng1').value = marker1.getPosition().lng();
+                                                });
+
+                                                google.maps.event.addListener(marker2, 'dragend', function () {
+                                                    geocodePosition(marker2.getPosition(), marker2);
+                                                    document.getElementById('dest').value = marker2.formatted_address;
+                                                    document.getElementById('lat2').value = marker2.getPosition().lat();
+                                                    document.getElementById('lng2').value = marker2.getPosition().lng();
+                                                });
+
+                                                google.maps.event.addListener(marker1, 'dragend', onChangeHandler);
+                                                google.maps.event.addListener(marker2, 'dragend', onChangeHandler);
 
                                                 document.getElementById('searchorig').addEventListener('click', onChangeHandler);
                                                 document.getElementById('searchdest').addEventListener('click', onChangeHandler);
+
+                                                function geocodePosition(pos, marker) {
+                                                    geocoder.geocode({location: pos}, function (results, status) {
+                                                        if (status === 'OK') {
+                                                            marker.formatted_address = results[0].formatted_address;
+                                                        } else {
+                                                            marker.formatted_address = 'Cannot determine address at this location.';
+                                                        }
+                                                        infowindow.setContent(marker.formatted_address + "<br>coordinates: " + marker.getPosition().toUrlValue(6));
+                                                        infowindow.open(mapObj, marker);
+                                                    });
+                                                }
 
                                                 function calculateAndDisplayRoute(directionsService) {
                                                     if (a && b) {
@@ -479,12 +484,12 @@
                                                 var x = document.getElementsByClassName("tab");
                                                 x[n].style.display = "block";
                                                 //... and fix the Previous/Next buttons:
-                                                if (n == 0) {
+                                                if (n === 0) {
                                                     document.getElementById("prevBtn").style.display = "none";
                                                 } else {
                                                     document.getElementById("prevBtn").style.display = "inline";
                                                 }
-                                                if (n == (x.length - 1)) {
+                                                if (n === (x.length - 1)) {
                                                     document.getElementById("nextBtn").innerHTML = "Submit";
                                                 } else {
                                                     document.getElementById("nextBtn").innerHTML = "Next";
@@ -497,7 +502,7 @@
                                                 // This function will figure out which tab to display
                                                 var x = document.getElementsByClassName("tab");
                                                 // Exit the function if any field in the current tab is invalid:
-                                                if (n == 1 && !validateForm())
+                                                if (n === 1 && !validateForm())
                                                     return false;
                                                 // Hide the current tab:
                                                 x[currentTab].style.display = "none";
@@ -521,7 +526,7 @@
                                                 // A loop that checks every input field in the current tab:
                                                 for (i = 0; i < y.length; i++) {
                                                     // If a field is empty...
-                                                    if (y[i].value == "") {
+                                                    if (y[i].value === "") {
                                                         // add an "invalid" class to the field:
                                                         y[i].className += " invalid";
                                                         // and set the current valid status to false
@@ -570,7 +575,7 @@
 
                                             // When the user clicks anywhere outside of the modal, close it
                                             window.onclick = function (event) {
-                                                if (event.target == modal) {
+                                                if (event.target === modal) {
                                                     modal.style.display = "none";
                                                 }
                                             };
