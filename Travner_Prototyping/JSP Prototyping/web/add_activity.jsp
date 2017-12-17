@@ -318,7 +318,6 @@
                                                 var onChangeHandler = function () {
                                                     calculateAndDisplayRoute(directionsService);
                                                 };
-
 //                                                event when map clicked
 //                                                google.maps.event.addListener(map, 'click', function (event) {
 //                                                    placeMarker(event.latLng);
@@ -431,6 +430,7 @@
                                                             document.getElementById(addr).value = marker.formatted_address;
                                                             document.getElementById(lat).value = marker.getPosition().lat();
                                                             document.getElementById(lng).value = marker.getPosition().lng();
+                                                            calculateAndDisplayRoute(directionsService);
                                                         } else {
                                                             marker.formatted_address = 'Cannot determine address at this location.';
                                                         }
