@@ -1,0 +1,5 @@
+User_Account (#Username,E-Mail,Password,Photo)
+Vehicle (User_ID,#Vehicle_Name)
+Activity (#Activity_ID,User_ID,Travel_ID,Activity_Name,Time_Start,Time_End,Spare_Time)
+Travel (#Travel_ID,StartLocation_Long,StartLocation_Lat,DestLocation_Long,DestLocation_Long,Transportation_Mode, Departure_Time)
+Location (#Location_Long,#Location_Lat)
