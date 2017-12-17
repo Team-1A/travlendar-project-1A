@@ -403,17 +403,17 @@
                                                 });
 
                                                 google.maps.event.addListener(marker1, 'dragend', function () {
-                                                    geocodePosition(marker1.getPosition(), marker1);
-                                                    document.getElementById('orig').value = marker1.formatted_address;
-                                                    document.getElementById('lat1').value = marker1.getPosition().lat();
-                                                    document.getElementById('lng1').value = marker1.getPosition().lng();
+                                                    geocodePosition(marker1.getPosition(), marker1, 1, 'orig');
+                                                    //document.getElementById('orig').value = marker1.formatted_address;
+                                                    //document.getElementById('lat1').value = marker1.getPosition().lat();
+                                                    //document.getElementById('lng1').value = marker1.getPosition().lng();
                                                 });
 
                                                 google.maps.event.addListener(marker2, 'dragend', function () {
-                                                    geocodePosition(marker2.getPosition(), marker2);
-                                                    document.getElementById('dest').value = marker2.formatted_address;
-                                                    document.getElementById('lat2').value = marker2.getPosition().lat();
-                                                    document.getElementById('lng2').value = marker2.getPosition().lng();
+                                                    geocodePosition(marker2.getPosition(), marker2, 2, 'dest');
+                                                    //document.getElementById('dest').value = marker2.formatted_address;
+                                                    //document.getElementById('lat2').value = marker2.getPosition().lat();
+                                                    //document.getElementById('lng2').value = marker2.getPosition().lng();
                                                 });
 
                                                 google.maps.event.addListener(marker1, 'dragend', onChangeHandler);
@@ -422,10 +422,13 @@
                                                 document.getElementById('searchorig').addEventListener('click', onChangeHandler);
                                                 document.getElementById('searchdest').addEventListener('click', onChangeHandler);
 
-                                                function geocodePosition(pos, marker) {
+                                                function geocodePosition(pos, marker, num, addr) {
                                                     geocoder.geocode({location: pos}, function (results, status) {
                                                         if (status === 'OK') {
                                                             marker.formatted_address = results[0].formatted_address;
+                                                            document.getElementById(addr).value = marker.formatted_address;
+                                                            document.getElementById('lat' + num).value = marker.getPosition().lat();
+                                                            document.getElementById('lng' + num).value = marker.getPosition().lng();
                                                         } else {
                                                             marker.formatted_address = 'Cannot determine address at this location.';
                                                         }
