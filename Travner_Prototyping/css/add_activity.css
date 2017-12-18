@@ -109,7 +109,7 @@ height: 30px;
 
 .left{
 
-  margin-left:20px; 
+  margin-left:25px; 
   padding:30px;
   float: left;
   overflow: hidden;
@@ -118,7 +118,7 @@ height: 30px;
   background-color: #F8F9F9;
   border-radius: 5px;
   height:800px;
-  width: 700px;
+  width: 47%;
 }
 
 
@@ -133,7 +133,7 @@ height: 30px;
   background-color:#F8F9F9;
   border-radius: 5px;
   height:800px;
-  width:460px;
+  width:47%;
 }
 
 #calendar{
@@ -212,7 +212,7 @@ input[type="time"]{
 input[type="radio"]{
   margin: 10px;
   font-size: 7px;
-  width: 2%;
+  width: 3%;
 }
 input[type="location"]{
   font-size: 12px;

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     
-	var formInputs = $('input[type="email"],input[type="username"],input[type="password"]');
+	var formInputs = $('input[type="email"],input[type="text"],input[type="password"]');
 	formInputs.focus(function() {
        $(this).parent().children('p.formLabel').addClass('formTop');
        $('div#formWrapper').addClass('darken-bg');
@@ -46,5 +46,5 @@ $(document).ready(function () {
             });
 
         });
-    
+   
 });

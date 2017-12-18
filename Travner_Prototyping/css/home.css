@@ -200,7 +200,7 @@ h2 {
 
 .left{
 
-  margin-left:20px; 
+  margin-left:25px; 
   padding:30px;
   float: left;
   overflow: hidden;
@@ -208,8 +208,8 @@ h2 {
   margin-top: 80px;
   background-color: #F8F9F9;
   border-radius: 5px;
-  height:500px;
-  width: 600px;
+  height:530px;
+  width: 47%;
 }
 .right{
   float: left;
@@ -221,17 +221,17 @@ h2 {
   margin-bottom: 20px;
   background-color:#F8F9F9;
   border-radius: 5px;
-  height:500px;
-  width:690px;
+  height:530px;
+  width:47%;
 }
 
 .right img{
-  opacity: 0.2;
-  margin-top: 60px;
-  margin-right: 80px;
-  margin-left: 80px; 
-  width: 520px;
-  height: 250px;   
+  margin-top: 20px;
+  margin-left: 30px;
+  opacity: 0.65;
+  padding: 2px;
+  width: 90%;
+  height: 320px; 
 }
 
 #calendar{
