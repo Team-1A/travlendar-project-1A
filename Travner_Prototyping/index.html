@@ -29,15 +29,14 @@ function Submit(){
 	if( lname == "" )
    {
      document.form.LastName.focus() ;
-	  document.getElementById("errorBox_lastname").innerHTML = "enter the last name";
-       document.getElementById("errorBox_name").innerHTML = "";
-     return false;
+	  document.getElementById("errorBox_name").innerHTML = "enter the last name";
+            return false;
    }
    
    if (femail == "" )
 	{
 		document.form.Email.focus();
-         document.getElementById("errorBox_lastname").innerHTML = "";
+         document.getElementById("errorBox_name").innerHTML = "";
 		document.getElementById("errorBox_email").innerHTML = "enter the email";
 		return false;
 	 }else if(!emailRegex.test(femail)){
@@ -143,13 +142,7 @@ function Submit(){
     <div id="form_name">
       <div class="firstnameorlastname">
        <form name="form" >
-           <div class="form-item">
-                    <a class='button glyphicon glyphicon-plus' href='#'></a>
-                    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-                  <!-- <input type="button" class="close" value="Close">  -->
-                    <p class="close"><a href="#"><small>Close</small></a></p>
-                    <div class="clear-fix"></div>
-                </div>
+           
     <div id="errorBox_name"></div>
         <input type="text" name="Name" value="" placeholder="First Name"  class="input_name" >
 <!--           <div id="errorBox_lastname"></div>-->
@@ -270,6 +263,13 @@ function Submit(){
         <p id="sign_user" onClick="Submit()">Sign Up </p>
       </div>
 
+          <div class="form-item">
+        <a class='button glyphicon glyphicon-plus' href='#'></a>
+                    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                  <!-- <input type="button" class="close" value="Close">  -->
+                    <p class="close"><a href="#"><small>Close</small></a></p>
+                    <div class="clear-fix"></div>
+          </div>
 <!--
        <div class="form-item">
                     <a class='button glyphicon glyphicon-plus' onClick="Submit()"></a>

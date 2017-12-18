@@ -201,7 +201,7 @@ input[type="submit"].login:focus{outline: none;}
 .input_name{
  width:135px;
  padding:5px;
- font-size:18px;
+ font-size:14px;
  }
 
 #email_form{
@@ -211,7 +211,7 @@ input[type="submit"].login:focus{outline: none;}
 .input_email{
  width:288px;
  padding:5px;
- font-size:18px;
+ font-size:14px;
  }
 
 #password_form{
@@ -220,7 +220,7 @@ input[type="submit"].login:focus{outline: none;}
 .input_password{
  width:288px;
  padding:5px;
- font-size:18px;
+ font-size:14px;
  }
 
 #re_password_form{
@@ -229,7 +229,7 @@ input[type="submit"].login:focus{outline: none;}
 .input_re_password{
  width:288px;
  padding:5px;
- font-size:18px;
+ font-size:14px;
  }
 
 .birthday_title{
