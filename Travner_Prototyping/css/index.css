@@ -3,6 +3,17 @@ background-image: url(Assets/background.gif);
 background-size: cover;
 font-family:'HelveticaNeue','Arial', sans-serif;
 
+@font-face {
+font-family: 'icons';
+src: url('fontello.eot');
+src: url('fontello.eot?#iefix') format('embedded-opentype'),
+      url('fontello.woff') format('woff'),
+      url('fontello.ttf') format('truetype'),
+      url('fontello.svg#icons') format('svg');
+font-weight: normal;
+font-style: normal;
+}    
+    
 }
 a{color:#58bff6;text-decoration: none;}
 a:hover{color:#aaa; }
@@ -285,6 +296,8 @@ border-radius: 100px;
  color:#F00;
     font-size:9px;
  }
+
+
 
 
 
