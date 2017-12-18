@@ -108,7 +108,7 @@
 
                                                 <p>Starting Location :</p>
                                                 <p><input type="location" id="orig" size="50" name="orig" />
-                                                    <input type="submit" value="Search" id="searchorig" /></p>
+                                                    <input type="button" value="Search" id="searchorig" /></p>
                                                 <!--p><label class="switch">
                                                 <input type="checkbox" id="mark1">
                                                 <span class="slider_round"></span>
