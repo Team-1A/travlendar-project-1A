@@ -2,7 +2,8 @@
 SQLyog Ultimate v11.11 (64 bit)
 MySQL - 5.6.16 : Database - travner
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -53,6 +54,7 @@ CREATE TABLE `user_account` (
   `USERNAME` VARCHAR(15) NOT NULL,
   `EMAIL` VARCHAR(30) NOT NULL,
   `PASSWORD` VARCHAR(15) NOT NULL,
+  `PROFILE_PICTURE` LONGBLOB,
   PRIMARY KEY (`USERNAME`)
 ) ENGINE=INNODB DEFAULT CHARSET=latin1;
 
