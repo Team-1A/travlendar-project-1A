@@ -123,8 +123,8 @@ body {
   width:95%;
 }
 .right img{
-  width: 180px;
-  height: 90px;
+  width: 90%;
+  height: 50%; 
 }
 #calendar{
   margin-left: 20px;

@@ -27,8 +27,9 @@
   width:360px;
 }
 .right img{
-  width: 180px;
-  height: 90px;
+    margin-left: 15px;
+  width: 90%;
+  height: 40%; 
 }
 
 }
@@ -64,8 +65,8 @@
   width:700px;
 }
 .right img{
-  width: 180px;
-  height: 90px;
+  width: 90%;
+  height: 50%; 
 }
 
 #calendar{
