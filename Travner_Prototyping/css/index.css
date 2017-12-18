@@ -203,6 +203,7 @@ input[type="submit"].login:focus{outline: none;}
  padding:5px;
  font-size:18px;
  }
+
 #email_form{
  clear:both;
  padding:15px 0 10px 0px;
@@ -212,14 +213,7 @@ input[type="submit"].login:focus{outline: none;}
  padding:5px;
  font-size:18px;
  }
-#Re_email_form{
- padding:10px 0 10px 0px;
- }
-.input_Re_email{
- width:288px;
- padding:5px;
- font-size:18px;
- }
+
 #password_form{
  padding:10px 0 10px 0px;
  }
@@ -228,6 +222,16 @@ input[type="submit"].login:focus{outline: none;}
  padding:5px;
  font-size:18px;
  }
+
+#re_password_form{
+ padding:10px 0 10px 0px;
+ }
+.input_re_password{
+ width:288px;
+ padding:5px;
+ font-size:18px;
+ }
+
 .birthday_title{
  font-size:16px; 
  color:#55b1df; 
@@ -256,10 +260,33 @@ border-radius: 100px;
  margin-top:10px;
  cursor: pointer;
  }
-#errorBox{
+#errorBox_name{
  color:#F00;
     font-size:9px;
  }
+#errorBox_lastname{
+ color:#F00;
+    font-size:9px;
+    margin-left: 200px;
+ }
+#errorBox_email{
+ color:#F00;
+    font-size:9px;
+ }
+#errorBox_password{
+ color:#F00;
+    font-size:9px;
+ }
+#errorBox_repassword{
+ color:#F00;
+    font-size:9px;
+ }
+#errorBox_birthday{
+ color:#F00;
+    font-size:9px;
+ }
+
+
 
 
 

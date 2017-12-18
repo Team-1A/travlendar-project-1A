@@ -14,8 +14,8 @@ function Submit(){
 	var fname = document.form.Name.value,
 		lname = document.form.LastName.value,
 		femail = document.form.Email.value,
-		freemail = document.form.enterEmail.value,
-		fpassword = document.form.Password.value,
+	    fpassword = document.form.Password.value,
+        frepassword = document.form.enterPassword.value,
 		fmonth = document.form.birthday_month.value,
 		fday = document.form.birthday_day.value,
 		fyear = document.form.birthday_year.value;
@@ -23,73 +23,80 @@ function Submit(){
 	if( fname == "" )
    {
      document.form.Name.focus() ;
-	 document.getElementById("errorBox").innerHTML = "enter the first name";
+	 document.getElementById("errorBox_name").innerHTML = "enter the first name";
      return false;
    }
 	if( lname == "" )
    {
      document.form.LastName.focus() ;
-	  document.getElementById("errorBox").innerHTML = "enter the last name";
+	  document.getElementById("errorBox_lastname").innerHTML = "enter the last name";
+       document.getElementById("errorBox_name").innerHTML = "";
      return false;
    }
    
    if (femail == "" )
 	{
 		document.form.Email.focus();
-		document.getElementById("errorBox").innerHTML = "enter the email";
+         document.getElementById("errorBox_lastname").innerHTML = "";
+		document.getElementById("errorBox_email").innerHTML = "enter the email";
 		return false;
 	 }else if(!emailRegex.test(femail)){
 		document.form.Email.focus();
-		document.getElementById("errorBox").innerHTML = "enter the valid email";
+        document.getElementById("errorBox_name").innerHTML = "";
+		document.getElementById("errorBox_email").innerHTML = "enter the valid email";
 		return false;
 	 }
+    
+    if(fpassword == "")
+	 {
+          document.form.Password.focus();
+        document.getElementById("errorBox_email").innerHTML = "";
+		 document.getElementById("errorBox_password").innerHTML = "enter the password";
+		 return false;
+	 }
 	 
-	  if (freemail == "" )
+	  if (frepassword == "" )
 	{
-		document.form.enterEmail.focus();
-		document.getElementById("errorBox").innerHTML = "Re-enter the email";
-		return false;
-	 }else if(!emailRegex.test(freemail)){
-		document.form.enterEmail.focus();
-		document.getElementById("errorBox").innerHTML = "Re-enter the valid email";
+		document.form.enterPassword.focus();
+        document.getElementById("errorBox_password").innerHTML = "";
+		document.getElementById("errorBox_repassword").innerHTML = "Re-enter the password";
 		return false;
 	 }
-	 
-	 if(freemail !=  femail){
-		 document.form.enterEmail.focus();
-		 document.getElementById("errorBox").innerHTML = "emails are not matching, re-enter again";
+
+	 if(frepassword !=  fpassword){
+		 document.form.enterPassword.focus();
+         document.getElementById("errorBox_password").innerHTML = "";
+		 document.getElementById("errorBox_repassword").innerHTML = "emails are not matching, re-enter again";
 		 return false;
 		 }
 	 
 	 
-	if(fpassword == "")
-	 {
-		 document.form.Password.focus();
-		 document.getElementById("errorBox").innerHTML = "enter the password";
-		 return false;
-	 }
-	 
-		 if (fmonth == "") {
+    if (fmonth == "") {
         document.form.birthday_month.focus();
-		document.getElementById("errorBox").innerHTML = "select the birthday month";
+        document.getElementById("errorBox_repassword").innerHTML = "";
+		document.getElementById("errorBox_birthday").innerHTML = "select the birthday month";
         return false;
      }
 	 if (fday == "") {
         document.form.birthday_day.focus();
-		document.getElementById("errorBox").innerHTML = "select the birthday day";
+          document.getElementById("errorBox_repassword").innerHTML = "";
+		document.getElementById("errorBox_birthday").innerHTML = "select the birthday day";
         return false;
      }
 	 if (fyear == "") {
         document.form.birthday_year.focus();
-		document.getElementById("errorBox").innerHTML = "select the birthday year";
+          document.getElementById("errorBox_repassword").innerHTML = "";
+		document.getElementById("errorBox_birthday").innerHTML = "select the birthday year";
         return false;
      }
-		if(document.form.radiobutton[0].checked == false && document.form.radiobutton[1].checked == false){
-				document.getElementById("errorBox").innerHTML = "select your gender";
-			 return false;
-			}
-		if(fname != '' && lname != '' && femail != '' && freemail != '' && fpassword != '' && fmonth != '' && fday != '' && fyear != ''){
-			document.getElementById("errorBox").innerHTML = "form submitted successfully";
+//		if(document.form.radiobutton[0].checked == false && document.form.radiobutton[1].checked == false){
+//				document.getElementById("errorBox").innerHTML = "select your gender";
+//			 return false;
+//			}
+    
+		if(fname != '' && lname != '' && femail != '' && fpassword != '' && frepassword != '' && fmonth != '' && fday != '' && fyear != ''){
+             document.getElementById("errorBox_birthday").innerHTML = "";
+			document.getElementById("errorBox_name").innerHTML = "form submitted successfully";
 			}
 		  
 }
@@ -143,25 +150,32 @@ function Submit(){
                     <p class="close"><a href="#"><small>Close</small></a></p>
                     <div class="clear-fix"></div>
                 </div>
-       <div id="errorBox"></div>
-           
+    <div id="errorBox_name"></div>
         <input type="text" name="Name" value="" placeholder="First Name"  class="input_name" >
-        <input type="text" name="LastName" value="" placeholder="Last Name" class="input_name" >
-         
-      </div>
+<!--           <div id="errorBox_lastname"></div>-->
+           <input type="text" name="LastName" value="" placeholder="Last Name" class="input_name" >
+    </div>
+          
+        <div id="errorBox_email"></div>
       <div id="email_form">
         <input type="text" name="Email" value=""  placeholder="Your Email" class="input_email">
       </div>
-      <div id="Re_email_form">
-        <input type="text" name="enterEmail" value=""  placeholder="Re-enter Email" class="input_Re_email">
-      </div>
-      <div id="password_form">
+          
+          <div id="errorBox_password"></div>
+        <div id="password_form">
         <input type="password" name="Password" value=""  placeholder="New Password" class="input_password">
       </div>
+          
+          <div id="errorBox_repassword"></div>
+      <div id="re_password_form">
+        <input type="text" name="enterPassword" value=""  placeholder="Re-enter Password" class="input_re_password">
+      </div>
+      
       <!--birthday details start-->
       <div>
         <h3 class="birthday_title">Birthday</h3>
       </div>
+          <div id="errorBox_birthday"></div>
       <div>
         <select name="birthday_month" >
           <option value="" selected >Month</option>
