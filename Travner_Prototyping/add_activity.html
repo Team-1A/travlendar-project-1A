@@ -81,14 +81,13 @@
                 <div class="tab">
                     <h1>Add Activity</h1>
                     <h2>Title</h2>
-                    <p>Give a name to your activity</p>
                     <p><input placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
-                    <h2>Time of Activity</h2>
-                    <p>When does the activity started?</p>
+                    <h2>Time of Activity</h2><br>
+                    <p>Start time:</p>
                     <p><input type="date" name="day"><input type="time" name="time"></p>
-                    <p>When does the activity ended?</p>
-                    <p><input type="date" name="day"><input type="time" name="time"></p>
-                    <p>spare time (if you want to come erlier before the activity start)<p>
+                    <p>End time:</p>
+                    <p><input type="date" name="day"><input type="time" name="time"></p><br>
+                    <p>Spare Time<p>
                     <p>
                         <input type="radio" name="sparetime" value="none" checked> none
                         <input type="radio" name="sparetime" value="fivemins"> 5 mins
@@ -97,18 +96,17 @@
                     </p><br>
                     
                     <form name="form" action="" method="POST" id="geocoding_form">
-                        <h1>Add Location</h1>
+                        <h1>Location</h1>
                         
-                        <p>Lokasi awal :</p>
-                        <p><input type="location" id="orig" size="50" name="orig" />
-                            <input type="submit" value="Search" name="searchorig" /></p>
+                        
+                        <p><input type="location" id="orig" size="50" name="orig" placeholder="Starting Position" />
+                            <input type="submit" value="Search" name="searchorig"  /></p>
                         <!--p><label class="switch">
                         <input type="checkbox" id="mark1">
                         <span class="slider_round"></span>
                         </label></p>-->        
-
-                        <p>Lokasi tujuan :</p> 
-                        <p><input type="location" id="dest" size="50" name="dest"/>
+                        
+                        <p><input type="location" id="dest" size="50" name="dest" placeholder="Destinantion Location" />
                         <input type="submit" value="Search" name="searchdest" /></p>
                         <!-- <p><label class="switch">
                         <input type="checkbox" id="mark2">
@@ -133,9 +131,10 @@
                     </div>
                     -->
                 </div>
-                <!--Transportation Mode-->
+                
+                <!--Activity has been add-->
                 <div class="tab">
-                    <h1>Recommendation Transportation Mode</h1>
+                      <h1>Recommendation Transportation Mode</h1>
                     <p>Estimated you will arrive at "07:30" by uaing these transportation mode</p><br> <!--estimasi waktu sementara-->
                     <div class="outline">
                         <table>
@@ -192,14 +191,8 @@
                         <option value="bicycle">bicycle</option>
                     </select>
                 </div>
-                <!--Activity has been add-->
-                <div class="tab">
-                    <h1 style="font-size: 20px; text-align: center; margin-top:100px;">Your Activity has been Recorded</h1><br>
-                    <p style="text-align: center;">See your activity on the List or you can see it on the calendar as it marked</p>
-                </div>
                 <div style="overflow: auto">
                     <div style="float:right;"><br>
-                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                         <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                     </div>
                 </div>
@@ -619,7 +612,7 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
+    document.getElementById("nextBtn").innerHTML = "Finish";
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
