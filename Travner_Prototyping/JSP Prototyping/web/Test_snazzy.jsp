@@ -89,11 +89,12 @@
 
                                                 <h1>Add Activity</h1>
                                                 <h2>Title</h2>
+                                                <p>Give a name to your activity</p>
                                                 <p><input form="regForm" placeholder="Activity Name" oninput="this.className = ''" name="ActivityName"></p><br>
                                                 <h2>Time of Activity</h2>
-                                                <p>Start Time:</p>
+                                                <p>When does the activity started?</p>
                                                 <p><input form="regForm" type="date" name="startday"><input form="regForm" type="time" name="starttime"></p>
-                                                <p>End Time:</p>
+                                                <p>When does the activity ended?</p>
                                                 <p><input form="regForm" type="date" name="endday"><input form="regForm" type="time" name="endtime"></p>
                                                 <p>spare time (if you want to come earlier before the activity start)<p>
                                                 <p>
@@ -105,7 +106,7 @@
 
                                                 <h1>Add Location</h1>
 
-                                                <p>Starting Position:</p>
+                                                <p>Starting Location :</p>
                                                 <p><input type="location" id="orig" size="50" name="orig" />
                                                     <input type="button" value="Search" id="searchorig" /></p>
                                                 <!--p><label class="switch">
@@ -113,7 +114,7 @@
                                                 <span class="slider_round"></span>
                                                 </label></p>-->        
 
-                                                <p>Destination Location:</p> 
+                                                <p>Destination :</p> 
                                                 <p><input type="location" id="dest" size="50" name="dest"/>
                                                     <input type="button" value="Search" id="searchdest" /></p>
 
@@ -310,11 +311,24 @@
                                                 var route;
                                                 var directionsService = new google.maps.DirectionsService;
                                                 var distMatrixService = new google.maps.DistanceMatrixService;
-                                                var mapObj;
-                                                mapObj = new google.maps.Map(document.getElementById('map'), {
+                                                var mapOptions = {
+                                                    // Zoom di gmaps
+                                                    zoom: 13,
+                                                    // posisi maps
                                                     center: {lat: -34.397, lng: 150.644},
-                                                    zoom: 13
-                                                });
+                                                    // style di gmaps
+                                                    styles: [
+                                                        {"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},
+                                                        {"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},
+                                                        {"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},
+                                                        {"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},
+                                                        {"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},
+                                                        {"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
+                                                        {"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},
+                                                        {"featureType":"water","elementType":"all","stylers":[{"color":"#7ba0bf"},{"visibility":"on"}]}]
+                                                };
+                                                var mapObj = document.getElementById('map');
+                                                var map = new google.maps.Map(mapObj, mapOptions);
 
                                                 var onChangeHandler = function () {
                                                     calculateAndDisplayRoute(directionsService);
