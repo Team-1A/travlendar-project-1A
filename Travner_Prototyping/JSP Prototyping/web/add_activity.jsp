@@ -128,9 +128,9 @@
                                                 <span class="slider round"></span>
                                                 </label></p>-->
 
-                                                <!--<input form="regForm" type="Hidden" id="getOrig" name="Orig">
-                                                <input form="regForm" type="Hidden" id="getDest" name="Dest">
-                                                <!--<input form="regForm" type="Hidden" id="getDist" name="Dist">-->
+                                                <!--<input form="regForm" type="Hidden" id="getOrig" name="Orig">-->
+<!--                                                <input form="regForm" type="Text" id="getDur" name="Dur">
+                                                <input form="regForm" type="Text" id="getDist" name="Dist">-->
                                                 <input form="regForm" type="Hidden" id="lat1" name="marker1_lat">
                                                 <input form="regForm" type="Hidden" id="lng1" name="marker1_lng">
                                                 <input form="regForm" type="Hidden" id="lat2" name="marker2_lat">
@@ -317,7 +317,11 @@
                                                 });
 
                                                 var onChangeHandler = function () {
-                                                    calculateAndDisplayRoute(directionsService);
+                                                    displayRoute(directionsService);
+                                                };
+
+                                                var calculateHandler = function () {
+                                                    calculateRoute(distMatrixService);
                                                 };
 //                                                event when map clicked
 //                                                google.maps.event.addListener(map, 'click', function (event) {
@@ -359,8 +363,8 @@
                                                             //document.getElementById("lat1").value = results[0].geometry.location.lat();
                                                             marker1.setPosition(results[0].geometry.location);
                                                             marker1.setMap(mapObj);
-                                                            marker1.formatted_address = results[0].formatted_address;
-                                                            document.getElementById("orig").value = marker1.formatted_address;
+//                                                            marker1.formatted_address = results[0].formatted_address;
+//                                                            document.getElementById("orig").value = marker1.formatted_address;
                                                             document.getElementById("lat1").value = marker1.getPosition().lat();
                                                             document.getElementById("lng1").value = marker1.getPosition().lng();
 //                                                            marker1 = new google.maps.Marker({
@@ -399,8 +403,8 @@
                                                             mapObj.setCenter(results[0].geometry.location);
                                                             marker2.setPosition(results[0].geometry.location);
                                                             marker2.setMap(mapObj);
-                                                            marker2.formatted_address = results[0].formatted_address;
-                                                            document.getElementById("dest").value = marker2.formatted_address;
+//                                                            marker2.formatted_address = results[0].formatted_address;
+//                                                            document.getElementById("dest").value = marker2.formatted_address;
                                                             document.getElementById("lat2").value = marker2.getPosition().lat();
                                                             document.getElementById("lng2").value = marker2.getPosition().lng();
                                                         } else {
@@ -426,7 +430,11 @@
 
                                                 google.maps.event.addListener(marker1, 'dragend', onChangeHandler);
                                                 google.maps.event.addListener(marker2, 'dragend', onChangeHandler);
+                                                google.maps.event.addListener(marker1, 'dragend', calculateHandler);
+                                                google.maps.event.addListener(marker2, 'dragend', calculateHandler);
 
+                                                document.getElementById('searchorig').addEventListener('click', calculateHandler);
+                                                document.getElementById('searchdest').addEventListener('click', calculateHandler);
                                                 document.getElementById('searchorig').addEventListener('click', onChangeHandler);
                                                 document.getElementById('searchdest').addEventListener('click', onChangeHandler);
 
@@ -439,7 +447,7 @@
                                                             document.getElementById(addr).value = marker.formatted_address;
                                                             document.getElementById(lat).value = marker.getPosition().lat();
                                                             document.getElementById(lng).value = marker.getPosition().lng();
-                                                            calculateAndDisplayRoute(directionsService);
+                                                            displayRoute(directionsService);
                                                         } else {
                                                             marker.formatted_address = 'Cannot determine address at this location.';
                                                         }
@@ -448,7 +456,7 @@
                                                     });
                                                 }
 
-                                                function calculateAndDisplayRoute(directionsService) {
+                                                function displayRoute(directionsService) {
                                                     if (a && b) {
                                                         if (routes !== []) {
                                                             for (var i = 0; i < routes.length; i++) {
@@ -472,24 +480,40 @@
                                                                 window.alert('Directions request failed due to ' + status);
                                                             }
                                                         });
+                                                    }
+                                                }
+
+                                                function calculateRoute(distMatrixService) {
+                                                    if (a && b) {
+                                                        var origin = document.getElementById('orig').value;
+                                                        var destination = document.getElementById('dest').value;
+                                                        var transportMode = document.getElementById('mode').value;
                                                         distMatrixService.getDistanceMatrix({
-                                                            origin: document.getElementById('orig').value,
-                                                            destination: document.getElementById('dest').value,
-                                                            travelMode: google.maps.TravelMode[transportMode]
-                                                        }, function (response, status) {
-                                                            if (status === 'OK') {
+                                                            origins: [origin],
+                                                            destinations: [destination],
+                                                            travelMode: google.maps.TravelMode[transportMode],
+                                                            avoidHighways: false,
+                                                            avoidTolls: false
+                                                        }, callback
+                                                                );
+                                                        function callback(response, status) {
+                                                            var getDur = document.getElementById("getDur");
+                                                            var getDist = document.getElementById("getDist");
+                                                            if (status === "OK") {
                                                                 var text = "";
-                                                                    text += "from " + response.originAddresses[0] + " to " + response.destinationAddresses[0] + "<br>";
+                                                                text += "from " + response.originAddresses[0] + " to " + response.destinationAddresses[0] + "<br>";
                                                                 for (var i = 0; i < response.rows.length; i++) {
                                                                     text += "route " + i + "<br>";
                                                                     text += response.rows[i].elements[0].distance.text + "<br>";
                                                                     text += response.rows[i].elements[0].duration.text + "<br>";
                                                                 }
                                                                 document.getElementById('distM').innerHTML = text;
+//                                                                getDist.value = response.rows[0].elements[0].distance.text;
+//                                                                getDur.value = response.rows[0].elements[0].duration.text;
                                                             } else {
-                                                                window.alert('Distance Matrix request failed due to ' + status);
+                                                                alert("Error: " + status);
                                                             }
-                                                        });
+                                                        }
                                                     }
                                                 }
 
