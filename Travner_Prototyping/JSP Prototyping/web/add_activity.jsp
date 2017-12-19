@@ -359,6 +359,10 @@
                                                             //document.getElementById("lat1").value = results[0].geometry.location.lat();
                                                             marker1.setPosition(results[0].geometry.location);
                                                             marker1.setMap(mapObj);
+                                                            marker1.formatted_address = results[0].formatted_address;
+                                                            document.getElementById("orig").value = marker1.formatted_address;
+                                                            document.getElementById("lat1").value = marker1.getPosition().lat();
+                                                            document.getElementById("lng1").value = marker1.getPosition().lng();
 //                                                            marker1 = new google.maps.Marker({
 //                                                                map: mapObj,
 //                                                                position: results[0].geometry.location,
@@ -395,6 +399,10 @@
                                                             mapObj.setCenter(results[0].geometry.location);
                                                             marker2.setPosition(results[0].geometry.location);
                                                             marker2.setMap(mapObj);
+                                                            marker2.formatted_address = results[0].formatted_address;
+                                                            document.getElementById("dest").value = marker2.formatted_address;
+                                                            document.getElementById("lat2").value = marker2.getPosition().lat();
+                                                            document.getElementById("lng2").value = marker2.getPosition().lng();
                                                         } else {
                                                             alert('Geocode was not successful for the following reason: ' + status);
                                                         }
@@ -471,8 +479,9 @@
                                                         }, function (response, status) {
                                                             if (status === 'OK') {
                                                                 var text = "";
-                                                                for (var i = 0; i < response.rows.length; i++) {
                                                                     text += "from " + response.originAddresses[0] + " to " + response.destinationAddresses[0] + "<br>";
+                                                                for (var i = 0; i < response.rows.length; i++) {
+                                                                    text += "route " + i + "<br>";
                                                                     text += response.rows[i].elements[0].distance.text + "<br>";
                                                                     text += response.rows[i].elements[0].duration.text + "<br>";
                                                                 }
