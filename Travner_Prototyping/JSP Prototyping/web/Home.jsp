@@ -37,8 +37,36 @@
     </head>
     
     <body>
-        <div id="main">
+       <div id="main">
             <div id="header"><!--header-->
+                
+                <nav onmouseover="">
+		<a href="#" title="Menu">Menu</a>
+		<a href="#" title="Account">Account</a>
+		<a href="#" title="Settings">Settings</a>
+		<a href="#" title="Email">Email</a>
+	</nav>
+
+
+<!--	<script type="text/javascript">
+    /* iOS re-orientation fix */
+    if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+      var viewportmeta = document.querySelectorAll('meta[name="viewport"]')[0];
+      if (viewportmeta) {
+        viewportmeta.content = 'width=device-width, minimum-scale=1.0, maximum-scale=1.0';
+        document.body.addEventListener('gesturestart', function() {
+          viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6';
+        }, false);
+      }
+      /* iOS hides Safari address bar */
+      window.addEventListener("load",function() {
+        setTimeout(function() {
+          window.scrollTo(0, 1);
+        }, 300);
+      });
+    }
+	</script>-->
+                
                 <img src="css/Assets/icon/logo.png">
                 <div class="account-btn">
                    
@@ -64,24 +92,30 @@
             <div class="account-menu">
 
                 <ul class="account-menu-list">
-                    <a href=Index.jsp> <li>Sign Out</li> </a>
+                    <a href=index.jsp> <li>Sign Out</li> </a>
                 </ul>
 
             </div><!--end account-menu-->
+                    
 
         </div>
+                
             </div>
             
             <div id="main">
+                
                 <!--calendar-->
                 <div class="left">
+                    <form>
+	                   <input type="search" placeholder="Find Activity">
+                </form>
                     <div id='calendar'></div>
                 </div>
                 
                 <!--Tab Utama-->
                 <div class="right">
                     <a href="add_activity.jsp"><button class="activity">Add Activity</button></a>
-                    <img src="css/Assets/Travner1.png">
+                    <img src="css/Assets/travel.jpg">
                 </div>
                 <!-- script calendar -->
 <script>
