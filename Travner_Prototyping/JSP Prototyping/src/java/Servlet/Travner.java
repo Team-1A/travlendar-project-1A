@@ -10,9 +10,11 @@ import DAO.LocationDAO;
 import DAO.TravelDAO;
 import DAO.User_AccountDAO;
 import Model.Activity;
+import Model.JSON.Activity_JSON;
 import Model.Location;
 import Model.Travel;
 import Model.User_Account;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -79,7 +81,6 @@ public class Travner extends HttpServlet {
         switch(param){
             case "activitycal":{
             try {
-                System.out.print("hello");
                 DisplayActCalendar(request,response);
             } catch (SQLException | ParseException ex) {
                 Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
@@ -131,7 +132,17 @@ public class Travner extends HttpServlet {
 
     @SuppressWarnings("empty-statement")
     public void DisplayActCalendar(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
-        //TODO Write a Code
+        String usernm = this.username;
+        List<Activity> listAct = ActivityDAO.getAll(usernm);
+        List<Activity_JSON> listActJSON = new ArrayList<>();
+        listAct.forEach((Activity act)->{
+            Activity_JSON actJSON = new Activity_JSON(act.getActivity_ID(),act.getActivity_Name(),act.getTime_Start(),act.getTime_End());
+            listActJSON.add(actJSON);
+        });
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.write(new Gson().toJson(listActJSON));
     }
     
     public void saveDataUser(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {

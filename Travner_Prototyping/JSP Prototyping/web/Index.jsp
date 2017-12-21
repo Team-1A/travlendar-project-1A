@@ -113,7 +113,7 @@ function Submit(){
                 <!-- masukkan email-->
                 <div class="form-item">
                     <p class="formLabel">Username</p>
-                    <input form="login" type="text" name="email" id="email" class="form-style" autocomplete="off"/>
+                    <input form="login" type="text" name="username" id="email" class="form-style" autocomplete="off"/>
                 </div>
                 <!-- masukkan password-->
                 <div class="form-item">
