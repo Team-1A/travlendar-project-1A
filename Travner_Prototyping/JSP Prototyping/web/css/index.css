@@ -3,7 +3,7 @@ background-image: url(Assets/BackGround.gif);
 background-size: cover;
 font-family:'HelveticaNeue','Arial', sans-serif;
 
-@font-face {
+font-face {
 font-family: 'icons';
 src: url('fontello.eot');
 src: url('fontello.eot?#iefix') format('embedded-opentype'),

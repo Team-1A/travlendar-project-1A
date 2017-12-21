@@ -176,7 +176,7 @@
                                                         <!--Perjalanan dengan sepeda-->
                                                         <tr>
                                                             <td><img src="css/Assets/icon/bicycle.svg"></td>
-                                                            <td id="BycDur"></td>
+                                                            <td id="BICYCLINGDur"></td>
                                                             <td>-</td>
                                                             <td><img src="css/Assets/icon/route.svg"></td>
                                                         </tr>
@@ -294,7 +294,7 @@
                                         <!-- Script Gmaps -->
                                         <script>
                                             // JQuery
-                                            $(document).ready(function () {  // Ketika web udah siap
+//                                            $(document).ready(function () {  // Ketika web udah siap
                                                 //		prettyPrint();
                                                 var marker1 = new google.maps.Marker({
                                                     map: mapObj,
@@ -321,6 +321,7 @@
                                                 };
 
                                                 var calculateHandler = function () {
+                                                    var transport = document.getElementById('mode').value;
                                                     calculateRoute(distMatrixService);
                                                 };
 //                                                event when map clicked
@@ -360,32 +361,10 @@
                                                     geocoder.geocode({address: orig}, function (results, status) {
                                                         if (status === 'OK') {
                                                             mapObj.setCenter(results[0].geometry.location);
-                                                            //document.getElementById("lat1").value = results[0].geometry.location.lat();
                                                             marker1.setPosition(results[0].geometry.location);
                                                             marker1.setMap(mapObj);
-//                                                            marker1.formatted_address = results[0].formatted_address;
-//                                                            document.getElementById("orig").value = marker1.formatted_address;
                                                             document.getElementById("lat1").value = marker1.getPosition().lat();
                                                             document.getElementById("lng1").value = marker1.getPosition().lng();
-//                                                            marker1 = new google.maps.Marker({
-//                                                                map: mapObj,
-//                                                                position: results[0].geometry.location,
-//                                                                draggable: true
-//                                                            });
-//                                                            google.maps.event.addListener(marker1, 'dragend', function () {
-//                                                                geocodePosition(marker1.getPosition(), marker1);
-//                                                                document.getElementById('orig').value = marker1.formatted_address;
-//                                                                document.getElementById('lat1').value = marker1.getPosition().lat();
-//                                                                document.getElementById('lng1').value = marker1.getPosition().lng();
-//                                                            });
-//                                                            google.maps.event.addListener(marker1, 'click', function () {
-//                                                                if (marker1.formatted_address) {
-//                                                                    infowindow.setContent(marker1.formatted_address + "<br>coordinates: " + marker1.getPosition().toUrlValue(6));
-//                                                                } else {
-//                                                                    infowindow.setContent(orig + "<br>coordinates: " + orig.getPosition().toUrlValue(6));
-//                                                                }
-//                                                                infowindow.open(mapObj, marker1);
-//                                                            });
                                                         } else {
                                                             alert('Geocode was not successful for the following reason: ' + status);
                                                         }
@@ -403,8 +382,6 @@
                                                             mapObj.setCenter(results[0].geometry.location);
                                                             marker2.setPosition(results[0].geometry.location);
                                                             marker2.setMap(mapObj);
-//                                                            marker2.formatted_address = results[0].formatted_address;
-//                                                            document.getElementById("dest").value = marker2.formatted_address;
                                                             document.getElementById("lat2").value = marker2.getPosition().lat();
                                                             document.getElementById("lng2").value = marker2.getPosition().lng();
                                                         } else {
@@ -416,16 +393,10 @@
 
                                                 google.maps.event.addListener(marker1, 'dragend', function () {
                                                     geocodePosition(marker1.getPosition(), marker1, 1, 'orig');
-                                                    //document.getElementById('orig').value = marker1.formatted_address;
-                                                    //document.getElementById('lat1').value = marker1.getPosition().lat();
-                                                    //document.getElementById('lng1').value = marker1.getPosition().lng();
                                                 });
 
                                                 google.maps.event.addListener(marker2, 'dragend', function () {
                                                     geocodePosition(marker2.getPosition(), marker2, 2, 'dest');
-                                                    //document.getElementById('dest').value = marker2.formatted_address;
-                                                    //document.getElementById('lat2').value = marker2.getPosition().lat();
-                                                    //document.getElementById('lng2').value = marker2.getPosition().lng();
                                                 });
 
                                                 google.maps.event.addListener(marker1, 'dragend', onChangeHandler);
@@ -533,7 +504,7 @@
                                                         $('input#mark1').prop('checked', false);
                                                     }
                                                 });
-                                            }); // tutup JQuery    
+//                                            }); // tutup JQuery    
                                         </script>     
                                         <!-- script tab -->
                                         <script>
@@ -560,6 +531,10 @@
                                             }
 
                                             function nextPrev(n) {
+                                                calculateRoute(distMatrixService, "DRIVING");
+                                                calculateRoute(distMatrixService, "WALKING");
+                                                calculateRoute(distMatrixService, "BICYCLING");
+                                                calculateRoute(distMatrixService, "TRANSIT");
                                                 // This function will figure out which tab to display
                                                 var x = document.getElementsByClassName("tab");
                                                 // Exit the function if any field in the current tab is invalid:
