@@ -129,8 +129,8 @@
                                                 </label></p>-->
 
                                                 <!--<input form="regForm" type="Hidden" id="getOrig" name="Orig">-->
-                                                <input form="regForm" type="Text" id="getDur" name="Dur">
-                                                <input form="regForm" type="Text" id="getDist" name="Dist">
+                                                <!--<input form="regForm" type="Text" id="getDur" name="Dur">
+                                                <input form="regForm" type="Text" id="getDist" name="Dist">-->
                                                 <input form="regForm" type="Hidden" id="lat1" name="marker1_lat">
                                                 <input form="regForm" type="Hidden" id="lng1" name="marker1_lng">
                                                 <input form="regForm" type="Hidden" id="lat2" name="marker2_lat">
@@ -154,7 +154,7 @@
                                                         <!--Perjalanan dengan mobil-->
                                                         <tr>
                                                             <td><img src="css/Assets/icon/car.svg"></td>
-                                                            <td>80 mins</td>
+                                                            <td id="DRIVINGDur"></td>
                                                             <td>Leave at 8.45 AM</td>
                                                             <td>
                                                                 <img src="css/Assets/icon/route.svg"></td>
@@ -162,7 +162,7 @@
                                                         <!--Perjalanan dengan motor-->
                                                         <tr>
                                                             <td><img src="css/Assets/icon/motorcycle.svg"></td>
-                                                            <td>180 mins</td>
+                                                            <td id="MotDur"></td>
                                                             <td>Leave at 9.00 AM</td>
                                                             <td><img src="css/Assets/icon/route.svg"></td>
                                                         </tr>
@@ -176,14 +176,14 @@
                                                         <!--Perjalanan dengan sepeda-->
                                                         <tr>
                                                             <td><img src="css/Assets/icon/bicycle.svg"></td>
-                                                            <td>-</td>
+                                                            <td id="BycDur"></td>
                                                             <td>-</td>
                                                             <td><img src="css/Assets/icon/route.svg"></td>
                                                         </tr>
                                                         <!--Perjalanan dengan berjalan kaki-->
                                                         <tr>
                                                             <td><img src="css/Assets/icon/walk.svg"></td>
-                                                            <td>-</td>
+                                                            <td id="WALKINGDur"></td>
                                                             <td>-</td>
                                                             <td><img src="css/Assets/icon/route.svg"></td>
                                                         </tr>
@@ -483,15 +483,15 @@
                                                     }
                                                 }
 
-                                                function calculateRoute(distMatrixService) {
+                                                function calculateRoute(distMatrixService, transport) {
                                                     if (a && b) {
                                                         var origin = document.getElementById('orig').value;
                                                         var destination = document.getElementById('dest').value;
-                                                        var transportMode = document.getElementById('mode').value;
+                                                        var durID = transport + 'Dur';
                                                         distMatrixService.getDistanceMatrix({
                                                             origins: [origin],
                                                             destinations: [destination],
-                                                            travelMode: google.maps.TravelMode[transportMode],
+                                                            travelMode: google.maps.TravelMode[transport],
                                                             avoidHighways: false,
                                                             avoidTolls: false
                                                         }, callback
@@ -506,12 +506,13 @@
                                                                     text += "route " + i + "<br>";
                                                                     text += response.rows[i].elements[0].distance.text + "<br>";
                                                                     text += response.rows[i].elements[0].duration.text + "<br>";
-                                                                    getDur += response.rows[i].elements[0].duration.value;
+                                                                    getDur = response.rows[i].elements[0].duration.text;
                                                                     getDist += response.rows[i].elements[0].distance.text;
                                                                 }
                                                                 //document.getElementById('distM').innerHTML = text;
-                                                                document.getElementById("getDur").value = getDur;
-                                                                document.getElementById("getDist").value = getDist;
+                                                                //document.getElementById("getDur").value = getDur;
+                                                                //document.getElementById("getDist").value = getDist;
+                                                                document.getElementById(durID).innerHTML = getDur;
 //                                                                getDist.value = response.rows[0].elements[0].distance.text;
 //                                                                getDur.value = response.rows[0].elements[0].duration.text;
                                                             } else {
@@ -576,6 +577,10 @@
                                                 }
                                                 // Otherwise, display the correct tab:
                                                 showTab(currentTab);
+                                                if (currentTab === 2){
+                                                    calculateRoute(distMatrixService,'DRIVING');
+                                                    //calculateRoute(distMatrixService,'WALKING');
+                                                }
                                             }
 
                                             function validateForm() {
