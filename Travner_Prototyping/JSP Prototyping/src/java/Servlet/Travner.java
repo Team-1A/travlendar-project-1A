@@ -118,12 +118,34 @@ public class Travner extends HttpServlet {
                 }
                 break;
             }
+            case "signup":{
+                try{
+                    saveDataUser(request,response);
+                } catch (SQLException | ParseException ex) {
+                Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            }
         }
     }
 
     @SuppressWarnings("empty-statement")
     public void DisplayActCalendar(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
         //TODO Write a Code
+    }
+    
+    public void saveDataUser(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
+        String username = request.getParameter("Name");
+        String email = request.getParameter("Email");
+        String password = request.getParameter("Password");
+        
+        User_Account user = new User_Account();
+        user.setEmail(email);
+        user.setUsername(username);
+        user.setPassword(password);
+        
+        User_AccountDAO.save(user);
+        response.sendRedirect("./Index.jsp");
     }
     
     public void getDataUser(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {

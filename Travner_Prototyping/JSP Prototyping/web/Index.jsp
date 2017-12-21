@@ -21,20 +21,20 @@ function Submit(){
 		fday = document.form.birthday_day.value,
 		fyear = document.form.birthday_year.value;
 		
-	if( fname == "" )
+	if( fname === "" )
    {
      document.form.Name.focus() ;
 	 document.getElementById("errorBox_name").innerHTML = "enter the first name";
      return false;
    }
-	if( lname == "" )
+	if( lname === "" )
    {
      document.form.LastName.focus() ;
 	  document.getElementById("errorBox_name").innerHTML = "enter the last name";
             return false;
    }
    
-   if (femail == "" )
+   if (femail === "" )
 	{
 		document.form.Email.focus();
          document.getElementById("errorBox_name").innerHTML = "";
@@ -47,7 +47,7 @@ function Submit(){
 		return false;
 	 }
     
-    if(fpassword == "")
+    if(fpassword === "")
 	 {
           document.form.Password.focus();
         document.getElementById("errorBox_email").innerHTML = "";
@@ -55,7 +55,7 @@ function Submit(){
 		 return false;
 	 }
 	 
-	  if (frepassword == "" )
+	  if (frepassword === "" )
 	{
 		document.form.enterPassword.focus();
         document.getElementById("errorBox_password").innerHTML = "";
@@ -63,7 +63,7 @@ function Submit(){
 		return false;
 	 }
 
-	 if(frepassword !=  fpassword){
+	 if(frepassword !==  fpassword){
 		 document.form.enterPassword.focus();
          document.getElementById("errorBox_password").innerHTML = "";
 		 document.getElementById("errorBox_repassword").innerHTML = "emails are not matching, re-enter again";
@@ -71,19 +71,19 @@ function Submit(){
 		 }
 	 
 	 
-    if (fmonth == "") {
+    if (fmonth === "") {
         document.form.birthday_month.focus();
         document.getElementById("errorBox_repassword").innerHTML = "";
 		document.getElementById("errorBox_birthday").innerHTML = "select the birthday month";
         return false;
      }
-	 if (fday == "") {
+	 if (fday === "") {
         document.form.birthday_day.focus();
           document.getElementById("errorBox_repassword").innerHTML = "";
 		document.getElementById("errorBox_birthday").innerHTML = "select the birthday day";
         return false;
      }
-	 if (fyear == "") {
+	 if (fyear === "") {
         document.form.birthday_year.focus();
           document.getElementById("errorBox_repassword").innerHTML = "";
 		document.getElementById("errorBox_birthday").innerHTML = "select the birthday year";
@@ -94,10 +94,11 @@ function Submit(){
 //			 return false;
 //			}
     
-		if(fname != '' && lname != '' && femail != '' && fpassword != '' && frepassword != '' && fmonth != '' && fday != '' && fyear != ''){
-             document.getElementById("errorBox_birthday").innerHTML = "";
+		if(fname !== '' && lname !== '' && femail !== '' && fpassword !== '' && frepassword !== '' && fmonth !== '' && fday !== '' && fyear !== ''){
+                        document.getElementById("errorBox_birthday").innerHTML = "";
+                        document.getElementById("signup").submit();
 			document.getElementById("errorBox_name").innerHTML = "form submitted successfully";
-			}
+		}
 		  
 }
 
@@ -142,27 +143,27 @@ function Submit(){
     <!--Form  start-->
     <div id="form_name">
       <div class="firstnameorlastname">
-       <form name="form" >
+          <form name="form" action="${pageContext.request.contextPath}/Travner?action=signup" id="signup" method="POST"></form>
            
     <div id="errorBox_name"></div>
-        <input type="text" name="Name" value="" placeholder="First Name"  class="input_name" >
+        <input form="signup" type="text" name="Name" value="" placeholder="First Name"  class="input_name" >
 <!--           <div id="errorBox_lastname"></div>-->
-           <input type="text" name="LastName" value="" placeholder="Last Name" class="input_name" >
+           <input form="signup" type="text" name="LastName" value="" placeholder="Last Name" class="input_name" >
     </div>
           
         <div id="errorBox_email"></div>
       <div id="email_form">
-        <input type="text" name="Email" value=""  placeholder="Your Email" class="input_email">
+        <input form="signup" type="text" name="Email" value=""  placeholder="Your Email" class="input_email">
       </div>
           
           <div id="errorBox_password"></div>
         <div id="password_form">
-        <input type="password" name="Password" value=""  placeholder="New Password" class="input_password">
+        <input form="signup" type="password" name="Password" value=""  placeholder="New Password" class="input_password">
       </div>
           
           <div id="errorBox_repassword"></div>
       <div id="re_password_form">
-        <input type="text" name="enterPassword" value=""  placeholder="Re-enter Password" class="input_re_password">
+        <input form="signup" type="text" name="enterPassword" value=""  placeholder="Re-enter Password" class="input_re_password">
       </div>
       
       <!--birthday details start-->
@@ -171,7 +172,7 @@ function Submit(){
       </div>
           <div id="errorBox_birthday"></div>
       <div>
-        <select name="birthday_month" >
+        <select form="signup" name="birthday_month" >
           <option value="" selected >Month</option>
           <option value="1">Jan</option>
           <option value="2">Feb</option>
@@ -187,7 +188,7 @@ function Submit(){
           <option value="12">Dec</option>
         </select>
         &nbsp;&nbsp;
-        <select name="birthday_day" >
+        <select form="signup" name="birthday_day" >
           <option value="" selected>Day</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -222,7 +223,7 @@ function Submit(){
           <option value="31">31</option>
         </select>
         &nbsp;&nbsp;
-        <select name="birthday_year">
+        <select form="signup" name="birthday_year">
           <option value="" selected>Year</option>
           <option value="2013">2013</option>
           <option value="2012">2012</option>
@@ -261,7 +262,7 @@ function Submit(){
       </div>
 -->
           <div>
-        <p id="sign_user" onClick="Submit()">Sign Up </p>
+        <p form="signup" id="sign_user" onClick="Submit()">Sign Up </p>
       </div>
 
           <div class="form-item">
