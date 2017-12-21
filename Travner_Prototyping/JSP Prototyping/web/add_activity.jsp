@@ -129,8 +129,8 @@
                                                 </label></p>-->
 
                                                 <!--<input form="regForm" type="Hidden" id="getOrig" name="Orig">-->
-<!--                                                <input form="regForm" type="Text" id="getDur" name="Dur">
-                                                <input form="regForm" type="Text" id="getDist" name="Dist">-->
+                                                <input form="regForm" type="Text" id="getDur" name="Dur">
+                                                <input form="regForm" type="Text" id="getDist" name="Dist">
                                                 <input form="regForm" type="Hidden" id="lat1" name="marker1_lat">
                                                 <input form="regForm" type="Hidden" id="lng1" name="marker1_lng">
                                                 <input form="regForm" type="Hidden" id="lat2" name="marker2_lat">
@@ -506,8 +506,12 @@
                                                                     text += "route " + i + "<br>";
                                                                     text += response.rows[i].elements[0].distance.text + "<br>";
                                                                     text += response.rows[i].elements[0].duration.text + "<br>";
+                                                                    getDur += response.rows[i].elements[0].duration.value;
+                                                                    getDist += response.rows[i].elements[0].distance.text;
                                                                 }
-                                                                document.getElementById('distM').innerHTML = text;
+                                                                //document.getElementById('distM').innerHTML = text;
+                                                                document.getElementById("getDur").value = getDur;
+                                                                document.getElementById("getDist").value = getDist;
 //                                                                getDist.value = response.rows[0].elements[0].distance.text;
 //                                                                getDur.value = response.rows[0].elements[0].duration.text;
                                                             } else {
