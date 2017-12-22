@@ -55,7 +55,7 @@ CREATE TABLE `user_account` (
   `EMAIL` VARCHAR(30) NOT NULL,
   `PASSWORD` VARCHAR(15) NOT NULL,
   `PROFILE_PICTURE` LONGBLOB,
-  PRIMARY KEY (`USERNAME`)
+  PRIMARY KEY (`EMAIL`)
 ) ENGINE=INNODB DEFAULT CHARSET=latin1;
 
 /*Data for the table `user_account` */
@@ -66,36 +66,36 @@ INSERT  INTO `user_account`(`USERNAME`,`EMAIL`,`PASSWORD`) VALUES ('sitti','sitt
 
 CREATE TABLE `vehicle` (
   `VEHICLE_NAME` VARCHAR(15) NOT NULL,
-  `USERNAME` VARCHAR(15) DEFAULT NULL,
-  PRIMARY KEY (`VEHICLE_NAME`),
-  KEY `FK_HAVE_A_VEHICLE` (`USERNAME`),
-  CONSTRAINT `FK_HAVE_A_VEHICLE` FOREIGN KEY (`USERNAME`) REFERENCES `user_account` (`USERNAME`)
+  `EMAIL` VARCHAR(15) DEFAULT NULL,
+  PRIMARY KEY (`VEHICLE_NAME`,`EMAIL`),
+  KEY `FK_HAVE_A_VEHICLE` (`EMAIL`),
+  CONSTRAINT `FK_HAVE_A_VEHICLE` FOREIGN KEY (`EMAIL`) REFERENCES `user_account` (`EMAIL`)
 ) ENGINE=INNODB DEFAULT CHARSET=latin1;
 
 /*Data for the table `vehicle` */
 
-INSERT  INTO `vehicle`(`VEHICLE_NAME`,`USERNAME`) VALUES ('Mobil','sitti');
+INSERT  INTO `vehicle`(`VEHICLE_NAME`,`EMAIL`) VALUES ('Mobil','sitti@polban.me');
 
 /*Table structure for table `activity` */
 
 CREATE TABLE `activity` (
   `ACTIVITY_ID` INT(11) NOT NULL AUTO_INCREMENT,
   `TRAVEL_ID` INT(11) DEFAULT NULL,
-  `USERNAME` VARCHAR(15) DEFAULT NULL,
+  `EMAIL` VARCHAR(15) DEFAULT NULL,
   `ACTIVITY_NAME` VARCHAR(60) DEFAULT NULL,
   `TIME_START` TIMESTAMP NOT NULL,
   `TIME_END` TIMESTAMP NOT NULL,
   `SPARE_TIME` TIME DEFAULT NULL,
   PRIMARY KEY (`ACTIVITY_ID`),
-  KEY `FK_DOING_AN_ACTIVITY` (`USERNAME`),
+  KEY `FK_DOING_AN_ACTIVITY` (`EMAIL`),
   KEY `FK_RELATIONSHIP_1` (`TRAVEL_ID`),
-  CONSTRAINT `FK_DOING_AN_ACTIVITY` FOREIGN KEY (`USERNAME`) REFERENCES `user_account` (`USERNAME`),
+  CONSTRAINT `FK_DOING_AN_ACTIVITY` FOREIGN KEY (`EMAIL`) REFERENCES `user_account` (`EMAIL`),
   CONSTRAINT `FK_RELATIONSHIP_1` FOREIGN KEY (`TRAVEL_ID`) REFERENCES `travel` (`TRAVEL_ID`)
 ) ENGINE=INNODB DEFAULT CHARSET=latin1;
 
 /*Data for the table `activity` */
 
-INSERT  INTO `activity`(`ACTIVITY_ID`,`TRAVEL_ID`,`USERNAME`,`ACTIVITY_NAME`,`TIME_START`,`TIME_END`,`SPARE_TIME`) VALUES (1,1,'sitti','Menunggu keberangkatan pesawat ke kendari','2017-09-19 05:10:00','2017-09-19 05:10:00','00:40:00'),(2,2,'sitti','Sampai di bandara Kendari','2017-09-19 11:10:00','2017-09-19 11:10:00','00:00:00'),(3,3,'sitti','Sampai di hotel untuk ishoma Tartil dan diskusi dengan depar','2017-09-19 12:30:00','2017-09-19 15:00:00','00:30:00'),(4,4,'sitti','Makan sore','2017-09-19 15:30:00','2017-09-19 16:30:00','00:00:00'),(5,5,'sitti','Kunjungan korban Narkoba','2017-09-19 17:00:00','2017-09-19 18:30:00','00:12:00'),(6,6,'sitti','Kembali ke hotel','2017-09-19 19:00:00','2017-09-19 00:00:00','00:00:00');
+INSERT  INTO `activity`(`ACTIVITY_ID`,`TRAVEL_ID`,`USERNAME`,`ACTIVITY_NAME`,`TIME_START`,`TIME_END`,`SPARE_TIME`) VALUES (1,1,'sitti@polban.me','Menunggu keberangkatan pesawat ke kendari','2017-09-19 05:10:00','2017-09-19 05:10:00','00:40:00'),(2,2,'sitti@polban.me','Sampai di bandara Kendari','2017-09-19 11:10:00','2017-09-19 11:10:00','00:00:00'),(3,3,'sitti@polban.me','Sampai di hotel untuk ishoma Tartil dan diskusi dengan depar','2017-09-19 12:30:00','2017-09-19 15:00:00','00:30:00'),(4,4,'sitti@polban.me','Makan sore','2017-09-19 15:30:00','2017-09-19 16:30:00','00:00:00'),(5,5,'sitti@polban.me','Kunjungan korban Narkoba','2017-09-19 17:00:00','2017-09-19 18:30:00','00:12:00'),(6,6,'sitti@polban.me','Kembali ke hotel','2017-09-19 19:00:00','2017-09-19 00:00:00','00:00:00');
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
