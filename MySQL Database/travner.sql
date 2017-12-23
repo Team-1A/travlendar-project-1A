@@ -95,7 +95,7 @@ CREATE TABLE `activity` (
 
 /*Data for the table `activity` */
 
-INSERT  INTO `activity`(`ACTIVITY_ID`,`TRAVEL_ID`,`USERNAME`,`ACTIVITY_NAME`,`TIME_START`,`TIME_END`,`SPARE_TIME`) VALUES (1,1,'sitti@polban.me','Menunggu keberangkatan pesawat ke kendari','2017-09-19 05:10:00','2017-09-19 05:10:00','00:40:00'),(2,2,'sitti@polban.me','Sampai di bandara Kendari','2017-09-19 11:10:00','2017-09-19 11:10:00','00:00:00'),(3,3,'sitti@polban.me','Sampai di hotel untuk ishoma Tartil dan diskusi dengan depar','2017-09-19 12:30:00','2017-09-19 15:00:00','00:30:00'),(4,4,'sitti@polban.me','Makan sore','2017-09-19 15:30:00','2017-09-19 16:30:00','00:00:00'),(5,5,'sitti@polban.me','Kunjungan korban Narkoba','2017-09-19 17:00:00','2017-09-19 18:30:00','00:12:00'),(6,6,'sitti@polban.me','Kembali ke hotel','2017-09-19 19:00:00','2017-09-19 00:00:00','00:00:00');
+INSERT  INTO `activity`(`ACTIVITY_ID`,`TRAVEL_ID`,`EMAIL`,`ACTIVITY_NAME`,`TIME_START`,`TIME_END`,`SPARE_TIME`) VALUES (1,1,'sitti@polban.me','Menunggu keberangkatan pesawat ke kendari','2017-09-19 05:10:00','2017-09-19 05:10:00','00:40:00'),(2,2,'sitti@polban.me','Sampai di bandara Kendari','2017-09-19 11:10:00','2017-09-19 11:10:00','00:00:00'),(3,3,'sitti@polban.me','Sampai di hotel untuk ishoma Tartil dan diskusi dengan depar','2017-09-19 12:30:00','2017-09-19 15:00:00','00:30:00'),(4,4,'sitti@polban.me','Makan sore','2017-09-19 15:30:00','2017-09-19 16:30:00','00:00:00'),(5,5,'sitti@polban.me','Kunjungan korban Narkoba','2017-09-19 17:00:00','2017-09-19 18:30:00','00:12:00'),(6,6,'sitti@polban.me','Kembali ke hotel','2017-09-19 19:00:00','2017-09-19 00:00:00','00:00:00');
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

@@ -16,7 +16,7 @@ import java.sql.Timestamp;
 public class Activity {
     private Integer Activity_ID;
     private Integer Travel_ID;
-    private String Username;
+    private String Email;
     private String Activity_Name;
     private java.sql.Timestamp Time_Start;
     private java.sql.Timestamp Time_End;
@@ -25,7 +25,7 @@ public class Activity {
     public Activity(){
         Activity_ID = 0;
         Travel_ID = 0;
-        Username = null;
+        Email = null;
         Activity_Name = null;
         Time_Start = null;
         Time_End = null;
@@ -119,15 +119,15 @@ public class Activity {
     /**
      * @return the Username
      */
-    public String getUsername() {
-        return Username;
+    public String getEmail() {
+        return Email;
     }
 
     /**
      * @param Username the Username to set
      */
-    public void setUsername(String Username) {
-        this.Username = Username;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
     
 }

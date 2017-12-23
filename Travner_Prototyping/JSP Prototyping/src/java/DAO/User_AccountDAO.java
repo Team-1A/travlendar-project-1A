@@ -37,12 +37,12 @@ public class User_AccountDAO extends DAO {
         return User_Account;
     }
     
-    public static User_Account getUser(String username,String password){
+    public static User_Account getUser(String email,String password){
         //List<User_Account> User_Account = new ArrayList<>();
         User_Account User = new User_Account();
         try {
         com.mysql.jdbc.Connection con = (com.mysql.jdbc.Connection) getConnection();
-        PreparedStatement ps = con.prepareStatement("SELECT * FROM user_account where USERNAME = \"" + username + "\" AND PASSWORD = \"" + password + "\" ;");
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM user_account where EMAIL = \"" + email + "\" AND PASSWORD = \"" + password + "\" ;");
         ResultSet rs = ps.executeQuery();
         
         while(rs.next()){

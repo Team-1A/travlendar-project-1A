@@ -10,7 +10,7 @@ import DAO.LocationDAO;
 import DAO.TravelDAO;
 import DAO.User_AccountDAO;
 import Model.Activity;
-import Model.JSON.Activity_JSON;
+import ModelJSON.Activity_JSON;
 import Model.Location;
 import Model.Travel;
 import Model.User_Account;
@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +37,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "Travner", urlPatterns = {"/Travner"})
 public class Travner extends HttpServlet {
-    String username = null;
+    String email = null;
     String password = null;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -80,8 +81,11 @@ public class Travner extends HttpServlet {
         
         switch(param){
             case "activitycal":{
-            try {
                 DisplayActCalendar(request,response);
+            }
+            case "getProfile":{
+            try {
+                getUserProfile(request,response);
             } catch (SQLException | ParseException ex) {
                 Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -130,9 +134,8 @@ public class Travner extends HttpServlet {
         }
     }
 
-    @SuppressWarnings("empty-statement")
-    public void DisplayActCalendar(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
-        String usernm = this.username;
+    public void DisplayActCalendar(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+        String usernm = this.email;
         List<Activity> listAct = ActivityDAO.getAll(usernm);
         List<Activity_JSON> listActJSON = new ArrayList<>();
         listAct.forEach((Activity act)->{
@@ -143,6 +146,13 @@ public class Travner extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         out.write(new Gson().toJson(listActJSON));
+    }
+    
+    public void getUserProfile(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException, ServletException {
+        String userP = this.email;
+        request.setAttribute("name", userP);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("JSP_Prototyping/add_activity.jsp");
+        dispatcher.include(request, response);
     }
     
     public void saveDataUser(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
@@ -161,12 +171,12 @@ public class Travner extends HttpServlet {
     
     public void getDataUser(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {
         
-            this.username = request.getParameter("username");
+            this.email = request.getParameter("email");
             this.password = request.getParameter("password");
             
-            User_Account user = User_AccountDAO.getUser(this.username, this.password);
+            User_Account user = User_AccountDAO.getUser(this.email, this.password);
             String test = user.getUsername();
-            if (user.getUsername() == null ? username == null : user.getUsername().equals(username)){
+            if (user.getUsername() == null ? email == null : user.getEmail().equals(email)){
                 response.sendRedirect("./Home.jsp");
             } else {
                 //TODO : Send Message to Client User Not Found!
@@ -259,7 +269,7 @@ public class Travner extends HttpServlet {
             
             int idT = TravelDAO.getLastID();
             act.setTravel_ID(idT);
-            act.setUsername(this.username);
+            act.setEmail(this.email);
             
             ActivityDAO.save(act);
             

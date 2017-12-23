@@ -7,7 +7,7 @@ package Servlet;
 
 import DAO.ActivityDAO;
 import Model.Activity;
-import Model.JSON.Activity_JSON;
+import ModelJSON.Activity_JSON;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -64,7 +64,7 @@ public class Calendar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Activity> listAct = ActivityDAO.getAll("sitti");
+        List<Activity> listAct = ActivityDAO.getAll("sitti@polban.me");
         List<Activity_JSON> listActJSON = new ArrayList<>();
         listAct.forEach((Activity act)->{
             Activity_JSON actJSON = new Activity_JSON(act.getActivity_ID(),act.getActivity_Name(),act.getTime_Start(),act.getTime_End());

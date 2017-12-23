@@ -20,14 +20,14 @@ public class ActivityDAO extends DAO {
         List<Activity> activity = new ArrayList<>();
         try {
             java.sql.Connection con = getConnection();
-            PreparedStatement ps = con.prepareStatement("SELECT * FROM activity WHERE USERNAME = \"" + username + "\" ;");
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM activity WHERE EMAIL = \"" + username + "\" ;");
             ResultSet rs = ps.executeQuery();
 
             while(rs.next()){
                 Activity act = new Activity();
                 act.setActivity_ID(rs.getInt("ACTIVITY_ID"));
                 act.setTravel_ID(rs.getInt("TRAVEL_ID"));
-                act.setUsername(rs.getString("USERNAME"));
+                act.setEmail(rs.getString("EMAIL"));
                 act.setActivity_Name(rs.getString("ACTIVITY_NAME"));
                 act.setTime_Start(rs.getTimestamp("TIME_START"));
                 act.setTime_End(rs.getTimestamp("TIME_END"));
@@ -49,14 +49,14 @@ public class ActivityDAO extends DAO {
             
             Integer Activity_ID = _activity.getActivity_ID();
             Integer Travel_ID = _activity.getTravel_ID();
-            String username = _activity.getUsername();
+            String email = _activity.getEmail();
             String Activity_Name = _activity.getActivity_Name();
             java.sql.Timestamp Time_Start = _activity.getTime_Start();
             java.sql.Timestamp Time_End = _activity.getTime_End();
             Time Spare_Time = _activity.getSpare_Time();
            
             
-            String sql = "INSERT INTO activity (TRAVEL_ID,USERNAME,ACTIVITY_NAME,TIME_START,TIME_END,SPARE_TIME) VALUES(\"" + Travel_ID + "\",\"" + username+ "\",\"" + Activity_Name + "\",\"" + Time_Start + "\",\"" + Time_End + "\",\"" + Spare_Time + "\");";
+            String sql = "INSERT INTO activity (TRAVEL_ID,EMAIL,ACTIVITY_NAME,TIME_START,TIME_END,SPARE_TIME) VALUES(\"" + Travel_ID + "\",\"" + email + "\",\"" + Activity_Name + "\",\"" + Time_Start + "\",\"" + Time_End + "\",\"" + Spare_Time + "\");";
             stats = st.executeUpdate(sql);
         } catch (SQLException ex){
             System.out.println(ex);
