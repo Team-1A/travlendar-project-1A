@@ -294,223 +294,257 @@
                                         </script>
                                         <!-- Script Gmaps -->
                                         <script>
-                                            // JQuery
-                                            $(document).ready(function () {  // Ketika web udah siap
-                                                //		prettyPrint();
-                                                var marker1 = new google.maps.Marker({
-                                                    map: mapObj,
-                                                    draggable: true
-                                                }), marker2 = new google.maps.Marker({
-                                                    map: mapObj,
-                                                    draggable: true
-                                                });
-                                                var routes = [];
-                                                var marker1pos, marker2pos;
-                                                var a = false, b = false;
-                                                var geocoder = new google.maps.Geocoder();
-                                                var route;
-                                                var directionsService = new google.maps.DirectionsService;
-                                                var distMatrixService = new google.maps.DistanceMatrixService;
-                                                var mapOptions = {
-                                                    // Zoom di gmaps
-                                                    zoom: 13,
-                                                    // posisi maps
-                                                    center: {lat: -34.397, lng: 150.644},
-                                                    // style di gmaps
-                                                    styles: [
-                                                        {"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},
-                                                        {"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},
-                                                        {"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},
-                                                        {"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},
-                                                        {"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},
-                                                        {"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
-                                                        {"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},
-                                                        {"featureType":"water","elementType":"all","stylers":[{"color":"#7ba0bf"},{"visibility":"on"}]}]
-                                                };
-                                                var mapObj = document.getElementById('map');
-                                                var map = new google.maps.Map(mapObj, mapOptions);
-
-                                                var onChangeHandler = function () {
-                                                    calculateAndDisplayRoute(directionsService);
-                                                };
-//                                                event when map clicked
-//                                                google.maps.event.addListener(map, 'click', function (event) {
-//                                                    placeMarker(event.latLng);
-//                                                });
-//
-//                                                function placeMarker(location) {
-//                                                    if (marker) {
-//                                                        marker.setPosition(location);
-//                                                    } else {
-//                                                        marker = new google.maps.Marker({
-//                                                            position: location,
-//                                                            map: map
-//                                                        });
-//                                                    }
-//                                                }
-
-                                                // Try HTML5 geolocation.
-                                                if (navigator.geolocation) {
-                                                    navigator.geolocation.getCurrentPosition(function (position) {
-                                                        var pos = {
-                                                            lat: position.coords.latitude,
-                                                            lng: position.coords.longitude
-                                                        };
-
-                                                        mapObj.setCenter(pos);
-                                                    });
-                                                } else {
-                                                }
-
-                                                document.getElementById('searchorig').addEventListener('click', function () {
-                                                    var orig = document.getElementById('orig').value;
-                                                    if (a) {
-                                                        marker1.setMap(null);
-                                                    }
-                                                    geocoder.geocode({address: orig}, function (results, status) {
-                                                        if (status === 'OK') {
-                                                            mapObj.setCenter(results[0].geometry.location);
-                                                            //document.getElementById("lat1").value = results[0].geometry.location.lat();
-                                                            marker1.setPosition(results[0].geometry.location);
-                                                            marker1.setMap(mapObj);
-//                                                            marker1 = new google.maps.Marker({
-//                                                                map: mapObj,
-//                                                                position: results[0].geometry.location,
-//                                                                draggable: true
-//                                                            });
-//                                                            google.maps.event.addListener(marker1, 'dragend', function () {
-//                                                                geocodePosition(marker1.getPosition(), marker1);
-//                                                                document.getElementById('orig').value = marker1.formatted_address;
-//                                                                document.getElementById('lat1').value = marker1.getPosition().lat();
-//                                                                document.getElementById('lng1').value = marker1.getPosition().lng();
-//                                                            });
-//                                                            google.maps.event.addListener(marker1, 'click', function () {
-//                                                                if (marker1.formatted_address) {
-//                                                                    infowindow.setContent(marker1.formatted_address + "<br>coordinates: " + marker1.getPosition().toUrlValue(6));
-//                                                                } else {
-//                                                                    infowindow.setContent(orig + "<br>coordinates: " + orig.getPosition().toUrlValue(6));
-//                                                                }
-//                                                                infowindow.open(mapObj, marker1);
-//                                                            });
-                                                        } else {
-                                                            alert('Geocode was not successful for the following reason: ' + status);
-                                                        }
-                                                    });
-                                                    a = true;
-                                                });
-
-                                                document.getElementById('searchdest').addEventListener('click', function () {
-                                                    var dest = document.getElementById('dest').value;
-                                                    if (b) {
-                                                        marker2.setMap(null);
-                                                    }
-                                                    geocoder.geocode({address: dest}, function (results, status) {
-                                                        if (status === 'OK') {
-                                                            mapObj.setCenter(results[0].geometry.location);
-                                                            marker2.setPosition(results[0].geometry.location);
-                                                            marker2.setMap(mapObj);
-                                                        } else {
-                                                            alert('Geocode was not successful for the following reason: ' + status);
-                                                        }
-                                                    });
-                                                    b = true;
-                                                });
-
-                                                google.maps.event.addListener(marker1, 'dragend', function () {
-                                                    geocodePosition(marker1.getPosition(), marker1, 1, 'orig');
-                                                    //document.getElementById('orig').value = marker1.formatted_address;
-                                                    //document.getElementById('lat1').value = marker1.getPosition().lat();
-                                                    //document.getElementById('lng1').value = marker1.getPosition().lng();
-                                                });
-
-                                                google.maps.event.addListener(marker2, 'dragend', function () {
-                                                    geocodePosition(marker2.getPosition(), marker2, 2, 'dest');
-                                                    //document.getElementById('dest').value = marker2.formatted_address;
-                                                    //document.getElementById('lat2').value = marker2.getPosition().lat();
-                                                    //document.getElementById('lng2').value = marker2.getPosition().lng();
-                                                });
-
-                                                google.maps.event.addListener(marker1, 'dragend', onChangeHandler);
-                                                google.maps.event.addListener(marker2, 'dragend', onChangeHandler);
-
-                                                document.getElementById('searchorig').addEventListener('click', onChangeHandler);
-                                                document.getElementById('searchdest').addEventListener('click', onChangeHandler);
-
-                                                function geocodePosition(pos, marker, num, addr) {
-                                                    var lat = 'lat' + num;
-                                                    var lng = 'lng' + num;
-                                                    geocoder.geocode({location: pos}, function (results, status) {
-                                                        if (status === 'OK') {
-                                                            marker.formatted_address = results[0].formatted_address;
-                                                            document.getElementById(addr).value = marker.formatted_address;
-                                                            document.getElementById(lat).value = marker.getPosition().lat();
-                                                            document.getElementById(lng).value = marker.getPosition().lng();
-                                                            calculateAndDisplayRoute(directionsService);
-                                                        } else {
-                                                            marker.formatted_address = 'Cannot determine address at this location.';
-                                                        }
-                                                        infowindow.setContent(marker.formatted_address + "<br>coordinates: " + marker.getPosition().toUrlValue(6));
-                                                        infowindow.open(mapObj, marker);
-                                                    });
-                                                }
-
-                                                function calculateAndDisplayRoute(directionsService) {
-                                                    if (a && b) {
-                                                        if (routes !== []) {
-                                                            for (var i = 0; i < routes.length; i++) {
-                                                                routes[i].setMap(null);
-                                                            }
-                                                        }
-                                                        var transportMode = document.getElementById('mode').value;
-                                                        directionsService.route({
-                                                            origin: document.getElementById('orig').value,
-                                                            destination: document.getElementById('dest').value,
-                                                            travelMode: google.maps.TravelMode[transportMode],
-                                                            provideRouteAlternatives: true
-                                                        }, function (response, status) {
-                                                            if (status === 'OK') {
-                                                                for (var i = 0; i < response.routes.length; i++) {
-                                                                    routes[i] = new google.maps.DirectionsRenderer({map: mapObj});
-                                                                    routes[i].setDirections(response);
-                                                                    routes[i].setRouteIndex(i);
-                                                                }
-                                                            } else {
-                                                                window.alert('Directions request failed due to ' + status);
-                                                            }
-                                                        });
-                                                        distMatrixService.getDistanceMatrix({
-                                                            origin: document.getElementById('orig').value,
-                                                            destination: document.getElementById('dest').value,
-                                                            travelMode: google.maps.TravelMode[transportMode]
-                                                        }, function (response, status) {
-                                                            if (status === 'OK') {
-                                                                var text = "";
-                                                                for (var i = 0; i < response.rows.length; i++) {
-                                                                    text += "from " + response.originAddresses[0] + " to " + response.destinationAddresses[0] + "<br>";
-                                                                    text += response.rows[i].elements[0].distance.text + "<br>";
-                                                                    text += response.rows[i].elements[0].duration.text + "<br>";
-                                                                }
-                                                                document.getElementById('distM').innerHTML = text;
-                                                            } else {
-                                                                window.alert('Distance Matrix request failed due to ' + status);
-                                                            }
-                                                        });
-                                                    }
-                                                }
-
-                                                $('input#mark1').change(function () {
-                                                    if ($(this).prop('checked')) {
-                                                        $('input#mark2').prop('checked', false);
-                                                    }
-                                                });
-
-                                                $('input#mark2').change(function () {
-                                                    if ($(this).prop('checked')) {
-                                                        $('input#mark1').prop('checked', false);
-                                                    }
-                                                });
-                                            }); // tutup JQuery    
-                                        </script>     
+                                                                    // JQuery
+                                                                    // //$(document).ready(function () {  // Ketika web udah siap
+                                                                    // //		prettyPrint();
+                                                                    var marker1 = new google.maps.Marker({
+                                                                        map: map,
+                                                                        draggable: true
+                                                                    }), marker2 = new google.maps.Marker({
+                                                                        map: map,
+                                                                        draggable: true
+                                                                    });
+                                                                    var routes = [];
+                                                                    var marker1pos, marker2pos;
+                                                                    var a = false, b = false;
+                                                                    var geocoder = new google.maps.Geocoder();
+                                                                    var route;
+                                                                    var directionsService = new google.maps.DirectionsService;
+                                                                    var distMatrixService = new google.maps.DistanceMatrixService;
+                                                                    var mapOptions = {
+                                                                        // Zoom di gmaps
+                                                                        zoom: 13,
+                                                                        // posisi maps
+                                                                        center: {lat: -34.397, lng: 150.644},
+                                                                        // style di gmaps
+                                                                        styles: [
+                                                                            {"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},
+                                                                            {"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},
+                                                                            {"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},
+                                                                            {"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},
+                                                                            {"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},
+                                                                            {"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
+                                                                            {"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},
+                                                                            {"featureType":"water","elementType":"all","stylers":[{"color":"#7ba0bf"},{"visibility":"on"}]}]
+                                                                    };
+                                                                    var mapObj = document.getElementById('map');
+                                                                    var map = new google.maps.Map(mapObj, mapOptions);
+                                                                    var onChangeHandler = function () {
+                                                                        displayRoute(directionsService);
+                                                                    };
+                                                                    var calculateHandler = function () {
+                                                                        var transport = document.getElementById('mode').value;
+                                                                        calculateRoute(distMatrixService);
+                                                                    };
+                                                                    //                                                event when map clicked
+                                                                    //                                                //                                                google.maps.event.addListener(map, 'click', function (event) {
+                                                                    //                                                //                                                    placeMarker(event.latLng);
+                                                                    //                                                //                                                });
+                                                                    //                                                //
+                                                                    //                                                //                                                function placeMarker(location) {
+                                                                    //                                                //                                                    if (marker) {
+                                                                    //                                                //                                                        marker.setPosition(location);
+                                                                    //                                                //                                                    } else {
+                                                                    //                                                //                                                        marker = new google.maps.Marker({
+                                                                    //                                                //                                                            position: location,
+                                                                    //                                                //                                                            map: map
+                                                                    //                                                //                                                        });
+                                                                    //                                                //                                                    }
+                                                                    //                                                //                                                }
+                                                                    // 
+                                                                    // Try HTML5 geolocation.
+                                                                    if (navigator.geolocation) {
+                                                                        navigator.geolocation.getCurrentPosition(function (position) {
+                                                                            var pos = {
+                                                                                lat: position.coords.latitude,
+                                                                                lng: position.coords.longitude
+                                                                            };
+                                                                            map.setCenter(pos);
+                                                                        });
+                                                                    } else {
+                                                                    }
+                                                                    document.getElementById('searchorig').addEventListener('click', function () {
+                                                                        var orig = document.getElementById('orig').value;
+                                                                        if (a) {
+                                                                            marker1.setMap(null);
+                                                                        }
+                                                                        geocoder.geocode({address: orig}, function (results, status) {
+                                                                            if (status === 'OK') {
+                                                                                map.setCenter(results[0].geometry.location);
+                                                                                marker1.setPosition(results[0].geometry.location);
+                                                                                marker1.setMap(map);
+                                                                                document.getElementById("lat1").value = marker1.getPosition().lat();
+                                                                                document.getElementById("lng1").value = marker1.getPosition().lng();
+                                                                            } else {
+                                                                                alert('Geocode was not successful for the following reason: ' + status);
+                                                                            }
+                                                                        });
+                                                                        a = true;
+                                                                    });
+                                                                    document.getElementById('searchdest').addEventListener('click', function () {
+                                                                        var dest = document.getElementById('dest').value;
+                                                                        if (b) {
+                                                                            marker2.setMap(null);
+                                                                        }
+                                                                        geocoder.geocode({address: dest}, function (results, status) {
+                                                                            if (status === 'OK') {
+                                                                                map.setCenter(results[0].geometry.location);
+                                                                                marker2.setPosition(results[0].geometry.location);
+                                                                                marker2.setMap(map);
+                                                                                document.getElementById("lat2").value = marker2.getPosition().lat();
+                                                                                document.getElementById("lng2").value = marker2.getPosition().lng();
+                                                                            } else {
+                                                                                alert('Geocode was not successful for the following reason: ' + status);
+                                                                            }
+                                                                        });
+                                                                        b = true;
+                                                                    });
+                                                                    google.maps.event.addListener(marker1, 'dragend', function () {
+                                                                        geocodePosition(marker1.getPosition(), marker1, 1, 'orig');
+                                                                    });
+                                                                    google.maps.event.addListener(marker2, 'dragend', function () {
+                                                                        geocodePosition(marker2.getPosition(), marker2, 2, 'dest');
+                                                                    });
+                                                                    
+                                                                    google.maps.event.addListener(marker1, 'dragend', onChangeHandler);
+                                                                    google.maps.event.addListener(marker2, 'dragend', onChangeHandler);
+                                                                    google.maps.event.addListener(marker1, 'dragend', calculateHandler);
+                                                                    google.maps.event.addListener(marker2, 'dragend', calculateHandler);
+                                                                    
+                                                                    document.getElementById('searchorig').addEventListener('click', calculateHandler);
+                                                                    document.getElementById('searchdest').addEventListener('click', calculateHandler);
+                                                                    document.getElementById('searchorig').addEventListener('click', onChangeHandler);
+                                                                    document.getElementById('searchdest').addEventListener('click', onChangeHandler);
+                                                                    
+                                                                    function geocodePosition(pos, marker, num, addr) {
+                                                                        var lat = 'lat' + num;
+                                                                        var lng = 'lng' + num;
+                                                                        geocoder.geocode({location: pos}, function (results, status) {
+                                                                            if (status === 'OK') {
+                                                                                marker.formatted_address = results[0].formatted_address;
+                                                                                document.getElementById(addr).value = marker.formatted_address;
+                                                                                document.getElementById(lat).value = marker.getPosition().lat();
+                                                                                document.getElementById(lng).value = marker.getPosition().lng();
+                                                                                displayRoute(directionsService);
+                                                                            } else {
+                                                                                marker.formatted_address = 'Cannot determine address at this location.';
+                                                                            }
+                                                                            infowindow.setContent(marker.formatted_address + "<br>coordinates: " + marker.getPosition().toUrlValue(6));
+                                                                            infowindow.open(map, marker);
+                                                                        });
+                                                                    }
+                                                                    function displayRoute(directionsService) {
+                                                                        if (a && b) {
+                                                                            if (routes !== []) {
+                                                                                for (var i = 0; i < routes.length; i++) {
+                                                                                    routes[i].setMap(null);
+                                                                                }
+                                                                            }
+                                                                            var transportMode = document.getElementById('mode').value;
+                                                                            directionsService.route({
+                                                                                origin: document.getElementById('orig').value,
+                                                                                destination: document.getElementById('dest').value,
+                                                                                travelMode: google.maps.TravelMode[transportMode],
+                                                                                provideRouteAlternatives: true
+                                                                            }, function (response, status) {
+                                                                                if (status === 'OK') {
+                                                                                    for (var i = 0; i < response.routes.length; i++) {
+                                                                                        routes[i] = new google.maps.DirectionsRenderer({map: map});
+                                                                                        routes[i].setDirections(response);
+                                                                                        routes[i].setRouteIndex(i);
+                                                                                    }
+                                                                                } else {
+                                                                                    window.alert('Directions request failed due to ' + status);
+                                                                                }
+                                                                            });
+                                                                        }
+                                                                    }
+                                                                    function calculateRoute(distMatrixService, transport) {
+                                                                        if (a && b) {
+                                                                            var origin = document.getElementById('orig').value;
+                                                                            var destination = document.getElementById('dest').value;
+                                                                            var startTime = document.getElementById('sTime').value;
+                                                                            var durID = transport + 'Dur';
+                                                                            var depID = transport + 'Dep';
+                                                                            distMatrixService.getDistanceMatrix({
+                                                                                origins: [origin],
+                                                                                destinations: [destination],
+                                                                                travelMode: google.maps.TravelMode[transport],
+                                                                                avoidHighways: false,
+                                                                                avoidTolls: false
+                                                                            }, callback
+                                                                                    );
+                                                                            function callback(response, status) {
+                                                                                var getDur = document.getElementById("getDur");
+                                                                                var getDist = document.getElementById("getDist");
+                                                                                var getDep = document.getElementById("sTime").value;
+                                                                                var strDep = getDep.split(":", 2);
+                                                                                var hoursDep = parseInt(strDep[0]);
+                                                                                var minutesDep = parseInt(strDep[1]);
+                                                                                if (status === "OK") {
+                                                                                    getDur.value = response.rows[0].elements[0].duration.text;
+                                                                                    if (minutesDep < 0) {
+                                                                                        hoursDep--;
+                                                                                        minutesDep = minutesDep + 60;
+                                                                                    }
+                                                                                    
+                                                                                    var duration = response.rows[0].elements[0].duration.value;
+                                                                                    var hoursDur = duration/3600;
+                                                                                    var checkHours = hoursDur.toFixed(0);
+                                                                                    if(hoursDur < checkHours){
+                                                                                        hoursDur = hoursDur - 1;
+                                                                                    }
+                                                                                    
+                                                                                    hoursDur = hoursDur.toFixed(0);
+                                                                                    var minutesDur = duration/60;
+                                                                                    minutesDur = minutesDur.toFixed(0);
+                                                                                    
+                                                                                    if(minutesDur>60){
+                                                                                        minutesDur = minutesDur - 60;
+                                                                                    }
+                                                                                    hoursDep = hoursDep - hoursDur;
+                                                                                    minutesDep = minutesDep - minutesDur;
+                                                                                    if (minutesDep < 0) {
+                                                                                        hoursDep = hoursDep - 1;
+                                                                                        minutesDep = minutesDep + 60;
+                                                                                    }
+                                                                                    var midnight;
+                                                                                    if(hoursDep<0){
+                                                                                        hoursDep = hoursDep + 12;
+                                                                                        midnight = " PM";
+                                                                                    } else if(hoursDep>12){
+                                                                                        hoursDep = hoursDep - 12;
+                                                                                        midnight = " PM";
+                                                                                    }else{
+                                                                                        midnight = " AM";
+                                                                                    }
+                                                                                    var departure = "Leave at " + hoursDep + "." + minutesDep + midnight;
+                                                                                    //document.getElementById('distM').innerHTML = text;
+                                                                                    ////document.getElementById("getDur").value = getDur;
+                                                                                    ////document.getElementById("getDist").value = getDist;
+                                                                                    document.getElementById(durID).innerHTML = getDur.value;
+                                                                                    document.getElementById(depID).innerHTML = departure;
+                                                                                    //                                                                getDist.value = response.rows[0].elements[0].distance.text;
+                                                                                    //                                                                //                                                                getDur.value = response.rows[0].elements[0].duration.text;
+                                                                                } else {
+                                                                                    alert("Error: " + status);
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    
+                                                                    $('input#mark1').change(function () {
+                                                                        if ($(this).prop('checked')) {
+                                                                            $('input#mark2').prop('checked', false);
+                                                                        }
+                                                                    });
+                                                                    $('input#mark2').change(function () {
+                                                                        if ($(this).prop('checked')) {
+                                                                            $('input#mark1').prop('checked', false);
+                                                                        }
+                                                                    });
+                                                                    //                                            }); // tutup JQuery    
+                                                                                                                                </script>     
                                         <!-- script tab -->
                                         <script>
                                             var currentTab = 0; // Current tab is set to be the first tab (0)
