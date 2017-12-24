@@ -276,10 +276,10 @@
                                                                     // //$(document).ready(function () {  // Ketika web udah siap
                                                                     // //		prettyPrint();
                                                                     var marker1 = new google.maps.Marker({
-                                                                        map: mapObj,
+                                                                        map: map,
                                                                         draggable: true
                                                                     }), marker2 = new google.maps.Marker({
-                                                                        map: mapObj,
+                                                                        map: map,
                                                                         draggable: true
                                                                     });
                                                                     var routes = [];
@@ -289,11 +289,24 @@
                                                                     var route;
                                                                     var directionsService = new google.maps.DirectionsService;
                                                                     var distMatrixService = new google.maps.DistanceMatrixService;
-                                                                    var mapObj;
-                                                                    mapObj = new google.maps.Map(document.getElementById('map'), {
+                                                                    var mapOptions = {
+                                                                        // Zoom di gmaps
+                                                                        zoom: 13,
+                                                                        // posisi maps
                                                                         center: {lat: -34.397, lng: 150.644},
-                                                                        zoom: 13
-                                                                    });
+                                                                        // style di gmaps
+                                                                        styles: [
+                                                                            {"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},
+                                                                            {"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},
+                                                                            {"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},
+                                                                            {"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},
+                                                                            {"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},
+                                                                            {"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
+                                                                            {"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},
+                                                                            {"featureType":"water","elementType":"all","stylers":[{"color":"#7ba0bf"},{"visibility":"on"}]}]
+                                                                    };
+                                                                    var mapObj = document.getElementById('map');
+                                                                    var map = new google.maps.Map(mapObj, mapOptions);
                                                                     var onChangeHandler = function () {
                                                                         displayRoute(directionsService);
                                                                     };
@@ -324,7 +337,7 @@
                                                                                 lat: position.coords.latitude,
                                                                                 lng: position.coords.longitude
                                                                             };
-                                                                            mapObj.setCenter(pos);
+                                                                            map.setCenter(pos);
                                                                         });
                                                                     } else {
                                                                     }
@@ -335,9 +348,9 @@
                                                                         }
                                                                         geocoder.geocode({address: orig}, function (results, status) {
                                                                             if (status === 'OK') {
-                                                                                mapObj.setCenter(results[0].geometry.location);
+                                                                                map.setCenter(results[0].geometry.location);
                                                                                 marker1.setPosition(results[0].geometry.location);
-                                                                                marker1.setMap(mapObj);
+                                                                                marker1.setMap(map);
                                                                                 document.getElementById("lat1").value = marker1.getPosition().lat();
                                                                                 document.getElementById("lng1").value = marker1.getPosition().lng();
                                                                             } else {
@@ -353,9 +366,9 @@
                                                                         }
                                                                         geocoder.geocode({address: dest}, function (results, status) {
                                                                             if (status === 'OK') {
-                                                                                mapObj.setCenter(results[0].geometry.location);
+                                                                                map.setCenter(results[0].geometry.location);
                                                                                 marker2.setPosition(results[0].geometry.location);
-                                                                                marker2.setMap(mapObj);
+                                                                                marker2.setMap(map);
                                                                                 document.getElementById("lat2").value = marker2.getPosition().lat();
                                                                                 document.getElementById("lng2").value = marker2.getPosition().lng();
                                                                             } else {
@@ -395,7 +408,7 @@
                                                                                 marker.formatted_address = 'Cannot determine address at this location.';
                                                                             }
                                                                             infowindow.setContent(marker.formatted_address + "<br>coordinates: " + marker.getPosition().toUrlValue(6));
-                                                                            infowindow.open(mapObj, marker);
+                                                                            infowindow.open(map, marker);
                                                                         });
                                                                     }
                                                                     function displayRoute(directionsService) {
@@ -414,7 +427,7 @@
                                                                             }, function (response, status) {
                                                                                 if (status === 'OK') {
                                                                                     for (var i = 0; i < response.routes.length; i++) {
-                                                                                        routes[i] = new google.maps.DirectionsRenderer({map: mapObj});
+                                                                                        routes[i] = new google.maps.DirectionsRenderer({map: map});
                                                                                         routes[i].setDirections(response);
                                                                                         routes[i].setRouteIndex(i);
                                                                                     }
