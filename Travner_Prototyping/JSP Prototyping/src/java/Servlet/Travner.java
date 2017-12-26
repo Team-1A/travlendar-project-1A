@@ -136,7 +136,7 @@ public class Travner extends HttpServlet {
     }
 
     public void DisplayActCalendar(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-        String usernm = this.email;
+        String usernm = request.getSession(false).getAttribute("email").toString();
         List<Activity> listAct = ActivityDAO.getAll(usernm);
         List<Activity_JSON> listActJSON = new ArrayList<>();
         listAct.forEach((Activity act)->{
@@ -179,11 +179,12 @@ public class Travner extends HttpServlet {
             if (user.getEmail() == null ? email == null : user.getPassword().equals(password)){
                 HttpSession session = request.getSession(true);
                 session.setAttribute("email", email);
+                session.setAttribute("username", user.getUsername());
                 //response.sendRedirect("./Home.jsp");
                 PrintWriter out = response.getWriter();
                 response.setContentType("text/html");  
                 out.println("<script type=\"text/javascript\">");  
-                out.println("alert('Hello " + request.getSession(false).getAttribute("email").toString() + "');");  
+                out.println("alert('Hello " + user.getUsername() + "');");  
                 out.println("location='./Home.jsp';");
                 out.println("</script>");
             } else {

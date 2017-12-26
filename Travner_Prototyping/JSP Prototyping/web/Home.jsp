@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html>
@@ -79,8 +80,8 @@
 
                 <div id="profile-pic"></div>
                 <div id="profile-details">
-                    <h1>Adhitya</h1>
-                    <h2>JustAdhita3798@gmail.com<h2>
+                    <h1><c:out value="${sessionScope.username}" /></h1>
+                    <h2><c:out value="${sessionScope.email}" /><h2>
                     <div id="profile-buttons">
                         <div class="view-profile">View Profile</div>
                         <div class="add-account" >Activities</div>
