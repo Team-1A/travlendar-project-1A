@@ -91,6 +91,13 @@ public class Travner extends HttpServlet {
                 Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
             }
             }
+            case "Logout":{
+            try {
+                Logout(request,response);
+            } catch (SQLException | ParseException ex) {
+                Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
         }
     }
 
@@ -154,6 +161,19 @@ public class Travner extends HttpServlet {
         request.setAttribute("name", userP);
         RequestDispatcher dispatcher = request.getRequestDispatcher("JSP_Prototyping/add_activity.jsp");
         dispatcher.include(request, response);
+    }
+    
+    public void Logout(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException, ServletException {
+        //request.getRequestDispatcher("./Home.jsp").include(request, response);
+        HttpSession session=request.getSession();  
+        session.invalidate();  
+            
+        PrintWriter out = response.getWriter();
+        response.setContentType("text/html");  
+        out.println("<script type=\"text/javascript\">");  
+        out.println("alert('Logout Success!');");  
+        out.println("location='./Index.jsp';");
+        out.println("</script>");
     }
     
     public void saveDataUser(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException {

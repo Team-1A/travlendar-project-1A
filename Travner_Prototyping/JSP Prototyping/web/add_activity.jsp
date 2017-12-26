@@ -4,6 +4,7 @@
     Author     : netspv
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html>
@@ -59,7 +60,7 @@
                     </div><!--end account-header-->
                     <div class="account-menu">
                         <ul class="account-menu-list">
-                            <a href=Index.jsp> <li>Sign Out</li> </a>
+                            <a href=${pageContext.request.contextPath}/Travner?action=Logout> <li>Sign Out</li> </a>
                         </ul>
                     </div><!--end account-menu-->
                 </div>

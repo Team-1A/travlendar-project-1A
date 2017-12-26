@@ -93,7 +93,7 @@
             <div class="account-menu">
 
                 <ul class="account-menu-list">
-                    <a href=index.jsp> <li>Sign Out</li> </a>
+                    <a href=${pageContext.request.contextPath}/Travner?action=Logout> <li>Sign Out</li> </a>
                 </ul>
 
             </div><!--end account-menu-->
