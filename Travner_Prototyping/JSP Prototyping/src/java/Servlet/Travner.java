@@ -30,6 +30,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -175,12 +176,25 @@ public class Travner extends HttpServlet {
             this.password = request.getParameter("password");
             
             User_Account user = User_AccountDAO.getUser(this.email, this.password);
-            String test = user.getUsername();
-            if (user.getUsername() == null ? email == null : user.getEmail().equals(email)){
-                response.sendRedirect("./Home.jsp");
+            if (user.getEmail() == null ? email == null : user.getPassword().equals(password)){
+                HttpSession session = request.getSession(true);
+                session.setAttribute("email", email);
+                //response.sendRedirect("./Home.jsp");
+                PrintWriter out = response.getWriter();
+                response.setContentType("text/html");  
+                out.println("<script type=\"text/javascript\">");  
+                out.println("alert('Hello " + request.getSession(false).getAttribute("email").toString() + "');");  
+                out.println("location='./Home.jsp';");
+                out.println("</script>");
             } else {
                 //TODO : Send Message to Client User Not Found!
-                response.sendError(0, "Data Not Found!");
+                PrintWriter out = response.getWriter();
+                response.setContentType("text/html");  
+                out.println("<script type=\"text/javascript\">");  
+                out.println("alert('Wrong Email or Password!');");
+                out.println("location='./Index.jsp';");
+                out.println("</script>");
+                //response.sendRedirect("./Index.jsp");
             }
     }
     
