@@ -84,13 +84,6 @@ public class Travner extends HttpServlet {
             case "activitycal":{
                 DisplayActCalendar(request,response);
             }
-            case "getProfile":{
-            try {
-                getUserProfile(request,response);
-            } catch (SQLException | ParseException ex) {
-                Logger.getLogger(Travner.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            }
             case "Logout":{
             try {
                 Logout(request,response);
@@ -154,13 +147,6 @@ public class Travner extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         out.write(new Gson().toJson(listActJSON));
-    }
-    
-    public void getUserProfile(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException, ServletException {
-        String userP = this.email;
-        request.setAttribute("name", userP);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("JSP_Prototyping/add_activity.jsp");
-        dispatcher.include(request, response);
     }
     
     public void Logout(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ParseException, ServletException {
