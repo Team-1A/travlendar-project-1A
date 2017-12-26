@@ -291,9 +291,9 @@
                                                                     var distMatrixService = new google.maps.DistanceMatrixService;
                                                                     var mapOptions = {
                                                                         // Zoom di gmaps
-                                                                        zoom: 13,
+                                                                        zoom: 15,
                                                                         // posisi maps
-                                                                        center: {lat: -34.397, lng: 150.644},
+                                                                        center: {lat: -6.8715514, lng: 107.5708255},
                                                                         // style di gmaps
                                                                         styles: [{"featureType":"all","elementType":"all","stylers":[{"hue":"#00b7ff"}]},
                                                                             {"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},
