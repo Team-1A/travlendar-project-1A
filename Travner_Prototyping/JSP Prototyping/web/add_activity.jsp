@@ -413,6 +413,7 @@
                                                     infowindow.open(map, marker);
                                                 });
                                             }
+
                                             function displayRoute(directionsService) {
                                                 if (a && b) {
                                                     if (routes !== []) {
@@ -428,7 +429,7 @@
                                                         provideRouteAlternatives: true
                                                     }, function (response, status) {
                                                         if (status === 'OK') {
-                                                            for (var i = 0; i < response.routes.length; i++) {
+                                                            for (var i = response.routes.length; i >= 0; i--) {
                                                                 if (i === 0) {
                                                                     var poly = new google.maps.Polyline({
                                                                         strokeColor: '#228B22'
@@ -453,6 +454,18 @@
                                                                             routes[j].setOptions({strokeColor: '#228B22'});
                                                                         }
                                                                     }
+//                                                                    var poly1 = new google.maps.Polyline({
+//                                                                        strokeColor: '#228B22'
+//                                                                    });
+//                                                                    var poly2 = new google.maps.Polyline({
+//                                                                        strokeColor: '#DAA520'
+//                                                                    });
+//                                                                    routes[i].setOptions({options: poly2});
+//                                                                    for (var j = 0; j < response.routes.length; j++) {
+//                                                                        if (i !== j) {
+//                                                                            routes[j].setOptions({options: poly1});
+//                                                                        }
+//                                                                    }
                                                                 });
                                                             }
                                                         } else {
