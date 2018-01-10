@@ -18,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -64,7 +65,8 @@ public class Calendar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Activity> listAct = ActivityDAO.getAll("sitti@polban.me");
+        String email =(String) request.getSession().getAttribute("email");
+        List<Activity> listAct = ActivityDAO.getAll(email);
         List<Activity_JSON> listActJSON = new ArrayList<>();
         listAct.forEach((Activity act)->{
             Activity_JSON actJSON = new Activity_JSON(act.getActivity_ID(),act.getActivity_Name(),act.getTime_Start(),act.getTime_End());

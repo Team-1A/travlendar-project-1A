@@ -267,7 +267,7 @@
                                                     navLinks: true, // can click day/week names to navigate views
                                                     editable: true,
                                                     eventLimit: true, // allow "more" link when too many events
-                                                    events: "/JSP_Prototyping/Travner?action=activitycal"
+                                                    events: "/JSP_Prototyping/Calendar"
                                                 });
                                             });
                                         </script>
