@@ -67,6 +67,60 @@ div#form{
 div.form-item{position: relative; display: block; margin-bottom: 20px;}
  input{transition: all .2s ease;}
 
+ input.input_name{
+        color:#8a8a8a;
+	width: 45%;
+	height: 20px;
+	border:1px solid #ccc;
+	border-radius: 27px;
+	background-color: #fff;
+	font-family:'HelveticaNeue','Arial', sans-serif;
+	font-size: 80%;
+	
+ }
+  input.input_email{
+        color:#8a8a8a;
+	width: 90%;
+	height: 20px;
+	border:1px solid #ccc;
+	border-radius: 27px;
+	background-color: #fff;
+	font-family:'HelveticaNeue','Arial', sans-serif;
+	font-size: 80%;
+	
+ }
+  input.input_password{
+        color:#8a8a8a;
+	width: 90%;
+	height: 20px;
+	border:1px solid #ccc;
+	border-radius: 27px;
+	background-color: #fff;
+	font-family:'HelveticaNeue','Arial', sans-serif;
+	font-size: 80%;
+	
+ }
+  input.input_re_password{
+        color:#8a8a8a;
+	width: 90%;
+	height: 20px;
+	border:1px solid #ccc;
+	border-radius: 27px;
+	background-color: #fff;
+	font-family:'HelveticaNeue','Arial', sans-serif;
+	font-size: 80%;
+	
+ }
+ select{
+      color:#8a8a8a;
+	width: 20%;
+	height: 40px;
+	border:1px solid #ccc;
+	border-radius: 27px;
+	background-color: #fff;
+	font-family:'HelveticaNeue','Arial', sans-serif;
+	font-size: 80%;
+ }
  input.form-style{
 	color:#8a8a8a;
 	display: block;

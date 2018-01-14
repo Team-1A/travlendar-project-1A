@@ -156,7 +156,7 @@ width: 70px;
     border-radius: 50%;
     display: inline-block;
     margin-top: 35px;
-    background: url(Assets/Adhitya.png) -10px -5px no-repeat;
+    /*background: url(Assets/Adhitya.png) -10px -5px no-repeat;*/
     background-size: 110px;
 }
 

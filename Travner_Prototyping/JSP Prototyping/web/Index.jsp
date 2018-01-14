@@ -146,7 +146,7 @@ function Submit(){
           <form name="form" action="${pageContext.request.contextPath}/Travner?action=signup" id="signup" method="POST"></form>
            
     <div id="errorBox_name"></div>
-        <input form="signup" type="text" name="Name" value="" placeholder="First Name"  class="input_name" >
+    <input form="signup" type="text" name="Name" value="" placeholder="First Name"  class="input_name" >
 <!--           <div id="errorBox_lastname"></div>-->
            <input form="signup" type="text" name="LastName" value="" placeholder="Last Name" class="input_name" >
     </div>

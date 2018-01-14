@@ -11,7 +11,7 @@
   background-color: #F8F9F9;
   border-radius: 5px;
   height:800px;
-  width: 735px;
+  width: 47%;
 }
 .right{
   float: left;
@@ -24,7 +24,7 @@
   background-color:#F8F9F9;
   border-radius: 5px;
   height:800px;
-  width:735px;
+  width:47%;
 }
 
 input[type="submit"]{
