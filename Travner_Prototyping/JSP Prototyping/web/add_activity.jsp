@@ -133,12 +133,6 @@
                                             <input form="regForm" type="Hidden" id="lat2" name="marker2_lat">
                                             <input form="regForm" type="Hidden" id="lng2" name="marker2_lng">
                                             <!--<input type="submit" value="Submit" name="submit" />-->
-                                            <select id="mode">
-                                                <option value="DRIVING">Driving</option>
-                                                <option value="WALKING">Walking</option>
-                                                <option value="BICYCLING">Bicycling</option>
-                                                <option value="TRANSIT">Transit</option>
-                                            </select>
                                             
                                             <div id="map">Maps Event</div>
                                             <!--
@@ -189,6 +183,12 @@
                                                         <td><img src="css/Assets/icon/route.svg"></td>
                                                     </tr>
                                                 </table>
+                                                <select id="mode" name="mode" form="regForm">
+                                                    <option id="DRIVING" value="DRIVING">Driving</option>
+                                                    <option id="WALKING" value="WALKING">Walking</option>
+                                                    <option id="BICYCLING" value="BICYCLING">Bicycling</option>
+                                                    <option id="TRANSIT" value="TRANSIT">Transit</option>
+                                                </select>
                                             </div><br>
                                             
                                         </div>
@@ -543,6 +543,7 @@
                                                         ////document.getElementById("getDist").value = getDist;
                                                         document.getElementById(durID).innerHTML = getDur.value;
                                                         document.getElementById(depID).innerHTML = departure;
+                                                        document.getElementById(transport).value = transport + "-" + hoursDep + ":" + minutesDep + "-" + midnight;
                                                         //                                                                getDist.value = response.rows[0].elements[0].distance.text;
                                                         //                                                                //                                                                getDur.value = response.rows[0].elements[0].duration.text;
                                                     } else {
@@ -608,7 +609,7 @@
                                             // Increase or decrease the current tab by 1:
                                             currentTab = currentTab + n;
                                             // if you have reached the end of the form...
-                                            if (currentTab >= x.length) {
+                                            if (currentTab >= x.length-1) {
                                                 // ... the form gets submitted:
                                                 document.getElementById("regForm").submit();
                                                 return false;

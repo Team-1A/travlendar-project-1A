@@ -215,9 +215,19 @@ public class Travner extends HttpServlet {
             String endTime = request.getParameter("endtime");
             
             String spareTime = request.getParameter("sparetime");
+            String mode = request.getParameter("mode");
+            String[] md = mode.split("-",3);
+            String[] departureT = md[1].split(":", 2);
+            int depH = Integer.parseInt(departureT[0]);
+            int depM = Integer.parseInt(departureT[1]);
+            
+            if (" PM".equals(md[2])){
+                depH += 12;
+            }
             
             String startLoc_Lat = request.getParameter("marker1_lat");
             String startLoc_Long = request.getParameter("marker1_lng");
+            
             
             Location loc = new Location();
             Double lat = Double.parseDouble(startLoc_Lat);
@@ -238,10 +248,10 @@ public class Travner extends HttpServlet {
             trav.setStartLocation_Long(Double.parseDouble(startLoc_Long));
             trav.setDestLocation_Lat(Double.parseDouble(destLoc_Lat));
             trav.setDestLocation_Long(Double.parseDouble(destLoc_Long));
-            trav.setTransportation_Mode("Mobil Dinas");
+            trav.setTransportation_Mode(md[0]);
             
-            String departure = "2017-03-11";
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String departure = startDay + " " + depH + ":" + depM + ":00";
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             java.util.Date dt = sdf.parse(departure);
             java.sql.Timestamp Departure_Time = new java.sql.Timestamp(dt.getTime());
             trav.setDeparture_Time(Departure_Time);
