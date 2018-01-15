@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Home
+    Document   : Event List
     Created on : Dec 10, 2017, 7:45:38 AM
     Author     : netspv
 --%>
@@ -27,8 +27,7 @@
         <link href="css/fullcalendar.min.css" rel="stylesheet">
         <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
         <link rel="stylesheet" type="text/css" href="css/home.css">
-        <link rel="stylesheet" type="text/css" href="css/map.css">
-
+        
         <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -42,8 +41,8 @@
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="Home.jsp"><img src="css/Assets/home.svg" style="width: 30px; height: 30px;"></a>
+                <a href="Event_List.jsp"><img src="css/Assets/list.svg"style="width: 30px; height: 30px;"></a>
                 <a href="Userguide.jsp"><img src="css/Assets/help.svg"style="width: 30px; height: 30px;"></a>
-                <a href="Event_List.jsp"><img src="css/Assets/home.svg"style="width: 30px; height: 30px;"></a>
             </div>
             <div id="header"><!--header-->
                 <span style="font-size:30px;cursor:pointer; float:left;margin: 10px; color:white;" onclick="openNav()">&#9776;</span>
