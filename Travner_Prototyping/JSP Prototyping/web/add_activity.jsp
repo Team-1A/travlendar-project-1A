@@ -184,12 +184,7 @@
                                                     </tr>
                                                 </table>
                                             </div><br>
-                                            <select id="mode">
-                                                <option value="DRIVING">Driving</option>
-                                                <option value="WALKING">Walking</option>
-                                                <option value="BICYCLING">Bicycling</option>
-                                                <option value="TRANSIT">Transit</option>
-                                            </select>
+                                           
                                         </div>
                                         <!--Activity has been add-->
                                         <div class="tab">
