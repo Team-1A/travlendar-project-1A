@@ -133,7 +133,13 @@
                                             <input form="regForm" type="Hidden" id="lat2" name="marker2_lat">
                                             <input form="regForm" type="Hidden" id="lng2" name="marker2_lng">
                                             <!--<input type="submit" value="Submit" name="submit" />-->
-
+                                            <select id="mode">
+                                                <option value="DRIVING">Driving</option>
+                                                <option value="WALKING">Walking</option>
+                                                <option value="BICYCLING">Bicycling</option>
+                                                <option value="TRANSIT">Transit</option>
+                                            </select>
+                                            
                                             <div id="map">Maps Event</div>
                                             <!--
                                             <div class="row">
@@ -184,7 +190,7 @@
                                                     </tr>
                                                 </table>
                                             </div><br>
-                                           
+                                            
                                         </div>
                                         <!--Activity has been add-->
                                         <div class="tab">
