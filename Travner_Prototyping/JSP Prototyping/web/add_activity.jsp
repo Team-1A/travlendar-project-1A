@@ -208,7 +208,6 @@
                                             <span class="step"></span>
                                             <span class="step"></span>
                                             <span class="step"></span>
-
                                         </div>
                                     </div>
                                     <form id="regForm" action="${pageContext.request.contextPath}/Travner?action=InputData" method="POST"></form>
@@ -578,10 +577,17 @@
                                             } else {
                                                 document.getElementById("prevBtn").style.display = "inline";
                                             }
-                                            if (n === (x.length - 1) || n === 3) {
-                                                document.getElementById("nextBtn").style.display = "none";
-                                            } else {
-                                                document.getElementById("nextBtn").innerHTML = "Next";
+                                            
+                                            switch(n){
+                                                case 0:
+                                                    document.getElementById("nextBtn").innerHTML = "Next";
+                                                    break;
+                                                case 1:
+                                                    document.getElementById("nextBtn").innerHTML = "Submit";
+                                                    break;
+                                                case 2:
+                                                    document.getElementById("nextBtn").style.display = "none";
+                                                    break;
                                             }
                                             //... and run a function that will display the correct step indicator:
                                             fixStepIndicator(n);
