@@ -43,6 +43,7 @@
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <a href="Home.jsp"><img src="css/Assets/home.svg" style="width: 30px; height: 30px;"></a>
                     <a href="Userguide.jsp"><img src="css/Assets/help.svg"style="width: 30px; height: 30px;"></a>
+                    <a href="Event_List.jsp"><img src="css/Assets/home.svg"style="width: 30px; height: 30px;"></a>
               
             </div>
             <div id="header"><!--header-->
