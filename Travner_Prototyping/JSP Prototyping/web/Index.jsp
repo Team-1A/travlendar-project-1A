@@ -127,7 +127,7 @@ function Submit(){
                     <!-- klik untuk membuat akun baru-->
                     <p class="pull-left"><a href="#"><small>Sign Up</small></a></p>
                     <a class='button glyphicon cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-                    <input form="login" type="submit" class="login pull-right" value="Log In" >
+                    <input form="login" type="submit" class="login pull-right" value="Sign In" >
                     <div class="clear-fix"></div>
                 </div>
             </div>
