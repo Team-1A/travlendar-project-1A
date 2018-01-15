@@ -18,10 +18,10 @@
 
 .box {
     margin-top: 50px;
-    margin-left: 150px;
-    margin-right: 150px;
-    width: 1400px;
-    height: 700px;
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 1150px;
+    height: auto;
     background: white;
     border-radius: 20px;
 }
