@@ -26,6 +26,19 @@
   height:580px;
   width:360px;
 }
+.box{
+    float: left;
+  padding: 20px;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 120px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-color:#F8F9F9;
+  border-radius: 5px;
+  height:580px;
+  width:360px;
+}
 .right img{
     margin-left: 15px;
   width: 90%;

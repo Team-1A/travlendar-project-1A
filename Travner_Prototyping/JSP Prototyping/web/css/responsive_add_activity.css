@@ -26,6 +26,19 @@
   height:800px;
   width:47%;
 }
+.box{
+  float: left;
+  padding: 20px;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 100px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-color:#F8F9F9;
+  border-radius: 5px;
+  height:800px;
+  width:47%;
+}
 
 input[type="submit"]{
   margin: 2px;
@@ -66,6 +79,19 @@ input[type="submit"]{
   height:800px;
   width:510px;
 }
+.box{
+  float: left;
+  padding: 20px;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 100px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-color:#F8F9F9;
+  border-radius: 5px;
+  height:800px;
+  width:47%;
+}
 
 input[type="submit"]{
   margin: 2px;
@@ -105,6 +131,19 @@ input[type="submit"]{
   border-radius: 5px;
   height:800px;
   width:700px;
+}
+.box{
+  float: left;
+  padding: 20px;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 100px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-color:#F8F9F9;
+  border-radius: 5px;
+  height:800px;
+  width:47%;
 }
 .right img{
   width: 180px;
@@ -161,6 +200,19 @@ body {
   border-radius: 5px;
   height:880px;
   width:95%;
+}
+.box{
+  float: left;
+  padding: 20px;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 100px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-color:#F8F9F9;
+  border-radius: 5px;
+  height:800px;
+  width:47%;
 }
 .right img{
   width: 180px;
