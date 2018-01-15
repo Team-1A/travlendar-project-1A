@@ -37,10 +37,20 @@
         <script type="text/javascript" src="js/index.js"></script>
     </head>
 
-    <body>
-        
+    <body>                                    
         <div id="main">
-            <div id="header"><!--header-->
+            <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="Home.jsp"><img src="css/Assets/home.svg" style="width: 30px; height: 30px;"></a>
+                    <a href="Userguide.jsp"><img src="css/Assets/help.svg"style="width: 30px; height: 30px;"></a>
+              
+            </div>
+                <div id="header"><!--header-->
+                        
+                 <span style="font-size:30px;cursor:pointer; float:left;margin: 10px; color:white;" onclick="openNav()">&#9776;</span>
+               
+                
+
                 <img src="css/Assets/icon/logo.png">
                 <div class="account-btn">
                     <img class="account-img" src="css/Assets/icon/chevron-pointing-to-the-left.svg" style="width: 10px ; height:10px;"/>
@@ -65,8 +75,7 @@
                                         </ul>
                                     </div><!--end account-menu-->
                                     </div>
-                                    </div>
-                                    <div id="main">
+            </div>
                                         <!--calendar-->
                                         <div class="left">
                                             <div id='calendar'></div>
@@ -180,18 +189,11 @@
                                                         </tr>
                                                     </table>
                                                 </div>
-                                                <br><select form="regForm" name="transportation">
-                                                    <option form="regForm" value="car">Car</option>
-                                                    <option form="regForm" value="plane">Plane</option>
-                                                    <option form="regForm" value="motorcycle">Motorcycle</option>
-                                                    <option form="regForm" value="walk">Walk</option>
-                                                    <option form="regForm" value="bicycle">bicycle</option>
-                                                </select>
                                             </div>
                                             <!--Activity has been add-->
                                             <div class="tab">
-                                                <h1 style="font-size: 20px; text-align: center; margin-top:100px;">Your Activity has been Recorded</h1><br>
-                                                <p style="text-align: center;">See your activity on the List or you can see it on the calendar as it marked</p>
+                                                <h1 style="font-size: 20px; text-align: center; margin-top:100px;">Your Activity has been Saved</h1><br>
+                                                <p style="text-align: center;"></p>
                                             </div>
                                             <div style="overflow: auto">
                                                 <div style="float:right;"><br>
@@ -205,7 +207,7 @@
                                                 <span class="step"></span>
                                                 <span class="step"></span>
                                                 <span class="step"></span>
-                                                <span class="step"></span>
+                                           
                                             </div>
                                         </div>
                                         <form id="regForm" action="${pageContext.request.contextPath}/Travner?action=InputData" method="POST"></form>
@@ -570,12 +572,12 @@
                                                 var x = document.getElementsByClassName("tab");
                                                 x[n].style.display = "block";
                                                 //... and fix the Previous/Next buttons:
-                                                if (n === 0) {
+                                                if (n === 0 || n === 2) {
                                                     document.getElementById("prevBtn").style.display = "none";
                                                 } else {
                                                     document.getElementById("prevBtn").style.display = "inline";
                                                 }
-                                                if (n === (x.length - 1)) {
+                                                if (n === (x.length - 1) || n === 3) {
                                                     document.getElementById("nextBtn").innerHTML = "Submit";
                                                 } else {
                                                     document.getElementById("nextBtn").innerHTML = "Next";
@@ -664,6 +666,21 @@
                                                 }
                                             };
                                         </script>
+                        <!--script untuk sidebar-->
+                        <script>
+                            function openNav() {
+                                document.getElementById("mySidenav").style.width = "70px";
+                                document.getElementById("main").style.marginLeft = "70px";
+                                document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                            }
+
+                            function closeNav() {
+                                document.getElementById("mySidenav").style.width = "0";
+                                document.getElementById("main").style.marginLeft= "0";
+                                document.body.style.backgroundColor = "white";
+                            }
+                        </script>
+     
                                     </div>
                                     </div>
                                     </body>

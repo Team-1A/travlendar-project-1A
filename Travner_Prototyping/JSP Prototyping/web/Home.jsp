@@ -39,14 +39,15 @@
     
     <body>
        <div id="main">
+           <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="Home.jsp"><img src="css/Assets/home.svg" style="width: 30px; height: 30px;"></a>
+                    <a href="Userguide.jsp"><img src="css/Assets/help.svg"style="width: 30px; height: 30px;"></a>
+              
+            </div>
             <div id="header"><!--header-->
-                
-                <nav onmouseover="">
-                    <a href="#" title="Menu">Menu</a>
-                    <a href="#" title="Account">Account</a>
-                    <a href="#" title="Settings">Settings</a>
-                    <a href="#" title="Email">Email</a>
-                </nav>
+                <span style="font-size:30px;cursor:pointer; float:left;margin: 10px; color:white;" onclick="openNav()">&#9776;</span>
+               
 
 
 <!--	<script type="text/javascript">
@@ -554,6 +555,20 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 </script>
+
+<script>
+                            function openNav() {
+                                document.getElementById("mySidenav").style.width = "70px";
+                                document.getElementById("main").style.marginLeft = "70px";
+                                document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                            }
+
+                            function closeNav() {
+                                document.getElementById("mySidenav").style.width = "0";
+                                document.getElementById("main").style.marginLeft= "0";
+                                document.body.style.backgroundColor = "white";
+                            }
+                        </script>
             </div>
         </div>
     </body>

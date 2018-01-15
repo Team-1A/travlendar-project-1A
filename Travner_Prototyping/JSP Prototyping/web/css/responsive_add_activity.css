@@ -64,7 +64,7 @@ input[type="submit"]{
   background-color:#F8F9F9;
   border-radius: 5px;
   height:800px;
-  width:460px;
+  width:510px;
 }
 
 input[type="submit"]{
@@ -159,7 +159,7 @@ body {
   margin-bottom: 20px;
   background-color:#F8F9F9;
   border-radius: 5px;
-  height:820px;
+  height:880px;
   width:95%;
 }
 .right img{
