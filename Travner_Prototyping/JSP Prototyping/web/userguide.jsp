@@ -26,9 +26,9 @@
         <link rel="stylesheet" type="text/css" href="css/responsive_add_activity.css">
         <link href="css/fullcalendar.min.css" rel="stylesheet">
         <link href="css/fullcalendar.print.min.css" rel="stylesheet" media="print">
-        <link rel="stylesheet" type="text/css" href="css/home.css">
- 
-        
+        <link rel="stylesheet" type="text/css" href="css/userguide.css">
+
+
         <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -60,10 +60,6 @@
                         <div id="profile-details">
                             <h1><c:out value="${sessionScope.username}" /></h1>
                             <h2><c:out value="${sessionScope.email}" /><h2>
-                                    <div id="profile-buttons">
-                                        <div class="view-profile">View Profile</div>
-                                        <div class="add-account" >Activities</div>
-                                    </div>
                                     </div>
 
                                     </div><!--end account-header-->
@@ -82,61 +78,61 @@
                                     <br>
                                     </div>
                                     <div class="box">
-            <p><b>Start Page Web</b><br></br>
-                    Sign In<br></br>
-                        Untuk log in user sebelum memasuki page Travner (Calendar View dan Add Activity).<br></br>
-                    Sign Up<br></br>
-                        Pendaftaran awal untuk menjadi user pada Web Travner.<br></br> 
-                    Forget Password<br></br>
-                        Apabila user lupa password saat akan log in, dengan user mengklik forget password user dapat mengkonfirmasikannya melalui e-mail.<br></br>
-            <br></br>
-            <b>Calendar View</b><br></br>
-            1.Today<br></br>
-                Untuk menampilkan kalender hari ini.<br></br>
-            2.Month<br></br>
-                Untuk menampilkan kalender per bulan.<br></br>
-            3.Week<br></br>
-                Untuk menampilkan kalender per minggu.<br></br>
-            4.Day<br></br>
-                Untuk menampilkan kalender per hari.<br></br>
-            <br></br>
-            <b>Page Add Activity</b><br></br>
-            1.Add Activity<br></br>
-                Untuk menginputkan kegiatan yang akan Anda recanakan.<br></br>
-            2.Title<br></br>
-                Untuk menginputkan nama kegiatan yang akan Anda rencanakan.<br></br>
-            3.Time of Activity (Date and Time)<br></br>
-                Untuk menginputkan (Tanggal dan Waktu (Jam:Menit:Detik) dari kegiatan yang akan Anda rencanakan.<br></br>
-            4.Default location <br></br>
-                Untuk mendeteksi lokasi kita berada saat menginputkan plan kegiatan Anda.<br></br>
-            5.Find Activity<br></br>
-                Untuk mencari aktivitas yang ingin kita cari dari berbagai aktivitas yang telah kita inputkan.<br></br>
-            6.View Activity<br></br>
-                Untuk melihat berbagai aktivitas yang telah kita inputkan.<br></br>
-            <br></br>
-            <b>Location</b><br></br>
-            1.Start Location<br></br>
-                Untuk menginputkan lokasi awal dari tempat Anda berada sebelum menuju ke tempat kegiatan.<br></br>
-            2.End Location<br></br>
-                Untuk menginputkan lokasi akhir (lokasi tujuan/lokasi kegiatan).<br></br>
-            3.Recommendation<br></br>
-                Untuk menampilkan hasil rekomendasi data aktivitas yang telah diinputkan dari system, dapat merekomendasikan moda transportasi, estimasi waktu perjalanan,  rute, dan waktu keberangkatan. Dengan cara mengklik salah satu moda transportasi yang akan digunakan, nanti akan muncul berbagai rekomendasinya.<br></br>
-            4.Rute<br></br>
-                Ketika back langsung menyimpan rute yang telah terdeteksi.<br></br>
-            5.Spare Time<br></br>
-                Waktu luang antara waktu sampai pada lokasi tujuan dengan waktu mulainya aktivitas yang akan Anda rencankan.<br></br>
-            <br></br>
-            <b>Recommendation</b><br></br>
-            1.Transportation Mode<br></br>
-                Moda transportasi yang direkomendasikan oleh system untuk menuju ke lokasi tujuan.<br></br>
-            2.Estimation Mode<br></br>
-                Estimasi waktu perjalanan untuk menuju ke lokasi tujuan.<br></br>
-            3.Route<br></br>
-                Rute yang mungkin untuk dilalui oleh user dari lokasi awal menuju lokasi tujuan sesuai dengan moda transportasi yang akan digunakan. <br></br>
-            <br></br>
-            </p>    
-        </div>
-      
+                                        <p><b>Start Page Web</b><br></br>
+                                            Sign In<br></br>
+                                            Untuk log in user sebelum memasuki page Travner (Calendar View dan Add Activity).<br></br>
+                                            Sign Up<br></br>
+                                            Pendaftaran awal untuk menjadi user pada Web Travner.<br></br> 
+                                            Forget Password<br></br>
+                                            Apabila user lupa password saat akan log in, dengan user mengklik forget password user dapat mengkonfirmasikannya melalui e-mail.<br></br>
+                                            <br></br>
+                                            <b>Calendar View</b><br></br>
+                                            1.Today<br></br>
+                                            Untuk menampilkan kalender hari ini.<br></br>
+                                            2.Month<br></br>
+                                            Untuk menampilkan kalender per bulan.<br></br>
+                                            3.Week<br></br>
+                                            Untuk menampilkan kalender per minggu.<br></br>
+                                            4.Day<br></br>
+                                            Untuk menampilkan kalender per hari.<br></br>
+                                            <br></br>
+                                            <b>Page Add Activity</b><br></br>
+                                            1.Add Activity<br></br>
+                                            Untuk menginputkan kegiatan yang akan Anda recanakan.<br></br>
+                                            2.Title<br></br>
+                                            Untuk menginputkan nama kegiatan yang akan Anda rencanakan.<br></br>
+                                            3.Time of Activity (Date and Time)<br></br>
+                                            Untuk menginputkan (Tanggal dan Waktu (Jam:Menit:Detik) dari kegiatan yang akan Anda rencanakan.<br></br>
+                                            4.Default location <br></br>
+                                            Untuk mendeteksi lokasi kita berada saat menginputkan plan kegiatan Anda.<br></br>
+                                            5.Find Activity<br></br>
+                                            Untuk mencari aktivitas yang ingin kita cari dari berbagai aktivitas yang telah kita inputkan.<br></br>
+                                            6.View Activity<br></br>
+                                            Untuk melihat berbagai aktivitas yang telah kita inputkan.<br></br>
+                                            <br></br>
+                                            <b>Location</b><br></br>
+                                            1.Start Location<br></br>
+                                            Untuk menginputkan lokasi awal dari tempat Anda berada sebelum menuju ke tempat kegiatan.<br></br>
+                                            2.End Location<br></br>
+                                            Untuk menginputkan lokasi akhir (lokasi tujuan/lokasi kegiatan).<br></br>
+                                            3.Recommendation<br></br>
+                                            Untuk menampilkan hasil rekomendasi data aktivitas yang telah diinputkan dari system, dapat merekomendasikan moda transportasi, estimasi waktu perjalanan,  rute, dan waktu keberangkatan. Dengan cara mengklik salah satu moda transportasi yang akan digunakan, nanti akan muncul berbagai rekomendasinya.<br></br>
+                                            4.Rute<br></br>
+                                            Ketika back langsung menyimpan rute yang telah terdeteksi.<br></br>
+                                            5.Spare Time<br></br>
+                                            Waktu luang antara waktu sampai pada lokasi tujuan dengan waktu mulainya aktivitas yang akan Anda rencankan.<br></br>
+                                            <br></br>
+                                            <b>Recommendation</b><br></br>
+                                            1.Transportation Mode<br></br>
+                                            Moda transportasi yang direkomendasikan oleh system untuk menuju ke lokasi tujuan.<br></br>
+                                            2.Estimation Mode<br></br>
+                                            Estimasi waktu perjalanan untuk menuju ke lokasi tujuan.<br></br>
+                                            3.Route<br></br>
+                                            Rute yang mungkin untuk dilalui oleh user dari lokasi awal menuju lokasi tujuan sesuai dengan moda transportasi yang akan digunakan. <br></br>
+                                            <br></br>
+                                        </p>    
+                                    </div>
+
 
                                     <!-- script calendar -->
                                     <script>

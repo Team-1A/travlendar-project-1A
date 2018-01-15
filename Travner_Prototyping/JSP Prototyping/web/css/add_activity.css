@@ -87,17 +87,6 @@ height: 30px;
 
 }
 
-#profile-pic {
-    height: 90px;
-    width: 90px;
-    margin-left: 30px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-top: 35px;
-    background: url(Assets/Adhitya.png) -10px -5px no-repeat;
-    background-size: 110px;
-}
-
 #profile-details {
     width: 220px;
     float: right;
@@ -176,40 +165,6 @@ h1 {
 }
 h2{
   font-size: 16px;
-}
-
-
-#profile-buttons {
-    font-size: 12px;
-}
-
-.view-profile {
-    padding: 5px 15px;
-    background-color: #1976D2;
-    color: white;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    margin-left: 0;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.view-profile:hover{
-    background-color: #1668cb;
-    -webkit-transition: background-color 0.5s linear;
-    -ms-transition: background-color 0.5s linear;
-    transition: background-color 0.5s linear;
-    -webkit-box-shadow: 0px 8px 31px -2px rgba(25,118,210,0.28);
-    -moz-box-shadow: 0px 8px 31px -2px rgba(25,118,210,0.28);
-    box-shadow: 0px 8px 31px -2px rgba(25,118,210,0.28);
-}
-
-.Activity {
-    display: inline-block;
-    color: #1976D2;
-    cursor: pointer;
-    padding: 5px 15px;
 }
 
 .add-account:hover {
