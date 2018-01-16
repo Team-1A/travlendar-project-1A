@@ -26,55 +26,6 @@
     border-radius: 20px;
 }
 
-input {
-    outline: none;
-}
-input[type=search] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box;
-    font-family: inherit;
-    font-size: 100%;
-}
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button {
-    display: none; 
-}
-
-
-input[type=search] {
-    background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-    border: solid 1px #ccc;
-    padding: 5px 5px 2px 32px;
-    width: 95px;
-
-    -webkit-border-radius: 10em;
-    -moz-border-radius: 10em;
-    border-radius: 10em;
-
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
-}
-input[type=search]:focus {
-    width: 85%;
-    background-color:  #7bcbee;
-    border-color:  #116AB8;
-
-    -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
-    -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
-    box-shadow: 0 0 5px rgba(109,207,246,.5);
-}
-
-
-input:-moz-placeholder {
-    color: #999;
-}
-input::-webkit-input-placeholder {
-    color: #999;
-}
-
-
-
 body {
     background-image: url(Assets/BackGround.jpg);
     background-size: cover; 
@@ -95,7 +46,7 @@ body {
     align-content: center;
     margin-top: 10px;
     width: 70px;
-    \height: 30px;
+    height: 30px;
 }
 
 /*Profile Tab*/
@@ -175,16 +126,6 @@ body {
     height: 100px;
     margin-left: 20px;
     margin-top: 35px;
-}
-
-h1 {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-h2 {
-    font-size: 15px;
-    margin-bottom: 10px;
 }
 
 .add-account:hover {
@@ -289,24 +230,6 @@ h2 {
 
 }
 
-
-
-button.activity {
-    font-weight: bold;
-    border-radius: 5px; 
-    background-color: #2980B9; 
-    color: white;
-    cursor: pointer;
-    padding: 2px;
-    width: 100%;
-    height: 80px;
-    border: none;
-    text-align: center;
-    outline: none;
-    font-size: 16px;
-    transition: 0.4s;
-}
-
 div.panel {
     padding: 0 18px;
     border: 1px solid #2980B9;;
@@ -326,66 +249,9 @@ p {
 }
 
 h1 {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: bold;
-    text-align: left;  
-}
-h2{
-    font-weight: bold;
-    font-size: 10px;
-}
-
-
-input {
-    background-color: white;
-    border-radius: 5px;
-    width: 30%;
-    height: 30px;
-
-    font-size: 12px;
-    border: 1px solid #55B1DF;
-
-
-}
-label {
-    width: 10px;
-    height: 20px;
-}
-input[type="date"]{
-
-
-    width: 45%;
-}
-
-input[type="time"]{
-
-    width: 25%;
-    margin-left: 50px;
-}
-
-input[type="radio"]{
-    margin: 10px;
-    font-size: 7px;
-    width: 4%;
-    height: 2em;
-    border: 0px;
-}
-input[type="location"]{
-    font-size: 12px;
-    width: 80%;
-}
-
-input[type="submit"]{
-    font-weight: bold;
-    background-color:#4f9bff; 
-    font-size: 12px;
-    color: #fff;
-    width: 10%;
-}
-
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-    background-color: #ffdddd;
+    text-align: center;  
 }
 
 /* Hide all steps by default: */
@@ -411,56 +277,10 @@ button:hover {
     opacity: 0.8;
 }
 
-#prevBtn {
-
-    background-color: #2980B9;
-}
-
-/* Make circles that indicate the steps of the form: */
-.step {
-    height: 10px;
-    width: 10px;
-    margin: 0 2px;
-    background-color: #2980B9; 
-    border: none;  
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.5;
-}
-
-.step.active {
-    opacity: 1;
-}
-
-/* Mark the steps that are finished and valid: */
-.step.finish {
-    background-color: #2980B9;
-}
 img{
     margin-top: 5px;
     width: 15px;
     height: 15px;
-}
-#map{
-    width: 100%;
-    height: 200px;
-    border: 1px solid #a0a0a0;
-}
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
 }
 
 a, a:visited {
@@ -676,7 +496,3 @@ h1 {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
-
-
-
-
